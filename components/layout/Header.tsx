@@ -34,11 +34,11 @@ export default function Header() {
 					<div className="site-branding">
 						<div className="site-branding-inner">
 							<div className="site-logo site-logo-dark" style={{maxWidth: "11.06rem", maxHeight: "2.5rem", }}>
-								<a href="index.html" title="Asia Pacific Shipping">
+								<a href="/" title="Asia Pacific Shipping">
 									<img width="267" height="60" src="/wp-content/uploads/2024/03/ASP-logo-dark.svg" className="img-fluid" alt="Asia Pacific Shipping - Independent Vietnamese Shipowner" /> </a>
 							</div>
 							<div className="site-logo site-logo-light" style={{maxWidth: "11.06rem", maxHeight: "2.5rem", }}>
-								<a href="index.html" title="Asia Pacific Shipping">
+								<a href="/" title="Asia Pacific Shipping">
 									<img width="268" height="60" src="/wp-content/uploads/2024/03/ASP-logo-light.svg" className="img-fluid" alt="Asia Pacific Shipping - Independent Vietnamese Shipowner" /> </a>
 							</div>
 						</div>
@@ -46,20 +46,20 @@ export default function Header() {
 
 					<nav className="site-nav u-ml-auto u-d-none u-d-lg-flex u-ml-auto mega-nav"  >
 						<ul id="menu-primary-menu" className="site-nav-items site-nav-items-primary">
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-53" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-53 ${activeMegaMenu === "menu-item-53" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-53")} onMouseLeave={handleMouseLeave}><a title="About Us" href="about-us/index.html" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-53">About Us</a>
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-53" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-53 ${activeMegaMenu === "menu-item-53" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-53")} onMouseLeave={handleMouseLeave}><a title="About Us" href="/about-us" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-53">About Us</a>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-53" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
-											<li className="menu-item menu-item-heading"><a href="about-us/index.html" title="About Us" target="" className="">About Us</a></li>
+											<li className="menu-item menu-item-heading"><a href="/about-us" title="About Us" target="" className="">About Us</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-55" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-55">
-												<a title="History" href="about-us/history/index.html">History</a></li>
+												<a title="History" href="/about-us/history">History</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-56" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-56">
-												<a title="Leadership" href="about-us/leadership/index.html">Leadership</a></li>
+												<a title="Leadership" href="/about-us/leadership">Leadership</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-54" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-54">
-												<a title="Vision, Mission, Values" href="about-us/vision-mission-values/index.html">Vision, Mission,
+												<a title="Vision, Mission, Values" href="/about-us/vision-mission-values">Vision, Mission,
 													Values</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-57" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-57">
-												<a title="Trades" href="about-us/trades/index.html">Trades</a></li>
+												<a title="Trades" href="/about-us/trades">Trades</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="dba68197a6b45db2454af0fd84b9da6a" id="" className="layout layout-menu-statistic-boxes layout-app_megamenu layout-statistic-boxes layout-root">
@@ -100,20 +100,20 @@ export default function Header() {
 									</div>
 								</div>
 							</li>
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-68" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-68 ${activeMegaMenu === "menu-item-68" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-68")} onMouseLeave={handleMouseLeave}><a title="Sustainability" href="sustainability/index.html" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-68">Sustainability</a>
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-68" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-68 ${activeMegaMenu === "menu-item-68" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-68")} onMouseLeave={handleMouseLeave}><a title="Sustainability" href="/sustainability" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-68">Sustainability</a>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-68" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
-											<li className="menu-item menu-item-heading"><a href="sustainability/index.html" title="Sustainability" target="" className="">Sustainability</a></li>
+											<li className="menu-item menu-item-heading"><a href="/sustainability" title="Sustainability" target="" className="">Sustainability</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1112" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1112">
-												<a title="Environment" href="sustainability/environment/index.html">Environment</a></li>
+												<a title="Environment" href="/sustainability/environment">Environment</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1126" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1126">
-												<a title="Social" href="sustainability/social/index.html">Social</a>
+												<a title="Social" href="/sustainability/social">Social</a>
 											</li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1028" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1028">
-												<a title="Governance" href="sustainability/governance/index.html">Governance</a></li>
+												<a title="Governance" href="/sustainability/governance">Governance</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-71" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-71">
-												<a title="Policies &amp; Guidelines" href="sustainability/policies-guidelines/index.html">Policies &amp;
+												<a title="Policies &amp; Guidelines" href="/sustainability/policies-guidelines">Policies &amp;
 													Guidelines</a></li>
 										</ul>
 										<div className="menu-item-contents">
@@ -148,18 +148,18 @@ export default function Header() {
 									</div>
 								</div>
 							</li>
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-61" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-61 ${activeMegaMenu === "menu-item-61" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-61")} onMouseLeave={handleMouseLeave}><a title="Media" href="media/index.html" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-61">Media</a>
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-61" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-61 ${activeMegaMenu === "menu-item-61" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-61")} onMouseLeave={handleMouseLeave}><a title="Media" href="/media" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-61">Media</a>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-61" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
-											<li className="menu-item menu-item-heading"><a href="media/index.html" title="Media" target="" className="">Media</a></li>
+											<li className="menu-item menu-item-heading"><a href="/media" title="Media" target="" className="">Media</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-64" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-64">
-												<a title="Latest News" href="media/latest-news/index.html">Latest
+												<a title="Latest News" href="/media/latest-news">Latest
 													News</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-62" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-62">
-												<a title="Gallery" href="media/gallery/index.html">Gallery</a></li>
+												<a title="Gallery" href="/media/gallery">Gallery</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-63" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-63">
-												<a title="Glossary of Terms" href="media/glossary-of-terms/index.html">Glossary of Terms</a></li>
+												<a title="Glossary of Terms" href="/media/glossary-of-terms">Glossary of Terms</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="8fb3a8bba6e7c4e9f1a5f962d1602271" id="" className="layout layout-menu-post-list layout-app_megamenu layout-root">
@@ -169,12 +169,12 @@ export default function Header() {
 															<article id="post-2136" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2136 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
 																<header className="entry-header">
 																	<div className="post-categories row u-gy-2 u-gx-2">
-																		<div className="col-auto"><a href="media/news/category/press-releases/index.html" className="button button-small button-secondary">Press
+																		<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 																				Releases</a></div>
-																	</div><a href="media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance/index.html" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+																	</div><a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 																</header>
 																<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
-																	<a href="media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance/index.html" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29,
+																	<a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29,
 																			2026</time>
 																		<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 																			Asia Pacific Shipping expands use of GIT
@@ -188,12 +188,12 @@ export default function Header() {
 															<article id="post-2086" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2086 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
 																<header className="entry-header">
 																	<div className="post-categories row u-gy-2 u-gx-2">
-																		<div className="col-auto"><a href="media/news/category/press-releases/index.html" className="button button-small button-secondary">Press
+																		<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 																				Releases</a></div>
-																	</div><a href="media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan/index.html" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+																	</div><a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 																</header>
 																<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
-																	<a href="media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan/index.html" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September
+																	<a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September
 																			9, 2025</time>
 																		<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 																			Asia Pacific Shipping partners with
@@ -210,21 +210,21 @@ export default function Header() {
 									</div>
 								</div>
 							</li>
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-58" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-58 ${activeMegaMenu === "menu-item-58" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-58")} onMouseLeave={handleMouseLeave}><a title="Careers" href="careers/index.html" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-58">Careers</a>
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-58" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-58 ${activeMegaMenu === "menu-item-58" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-58")} onMouseLeave={handleMouseLeave}><a title="Careers" href="/careers" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-58">Careers</a>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-58" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
-											<li className="menu-item menu-item-heading"><a href="careers/index.html" title="Careers" target="" className="">Careers</a></li>
+											<li className="menu-item menu-item-heading"><a href="/careers" title="Careers" target="" className="">Careers</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-79" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-79">
-												<a title="The Asia Pacific Shipping Difference" href="careers/index.html#the-bw-epic-kosan-difference">The Asia Pacific Shipping Difference</a>
+												<a title="The Asia Pacific Shipping Difference" href="/careers#the-bw-epic-kosan-difference">The Asia Pacific Shipping Difference</a>
 											</li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-80" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-80">
-												<a title="Talent Management" href="careers/index.html#talent-management">Talent Management</a></li>
+												<a title="Talent Management" href="/careers#talent-management">Talent Management</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-81" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-81">
-												<a title="Benefits of Working at Asia Pacific Shipping" href="careers/index.html#benefits-of-working-at-bw-epic-kosan">Benefits of Working at Asia Pacific
+												<a title="Benefits of Working at Asia Pacific Shipping" href="/careers#benefits-of-working-at-bw-epic-kosan">Benefits of Working at Asia Pacific
 													Shipping</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-82" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-82">
-												<a title="Career Opportunities" href="careers/index.html#careers-opportunities">Career Opportunities</a></li>
+												<a title="Career Opportunities" href="/careers#careers-opportunities">Career Opportunities</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="965f6192b1b0dd5cd3464d76903929e9" id="" className="layout layout-menu-featured-cards layout-app_megamenu layout-root">
@@ -237,7 +237,7 @@ export default function Header() {
 																	<div className="card-header u-p-4 u-d-flex u-flex-row u-flex-nowrap u-align-items-center">
 																		<p className="heading h5 u-mb-3 featured-card-heading subheading u-mb-0 u-flex-grow-1 u-font-weight-normal">
 																			Join Us at Sea</p>
-																		<div><a href="join-us-at-sea/index.html" title="View Openings" target="_blank" className="button-small button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>View
+																		<div><a href="/join-us-at-sea" title="View Openings" target="_blank" className="button-small button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>View
 																					Openings</span></a></div>
 																	</div>
 																</div>
@@ -265,13 +265,13 @@ export default function Header() {
 									</div>
 								</div>
 							</li>
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2014" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-2014 ${activeMegaMenu === "menu-item-2014" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-2014")} onMouseLeave={handleMouseLeave}><a title="Suppliers" href="suppliers/index.html" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-2014">Suppliers</a>
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2014" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-2014 ${activeMegaMenu === "menu-item-2014" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-2014")} onMouseLeave={handleMouseLeave}><a title="Suppliers" href="/suppliers" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-2014">Suppliers</a>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-2014" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
-											<li className="menu-item menu-item-heading"><a href="suppliers/index.html" title="Suppliers" target="" className="">Suppliers</a></li>
+											<li className="menu-item menu-item-heading"><a href="/suppliers" title="Suppliers" target="" className="">Suppliers</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2015" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2015">
-												<a title="Supplier Verification" href="suppliers/supplier-verification/index.html">Supplier
+												<a title="Supplier Verification" href="/suppliers/supplier-verification">Supplier
 													Verification</a></li>
 										</ul>
 										<div className="menu-item-contents">
@@ -289,7 +289,7 @@ export default function Header() {
 																</div>
 																<div data-index="0" data-uid="9801d5ee4dc0c8a1add009712a6baf00" id="" className="layout layout-buttons layout-app_megamenu">
 																	<div className="layout-inner button-group u-mt-9 content-width">
-																		<div><a href="suppliers/supplier-verification/index.html" title="View Supplier Verification" target="" className="button button-outline button-outline-secondary"><span>View
+																		<div><a href="/suppliers/supplier-verification" title="View Supplier Verification" target="" className="button button-outline button-outline-secondary"><span>View
 																					Supplier Verification</span></a>
 																		</div>
 																	</div>
@@ -305,17 +305,17 @@ export default function Header() {
 							</li>
 						</ul>
 						<ul id="menu-callout-menu" className="site-nav-items site-nav-items-callout">
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-73" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-73 ${activeMegaMenu === "menu-item-73" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-73")} onMouseLeave={handleMouseLeave}><span className="menu-item-button-wrap"><a title="Our Fleet" href="our-fleet/index.html" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle button" id="menu-item-mega-nav-73">Our
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-73" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-73 ${activeMegaMenu === "menu-item-73" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-73")} onMouseLeave={handleMouseLeave}><span className="menu-item-button-wrap"><a title="Our Fleet" href="/our-fleet" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle button" id="menu-item-mega-nav-73">Our
 										Fleet</a></span>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-73" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
-											<li className="menu-item menu-item-heading"><a href="our-fleet/index.html" title="Our Fleet" target="" className="">Our Fleet</a></li>
+											<li className="menu-item menu-item-heading"><a href="/our-fleet" title="Our Fleet" target="" className="">Our Fleet</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-75" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-75">
-												<a title="Ammonia Propulsion" href="our-fleet/ammonia-propulsion/index.html">Ammonia
+												<a title="Ammonia Propulsion" href="/our-fleet/ammonia-propulsion">Ammonia
 													Propulsion</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-74" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-74">
-												<a title="LCO2 Shipping" href="our-fleet/lco2-shipping/index.html">LCO2
+												<a title="LCO2 Shipping" href="/our-fleet/lco2-shipping">LCO2
 													Shipping</a></li>
 										</ul>
 										<div className="menu-item-contents">
@@ -334,12 +334,12 @@ export default function Header() {
 																</div>
 																<div data-index="0" data-uid="d2080d133f8e81529528a39016980f0c" id="" className="layout layout-buttons layout-app_megamenu">
 																	<div className="layout-inner button-group u-mt-9 content-width">
-																		<div><a href="fleet-list/download/pdf/index.html" title="Save as PDF" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>Save as
+																		<div><a href="/fleet-list/download/pdf" title="Save as PDF" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>Save as
 																					PDF</span><i className="icon icon-download "><svg>
 																						<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#download">
 																						</use>
 																					</svg></i></a></div>
-																		<div><a href="fleet-list/download/xlsx/index.html" title="Save as Excel" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>Save as
+																		<div><a href="/fleet-list/download/xlsx" title="Save as Excel" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>Save as
 																					Excel</span><i className="icon icon-download "><svg>
 																						<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#download">
 																						</use>
@@ -355,15 +355,15 @@ export default function Header() {
 									</div>
 								</div>
 							</li>
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-76" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-76 ${activeMegaMenu === "menu-item-76" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-76")} onMouseLeave={handleMouseLeave}><span className="menu-item-button-wrap"><a title="Contact Us" href="contact-us/index.html" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle button button-secondary" id="menu-item-mega-nav-76">Contact Us</a></span>
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-76" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-76 ${activeMegaMenu === "menu-item-76" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-76")} onMouseLeave={handleMouseLeave}><span className="menu-item-button-wrap"><a title="Contact Us" href="/contact-us" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle button button-secondary" id="menu-item-mega-nav-76">Contact Us</a></span>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-76" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
-											<li className="menu-item menu-item-heading"><a href="contact-us/index.html" title="Contact Us" target="" className="">Contact Us</a></li>
+											<li className="menu-item menu-item-heading"><a href="/contact-us" title="Contact Us" target="" className="">Contact Us</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-77" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-77">
-												<a title="Whistleblowing" href="contact-us/index.html#the-bw-epic-kosan-difference">Whistleblowing</a></li>
+												<a title="Whistleblowing" href="/contact-us#the-bw-epic-kosan-difference">Whistleblowing</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-78" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-78">
-												<a title="Leave Us a Message" href="contact-us/index.html#have-a-question">Leave Us a Message</a></li>
+												<a title="Leave Us a Message" href="/contact-us#have-a-question">Leave Us a Message</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="e0a044c2c829270ac86904a13a445d9e" id="" className="layout layout-menu-section-media-callout layout-app_megamenu layout-section-media layout-root">
@@ -469,7 +469,7 @@ export default function Header() {
 									<div className="offcanvas-body">
 										<nav className="container container-w-outer container-fluid u-px-0 nav-slider"   >
 											<ul id="menu-primary-menu-1" className="site-nav-items site-nav-items-mobile">
-												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-53"><a title="About Us" href="about-us/index.html" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-53"><span className="menu-item-text">About
+												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-53"><a title="About Us" href="/about-us" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-53"><span className="menu-item-text">About
 															Us</span><i className="icon icon-chevron-right menu-icon-right">
 															<svg>
 																<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right">
@@ -486,17 +486,17 @@ export default function Header() {
 																		</svg>
 																	</i>
 																	<span className="menu-item-text">Back</span></a></li>
-															<li className="menu-item menu-item-view-parent"><a href="about-us/index.html">About Us</a></li>
+															<li className="menu-item menu-item-view-parent"><a href="/about-us">About Us</a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-55">
-																<a title="History" href="about-us/history/index.html" className="nav-slider-link"><span className="menu-item-text">History</span></a></li>
+																<a title="History" href="/about-us/history" className="nav-slider-link"><span className="menu-item-text">History</span></a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-56">
-																<a title="Leadership" href="about-us/leadership/index.html" className="nav-slider-link"><span className="menu-item-text">Leadership</span></a>
+																<a title="Leadership" href="/about-us/leadership" className="nav-slider-link"><span className="menu-item-text">Leadership</span></a>
 															</li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-54">
-																<a title="Vision, Mission, Values" href="about-us/vision-mission-values/index.html" className="nav-slider-link"><span className="menu-item-text">Vision, Mission,
+																<a title="Vision, Mission, Values" href="/about-us/vision-mission-values" className="nav-slider-link"><span className="menu-item-text">Vision, Mission,
 																		Values</span></a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-57">
-																<a title="Trades" href="about-us/trades/index.html" className="nav-slider-link"><span className="menu-item-text">Trades</span></a></li>
+																<a title="Trades" href="/about-us/trades" className="nav-slider-link"><span className="menu-item-text">Trades</span></a></li>
 														</ul>
 														<div className="menu-item-contents">
 															<div data-index="0" data-uid="f931d8a56e7e9cbe65912f779279e015" id="" className="layout layout-menu-statistic-boxes layout-app_megamenu layout-statistic-boxes layout-root">
@@ -545,7 +545,7 @@ export default function Header() {
 														</div>
 													</div>
 												</li>
-												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-68"><a title="Sustainability" href="sustainability/index.html" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-68"><span className="menu-item-text">Sustainability</span><i className="icon icon-chevron-right menu-icon-right">
+												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-68"><a title="Sustainability" href="/sustainability" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-68"><span className="menu-item-text">Sustainability</span><i className="icon icon-chevron-right menu-icon-right">
 															<svg>
 																<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right">
 																</use>
@@ -561,18 +561,18 @@ export default function Header() {
 																		</svg>
 																	</i>
 																	<span className="menu-item-text">Back</span></a></li>
-															<li className="menu-item menu-item-view-parent"><a href="sustainability/index.html">Sustainability</a>
+															<li className="menu-item menu-item-view-parent"><a href="/sustainability">Sustainability</a>
 															</li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1112">
-																<a title="Environment" href="sustainability/environment/index.html" className="nav-slider-link"><span className="menu-item-text">Environment</span></a>
+																<a title="Environment" href="/sustainability/environment" className="nav-slider-link"><span className="menu-item-text">Environment</span></a>
 															</li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1126">
-																<a title="Social" href="sustainability/social/index.html" className="nav-slider-link"><span className="menu-item-text">Social</span></a></li>
+																<a title="Social" href="/sustainability/social" className="nav-slider-link"><span className="menu-item-text">Social</span></a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1028">
-																<a title="Governance" href="sustainability/governance/index.html" className="nav-slider-link"><span className="menu-item-text">Governance</span></a>
+																<a title="Governance" href="/sustainability/governance" className="nav-slider-link"><span className="menu-item-text">Governance</span></a>
 															</li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-71">
-																<a title="Policies &amp; Guidelines" href="sustainability/policies-guidelines/index.html" className="nav-slider-link"><span className="menu-item-text">Policies &amp;
+																<a title="Policies &amp; Guidelines" href="/sustainability/policies-guidelines" className="nav-slider-link"><span className="menu-item-text">Policies &amp;
 																		Guidelines</span></a></li>
 														</ul>
 														<div className="menu-item-contents">
@@ -607,7 +607,7 @@ export default function Header() {
 														</div>
 													</div>
 												</li>
-												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-61"><a title="Media" href="media/index.html" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-61"><span className="menu-item-text">Media</span><i className="icon icon-chevron-right menu-icon-right">
+												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-61"><a title="Media" href="/media" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-61"><span className="menu-item-text">Media</span><i className="icon icon-chevron-right menu-icon-right">
 															<svg>
 																<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right">
 																</use>
@@ -623,14 +623,14 @@ export default function Header() {
 																		</svg>
 																	</i>
 																	<span className="menu-item-text">Back</span></a></li>
-															<li className="menu-item menu-item-view-parent"><a href="media/index.html">Media</a></li>
+															<li className="menu-item menu-item-view-parent"><a href="/media">Media</a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-64">
-																<a title="Latest News" href="media/latest-news/index.html" className="nav-slider-link"><span className="menu-item-text">Latest News</span></a>
+																<a title="Latest News" href="/media/latest-news" className="nav-slider-link"><span className="menu-item-text">Latest News</span></a>
 															</li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-62">
-																<a title="Gallery" href="media/gallery/index.html" className="nav-slider-link"><span className="menu-item-text">Gallery</span></a></li>
+																<a title="Gallery" href="/media/gallery" className="nav-slider-link"><span className="menu-item-text">Gallery</span></a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-63">
-																<a title="Glossary of Terms" href="media/glossary-of-terms/index.html" className="nav-slider-link"><span className="menu-item-text">Glossary of
+																<a title="Glossary of Terms" href="/media/glossary-of-terms" className="nav-slider-link"><span className="menu-item-text">Glossary of
 																		Terms</span></a></li>
 														</ul>
 														<div className="menu-item-contents">
@@ -641,12 +641,12 @@ export default function Header() {
 																			<article id="post-2136" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2136 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
 																				<header className="entry-header">
 																					<div className="post-categories row u-gy-2 u-gx-2">
-																						<div className="col-auto"><a href="media/news/category/press-releases/index.html" className="button button-small button-secondary">Press
+																						<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 																								Releases</a></div>
-																					</div><a href="media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance/index.html" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+																					</div><a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 																				</header>
 																				<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
-																					<a href="media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance/index.html" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May
+																					<a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May
 																							29, 2026</time>
 																						<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 																							Asia Pacific Shipping
@@ -661,12 +661,12 @@ export default function Header() {
 																			<article id="post-2086" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2086 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
 																				<header className="entry-header">
 																					<div className="post-categories row u-gy-2 u-gx-2">
-																						<div className="col-auto"><a href="media/news/category/press-releases/index.html" className="button button-small button-secondary">Press
+																						<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 																								Releases</a></div>
-																					</div><a href="media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan/index.html" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+																					</div><a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 																				</header>
 																				<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
-																					<a href="media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan/index.html" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September
+																					<a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September
 																							9, 2025</time>
 																						<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 																							Asia Pacific Shipping
@@ -683,7 +683,7 @@ export default function Header() {
 														</div>
 													</div>
 												</li>
-												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-58"><a title="Careers" href="careers/index.html" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-58"><span className="menu-item-text">Careers</span><i className="icon icon-chevron-right menu-icon-right">
+												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-58"><a title="Careers" href="/careers" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-58"><span className="menu-item-text">Careers</span><i className="icon icon-chevron-right menu-icon-right">
 															<svg>
 																<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right">
 																</use>
@@ -699,18 +699,18 @@ export default function Header() {
 																		</svg>
 																	</i>
 																	<span className="menu-item-text">Back</span></a></li>
-															<li className="menu-item menu-item-view-parent"><a href="careers/index.html">Careers</a></li>
+															<li className="menu-item menu-item-view-parent"><a href="/careers">Careers</a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-79">
-																<a title="The Asia Pacific Shipping Difference" href="careers/index.html#the-bw-epic-kosan-difference" className="nav-slider-link"><span className="menu-item-text">The Asia Pacific Shipping
+																<a title="The Asia Pacific Shipping Difference" href="/careers#the-bw-epic-kosan-difference" className="nav-slider-link"><span className="menu-item-text">The Asia Pacific Shipping
 																		Difference</span></a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-80">
-																<a title="Talent Management" href="careers/index.html#talent-management" className="nav-slider-link"><span className="menu-item-text">Talent
+																<a title="Talent Management" href="/careers#talent-management" className="nav-slider-link"><span className="menu-item-text">Talent
 																		Management</span></a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-81">
-																<a title="Benefits of Working at Asia Pacific Shipping" href="careers/index.html#benefits-of-working-at-bw-epic-kosan" className="nav-slider-link"><span className="menu-item-text">Benefits of Working at
+																<a title="Benefits of Working at Asia Pacific Shipping" href="/careers#benefits-of-working-at-bw-epic-kosan" className="nav-slider-link"><span className="menu-item-text">Benefits of Working at
 																		Asia Pacific Shipping</span></a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-82">
-																<a title="Career Opportunities" href="careers/index.html#careers-opportunities" className="nav-slider-link"><span className="menu-item-text">Career
+																<a title="Career Opportunities" href="/careers#careers-opportunities" className="nav-slider-link"><span className="menu-item-text">Career
 																		Opportunities</span></a></li>
 														</ul>
 														<div className="menu-item-contents">
@@ -724,7 +724,7 @@ export default function Header() {
 																					<div className="card-header u-p-4 u-d-flex u-flex-row u-flex-nowrap u-align-items-center">
 																						<p className="heading h5 u-mb-3 featured-card-heading subheading u-mb-0 u-flex-grow-1 u-font-weight-normal">
 																							Join Us at Sea</p>
-																						<div><a href="join-us-at-sea/index.html" title="View Openings" target="_blank" className="button-small button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>View
+																						<div><a href="/join-us-at-sea" title="View Openings" target="_blank" className="button-small button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>View
 																									Openings</span></a>
 																						</div>
 																					</div>
@@ -753,7 +753,7 @@ export default function Header() {
 														</div>
 													</div>
 												</li>
-												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-2014"><a title="Suppliers" href="suppliers/index.html" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-2014"><span className="menu-item-text">Suppliers</span><i className="icon icon-chevron-right menu-icon-right">
+												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-2014"><a title="Suppliers" href="/suppliers" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-2014"><span className="menu-item-text">Suppliers</span><i className="icon icon-chevron-right menu-icon-right">
 															<svg>
 																<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right">
 																</use>
@@ -769,9 +769,9 @@ export default function Header() {
 																		</svg>
 																	</i>
 																	<span className="menu-item-text">Back</span></a></li>
-															<li className="menu-item menu-item-view-parent"><a href="suppliers/index.html">Suppliers</a></li>
+															<li className="menu-item menu-item-view-parent"><a href="/suppliers">Suppliers</a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2015">
-																<a title="Supplier Verification" href="suppliers/supplier-verification/index.html" className="nav-slider-link"><span className="menu-item-text">Supplier
+																<a title="Supplier Verification" href="/suppliers/supplier-verification" className="nav-slider-link"><span className="menu-item-text">Supplier
 																		Verification</span></a></li>
 														</ul>
 														<div className="menu-item-contents">
@@ -791,7 +791,7 @@ export default function Header() {
 																				</div>
 																				<div data-index="0" data-uid="0f5b77a1cbb1b92200bc6878b39a933e" id="" className="layout layout-buttons layout-app_megamenu">
 																					<div className="layout-inner button-group u-mt-9 content-width">
-																						<div><a href="suppliers/supplier-verification/index.html" title="View Supplier Verification" target="" className="button button-outline button-outline-secondary"><span>View
+																						<div><a href="/suppliers/supplier-verification" title="View Supplier Verification" target="" className="button button-outline button-outline-secondary"><span>View
 																									Supplier
 																									Verification</span></a>
 																						</div>
@@ -807,7 +807,7 @@ export default function Header() {
 												</li>
 											</ul>
 											<ul id="menu-callout-menu-1" className="site-nav-items site-nav-items-mobile">
-												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-73"><span className="menu-item-button-wrap"><a title="Our Fleet" href="our-fleet/index.html" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle button" id="menu-item-nav-slider-73"><span className="menu-item-text">Our Fleet</span><i className="icon icon-chevron-right menu-icon-right">
+												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-73"><span className="menu-item-button-wrap"><a title="Our Fleet" href="/our-fleet" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle button" id="menu-item-nav-slider-73"><span className="menu-item-text">Our Fleet</span><i className="icon icon-chevron-right menu-icon-right">
 																<svg>
 																	<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right">
 																	</use>
@@ -823,12 +823,12 @@ export default function Header() {
 																		</svg>
 																	</i>
 																	<span className="menu-item-text">Back</span></a></li>
-															<li className="menu-item menu-item-view-parent"><a href="our-fleet/index.html">Our Fleet</a></li>
+															<li className="menu-item menu-item-view-parent"><a href="/our-fleet">Our Fleet</a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-75">
-																<a title="Ammonia Propulsion" href="our-fleet/ammonia-propulsion/index.html" className="nav-slider-link"><span className="menu-item-text">Ammonia
+																<a title="Ammonia Propulsion" href="/our-fleet/ammonia-propulsion" className="nav-slider-link"><span className="menu-item-text">Ammonia
 																		Propulsion</span></a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-74">
-																<a title="LCO2 Shipping" href="our-fleet/lco2-shipping/index.html" className="nav-slider-link"><span className="menu-item-text">LCO2 Shipping</span></a>
+																<a title="LCO2 Shipping" href="/our-fleet/lco2-shipping" className="nav-slider-link"><span className="menu-item-text">LCO2 Shipping</span></a>
 															</li>
 														</ul>
 														<div className="menu-item-contents">
@@ -848,12 +848,12 @@ export default function Header() {
 																				</div>
 																				<div data-index="0" data-uid="4a421abdc8f82e3ea73fbbcff13c73ea" id="" className="layout layout-buttons layout-app_megamenu">
 																					<div className="layout-inner button-group u-mt-9 content-width">
-																						<div><a href="fleet-list/download/pdf/index.html" title="Save as PDF" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>Save
+																						<div><a href="/fleet-list/download/pdf" title="Save as PDF" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>Save
 																									as PDF</span><i className="icon icon-download "><svg>
 																										<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#download">
 																										</use>
 																									</svg></i></a></div>
-																						<div><a href="fleet-list/download/xlsx/index.html" title="Save as Excel" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>Save
+																						<div><a href="/fleet-list/download/xlsx" title="Save as Excel" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span>Save
 																									as Excel</span><i className="icon icon-download "><svg>
 																										<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#download">
 																										</use>
@@ -868,7 +868,7 @@ export default function Header() {
 														</div>
 													</div>
 												</li>
-												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-76"><span className="menu-item-button-wrap"><a title="Contact Us" href="contact-us/index.html" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle button button-secondary" id="menu-item-nav-slider-76"><span className="menu-item-text">Contact Us</span><i className="icon icon-chevron-right menu-icon-right">
+												<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-76"><span className="menu-item-button-wrap"><a title="Contact Us" href="/contact-us" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle button button-secondary" id="menu-item-nav-slider-76"><span className="menu-item-text">Contact Us</span><i className="icon icon-chevron-right menu-icon-right">
 																<svg>
 																	<use xlinkHref="wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right">
 																	</use>
@@ -884,12 +884,12 @@ export default function Header() {
 																		</svg>
 																	</i>
 																	<span className="menu-item-text">Back</span></a></li>
-															<li className="menu-item menu-item-view-parent"><a href="contact-us/index.html">Contact Us</a></li>
+															<li className="menu-item menu-item-view-parent"><a href="/contact-us">Contact Us</a></li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-77">
-																<a title="Whistleblowing" href="contact-us/index.html#the-bw-epic-kosan-difference" className="nav-slider-link"><span className="menu-item-text">Whistleblowing</span></a>
+																<a title="Whistleblowing" href="/contact-us#the-bw-epic-kosan-difference" className="nav-slider-link"><span className="menu-item-text">Whistleblowing</span></a>
 															</li>
 															<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-78">
-																<a title="Leave Us a Message" href="contact-us/index.html#have-a-question" className="nav-slider-link"><span className="menu-item-text">Leave Us a
+																<a title="Leave Us a Message" href="/contact-us#have-a-question" className="nav-slider-link"><span className="menu-item-text">Leave Us a
 																		Message</span></a></li>
 														</ul>
 														<div className="menu-item-contents">

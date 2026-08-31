@@ -13,6 +13,7 @@
 /* Header Mega Menu (Phase 7) */
 /* Replaces Alpine.js x-show and inline style logic */
 .mega-nav-item .mega-nav-body {
+    display: block !important;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.2s ease, visibility 0.2s ease;
