@@ -36,31 +36,63 @@
 
 /* Compact Mega Menu Spacing Overrides */
 .mega-nav-content.grid {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
     min-height: 0 !important;
 }
 
 .mega-nav-content ul>li.menu-item {
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
 }
 
+/* Image & Card Blocks */
 .mega-nav-card .card-img, 
 .mega-nav-content img {
-    max-height: 140px !important;
+    max-height: 120px !important;
     width: auto !important;
     object-fit: contain;
     margin-bottom: 0 !important;
 }
 
 .mega-nav-card .card-body {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
 }
 
 .mega-nav-card .card-title {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+    font-size: 0.95rem !important;
+}
+
+.mega-nav-card .button {
+    padding: 0.4rem 1rem !important;
+    font-size: 0.85rem !important;
+}
+
+/* Statistic Boxes Compact Overrides */
+.layout-app_megamenu .layout-menu-statistic-boxes {
+    margin-bottom: 0 !important;
+}
+
+.layout-app_megamenu .layout-menu-statistic-box .statistic {
+    padding: 0.75rem !important;
+    justify-content: center !important;
+}
+
+.layout-app_megamenu .statistic-caption {
+    margin-top: 0.25rem !important;
+    font-size: 0.85rem !important;
+    line-height: 1.2 !important;
+}
+
+.layout-app_megamenu .statistic-figure {
+    font-size: 1.75rem !important;
+    line-height: 1 !important;
+    margin-bottom: 0 !important;
+}
+
+.layout-app_megamenu .statistic-suffix {
     font-size: 1rem !important;
 }
 
