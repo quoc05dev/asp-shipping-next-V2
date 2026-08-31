@@ -1,5 +1,8 @@
 CURRENT PHASE:
-Phase 1 — Next.js Foundation
+Phase 4 — Assets + CSS COMPLETE
+
+NEXT PHASE:
+Phase 5 — Home Static
 
 LEGACY SOURCE:
 ../legacy-approved

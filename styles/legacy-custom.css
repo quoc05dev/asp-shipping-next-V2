@@ -1,0 +1,197 @@
+/* Extracted inline style 0 */
+[x-cloak] {
+			visibility: hidden !important
+		}
+
+	
+.global-grid-chairman {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .global-grid-chairman {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 64px;
+  }
+}
+
+/* Extracted inline style #wp-img-auto-sizes-contain-inline-css */
+img:is([sizes=auto i], [sizes^="auto," i]) {
+			contain-intrinsic-size: 3000px 1500px
+		}
+
+		/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+	
+.global-grid-chairman {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .global-grid-chairman {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 64px;
+  }
+}
+
+/* Extracted inline style #classic-theme-styles-inline-css */
+/*! This file is auto-generated */
+		.wp-block-button__link {
+			color: #fff;
+			background-color: #32373c;
+			border-radius: 9999px;
+			box-shadow: none;
+			text-decoration: none;
+			padding: calc(.667em + 2px) calc(1.333em + 2px);
+			font-size: 1.125em
+		}
+
+		.wp-block-file__button {
+			background: #32373c;
+			color: #fff;
+			text-decoration: none
+		}
+
+		/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+	
+.global-grid-chairman {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .global-grid-chairman {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 64px;
+  }
+}
+
+/* Extracted inline style 4 */
+/* Global Container Refactor */
+
+@media (min-width: 1200px) {
+  
+}
+  @media (min-width: 1400px) {
+    
+  }
+  .banner-landing .banner-media img {
+    min-height: 80vh !important;
+    object-fit: cover !important;
+  }
+  .global-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+@media (min-width: 1024px) {
+  .global-grid-2col {
+    grid-template-columns: 48fr 52fr;
+  }
+}
+.global-grid-latest-news {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .global-grid-latest-news {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.global-grid-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .global-grid-stats { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .global-grid-stats { grid-template-columns: repeat(5, 1fr); }
+}
+
+.global-grid-chairman {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .global-grid-chairman {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 64px;
+  }
+}
+
+/* Extracted inline style 5 */
+.custom-sync-color {
+								color: #ffffff !important;
+								transition: color 0.3s ease;
+								text-decoration: none;
+							}
+							#siteHeader.is-stuck .custom-sync-color,
+							#siteHeader.headroom--not-top .custom-sync-color,
+							#siteHeader.site-header--stuck .custom-sync-color,
+							.mega-nav:hover .custom-sync-color,
+							.nav-offcanvas-opened .custom-sync-color {
+								color: #1a202c !important;
+							}
+							a.custom-sync-color:hover,
+							button.custom-sync-color:hover {
+								color: #74C043 !important;
+							}
+							/* Ensure the header container doesn't wrap on desktop to prevent vertical stacking */
+							@media (min-width: 992px) {
+								.site-navbar > .container {
+									flex-wrap: nowrap !important;
+								}
+								.custom-nav-extras {
+									margin-left: 1rem;
+									margin-right: 0rem;
+								}
+							}
+							@media (max-width: 991px) {
+								.custom-nav-extras {
+									margin-left: auto;
+									margin-right: 1.5rem;
+								}
+							}
+
+/* Extracted inline style 6 */
+/* Responsive overrides for Our Fleet section */
+			@media (max-width: 1023px) {
+				#our-fleet-section>div>div {
+					grid-template-columns: 1fr !important;
+					gap: 32px !important;
+				}
+
+				#our-fleet-section .custom-fleet-slider {
+					aspect-ratio: 16/9 !important;
+				}
+			}
+
+			@media (max-width: 576px) {
+				#our-fleet-section .custom-fleet-slider {
+					aspect-ratio: 4/3 !important;
+				}
+			}
+
+			.custom-stat-box {
+				background-color: #f5f5f5;
+				color: #333;
+				padding: 32px;
+				border-radius: 4px;
+				transition: background-color 0.3s ease, color 0.3s ease;
+			}
+			.layout-statistic-box.active .custom-stat-box,
+			.layout-statistic-box:hover .custom-stat-box {
+				background-color: #0d703b;
+				color: #fff;
+			}
