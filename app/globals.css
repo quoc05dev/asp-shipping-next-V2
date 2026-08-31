@@ -10,6 +10,10 @@
    REACT STATE HOOKS FOR MIGRATED COMPONENTS
    ========================================================================== */
 
+:root {
+    --desktop-mega-menu-height: 240px;
+}
+
 /* Header Mega Menu (Phase 7) */
 /* Replaces Alpine.js x-show and inline style logic */
 .mega-nav-item .mega-nav-body {
@@ -22,6 +26,42 @@
     left: 0;
     right: 0;
     width: 100%;
+    height: var(--desktop-mega-menu-height) !important;
+    overflow: hidden;
+}
+
+.mega-nav-backdrop {
+    height: var(--desktop-mega-menu-height) !important;
+}
+
+/* Compact Mega Menu Spacing Overrides */
+.mega-nav-content.grid {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    min-height: 0 !important;
+}
+
+.mega-nav-content ul>li.menu-item {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+.mega-nav-card .card-img, 
+.mega-nav-content img {
+    max-height: 140px !important;
+    width: auto !important;
+    object-fit: contain;
+    margin-bottom: 0 !important;
+}
+
+.mega-nav-card .card-body {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.mega-nav-card .card-title {
+    margin-bottom: 0.5rem !important;
+    font-size: 1rem !important;
 }
 
 .mega-nav-item.is-active .mega-nav-body {

@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
-    const [backdropHeight, setBackdropHeight] = useState<number>(0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,27 +24,6 @@ export default function Header() {
     const handleMouseLeave = () => {
         setActiveMegaMenu(null);
     };
-
-    useEffect(() => {
-        const updateHeight = () => {
-            if (activeMegaMenu) {
-                const activeItem = document.getElementById(activeMegaMenu);
-                if (activeItem) {
-                    const body = activeItem.querySelector('.mega-nav-body');
-                    if (body) {
-                        setBackdropHeight(body.getBoundingClientRect().height);
-                    }
-                }
-            } else {
-                setBackdropHeight(0);
-            }
-        };
-
-        updateHeight();
-
-        window.addEventListener('resize', updateHeight);
-        return () => window.removeEventListener('resize', updateHeight);
-    }, [activeMegaMenu]);
 
     return (
         <>
@@ -991,7 +969,7 @@ export default function Header() {
 						
 					</nav>
 				</div>
-                {activeMegaMenu && <div className="mega-nav-backdrop active" style={{ display: 'block', height: backdropHeight ? `${backdropHeight}px` : undefined }}></div>}
+                {activeMegaMenu && <div className="mega-nav-backdrop active" style={{ display: 'block' }}></div>}
 			</div>
 
 
