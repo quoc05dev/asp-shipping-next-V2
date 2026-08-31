@@ -5,3 +5,47 @@
 @import "../styles/legacy-main.css";
 @import "../styles/legacy-utilities.css";
 @import "../styles/legacy-custom.css";
+
+/* ==========================================================================
+   REACT STATE HOOKS FOR MIGRATED COMPONENTS
+   ========================================================================== */
+
+/* Header Mega Menu (Phase 7) */
+/* Replaces Alpine.js x-show and inline style logic */
+.mega-nav-item .mega-nav-body {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+    position: absolute;
+}
+
+.mega-nav-item.is-active .mega-nav-body {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Ensure Header is relatively positioned if it's not already, 
+   so absolute mega menus align correctly if they depend on it */
+.site-header {
+    position: relative;
+}
+
+/* Backdrop */
+.mega-nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 1;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
