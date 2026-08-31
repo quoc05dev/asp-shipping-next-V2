@@ -46,12 +46,20 @@
     padding-bottom: 4px !important;
 }
 
-/* Image & Media Wrappers (Fixes Aspect Ratio Distortion) */
+/* Image & Media Wrappers (Fixes Aspect Ratio Distortion & Clipping) */
 /* Disable Bootstrap padding hack so we can strictly control heights */
 .mega-nav-content .ratio {
     padding-bottom: 0 !important;
     width: 100% !important;
     flex-shrink: 0 !important;
+    display: block !important;
+    position: relative !important;
+    overflow: hidden !important; /* prevent image bleeding */
+}
+
+/* Hide the inline padding element that causes height collapsing/clipping */
+.mega-nav-content .ratio > .ratio-size {
+    display: none !important;
 }
 
 /* Make images perfectly fill the new fixed-height wrappers without stretching */
@@ -60,11 +68,13 @@
     height: 100% !important;
     width: 100% !important;
     object-fit: cover !important;
-    position: static !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
 }
 
 /* 1. Side-by-side feature media (Sustainability, Media, Our Fleet) */
-/* Can utilize the full available height of the compact panel (~200px) */
+/* Can utilize the full available height of the compact panel (~195px) */
 .mega-nav-content .section-media-thumbnail .ratio {
     height: 195px !important; 
 }
