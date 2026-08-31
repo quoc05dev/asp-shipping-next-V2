@@ -155,7 +155,7 @@ jsxHtml = jsxHtml.replace(/xlink:href/g, 'xlinkHref');
 jsxHtml = jsxHtml.replace(/xml:space/g, 'xmlSpace');
 
 // Remove attributes containing dots (Alpine modifiers) that slipped through
-jsxHtml = jsxHtml.replace(/\s[a-zA-Z0-9_-]+\.[a-zA-Z0-9_.-]+(?:="[^"]*")?/g, '');
+jsxHtml = jsxHtml.replace(/\sx-[a-zA-Z0-9_-]+\.[a-zA-Z0-9_.-]+(?:="[^"]*")?/g, '');
 // Remove @ and : and x-bind: attributes (starting with them)
 jsxHtml = jsxHtml.replace(/\s[@:][a-zA-Z0-9_.-]+(?:="[^"]*")?/g, '');
 jsxHtml = jsxHtml.replace(/\sx-bind:[a-zA-Z0-9_.-]+(?:="[^"]*")?/g, '');

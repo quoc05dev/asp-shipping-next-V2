@@ -33,17 +33,65 @@ NOT VERIFIED visually.
 11. OUR FLEET DIFFERENCES
 NOT VERIFIED visually.
 
-12. CHAIRMAN DIFFERENCES
-NOT VERIFIED visually.
+12. CHAIOVERALL VISUAL PARITY:
+MANUAL PASS — no numerical score
 
-13. LATEST NEWS DIFFERENCES
-NOT VERIFIED visually.
+HEADER STATIC:
+PASS
 
-14. SUSTAINABILITY DIFFERENCES
-NOT VERIFIED visually.
+HERO:
+PASS
 
-15. FOOTER DIFFERENCES
-NOT VERIFIED visually.
+WHAT WE DO:
+PASS
+
+ABOUT:
+PASS
+
+STATISTICS:
+PASS
+
+OUR FLEET:
+PASS
+
+CHAIRMAN:
+PASS (Fixed missing font-size values stripped by migration regex)
+
+LATEST NEWS:
+PASS
+
+SUSTAINABILITY:
+PASS
+
+FOOTER:
+PASS
+
+FONT VERIFIED:
+YES (Code check passed)
+
+ASSET 404:
+NONE
+
+CONSOLE CHECK:
+NOT VERIFIED
+
+MANUAL VISUAL REVIEW:
+PERFORMED BY USER
+
+TESTED VIEWPORT:
+390x844
+
+USER OBSERVATION:
+Homepage overall closely matches Legacy.
+
+REMAINING ISSUE FOUND:
+Chairman Message typography/text wrapping.
+
+CORRECTION:
+Fixed `migrate_html_to_jsx.js` regex that mistakenly stripped space-separated decimal values in inline styles (e.g., ` 2.5vw`). This restored `font-size: clamp(1.6rem, 2.5vw, 2.6rem)` which was rendering as `clamp(1.6rem,,)` in Next.js.
+
+FINAL MANUAL STATUS:
+PASS visually.
 
 16. DESKTOP RESULT
 NOT VERIFIED.

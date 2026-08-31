@@ -1008,7 +1008,7 @@ export default function Home() {
 								
 								{/*  Right Column: Card 1 (Commercial)  */}
 								<div className="col-12 col-md-6 col-lg-4">
-									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
+									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all 0.3s ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
 										<div className="card-body p-0" style={{display: "flex", flexDirection: "column", height: "100%", }} data-cms-array="cards" data-cms-data-index="0">
 
 											<div className="section-lead-content u-h4 u-mb-3"><p data-cms-field="title">Commercial management</p></div>
@@ -1022,7 +1022,7 @@ export default function Home() {
 								
 								{/*  Right Column: Card 2 (Technical)  */}
 								<div className="col-12 col-md-6 col-lg-4">
-									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
+									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all 0.3s ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
 										<div className="card-body p-0" style={{display: "flex", flexDirection: "column", height: "100%", }}>
 
 											<div className="section-lead-content u-h4 u-mb-3"><p>Technical management</p></div>
@@ -1036,7 +1036,7 @@ export default function Home() {
 								
 								{/*  Left Column: Card 5 (Advisory/Marine consultancy)  */}
 								<div className="col-12 col-md-6 col-lg-4">
-									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
+									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all 0.3s ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
 										<div className="card-body p-0" style={{display: "flex", flexDirection: "column", height: "100%", }}>
 
 											<div className="section-lead-content u-h4 u-mb-3"><p>Marine consultancy</p></div>
@@ -1050,7 +1050,7 @@ export default function Home() {
 								
 								{/*  Right Column: Card 3 (Crew)  */}
 								<div className="col-12 col-md-6 col-lg-4">
-									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
+									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all 0.3s ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
 										<div className="card-body p-0" style={{display: "flex", flexDirection: "column", height: "100%", }}>
 
 											<div className="section-lead-content u-h4 u-mb-3"><p>Crew management</p></div>
@@ -1064,7 +1064,7 @@ export default function Home() {
 								
 								{/*  Right Column: Card 4 (Sea transportation)  */}
 								<div className="col-12 col-md-6 col-lg-4">
-									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
+									<div className="card u-h-100 u-border theme-hover-style" style={{border: "1px solid #e5e5e5", padding: "2.5rem 2rem", transition: "all 0.3s ease", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", }}>
 										<div className="card-body p-0" style={{display: "flex", flexDirection: "column", height: "100%", }}>
 
 											<div className="section-lead-content u-h4 u-mb-3"><p>Sea transportation</p></div>
@@ -1103,7 +1103,7 @@ export default function Home() {
   			<div className="layout layout-content layout-page" style={{maxWidth: "100% !important", padding: "0 !important", margin: "0 !important", }}>
   				<div className="layout-inner" style={{maxWidth: "100% !important", padding: "0 !important", margin: "0 !important", }}>
   					<hr className="u-mt-0" />
-  					<p style={{textAlign: "justify", maxWidth: "100% !important", marginRight: "0 !important", paddingRight: "0 !important", }} data-cms-field="title">We have the scale, fleet and operational resources to serve our customers on a truly global basis; with approximately 2,500 cargo operations annually, we transport more than million tonnes between over 240 different ports worldwide, performing an average of five load operations every day.</p>
+  					<p style={{textAlign: "justify", maxWidth: "100% !important", marginRight: "0 !important", paddingRight: "0 !important", }} data-cms-field="title">We have the scale, fleet and operational resources to serve our customers on a truly global basis; with approximately 2,500 cargo operations annually, we transport more than 4.2 million tonnes between over 240 different ports worldwide, performing an average of five load operations every day.</p>
   					<p style={{textAlign: "justify", maxWidth: "100% !important", marginRight: "0 !important", paddingRight: "0 !important", }} data-cms-field="description">We offer customers the best solution for their transportation needs with our leading service and high operational standards.</p>
   				</div>
   			</div>
@@ -1187,7 +1187,7 @@ export default function Home() {
 			<div style={{width: "100%", }}>
 				<div className="custom-fleet-slider" style={{position: "relative", width: "100%", aspectRatio: "4/5", overflow: "hidden", borderRadius: "20px", }}>
 					{/*  Slides Container  */}
-					<div className="custom-slider-container" style={{display: "flex", transition: "transform cubic-bezier(0.25, 1,, 1)", height: "100%", width: "100%", }}>
+					<div className="custom-slider-container" style={{display: "flex", transition: "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)", height: "100%", width: "100%", }}>
 						{/*  Slide 1  */}
 						<div className="custom-slider-slide" style={{minWidth: "100%", position: "relative", height: "100%", }}>
 							<img src="/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp" alt="ASP LUNA" style={{width: "100%", height: "100%", objectFit: "cover", position: "absolute", top: "0", left: "0", }} />
@@ -1196,7 +1196,7 @@ export default function Home() {
 							<div style={{position: "absolute", top: "30px", left: "40px", color: "#fff", fontSize: "0.75rem", letterSpacing: "2px", fontWeight: "bold", opacity: "0.8", textTransform: "uppercase", }}>
 								ASP / WORLD TRADES</div>
 							<div style={{position: "absolute", bottom: "40px", left: "40px", color: "#fff", }}>
-								<h3 style={{fontSize: "clamp(1.5rem, 3vw,)", fontWeight: "bold", marginBottom: "15px", color: "white", lineHeight: "1", }}>
+								<h3 style={{fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: "bold", marginBottom: "15px", color: "white", lineHeight: "1", }}>
 									ASP LUNA</h3>
 								<div style={{display: "flex", flexWrap: "wrap", gap: "15px", fontSize: "0.85rem", fontWeight: "bold", letterSpacing: "1px", opacity: "0.9", textTransform: "uppercase", }}>
 									<span>LR2 TANKER</span><span>114,800 DWT</span><span>BUILT
@@ -1212,7 +1212,7 @@ export default function Home() {
 							<div style={{position: "absolute", top: "30px", left: "40px", color: "#fff", fontSize: "0.75rem", letterSpacing: "2px", fontWeight: "bold", opacity: "0.8", textTransform: "uppercase", }}>
 								ASP / WORLD TRADES</div>
 							<div style={{position: "absolute", bottom: "40px", left: "40px", color: "#fff", }}>
-								<h3 style={{fontSize: "clamp(1.5rem, 3vw,)", fontWeight: "bold", marginBottom: "15px", color: "white", lineHeight: "1", }}>
+								<h3 style={{fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: "bold", marginBottom: "15px", color: "white", lineHeight: "1", }}>
 									ASP TITAN</h3>
 								<div style={{display: "flex", flexWrap: "wrap", gap: "15px", fontSize: "0.85rem", fontWeight: "bold", letterSpacing: "1px", opacity: "0.9", textTransform: "uppercase", }}>
 									<span>AFRAMAX TANKER</span><span>115,000 DWT</span><span>BUILT
@@ -1223,10 +1223,10 @@ export default function Home() {
 					</div>
 					{/*  Controls  */}
 					<div style={{position: "absolute", bottom: "40px", right: "40px", display: "flex", border: "1px solid rgba(255,255,255,0.4)", borderRadius: "4px", overflow: "hidden", zIndex: "10", }}>
-						<button id="slider-prev-btn" style={{background: "rgba(255,255,255,0.1)", border: "right: 1px solid rgba(255,255,255,0.4)", borderTop: "none", borderBottom: "none", borderLeft: "none", color: "white", width: "54px", height: "50px", cursor: "pointer", transition: "background", backdropFilter: "blur(5px)", fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center", }}>
+						<button id="slider-prev-btn" style={{background: "rgba(255,255,255,0.1)", border: "right: 1px solid rgba(255,255,255,0.4)", borderTop: "none", borderBottom: "none", borderLeft: "none", color: "white", width: "54px", height: "50px", cursor: "pointer", transition: "background 0.3s", backdropFilter: "blur(5px)", fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center", }}>
 							←
 						</button>
-						<button id="slider-next-btn" style={{background: "rgba(255,255,255,0.1)", border: "none", color: "white", width: "54px", height: "50px", cursor: "pointer", transition: "background", backdropFilter: "blur(5px)", fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center", }}>
+						<button id="slider-next-btn" style={{background: "rgba(255,255,255,0.1)", border: "none", color: "white", width: "54px", height: "50px", cursor: "pointer", transition: "background 0.3s", backdropFilter: "blur(5px)", fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center", }}>
 							→
 						</button>
 					</div>
@@ -1326,7 +1326,7 @@ export default function Home() {
         “
       </div>
       
-      <div style={{fontSize: "clamp(1.6rem,,)", fontWeight: "600", lineHeight: "1.35", color: "var(--asp-ink, #2d2d2d)", marginBottom: "24px", }} data-cms-field="quote">
+      <div style={{fontSize: "clamp(1.6rem, 2.5vw, 2.6rem)", fontWeight: "600", lineHeight: "1.35", color: "var(--asp-ink, #2d2d2d)", marginBottom: "24px", }} data-cms-field="quote">
         These vessels not only strengthen our fleet and let us serve clients more effectively — they reaffirm our dedication to advancing sustainable practices across the industry.
       </div>
       
