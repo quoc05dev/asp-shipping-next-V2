@@ -26,11 +26,7 @@
     pointer-events: auto;
 }
 
-/* Ensure Header is relatively positioned if it's not already, 
-   so absolute mega menus align correctly if they depend on it */
-.site-header {
-    position: relative;
-}
+
 
 /* Backdrop */
 .mega-nav-backdrop {
