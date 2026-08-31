@@ -1,8 +1,8 @@
 CURRENT PHASE:
-Phase 4 — Assets + CSS COMPLETE
+Phase 5 — Home Static COMPLETE
 
 NEXT PHASE:
-Phase 5 — Home Static
+Phase 6 — Fix Visual Parity
 
 LEGACY SOURCE:
 ../legacy-approved
