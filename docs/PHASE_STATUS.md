@@ -14,13 +14,14 @@ COMPLETED:
 - Environment setup
 - Legacy audit
 - Next.js foundation
-
-NOT STARTED:
 - Asset migration
 - CSS migration
-- Homepage migration
-- Header migration
-- Interaction migration
+- Homepage static migration
+- Header + Mega Menu React migration
+
+NOT STARTED:
+- Mobile Menu React
+- Homepage interactions
 - Other pages
 - WordPress cleanup
 - CMS
