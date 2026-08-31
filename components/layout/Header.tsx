@@ -27,7 +27,7 @@ export default function Header() {
 
     return (
         <>
-            <header id="siteHeader"      data-cms-section="header" className={`site-header site-header-transparent ${isScrolled ? "active is-stuck" : ""}`}>
+            <header id="siteHeader"      data-cms-section="header" className={`site-header site-header-transparent ${isScrolled || activeMegaMenu ? "active" : ""} ${isScrolled ? "is-stuck" : ""}`}>
 		<div className="site-header-inner">
 			<div id="siteNavbar" className="site-navbar">
 				<div className="container container-w-outer container-max container-rfs">
@@ -969,12 +969,12 @@ export default function Header() {
 						
 					</nav>
 				</div>
+                {activeMegaMenu && <div className="mega-nav-backdrop active" style={{ display: 'block' }}></div>}
 			</div>
 
 
 		</div>
 	</header>
-            {activeMegaMenu && <div className="mega-nav-backdrop"></div>}
         </>
     );
 }
