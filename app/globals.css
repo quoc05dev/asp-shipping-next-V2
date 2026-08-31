@@ -137,6 +137,21 @@
     pointer-events: auto;
 }
 
+/* ==========================================================================
+   MOBILE NAV (Phase 8)
+   ========================================================================== */
 
+.react-nav-submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--theme-color-light, #fff);
+    z-index: 10;
+    visibility: hidden;
+}
 
-
+.react-nav-submenu.is-active {
+    visibility: visible;
+}
