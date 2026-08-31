@@ -46,26 +46,51 @@
     padding-bottom: 4px !important;
 }
 
-/* Image & Card Blocks */
-.mega-nav-card .card-img, 
-.mega-nav-content img {
-    max-height: 120px !important;
-    width: auto !important;
-    object-fit: contain;
-    margin-bottom: 0 !important;
+/* Image & Media Wrappers (Fixes Aspect Ratio Distortion) */
+/* Disable Bootstrap padding hack so we can strictly control heights */
+.mega-nav-content .ratio {
+    padding-bottom: 0 !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
 }
 
-.mega-nav-card .card-body {
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
+/* Make images perfectly fill the new fixed-height wrappers without stretching */
+.mega-nav-content .ratio > .ratio-item,
+.mega-nav-content .ratio > img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    position: static !important;
 }
 
-.mega-nav-card .card-title {
-    margin-bottom: 0.25rem !important;
+/* 1. Side-by-side feature media (Sustainability, Media, Our Fleet) */
+/* Can utilize the full available height of the compact panel (~200px) */
+.mega-nav-content .section-media-thumbnail .ratio {
+    height: 195px !important; 
+}
+/* Use contain for the Sustainability report to prevent cropping important text */
+.menu-item-68 .section-media-thumbnail .ratio > .ratio-item {
+    object-fit: contain !important;
+    background-color: var(--theme-color-lighter, #f8f9fa); /* Subtle background for pillarboxes */
+}
+
+/* 2. Stacked card media (Careers) */
+/* Must be short to leave room for card text and buttons below */
+.mega-nav-content .card .ratio {
+    height: 130px !important;
+}
+
+.mega-nav-content .card .card-body {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.mega-nav-content .card .card-title {
+    margin-bottom: 0.5rem !important;
     font-size: 0.95rem !important;
 }
 
-.mega-nav-card .button {
+.mega-nav-content .card .button {
     padding: 0.4rem 1rem !important;
     font-size: 0.85rem !important;
 }
