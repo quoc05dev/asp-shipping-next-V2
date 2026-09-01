@@ -51,7 +51,7 @@ export default function Header() {
 
     return (
         <>
-            <header ref={headerRef} id="siteHeader"      data-cms-section="header" className={`site-header site-header-transparent ${isScrolled || activeMegaMenu || isMobileMenuOpen ? "active" : ""} ${isScrolled ? "is-stuck" : ""}`}>
+            <header id="siteHeader"      data-cms-section="header" className={`site-header site-header-transparent ${isScrolled || activeMegaMenu ? "active" : ""} ${isScrolled ? "is-stuck" : ""}`}>
 		<div className="site-header-inner">
 			<div id="siteNavbar" className="site-navbar">
 				<div className="container container-w-outer container-max container-rfs">
@@ -214,15 +214,15 @@ export default function Header() {
 																	<div className="post-categories row u-gy-2 u-gx-2">
 																		<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 																				Releases</a></div>
-																	</div><a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+																	</div><a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL┬« on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 																</header>
 																<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
-																	<a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September
+																	<a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL┬« on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September
 																			9, 2025</time>
 																		<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 																			Asia Pacific Shipping partners with
 																			bound4blue to install unique non-explosion
-																			proof eSAIL® on LPG carrier Helena Kosan
+																			proof eSAIL┬« on LPG carrier Helena Kosan
 																		</h3>
 																	</a></div>
 															</article>
@@ -403,9 +403,9 @@ export default function Header() {
 																<div className="callout-body">
 																	<div className="callout-content">
 																		<div className="content-width">
-																			<p>Mu?n c?p nh?t th�ng tin t? ASP? �ang k�
-																				nh?n b?n tin d? theo d�i c�c tin t?c,
-																				d?ch v? v� co h?i t? ch�ng t�i.</p>
+																			<p>Mu?n c?p nh?t th∩┐╜ng tin t? ASP? ∩┐╜ang k∩┐╜
+																				nh?n b?n tin d? theo d∩┐╜i c∩┐╜c tin t?c,
+																				d?ch v? v∩┐╜ co h?i t? ch∩┐╜ng t∩┐╜i.</p>
 																		</div>
 																	</div>
 																	<div className="u-mt-9 callout-content-form">

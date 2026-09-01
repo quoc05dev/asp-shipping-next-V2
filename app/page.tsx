@@ -633,7 +633,6 @@ export default function Home() {
 														<div className="wpcf7-response-output" aria-hidden="true"></div>
 													</div><input type="hidden" id="ct_checkjs_cf7_f9b902fc3289af4dd08de5d1de54f68f" name="ct_checkjs_cf7" value="0" />
 													
-													<input className="apbct_special_field apbct_email_id__wp_contact_form_7" name="apbct__email_id__wp_contact_form_7" aria-label="apbct__label_id__wp_contact_form_7" type="text" size={30} maxLength={200} autoComplete="off" value="" />
 												</form>
 											</div>
 										</div>
@@ -739,7 +738,6 @@ export default function Home() {
 											<div className="wpcf7-response-output" aria-hidden="true"></div>
 										</div><input type="hidden" id="ct_checkjs_cf7_7eacb532570ff6858afd2723755ff790" name="ct_checkjs_cf7" value="0" />
 										
-										<input className="apbct_special_field apbct_email_id__wp_contact_form_7" name="apbct__email_id__wp_contact_form_7" aria-label="apbct__label_id__wp_contact_form_7" type="text" size={30} maxLength={200} autoComplete="off" value="" />
 									</form>
 								</div>
 

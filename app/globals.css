@@ -31,6 +31,7 @@
 }
 
 .mega-nav-backdrop {
+    pointer-events: none;
     height: var(--desktop-mega-menu-height) !important;
 }
 
@@ -149,13 +150,18 @@
         top: var(--actual-mobile-header-height, 69px) !important;
         height: calc(100dvh - var(--actual-mobile-header-height, 69px)) !important;
     }
+    /* Remove double header offset (legacy code pushed offcanvas-inner down) */
+    #siteNavOffcanvas .offcanvas-inner {
+        top: 0 !important;
+    }
 }
 
 .react-nav-submenu {
     position: absolute;
     top: 0;
     width: 100%;
-    min-height: 100%;
+    height: auto !important;
+    overflow-y: visible !important;
     z-index: 10;
     visibility: hidden;
 }
