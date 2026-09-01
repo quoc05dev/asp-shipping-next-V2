@@ -20,10 +20,9 @@
 - Statistics Grid Hover (`layout-statistic-box`). The legacy `@mouseenter` Alpine JS was removed, and hover effects are handled purely via CSS `:hover`.
 
 ## MIGRATED TO REACT:
-None needed for this phase.
+- Footer Mobile Accordion. Migrated to `components/layout/FooterAccordion.tsx` using React state `isOpen`, rendering correctly on mobile and desktop breakpoints.
 
 ## OBSOLETE RUNTIME:
-- Footer Mobile Accordion: The legacy Alpine JS directives (`x-data`, `x-collapse`, `x-effect`) were stripped from the Next UI. The links now remain natively accessible and visible on mobile without requiring JS.
 - Statistics Grid Alpine: `x-data` and `x-init` were stripped.
 
 ## DEFERRED:
@@ -46,3 +45,17 @@ NONE
 
 ## DUPLICATE INTERACTION CONTROL:
 NONE
+
+## FOOTER ACCORDION DETAILS:
+LEGACY ALPINE RUNTIME:
+REMOVED
+
+USER INTERACTION:
+MIGRATED TO REACT
+
+- Expandable Groups: About Us, Our Fleet, Sustainability, Media
+- Direct Links: Home, Contact Us, Careers, Supplier Verification
+- Initial state: Closed on mobile
+- Mobile breakpoint: 768px (`$mq.min('md')`)
+- Behavior: Multi-open (each group has its own state)
+- Accessibility: Uses `<button>` triggers with `aria-expanded` and `aria-controls` on mobile.
