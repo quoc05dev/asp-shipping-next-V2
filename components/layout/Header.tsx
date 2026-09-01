@@ -1,10 +1,12 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import MobileNav from './MobileNav';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const headerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,6 +20,27 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Observe header height dynamically for MobileNav stacking invariant
+    useEffect(() => {
+        if (!headerRef.current) return;
+        
+        const updateHeaderHeight = () => {
+            if (headerRef.current) {
+                const h = headerRef.current.getBoundingClientRect().height;
+                document.documentElement.style.setProperty('--actual-mobile-header-height', `${h}px`);
+            }
+        };
+
+        const observer = new ResizeObserver(() => updateHeaderHeight());
+        observer.observe(headerRef.current);
+        
+        // Initial fallback to CSS variable, then real measurement
+        document.documentElement.style.setProperty('--actual-mobile-header-height', 'var(--theme-header-height-rem)');
+        updateHeaderHeight();
+
+        return () => observer.disconnect();
+    }, []);
+
     const handleMouseEnter = (id: string) => {
         setActiveMegaMenu(id);
     };
@@ -28,7 +51,7 @@ export default function Header() {
 
     return (
         <>
-            <header id="siteHeader"      data-cms-section="header" className={`site-header site-header-transparent ${isScrolled || activeMegaMenu ? "active" : ""} ${isScrolled ? "is-stuck" : ""}`}>
+            <header ref={headerRef} id="siteHeader"      data-cms-section="header" className={`site-header site-header-transparent ${isScrolled || activeMegaMenu || isMobileMenuOpen ? "active" : ""} ${isScrolled ? "is-stuck" : ""}`}>
 		<div className="site-header-inner">
 			<div id="siteNavbar" className="site-navbar">
 				<div className="container container-w-outer container-max container-rfs">
@@ -445,7 +468,7 @@ export default function Header() {
 								<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
 							</button>
 						</div>
-					<MobileNav />
+					<MobileNav onMenuToggle={setIsMobileMenuOpen} />
 				</div>
                 {activeMegaMenu && <div className="mega-nav-backdrop active" style={{ display: 'block' }}></div>}
 			</div>
