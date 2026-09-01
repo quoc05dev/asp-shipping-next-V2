@@ -265,27 +265,42 @@
 }
 
 
+
 /* Phase 10: Mobile Footer Accordion */
-.footer-accordion-group .footer-mobile-button {
+.footer-accordion-group .footer-accordion-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background: none;
-  border: none;
-  padding: 0;
-  text-align: left;
-  cursor: pointer;
-  color: inherit;
-  font: inherit;
 }
 
-.footer-accordion-group .footer-desktop-link {
-  display: none;
+.footer-accordion-group .footer-parent-link {
+  flex-grow: 1;
+  padding: 8px 0;
+  display: block;
+}
+
+.footer-accordion-group .footer-accordion-toggle {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.footer-accordion-group .footer-accordion-toggle svg,
+.footer-accordion-group .footer-accordion-toggle span {
+  pointer-events: none;
 }
 
 .footer-accordion-group .footer-accordion-chevron {
   transition: transform 180ms ease;
+  display: inline-block;
 }
 
 .footer-accordion-group .footer-accordion-chevron[data-open="true"] {
@@ -306,21 +321,22 @@
   overflow: hidden;
 }
 
-/* OVERRIDE LEGACY CSS CONFLICTS */
-.site-footer .footer-accordion-group:not(.active) .collapse-body {
-  display: block !important;
-  height: auto !important;
+.footer-accordion-group .footer-accordion-content {
+  padding-bottom: 16px;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 @media (min-width: 768px) {
-  .footer-accordion-group .footer-mobile-button {
+  .footer-accordion-group .footer-accordion-toggle {
     display: none !important;
-  }
-  .footer-accordion-group .footer-desktop-link {
-    display: flex !important;
   }
   .footer-accordion-group .footer-submenu-wrapper {
     display: block !important;
     grid-template-rows: none !important;
+  }
+  .footer-accordion-group .footer-accordion-content {
+    display: block !important;
   }
 }

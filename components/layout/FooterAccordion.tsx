@@ -17,58 +17,42 @@ export default function FooterAccordion({ id, title, href, children }: FooterAcc
       itemScope={true}
       itemType="https://www.schema.org/SiteNavigationElement"
       id={id}
-      className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse footer-accordion-group ${id}`}
+      className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children footer-accordion-group ${id}`}
     >
-      {/* Mobile Accordion Button */}
-      <button
-        type="button"
-        className="collapse-toggle footer-mobile-button"
-        onClick={() => setIsOpen(v => !v)}
-        aria-expanded={isOpen}
-        aria-controls={`${id}-submenu`}
-      >
-        <span>{title}</span>
-        <span className="footer-accordion-chevron" data-open={isOpen}>
-          <i className="icon icon-chevron-down ">
-            <svg>
-              <use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-down"></use>
-            </svg>
-          </i>
-        </span>
-      </button>
+      <div className="footer-accordion-heading">
+        {/* Parent Navigation Link */}
+        <a
+          title={title}
+          href={href}
+          className="footer-parent-link"
+        >
+          <span>{title}</span>
+        </a>
 
-      {/* Desktop Navigation Link */}
-      <a
-        title={title}
-        href={href}
-        aria-haspopup="true"
-        aria-expanded="false"
-        className="collapse-toggle footer-desktop-link"
-        id={`${id}-collapse`}
-      >
-        <span>{title}</span>
-        <span className="collapse-toggle-icon collapse-toggle-icon-close">
-          <i className="icon icon-chevron-up ">
-            <svg>
-              <use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-up"></use>
-            </svg>
-          </i>
-        </span>
-        <span className="collapse-toggle-icon collapse-toggle-icon-open">
-          <i className="icon icon-chevron-down ">
-            <svg>
-              <use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-down"></use>
-            </svg>
-          </i>
-        </span>
-      </a>
+        {/* Mobile Accordion Toggle Button */}
+        <button
+          type="button"
+          className="footer-accordion-toggle"
+          onClick={() => setIsOpen((v) => !v)}
+          aria-expanded={isOpen}
+          aria-controls={`${id}-submenu`}
+          aria-label={`Toggle ${title} submenu`}
+        >
+          <span className="footer-accordion-chevron" data-open={isOpen}>
+            <i className="icon icon-chevron-down">
+              <svg>
+                <use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-down"></use>
+              </svg>
+            </i>
+          </span>
+        </button>
+      </div>
 
       {/* Submenu */}
       <div className="footer-submenu-wrapper" data-open={isOpen}>
         <div className="footer-submenu-inner">
           <ul
-            className="collapse-body"
-            aria-labelledby={`${id}-collapse`}
+            className="footer-accordion-content"
             id={`${id}-submenu`}
           >
             {children}
