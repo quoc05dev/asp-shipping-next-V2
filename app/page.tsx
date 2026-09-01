@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from '@/components/layout/Header';
+import FleetSlider from '@/components/home/FleetSlider';
 
 export default function Home() {
   return (
@@ -240,52 +241,7 @@ export default function Home() {
 		<div className="global-grid-2col" style={{alignItems: "start", }}>
 			{/*  Left Column: Slider  */}
 			<div style={{width: "100%", }}>
-				<div className="custom-fleet-slider" style={{position: "relative", width: "100%", aspectRatio: "4/5", overflow: "hidden", borderRadius: "20px", }}>
-					{/*  Slides Container  */}
-					<div className="custom-slider-container" style={{display: "flex", transition: "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)", height: "100%", width: "100%", }}>
-						{/*  Slide 1  */}
-						<div className="custom-slider-slide" style={{minWidth: "100%", position: "relative", height: "100%", }}>
-							<img src="/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp" alt="ASP LUNA" style={{width: "100%", height: "100%", objectFit: "cover", position: "absolute", top: "0", left: "0", }} />
-							<div style={{position: "absolute", bottom: "0", left: "0", width: "100%", height: "60%", background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)", pointerEvents: "none", }}>
-							</div>
-							<div style={{position: "absolute", top: "30px", left: "40px", color: "#fff", fontSize: "0.75rem", letterSpacing: "2px", fontWeight: "bold", opacity: "0.8", textTransform: "uppercase", }}>
-								ASP / WORLD TRADES</div>
-							<div style={{position: "absolute", bottom: "40px", left: "40px", color: "#fff", }}>
-								<h3 style={{fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: "bold", marginBottom: "15px", color: "white", lineHeight: "1", }}>
-									ASP LUNA</h3>
-								<div style={{display: "flex", flexWrap: "wrap", gap: "15px", fontSize: "0.85rem", fontWeight: "bold", letterSpacing: "1px", opacity: "0.9", textTransform: "uppercase", }}>
-									<span>LR2 TANKER</span><span>114,800 DWT</span><span>BUILT
-										2026</span>
-								</div>
-							</div>
-						</div>
-						{/*  Slide 2  */}
-						<div className="custom-slider-slide" style={{minWidth: "100%", position: "relative", height: "100%", }}>
-							<img src="/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp" alt="ASP TITAN" style={{width: "100%", height: "100%", objectFit: "cover", position: "absolute", top: "0", left: "0", }} />
-							<div style={{position: "absolute", bottom: "0", left: "0", width: "100%", height: "60%", background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)", pointerEvents: "none", }}>
-							</div>
-							<div style={{position: "absolute", top: "30px", left: "40px", color: "#fff", fontSize: "0.75rem", letterSpacing: "2px", fontWeight: "bold", opacity: "0.8", textTransform: "uppercase", }}>
-								ASP / WORLD TRADES</div>
-							<div style={{position: "absolute", bottom: "40px", left: "40px", color: "#fff", }}>
-								<h3 style={{fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: "bold", marginBottom: "15px", color: "white", lineHeight: "1", }}>
-									ASP TITAN</h3>
-								<div style={{display: "flex", flexWrap: "wrap", gap: "15px", fontSize: "0.85rem", fontWeight: "bold", letterSpacing: "1px", opacity: "0.9", textTransform: "uppercase", }}>
-									<span>AFRAMAX TANKER</span><span>115,000 DWT</span><span>BUILT
-										2025</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					{/*  Controls  */}
-					<div style={{position: "absolute", bottom: "40px", right: "40px", display: "flex", border: "1px solid rgba(255,255,255,0.4)", borderRadius: "4px", overflow: "hidden", zIndex: "10", }}>
-						<button id="slider-prev-btn" style={{background: "rgba(255,255,255,0.1)", border: "right: 1px solid rgba(255,255,255,0.4)", borderTop: "none", borderBottom: "none", borderLeft: "none", color: "white", width: "54px", height: "50px", cursor: "pointer", transition: "background 0.3s", backdropFilter: "blur(5px)", fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center", }}>
-							←
-						</button>
-						<button id="slider-next-btn" style={{background: "rgba(255,255,255,0.1)", border: "none", color: "white", width: "54px", height: "50px", cursor: "pointer", transition: "background 0.3s", backdropFilter: "blur(5px)", fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center", }}>
-							→
-						</button>
-					</div>
-				</div>
+				<FleetSlider />
 			</div>
 
 			{/*  Right Column: Content  */}
