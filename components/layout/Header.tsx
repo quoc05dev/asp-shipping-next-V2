@@ -458,14 +458,14 @@ export default function Header() {
 						
 					</nav>
 						
-						<div className="custom-nav-extras" style={{display: "flex", alignItems: "center", gap: "16px", flexShrink: "0", zIndex: "100", }}>
+						<div className="custom-nav-extras" style={{display: "flex", alignItems: "center", gap: "16px", flexShrink: "0", zIndex: "100", position: "relative", }}>
 							<div className="language"  aria-label="Choose language" style={{display: "flex", alignItems: "center", fontWeight: "700", fontSize: "1rem", }}>
 								<a href="#" className="custom-sync-color">EN</a>
 								<span className="custom-sync-color" style={{margin: "0 4px", opacity: "0.5", pointerEvents: "none", }}>/</span>
 								<a href="#" className="custom-sync-color">VI</a>
 							</div>
 							<button type="button" className="custom-sync-color search-button" aria-label="Search website" style={{background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", padding: "0", }}>
-								<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+								<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
 							</button>
 						</div>
 					<MobileNav onMenuToggle={setIsMobileMenuOpen} />
