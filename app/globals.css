@@ -146,7 +146,6 @@
     top: 0;
     width: 100%;
     min-height: 100%;
-    background-color: var(--theme-color-light, #fff);
     z-index: 10;
     visibility: hidden;
 }
