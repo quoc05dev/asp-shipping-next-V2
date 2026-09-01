@@ -154,3 +154,10 @@
 .react-nav-submenu.is-active {
     visibility: visible;
 }
+
+/* Fix Safari click bubbling bug on SVG <use> elements */
+.nav-slider-toggle svg,
+.nav-slider-toggle i,
+.nav-slider-toggle span {
+    pointer-events: none;
+}
