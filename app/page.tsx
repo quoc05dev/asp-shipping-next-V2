@@ -183,7 +183,7 @@ export default function Home() {
 				<div className="statistic-caption u-mt-4">Vessels in Fleet</div>
 			</div>
 		</div>
-		<div id="" className="layout-statistic-box layout-page" x-init="">
+		<div id="" className="layout-statistic-box layout-page">
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">3</div>
@@ -192,7 +192,7 @@ export default function Home() {
 				<div className="statistic-caption u-mt-4">Total DWT</div>
 			</div>
 		</div>
-		<div id="" className="layout-statistic-box layout-page" x-init="">
+		<div id="" className="layout-statistic-box layout-page">
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">30</div>
@@ -201,7 +201,7 @@ export default function Home() {
 				<div className="statistic-caption u-mt-4">Global Partners</div>
 			</div>
 		</div>
-		<div id="" className="layout-statistic-box layout-page" x-init="">
+		<div id="" className="layout-statistic-box layout-page">
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">2021</div>
@@ -209,7 +209,7 @@ export default function Home() {
 				<div className="statistic-caption u-mt-4">Founded</div>
 			</div>
 		</div>
-		<div id="" className="layout-statistic-box layout-page" x-init="">
+		<div id="" className="layout-statistic-box layout-page">
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">21</div>
@@ -267,9 +267,9 @@ export default function Home() {
 				</div>
 
 				{/*  Statistics Grid (2x2)  */}
-				<div style={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", }} x-data="">
+				<div style={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", }}>
 					{/*  Stat 1  */}
-					<div className="layout-statistic-box active" x-init="">
+					<div className="layout-statistic-box active">
 						<div className="statistic custom-stat-box u-d-flex u-flex-column u-h-100" data-cms-array="stats" data-cms-data-index="0">
 							<div className="statistic-content u-mb-auto">
 								<div className="statistic-figure u-h2" style={{fontSize: "2.5rem", lineHeight: "1", }} data-cms-field="figure">41</div>
@@ -280,7 +280,7 @@ export default function Home() {
 						</div>
 					</div>
 					{/*  Stat 2  */}
-					<div className="layout-statistic-box" x-init="">
+					<div className="layout-statistic-box">
 						<div className="statistic custom-stat-box u-d-flex u-flex-column u-h-100" data-cms-array="stats" data-cms-data-index="1">
 							<div className="statistic-content u-mb-auto">
 								<div className="statistic-figure u-h2" style={{fontSize: "2.5rem", lineHeight: "1", }} data-cms-field="figure">10</div>
@@ -291,7 +291,7 @@ export default function Home() {
 						</div>
 					</div>
 					{/*  Stat 3  */}
-					<div className="layout-statistic-box" x-init="">
+					<div className="layout-statistic-box">
 						<div className="statistic custom-stat-box u-d-flex u-flex-column u-h-100" data-cms-array="stats" data-cms-data-index="2">
 							<div className="statistic-content u-mb-auto">
 								<div className="statistic-figure u-h2" style={{fontSize: "2.5rem", lineHeight: "1", }} data-cms-field="figure">8</div>
@@ -302,7 +302,7 @@ export default function Home() {
 						</div>
 					</div>
 					{/*  Stat 4  */}
-					<div className="layout-statistic-box" x-init="">
+					<div className="layout-statistic-box">
 						<div className="statistic custom-stat-box u-d-flex u-flex-column u-h-100" data-cms-array="stats" data-cms-data-index="3">
 							<div className="statistic-content u-mb-auto">
 								<div className="statistic-figure u-h2" style={{fontSize: "2.5rem", lineHeight: "1", }} data-cms-field="figure">5</div>
@@ -727,7 +727,7 @@ export default function Home() {
 									<h3 className="u-visually-hidden widget-title">About Us</h3>
 									<div className="menu-footer-column-2-container">
 										<ul id="menu-footer-column-2" className="menu">
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse menu-item-97" x-data="" x-collapse="{ show: false, disabled: $mq.min('md'), hash: false }" x-effect="__collapseDisable = $mq.min('md')"><a title="About Us" href="about-us/index.html" aria-haspopup="true" aria-expanded="false" className="collapse-toggle" id="menu-item-collapse-97"><span>About Us</span><span className="collapse-toggle-icon collapse-toggle-icon-close"><i className="icon icon-chevron-up ">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse menu-item-97"><a title="About Us" href="about-us/index.html" aria-haspopup="true" aria-expanded="false" className="collapse-toggle" id="menu-item-collapse-97"><span>About Us</span><span className="collapse-toggle-icon collapse-toggle-icon-close"><i className="icon icon-chevron-up ">
 															<svg>
 																<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-up">
 																</use>
@@ -761,7 +761,7 @@ export default function Home() {
 									<h3 className="u-visually-hidden widget-title">Our Fleet</h3>
 									<div className="menu-footer-column-3-container">
 										<ul id="menu-footer-column-3" className="menu">
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-102" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse menu-item-102" x-data="" x-collapse="{ show: false, disabled: $mq.min('md'), hash: false }" x-effect="__collapseDisable = $mq.min('md')"><a title="Our Fleet" href="our-fleet/index.html" aria-haspopup="true" aria-expanded="false" className="collapse-toggle" id="menu-item-collapse-102"><span>Our Fleet</span><span className="collapse-toggle-icon collapse-toggle-icon-close"><i className="icon icon-chevron-up ">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-102" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse menu-item-102"><a title="Our Fleet" href="our-fleet/index.html" aria-haspopup="true" aria-expanded="false" className="collapse-toggle" id="menu-item-collapse-102"><span>Our Fleet</span><span className="collapse-toggle-icon collapse-toggle-icon-close"><i className="icon icon-chevron-up ">
 															<svg>
 																<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-up">
 																</use>
@@ -791,7 +791,7 @@ export default function Home() {
 									<h3 className="u-visually-hidden widget-title">Sustainability</h3>
 									<div className="menu-footer-column-4-container">
 										<ul id="menu-footer-column-4" className="menu">
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-105" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse menu-item-105" x-data="" x-collapse="{ show: false, disabled: $mq.min('md'), hash: false }" x-effect="__collapseDisable = $mq.min('md')"><a title="Sustainability" href="sustainability/index.html" aria-haspopup="true" aria-expanded="false" className="collapse-toggle" id="menu-item-collapse-105"><span>Sustainability</span><span className="collapse-toggle-icon collapse-toggle-icon-close"><i className="icon icon-chevron-up ">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-105" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse menu-item-105"><a title="Sustainability" href="sustainability/index.html" aria-haspopup="true" aria-expanded="false" className="collapse-toggle" id="menu-item-collapse-105"><span>Sustainability</span><span className="collapse-toggle-icon collapse-toggle-icon-close"><i className="icon icon-chevron-up ">
 															<svg>
 																<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-up">
 																</use>
@@ -825,7 +825,7 @@ export default function Home() {
 									<h3 className="u-visually-hidden widget-title">Media</h3>
 									<div className="menu-footer-column-5-container">
 										<ul id="menu-footer-column-5" className="menu">
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-110" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse menu-item-110" x-data="" x-collapse="{ show: false, disabled: $mq.min('md'), hash: false }" x-effect="__collapseDisable = $mq.min('md')"><a title="Media" href="media/index.html" aria-haspopup="true" aria-expanded="false" className="collapse-toggle" id="menu-item-collapse-110"><span>Media</span><span className="collapse-toggle-icon collapse-toggle-icon-close"><i className="icon icon-chevron-up ">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-110" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapse menu-item-110"><a title="Media" href="media/index.html" aria-haspopup="true" aria-expanded="false" className="collapse-toggle" id="menu-item-collapse-110"><span>Media</span><span className="collapse-toggle-icon collapse-toggle-icon-close"><i className="icon icon-chevron-up ">
 															<svg>
 																<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-up">
 																</use>
