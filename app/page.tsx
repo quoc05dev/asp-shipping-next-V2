@@ -149,7 +149,7 @@ export default function Home() {
   					</div>
   					<div className="layout layout-buttons layout-page">
   						<div className="layout-inner button-group u-mt-9">
-  							<div><a href="about-us/index.html" title="Learn About Asia Pacific Shipping" className="button button-outline"><span data-cms-field="button_text">Learn About Asia Pacific Shipping</span></a></div>
+  							<div><a href="/about-us" title="Learn About Asia Pacific Shipping" className="button button-outline"><span data-cms-field="button_text">Learn About Asia Pacific Shipping</span></a></div>
   						</div>
   					</div>
   				</div>
@@ -264,7 +264,7 @@ export default function Home() {
 							supply chains.</p>
 					</div>
 
-					<a href="our-fleet/index.html" className="button button-outline" style={{marginBottom: "32px", }}><span>View Our Fleet List</span></a>
+					<a href="/our-fleet" className="button button-outline" style={{marginBottom: "32px", }}><span>View Our Fleet List</span></a>
 				</div>
 
 				{/*  Statistics Grid (2x2)  */}
@@ -377,7 +377,7 @@ export default function Home() {
 					</div>
 					<div id="" className="layout layout-buttons layout-page">
 						<div className="layout-inner button-group u-mt-9">
-							<div><a href="media/latest-news/index.html" title="View All News" className="button button-outline"><span>View All News</span></a></div>
+							<div><a href="/media/latest-news" title="View All News" className="button button-outline"><span>View All News</span></a></div>
 						</div>
 					</div>
 				</div>
@@ -388,9 +388,9 @@ export default function Home() {
 			<article id="post-2136" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2136 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
 				<header className="entry-header">
 					<div className="post-categories row u-gy-2 u-gx-2">
-						<div className="col-auto"><a href="media/news/category/press-releases/index.html" className="button button-small button-secondary">Press Releases</a></div>
+						<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press Releases</a></div>
 					</div>
-					<a href="media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance/index.html" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance">
+					<a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance">
 						<span className="ratio ratio-instrinsic">
 							<span className="ratio-size" style={{paddingBottom: "50%", }}></span>
 							<img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail ratio-item" alt="" />
@@ -398,7 +398,7 @@ export default function Home() {
 					</a>
 				</header>
 				<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
-					<a href="media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance/index.html" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance">
+					<a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance">
 						<time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29, 2026</time>
 						<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance</h3>
 					</a>
@@ -414,11 +414,11 @@ export default function Home() {
 										<article id="post-2136" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2136 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
 											<header className="entry-header">
 												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="media/news/category/press-releases/index.html" className="button button-small button-secondary">Press
+													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 															Releases</a></div>
-												</div><a href="media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance/index.html" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+												</div><a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance/index.html" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29, 2026</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29, 2026</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 														Asia Pacific Shipping expands use of GIT Coatings following 6%
 														out-of-dock fuel savings and maintained hull performance </h3>
@@ -429,11 +429,11 @@ export default function Home() {
 										<article id="post-2086" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2086 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
 											<header className="entry-header">
 												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="media/news/category/press-releases/index.html" className="button button-small button-secondary">Press
+													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 															Releases</a></div>
-												</div><a href="media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan/index.html" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+												</div><a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan/index.html" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September 9, 2025</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September 9, 2025</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 														Asia Pacific Shipping partners with bound4blue to install unique
 														non-explosion proof eSAIL® on LPG carrier Helena Kosan </h3>
@@ -444,11 +444,11 @@ export default function Home() {
 										<article id="post-2051" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2051 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
 											<header className="entry-header">
 												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="media/news/category/press-releases/index.html" className="button button-small button-secondary">Press
+													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 															Releases</a></div>
-												</div><a href="media/news/2025/04/16/bw-epic-kosan-new-leadership/index.html" className="entry-permalink" title="Jakob Bode announced as new CEO of Asia Pacific Shipping"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+												</div><a href="/media/news/2025/04/16/bw-epic-kosan-new-leadership" className="entry-permalink" title="Jakob Bode announced as new CEO of Asia Pacific Shipping"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="media/news/2025/04/16/bw-epic-kosan-new-leadership/index.html" className="entry-permalink" title="Jakob Bode announced as new CEO of Asia Pacific Shipping"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-04-16T07:18:11+00:00">April 16, 2025</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2025/04/16/bw-epic-kosan-new-leadership" className="entry-permalink" title="Jakob Bode announced as new CEO of Asia Pacific Shipping"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-04-16T07:18:11+00:00">April 16, 2025</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 														Jakob Bode announced as new CEO of Asia Pacific Shipping </h3>
 												</a></div>
@@ -458,11 +458,11 @@ export default function Home() {
 										<article id="post-2023" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2023 post type-post status-publish format-standard has-post-thumbnail hentry category-articles entity entity-post">
 											<header className="entry-header">
 												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="media/news/category/articles/index.html" className="button button-small button-secondary">Articles</a>
+													<div className="col-auto"><a href="/media/news/category/articles" className="button button-small button-secondary">Articles</a>
 													</div>
-												</div><a href="media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team/index.html" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/partners/logo-client-vitol.png" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+												</div><a href="/media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/partners/logo-client-vitol.png" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team/index.html" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-10-09T02:39:25+00:00">October 9, 2024</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-10-09T02:39:25+00:00">October 9, 2024</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 														How to Attract A New Generation To Join Your Team </h3>
 												</a></div>
@@ -472,11 +472,11 @@ export default function Home() {
 										<article id="post-2004" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2004 post type-post status-publish format-standard has-post-thumbnail hentry category-articles entity entity-post">
 											<header className="entry-header">
 												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="media/news/category/articles/index.html" className="button button-small button-secondary">Articles</a>
+													<div className="col-auto"><a href="/media/news/category/articles" className="button button-small button-secondary">Articles</a>
 													</div>
-												</div><a href="media/news/2024/06/19/cultivating-a-passion-for-shipping/index.html" className="entry-permalink" title="Cultivating A Passion for Shipping"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/partners/logo-client-lauritzen-bulkers.png" className="entry-thumbnail  ratio-item" alt="Cultivating A Passion for Shipping at Asia Pacific Shipping" /></span></a>
+												</div><a href="/media/news/2024/06/19/cultivating-a-passion-for-shipping" className="entry-permalink" title="Cultivating A Passion for Shipping"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/partners/logo-client-lauritzen-bulkers.png" className="entry-thumbnail  ratio-item" alt="Cultivating A Passion for Shipping at Asia Pacific Shipping" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="media/news/2024/06/19/cultivating-a-passion-for-shipping/index.html" className="entry-permalink" title="Cultivating A Passion for Shipping"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-06-19T03:37:15+00:00">June 19, 2024</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2024/06/19/cultivating-a-passion-for-shipping" className="entry-permalink" title="Cultivating A Passion for Shipping"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-06-19T03:37:15+00:00">June 19, 2024</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
 														Cultivating A Passion for Shipping </h3>
 												</a></div>
@@ -522,7 +522,7 @@ export default function Home() {
 										</div>
 										<div data-index="0" data-uid="3f89466ac3d6336f8175eedd8d953038" id="" className="layout layout-buttons layout-page">
 											<div className="layout-inner button-group u-mt-9 content-width">
-												<div><a href="sustainability/index.html" title="Our Role in Sustainability" target="" className="button button-outline button-outline-secondary"><span data-cms-field="sustainability_btn_1">Our
+												<div><a href="/sustainability" title="Our Role in Sustainability" target="" className="button button-outline button-outline-secondary"><span data-cms-field="sustainability_btn_1">Our
 															Role in Sustainability</span></a></div>
 												<div><a href="/wp-content/uploads/2025/04/BW-Epic-Kosan-Sustainability-Report-FY-2024.pdf" title="Download Sustainability Report 2024" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span data-cms-field="sustainability_btn_2">Download Sustainability Report
 															2024</span><i className="icon icon-download "><svg>
@@ -610,7 +610,7 @@ export default function Home() {
 										</div>
 										<div data-index="0" data-uid="3f1cfc038a29e62dcfc6e5f3178d2d92" id="" className="layout layout-buttons layout-page">
 											<div className="layout-inner button-group u-mt-9 callout-buttons content-width">
-												<div><a href="contact-us/index.html" title="Contact Us" target="" className="button button-outline button-outline-secondary"><span>Contact
+												<div><a href="/contact-us" title="Contact Us" target="" className="button button-outline button-outline-secondary"><span>Contact
 															Us</span></a></div>
 											</div>
 										</div>
@@ -631,7 +631,7 @@ export default function Home() {
 										</div>
 										<div data-index="0" data-uid="39ec83d80815927031362e45db742d93" id="" className="layout layout-buttons layout-page">
 											<div className="layout-inner button-group u-mt-9 callout-buttons content-width">
-												<div><a href="careers/index.html" title="Careers at Asia Pacific Shipping" target="" className="button button-outline button-outline-secondary"><span>Careers
+												<div><a href="/careers" title="Careers at Asia Pacific Shipping" target="" className="button button-outline button-outline-secondary"><span>Careers
 															at Asia Pacific Shipping</span></a></div>
 											</div>
 										</div>
@@ -712,11 +712,11 @@ export default function Home() {
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-active menu-item-94">
 												<a title="Home" href="index.html">Home</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-96" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-96">
-												<a title="Contact Us" href="contact-us/index.html">Contact Us</a></li>
+												<a title="Contact Us" href="/contact-us">Contact Us</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-95" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
-												<a title="Careers" href="careers/index.html">Careers</a></li>
+												<a title="Careers" href="/careers">Careers</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2013" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2013">
-												<a title="Supplier Verification" href="suppliers/supplier-verification/index.html">Supplier
+												<a title="Supplier Verification" href="/suppliers/supplier-verification">Supplier
 													Verification</a></li>
 										</ul>
 									</div>
@@ -728,15 +728,15 @@ export default function Home() {
 									<h3 className="u-visually-hidden widget-title">About Us</h3>
 									<div className="menu-footer-column-2-container">
 										<ul id="menu-footer-column-2" className="menu">
-											<FooterAccordion id="menu-item-97" title="About Us" href="about-us/index.html">
+											<FooterAccordion id="menu-item-97" title="About Us" href="/about-us">
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-99" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-99">
-														<a title="History" href="about-us/history/index.html" className="collapse-link">History</a></li>
+														<a title="History" href="/about-us/history" className="collapse-link">History</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-100" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-100">
-														<a title="Leadership" href="about-us/leadership/index.html" className="collapse-link">Leadership</a></li>
+														<a title="Leadership" href="/about-us/leadership" className="collapse-link">Leadership</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-98" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-98">
-														<a title="Vision, Mission, Values" href="about-us/vision-mission-values/index.html" className="collapse-link">Vision, Mission, Values</a></li>
+														<a title="Vision, Mission, Values" href="/about-us/vision-mission-values" className="collapse-link">Vision, Mission, Values</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
-														<a title="Trades" href="about-us/trades/index.html" className="collapse-link">Trades</a></li>
+														<a title="Trades" href="/about-us/trades" className="collapse-link">Trades</a></li>
 											</FooterAccordion>
 										</ul>
 									</div>
@@ -748,11 +748,11 @@ export default function Home() {
 									<h3 className="u-visually-hidden widget-title">Our Fleet</h3>
 									<div className="menu-footer-column-3-container">
 										<ul id="menu-footer-column-3" className="menu">
-											<FooterAccordion id="menu-item-102" title="Our Fleet" href="our-fleet/index.html">
+											<FooterAccordion id="menu-item-102" title="Our Fleet" href="/our-fleet">
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-103" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-103">
-														<a title="Ammonia Propulsion" href="our-fleet/ammonia-propulsion/index.html" className="collapse-link">Ammonia Propulsion</a></li>
+														<a title="Ammonia Propulsion" href="/our-fleet/ammonia-propulsion" className="collapse-link">Ammonia Propulsion</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-104" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-104">
-														<a title="LCO2 Shipping" href="our-fleet/lco2-shipping/index.html" className="collapse-link">LCO2 Shipping</a></li>
+														<a title="LCO2 Shipping" href="/our-fleet/lco2-shipping" className="collapse-link">LCO2 Shipping</a></li>
 											</FooterAccordion>
 										</ul>
 									</div>
@@ -764,15 +764,15 @@ export default function Home() {
 									<h3 className="u-visually-hidden widget-title">Sustainability</h3>
 									<div className="menu-footer-column-4-container">
 										<ul id="menu-footer-column-4" className="menu">
-											<FooterAccordion id="menu-item-105" title="Sustainability" href="sustainability/index.html">
+											<FooterAccordion id="menu-item-105" title="Sustainability" href="/sustainability">
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1125" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1125">
-														<a title="Social" href="sustainability/social/index.html" className="collapse-link">Social</a></li>
+														<a title="Social" href="/sustainability/social" className="collapse-link">Social</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1113" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1113">
-														<a title="Environment" href="sustainability/environment/index.html" className="collapse-link">Environment</a></li>
+														<a title="Environment" href="/sustainability/environment" className="collapse-link">Environment</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1029" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1029">
-														<a title="Governance" href="sustainability/governance/index.html" className="collapse-link">Governance</a></li>
+														<a title="Governance" href="/sustainability/governance" className="collapse-link">Governance</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-106" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-106">
-														<a title="Policies &amp; Guidelines" href="sustainability/policies-guidelines/index.html" className="collapse-link">Policies &amp; Guidelines</a></li>
+														<a title="Policies &amp; Guidelines" href="/sustainability/policies-guidelines" className="collapse-link">Policies &amp; Guidelines</a></li>
 											</FooterAccordion>
 										</ul>
 									</div>
@@ -784,13 +784,13 @@ export default function Home() {
 									<h3 className="u-visually-hidden widget-title">Media</h3>
 									<div className="menu-footer-column-5-container">
 										<ul id="menu-footer-column-5" className="menu">
-											<FooterAccordion id="menu-item-110" title="Media" href="media/index.html">
+											<FooterAccordion id="menu-item-110" title="Media" href="/media">
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-111" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-111">
-														<a title="Latest News" href="media/latest-news/index.html" className="collapse-link">Latest News</a></li>
+														<a title="Latest News" href="/media/latest-news" className="collapse-link">Latest News</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-112" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-112">
-														<a title="Gallery" href="media/gallery/index.html" className="collapse-link">Gallery</a></li>
+														<a title="Gallery" href="/media/gallery" className="collapse-link">Gallery</a></li>
 													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-113" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-113">
-														<a title="Glossary of Terms" href="media/glossary-of-terms/index.html" className="collapse-link">Glossary of Terms</a></li>
+														<a title="Glossary of Terms" href="/media/glossary-of-terms" className="collapse-link">Glossary of Terms</a></li>
 											</FooterAccordion>
 										</ul>
 									</div>
@@ -817,7 +817,7 @@ export default function Home() {
 					</div>
 
 					<div className="col-12 col-lg-auto offset-lg-1 offset-xl-0">
-						<a href="privacy-policy/index.html" title="Privacy Policy" target="" className="site-privacy-policy">Privacy Policy</a>
+						<a href="/privacy-policy" title="Privacy Policy" target="" className="site-privacy-policy">Privacy Policy</a>
 					</div>
 
 					<div className="col-12 col-lg-auto u-ml-lg-auto">
@@ -867,4 +867,5 @@ export default function Home() {
     </>
   );
 }
+
 

@@ -1,61 +1,14 @@
-# Phase 10: Other Interactions Report
+# Phase 10 — Other Interactions Report
 
-## INTERACTIONS FOUND:
-- Header / Mega Menu
-- Mobile Menu
-- Fleet Slider
-- Statistics Grid Hover
-- Footer Mobile Accordion
-- Search Modal
-- Language Switcher
-- Newsletter Form
-- Scroll Reveal Animations (Legacy)
+## Issue Documented
+The mobile footer accordion had an incorrect semantic structure in the previous attempt. The parent row was rendered either entirely as a button (mobile) or a link (desktop) based on `window.innerWidth`. This broke hydration and meant the parent text could not act as a navigation link on mobile.
 
-## ALREADY REACT:
-- Header / Mega Menu
-- Mobile Menu
-- Fleet Slider
+## Fix Implemented
+1. Re-architected `FooterAccordion.tsx` to separate the `<a>` (parent link) and `<button>` (chevron toggle) as siblings inside a flex container.
+2. Removed all `window.innerWidth` JS conditionals. The DOM always renders both controls, and CSS media queries are used to hide the `<button>` on desktop viewports.
+3. Completely removed legacy `collapse` and `collapse-body` classes from the React footer to prevent conflicts with the legacy CSS runtime.
+4. Removed the temporary `!important` CSS overrides from `globals.css` since they are no longer needed.
+5. Applied `FooterAccordion` correctly to all 4 navigable footer sections in `app/page.tsx`.
 
-## PURE CSS:
-- Statistics Grid Hover (`layout-statistic-box`). The legacy `@mouseenter` Alpine JS was removed, and hover effects are handled purely via CSS `:hover`.
-
-## MIGRATED TO REACT:
-- Footer Mobile Accordion. Migrated to `components/layout/FooterAccordion.tsx` using React state `isOpen`, rendering correctly on mobile and desktop breakpoints.
-
-## OBSOLETE RUNTIME:
-- Statistics Grid Alpine: `x-data` and `x-init` were stripped.
-
-## DEFERRED:
-- Search Modal: DEFERRED
-- Language Switcher: DEFERRED
-- Newsletter Form Backend: DEFERRED
-- Complete WordPress Cleanup (e.g. `wpcf7` HTML remnants): DEFERRED to Phase 19.
-
-## ALPINE IN ACTIVE NEXT UI:
-NO
-
-## JQUERY IN ACTIVE NEXT UI:
-NO
-
-## WORDPRESS RUNTIME CONTROLLING ACTIVE UI:
-NO
-
-## IMPERATIVE DOM CONTROL REMAINING:
-NONE
-
-## DUPLICATE INTERACTION CONTROL:
-NONE
-
-## FOOTER ACCORDION DETAILS:
-LEGACY ALPINE RUNTIME:
-REMOVED
-
-USER INTERACTION:
-MIGRATED TO REACT
-
-- Expandable Groups: About Us, Our Fleet, Sustainability, Media
-- Direct Links: Home, Contact Us, Careers, Supplier Verification
-- Initial state: Closed on mobile
-- Mobile breakpoint: 768px (`$mq.min('md')`)
-- Behavior: Multi-open (each group has its own state)
-- Accessibility: Uses `<button>` triggers with `aria-expanded` and `aria-controls` on mobile.
+## Verification Status
+All automated Puppeteer verifications passed for link navigation, chevron state toggling, submenu heights, multi-open support, and URL stability. Manual confirmation is still requested by the user.
