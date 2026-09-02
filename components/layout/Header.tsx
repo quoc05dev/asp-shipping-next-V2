@@ -124,6 +124,27 @@ export default function Header() {
 									</div>
 								</div>
 							</li>
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-what-we-do" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-what-we-do ${activeMegaMenu === "menu-item-what-we-do" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-what-we-do")} onMouseLeave={handleMouseLeave}><a title="What We Do" href="/what-we-do" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-what-we-do">What We Do</a>
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-what-we-do" role="menu">
+									<div className="mega-nav-content grid">
+										<ul>
+											<li className="menu-item menu-item-heading"><a href="/what-we-do" title="What We Do" target="" className="">What We Do</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-1" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1">
+												<a title="Commercial Management" href="/commercial-management">Commercial Management</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-2" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2">
+												<a title="Technical Management" href="/technical-management">Technical Management</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-3" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3">
+												<a title="Marine Consultancy" href="/marine-consultancy">Marine Consultancy</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-4" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4">
+												<a title="Crew Management" href="/crew-management">Crew Management</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-5" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5">
+												<a title="Sea Transportation" href="/sea-transportation">Sea Transportation</a></li>
+										</ul>
+										<div className="menu-item-contents">
+										</div>
+									</div>
+								</div>
+							</li>
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-68" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-68 ${activeMegaMenu === "menu-item-68" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-68")} onMouseLeave={handleMouseLeave}><a title="Sustainability" href="/sustainability" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-68">Sustainability</a>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-68" role="menu">
 									<div className="mega-nav-content grid">
