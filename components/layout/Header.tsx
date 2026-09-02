@@ -5,34 +5,27 @@ import MobileNav from './MobileNav';
 const whatWeDoServices = [
     {
         title: 'Commercial Management',
-        desc: 'Employment strategy across time charter, spot voyage and pool partnerships.',
-        route: '/commercial-management'
+        desc: 'Employment strategy across time charter, spot voyage and pool partnerships.'
     },
     {
         title: 'Technical Management',
-        desc: 'Planned maintenance, dry-docking, performance, safety and regulatory oversight.',
-        route: '/technical-management'
+        desc: 'Planned maintenance, dry-docking, performance, safety and regulatory oversight.'
     },
     {
         title: 'Marine Consultancy',
-        desc: 'Practical maritime advice for commercial planning and technical projects.',
-        route: '/marine-consultancy'
+        desc: 'Practical maritime advice for commercial planning and technical projects.'
     },
     {
         title: 'Crew Management',
-        desc: 'Recruitment, deployment, training and welfare for qualified seafarers.',
-        route: '/crew-management'
+        desc: 'Recruitment, deployment, training and welfare for qualified seafarers.'
     },
     {
         title: 'Sea Transportation',
-        desc: 'Flexible sea transportation across dry bulk, petroleum products and other cargoes.',
-        route: '/sea-transportation'
+        desc: 'Flexible sea transportation across dry bulk, petroleum products and other cargoes.'
     },
     {
         title: 'What We Do Overview',
-        desc: 'Maritime solutions across the vessel lifecycle.',
-        route: '/what-we-do',
-        cta: 'Explore All \u2192'
+        desc: 'End-to-end maritime solutions across a vessel\'s lifecycle.'
     }
 ];
 
@@ -105,7 +98,7 @@ export default function Header() {
 					<nav className="site-nav u-ml-auto u-d-none u-d-lg-flex u-ml-auto mega-nav"  >
 						<ul id="menu-primary-menu" className="site-nav-items site-nav-items-primary">
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-what-we-do" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-what-we-do ${activeMegaMenu === "menu-item-what-we-do" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-what-we-do")} onMouseLeave={handleMouseLeave}><a href="/what-we-do" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-what-we-do">What We Do</a>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" style={{ height: '320px' }} aria-labelledby="menu-item-mega-nav-what-we-do" role="menu">
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-what-we-do" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
 											<li className="menu-item menu-item-heading"><a href="/what-we-do" title="What We Do" target="" className="">What We Do</a></li>
@@ -122,16 +115,20 @@ export default function Header() {
 										</ul>
 										<div className="menu-item-contents u-h-100 u-pl-4">
                                             <div className="layout layout-menu-featured-cards layout-app_megamenu layout-root u-h-100">
-                                                <div className="layout-inner layout-row row u-gx-3 u-gy-3 u-h-100 u-pt-2 u-pb-2 u-m-0">
+                                                <div className="layout-inner layout-row row u-gx-4 u-gy-3 u-h-100 u-pt-3 u-pb-3 u-m-0">
                                                     {whatWeDoServices.map((service, index) => (
-                                                        <div key={index} className="col-12 col-md-4 u-d-flex u-flex-column u-border u-border-color-gray-200 u-border-radius u-p-3 theme-hover-bg-gray-100 u-transition-all" style={{ height: 'calc(50% - 0.5rem)' }}>
-                                                            <a href={service.route} onClick={handleMouseLeave} className="u-text-decoration-none u-d-flex u-flex-column u-h-100 u-color-body">
+                                                        <div key={index} className="col-12 col-md-4 u-d-flex u-flex-column u-px-2" style={{ height: 'calc(50% - 0.5rem)' }}>
+                                                            <div className="u-d-flex u-flex-column u-h-100 u-color-body">
                                                                 <h4 className="u-h6 u-mb-1 u-color-primary" style={{ fontSize: "0.95rem" }}>{service.title}</h4>
-                                                                <p className="u-font-size-sm u-color-gray-600 u-mb-auto u-text-truncate-2" style={{ lineHeight: 1.3, fontSize: "0.85rem" }}>{service.desc}</p>
-                                                                <span className="u-font-size-sm u-color-primary u-mt-1 u-fw-bold u-d-block" style={{ fontSize: "0.85rem" }}>
-                                                                    {service.cta || `Explore \u2192`}
-                                                                </span>
-                                                            </a>
+                                                                <p className="u-font-size-sm u-color-gray-600 u-mb-auto" style={{ 
+                                                                    lineHeight: 1.3, 
+                                                                    fontSize: "0.85rem",
+                                                                    display: '-webkit-box',
+                                                                    WebkitLineClamp: 2,
+                                                                    WebkitBoxOrient: 'vertical',
+                                                                    overflow: 'hidden'
+                                                                }}>{service.desc}</p>
+                                                            </div>
                                                         </div>
                                                     ))}
                                                 </div>
