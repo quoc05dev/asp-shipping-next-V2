@@ -100,25 +100,25 @@ export default function Header() {
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-what-we-do" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-what-we-do ${activeMegaMenu === "menu-item-what-we-do" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-what-we-do")} onMouseLeave={handleMouseLeave}><a href="/what-we-do" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-what-we-do">What We Do</a>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-what-we-do" role="menu">
 									<div className="mega-nav-content grid">
-										<ul>
-											<li className="menu-item menu-item-heading"><a href="/what-we-do" title="What We Do" target="" className="">What We Do</a></li>
+										<ul style={{ paddingTop: '0.5rem' }}>
+											<li className="menu-item menu-item-heading" style={{ marginBottom: '0.25rem' }}><a href="/what-we-do" title="What We Do" target="" className="" style={{ paddingTop: '0', paddingBottom: '0.25rem' }}>What We Do</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-1" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1">
-												<a title="Commercial Management" href="/commercial-management">Commercial Management</a></li>
+												<a title="Commercial Management" href="/commercial-management" style={{ padding: '0.2rem 0', display: 'block' }}>Commercial Management</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-2" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2">
-												<a title="Technical Management" href="/technical-management">Technical Management</a></li>
+												<a title="Technical Management" href="/technical-management" style={{ padding: '0.2rem 0', display: 'block' }}>Technical Management</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-3" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3">
-												<a title="Marine Consultancy" href="/marine-consultancy">Marine Consultancy</a></li>
+												<a title="Marine Consultancy" href="/marine-consultancy" style={{ padding: '0.2rem 0', display: 'block' }}>Marine Consultancy</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-4" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4">
-												<a title="Crew Management" href="/crew-management">Crew Management</a></li>
+												<a title="Crew Management" href="/crew-management" style={{ padding: '0.2rem 0', display: 'block' }}>Crew Management</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-5" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5">
-												<a title="Sea Transportation" href="/sea-transportation">Sea Transportation</a></li>
+												<a title="Sea Transportation" href="/sea-transportation" style={{ padding: '0.2rem 0', display: 'block' }}>Sea Transportation</a></li>
 										</ul>
 										<div className="menu-item-contents u-h-100 u-pl-4">
                                             <div className="layout layout-menu-featured-cards layout-app_megamenu layout-root u-h-100">
-                                                <div className="layout-inner layout-row row u-gx-4 u-gy-3 u-h-100 u-pt-3 u-pb-3 u-m-0">
+                                                <div className="layout-inner layout-row row u-gx-4 u-gy-2 u-h-100 u-pt-2 u-pb-2 u-m-0">
                                                     {whatWeDoServices.map((service, index) => (
-                                                        <div key={index} className="col-12 col-md-4 u-d-flex u-flex-column u-px-2" style={{ height: 'calc(50% - 0.5rem)' }}>
-                                                            <div className="u-d-flex u-flex-column u-h-100 u-color-body">
+                                                        <div key={index} className="col-12 col-md-4 u-d-flex u-flex-column u-px-2" style={{ height: 'calc(50% - 0.25rem)' }}>
+                                                            <div className="u-d-flex u-flex-column u-h-100 u-color-body u-pt-1">
                                                                 <h4 className="u-h6 u-mb-1 u-color-primary" style={{ fontSize: "0.95rem" }}>{service.title}</h4>
                                                                 <p className="u-font-size-sm u-color-gray-600 u-mb-auto" style={{ 
                                                                     lineHeight: 1.3, 
