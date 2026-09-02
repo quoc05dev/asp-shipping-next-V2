@@ -191,6 +191,42 @@ export default function MobileNav({ onMenuToggle }: MobileNavProps) {
                         <nav className="container container-w-outer container-fluid u-px-0 nav-slider">
                             <div style={sliderInnerStyle}>
                                 <ul id="menu-primary-menu-1" className="site-nav-items site-nav-items-mobile">
+                                      <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-what-we-do">
+                                          <a title="What We Do" href="/what-we-do" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-what-we-do" onClick={(e) => openSubmenu(e, 'menu-item-nav-slider-what-we-do')}>
+                                              <span className="menu-item-text">What We Do</span>
+                                              <i className="icon icon-chevron-right menu-icon-right">
+                                                  <svg><use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right"></use></svg>
+                                              </i>
+                                          </a>
+                                          <div className={`nav-slider nav-slider-submenu react-nav-submenu ${isSubmenuActive('menu-item-nav-slider-what-we-do') ? 'is-active' : ''}`} aria-labelledby="menu-item-nav-slider-what-we-do">
+                                              <ul>
+                                                  <li className="menu-item menu-item-back">
+                                                      <a className="nav-slider-toggle nav-slider-toggle-back" href="#back" onClick={closeSubmenu}>
+                                                          <i className="icon icon-chevron-left menu-icon-left">
+                                                              <svg><use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-left"></use></svg>
+                                                          </i>
+                                                          <span className="menu-item-text">Back</span>
+                                                      </a>
+                                                  </li>
+                                                  <li className="menu-item menu-item-view-parent"><Link href="/what-we-do" onClick={() => closeMenu('route')}>What We Do</Link></li>
+                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1">
+                                                      <Link title="Commercial Management" href="/commercial-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Commercial Management</span></Link>
+                                                  </li>
+                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2">
+                                                      <Link title="Technical Management" href="/technical-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Technical Management</span></Link>
+                                                  </li>
+                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3">
+                                                      <Link title="Marine Consultancy" href="/marine-consultancy" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Marine Consultancy</span></Link>
+                                                  </li>
+                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4">
+                                                      <Link title="Crew Management" href="/crew-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Crew Management</span></Link>
+                                                  </li>
+                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5">
+                                                      <Link title="Sea Transportation" href="/sea-transportation" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Sea Transportation</span></Link>
+                                                  </li>
+                                              </ul>
+                                          </div>
+                                      </li>
                                     <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-53">
                                         <a title="About Us" href="/about-us" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-53" onClick={(e) => openSubmenu(e, 'menu-item-nav-slider-53')}>
                                             <span className="menu-item-text">About Us</span>
@@ -257,42 +293,6 @@ export default function MobileNav({ onMenuToggle }: MobileNavProps) {
                                             </div>
                                         </div>
                                     </li>
-                                      <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-what-we-do">
-                                          <a title="What We Do" href="/what-we-do" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-what-we-do" onClick={(e) => openSubmenu(e, 'menu-item-nav-slider-what-we-do')}>
-                                              <span className="menu-item-text">What We Do</span>
-                                              <i className="icon icon-chevron-right menu-icon-right">
-                                                  <svg><use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right"></use></svg>
-                                              </i>
-                                          </a>
-                                          <div className={`nav-slider nav-slider-submenu react-nav-submenu ${isSubmenuActive('menu-item-nav-slider-what-we-do') ? 'is-active' : ''}`} aria-labelledby="menu-item-nav-slider-what-we-do">
-                                              <ul>
-                                                  <li className="menu-item menu-item-back">
-                                                      <a className="nav-slider-toggle nav-slider-toggle-back" href="#back" onClick={closeSubmenu}>
-                                                          <i className="icon icon-chevron-left menu-icon-left">
-                                                              <svg><use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-left"></use></svg>
-                                                          </i>
-                                                          <span className="menu-item-text">Back</span>
-                                                      </a>
-                                                  </li>
-                                                  <li className="menu-item menu-item-view-parent"><Link href="/what-we-do" onClick={() => closeMenu('route')}>What We Do</Link></li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1">
-                                                      <Link title="Commercial Management" href="/commercial-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Commercial Management</span></Link>
-                                                  </li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2">
-                                                      <Link title="Technical Management" href="/technical-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Technical Management</span></Link>
-                                                  </li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3">
-                                                      <Link title="Marine Consultancy" href="/marine-consultancy" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Marine Consultancy</span></Link>
-                                                  </li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4">
-                                                      <Link title="Crew Management" href="/crew-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Crew Management</span></Link>
-                                                  </li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5">
-                                                      <Link title="Sea Transportation" href="/sea-transportation" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Sea Transportation</span></Link>
-                                                  </li>
-                                              </ul>
-                                          </div>
-                                      </li>
                                     <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-68">
                                         <a title="Sustainability" href="/sustainability" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-68" onClick={(e) => openSubmenu(e, 'menu-item-nav-slider-68')}>
                                             <span className="menu-item-text">Sustainability</span>
