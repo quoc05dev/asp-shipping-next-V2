@@ -100,20 +100,20 @@ export default function Header() {
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-what-we-do" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-what-we-do ${activeMegaMenu === "menu-item-what-we-do" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-what-we-do")} onMouseLeave={handleMouseLeave}><a href="/what-we-do" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-what-we-do">What We Do</a>
 								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-what-we-do" role="menu" style={{ paddingBottom: '1.5rem' }}>
 									<div className="mega-nav-content grid">
-										<ul style={{ height: '200px', margin: 0, padding: 0, display: 'flex', flexDirection: 'column' }}>
+										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
 											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/what-we-do" title="What We Do" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>What We Do</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-1" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1" style={{ flex: 1, borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
-												<a title="Commercial Management" href="/commercial-management" style={{ width: '100%', padding: 0, display: 'block' }}>Commercial Management</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-2" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2" style={{ flex: 1, borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
-												<a title="Technical Management" href="/technical-management" style={{ width: '100%', padding: 0, display: 'block' }}>Technical Management</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-3" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3" style={{ flex: 1, borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
-												<a title="Marine Consultancy" href="/marine-consultancy" style={{ width: '100%', padding: 0, display: 'block' }}>Marine Consultancy</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-4" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4" style={{ flex: 1, borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
-												<a title="Crew Management" href="/crew-management" style={{ width: '100%', padding: 0, display: 'block' }}>Crew Management</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-5" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5" style={{ flex: 1, borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
-												<a title="Sea Transportation" href="/sea-transportation" style={{ width: '100%', padding: 0, display: 'block' }}>Sea Transportation</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-1" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Commercial Management" href="/commercial-management" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Commercial Management</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-2" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Technical Management" href="/technical-management" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Technical Management</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-3" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Marine Consultancy" href="/marine-consultancy" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Marine Consultancy</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-4" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Crew Management" href="/crew-management" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Crew Management</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-5" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Sea Transportation" href="/sea-transportation" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Sea Transportation</a></li>
 										</ul>
-										<div className="menu-item-contents u-pl-4" style={{ height: '200px' }}>
+										<div className="menu-item-contents u-pl-4">
                                             <div className="layout layout-menu-featured-cards layout-app_megamenu layout-root u-h-100">
                                                 <div className="layout-inner layout-row row u-gx-4 u-m-0" style={{ alignContent: 'space-between', height: '100%' }}>
                                                     {whatWeDoServices.map((service, index) => (
@@ -138,19 +138,18 @@ export default function Header() {
 								</div>
 							</li>
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-53" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-53 ${activeMegaMenu === "menu-item-53" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-53")} onMouseLeave={handleMouseLeave}><a title="About Us" href="/about-us" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-53">About Us</a>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-53" role="menu">
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-53" role="menu" style={{ paddingBottom: '1.5rem' }}>
 									<div className="mega-nav-content grid">
-										<ul>
-											<li className="menu-item menu-item-heading"><a href="/about-us" title="About Us" target="" className="">About Us</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-55" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-55">
-												<a title="History" href="/about-us/history">History</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-56" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-56">
-												<a title="Leadership" href="/about-us/leadership">Leadership</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-54" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-54">
-												<a title="Vision, Mission, Values" href="/about-us/vision-mission-values">Vision, Mission,
-													Values</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-57" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-57">
-												<a title="Trades" href="/about-us/trades">Trades</a></li>
+										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
+											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/about-us" title="About Us" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>About Us</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-55" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-55" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="History" href="/about-us/history" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>History</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-56" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-56" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Leadership" href="/about-us/leadership" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Leadership</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-54" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-54" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Vision, Mission, Values" href="/about-us/vision-mission-values" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Vision, Mission, Values</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-57" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-57" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Trades" href="/about-us/trades" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Trades</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="dba68197a6b45db2454af0fd84b9da6a" id="" className="layout layout-menu-statistic-boxes layout-app_megamenu layout-statistic-boxes layout-root">
@@ -192,20 +191,18 @@ export default function Header() {
 								</div>
 							</li>
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-68" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-68 ${activeMegaMenu === "menu-item-68" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-68")} onMouseLeave={handleMouseLeave}><a title="Sustainability" href="/sustainability" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-68">Sustainability</a>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-68" role="menu">
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-68" role="menu" style={{ paddingBottom: '1.5rem' }}>
 									<div className="mega-nav-content grid">
-										<ul>
-											<li className="menu-item menu-item-heading"><a href="/sustainability" title="Sustainability" target="" className="">Sustainability</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1112" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1112">
-												<a title="Environment" href="/sustainability/environment">Environment</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1126" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1126">
-												<a title="Social" href="/sustainability/social">Social</a>
-											</li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1028" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1028">
-												<a title="Governance" href="/sustainability/governance">Governance</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-71" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-71">
-												<a title="Policies &amp; Guidelines" href="/sustainability/policies-guidelines">Policies &amp;
-													Guidelines</a></li>
+										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
+											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/sustainability" title="Sustainability" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>Sustainability</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1112" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1112" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Environment" href="/sustainability/environment" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Environment</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1126" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1126" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Social" href="/sustainability/social" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Social</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1028" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1028" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Governance" href="/sustainability/governance" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Governance</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-71" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-71" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Policies &amp; Guidelines" href="/sustainability/policies-guidelines" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Policies &amp; Guidelines</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="a9890d9c20e611ec958b677f7274d40d" id="" className="layout layout-menu-section-media layout-app_megamenu layout-section-media layout-root layout-section-media-has-theme">
@@ -240,17 +237,16 @@ export default function Header() {
 								</div>
 							</li>
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-61" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-61 ${activeMegaMenu === "menu-item-61" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-61")} onMouseLeave={handleMouseLeave}><a title="Media" href="/media" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-61">Media</a>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-61" role="menu">
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-61" role="menu" style={{ paddingBottom: '1.5rem' }}>
 									<div className="mega-nav-content grid">
-										<ul>
-											<li className="menu-item menu-item-heading"><a href="/media" title="Media" target="" className="">Media</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-64" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-64">
-												<a title="Latest News" href="/media/latest-news">Latest
-													News</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-62" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-62">
-												<a title="Gallery" href="/media/gallery">Gallery</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-63" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-63">
-												<a title="Glossary of Terms" href="/media/glossary-of-terms">Glossary of Terms</a></li>
+										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
+											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/media" title="Media" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>Media</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-64" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-64" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Latest News" href="/media/latest-news" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Latest News</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-62" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-62" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Gallery" href="/media/gallery" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Gallery</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-63" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-63" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Glossary of Terms" href="/media/glossary-of-terms" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Glossary of Terms</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="8fb3a8bba6e7c4e9f1a5f962d1602271" id="" className="layout layout-menu-post-list layout-app_megamenu layout-root">
@@ -302,20 +298,19 @@ export default function Header() {
 								</div>
 							</li>
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-58" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-58 ${activeMegaMenu === "menu-item-58" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-58")} onMouseLeave={handleMouseLeave}><a title="Careers" href="/careers" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-58">Careers</a>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-58" role="menu">
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-58" role="menu" style={{ paddingBottom: '1.5rem' }}>
 									<div className="mega-nav-content grid">
-										<ul>
-											<li className="menu-item menu-item-heading"><a href="/careers" title="Careers" target="" className="">Careers</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-79" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-79">
-												<a title="The Asia Pacific Shipping Difference" href="/careers#the-bw-epic-kosan-difference">The Asia Pacific Shipping Difference</a>
+										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
+											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/careers" title="Careers" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>Careers</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-79" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-79" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="The Asia Pacific Shipping Difference" href="/careers#the-bw-epic-kosan-difference" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>The Asia Pacific Shipping Difference</a>
 											</li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-80" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-80">
-												<a title="Talent Management" href="/careers#talent-management">Talent Management</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-81" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-81">
-												<a title="Benefits of Working at Asia Pacific Shipping" href="/careers#benefits-of-working-at-bw-epic-kosan">Benefits of Working at Asia Pacific
-													Shipping</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-82" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-82">
-												<a title="Career Opportunities" href="/careers#careers-opportunities">Career Opportunities</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-80" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-80" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Talent Management" href="/careers#talent-management" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Talent Management</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-81" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-81" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Benefits of Working at Asia Pacific Shipping" href="/careers#benefits-of-working-at-bw-epic-kosan" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Benefits of Working at Asia Pacific Shipping</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-82" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-82" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Career Opportunities" href="/careers#careers-opportunities" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Career Opportunities</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="965f6192b1b0dd5cd3464d76903929e9" id="" className="layout layout-menu-featured-cards layout-app_megamenu layout-root">
@@ -357,13 +352,12 @@ export default function Header() {
 								</div>
 							</li>
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2014" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-2014 ${activeMegaMenu === "menu-item-2014" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-2014")} onMouseLeave={handleMouseLeave}><a title="Suppliers" href="/suppliers" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-2014">Suppliers</a>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-2014" role="menu">
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-2014" role="menu" style={{ paddingBottom: '1.5rem' }}>
 									<div className="mega-nav-content grid">
-										<ul>
-											<li className="menu-item menu-item-heading"><a href="/suppliers" title="Suppliers" target="" className="">Suppliers</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2015" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2015">
-												<a title="Supplier Verification" href="/suppliers/supplier-verification">Supplier
-													Verification</a></li>
+										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
+											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/suppliers" title="Suppliers" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>Suppliers</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2015" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2015" style={{ marginTop: 'auto', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Supplier Verification" href="/suppliers/supplier-verification" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Supplier Verification</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="67fa7fee6a64ffdd34d3956fc47ec227" id="" className="layout layout-menu-section-media layout-app_megamenu layout-section-media layout-root layout-section-media-has-theme">
@@ -398,16 +392,14 @@ export default function Header() {
 						<ul id="menu-callout-menu" className="site-nav-items site-nav-items-callout">
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-73" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-73 ${activeMegaMenu === "menu-item-73" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-73")} onMouseLeave={handleMouseLeave}><span className="menu-item-button-wrap"><a title="Our Fleet" href="/our-fleet" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle button" id="menu-item-mega-nav-73">Our
 										Fleet</a></span>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-73" role="menu">
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-73" role="menu" style={{ paddingBottom: '1.5rem' }}>
 									<div className="mega-nav-content grid">
-										<ul>
-											<li className="menu-item menu-item-heading"><a href="/our-fleet" title="Our Fleet" target="" className="">Our Fleet</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-75" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-75">
-												<a title="Ammonia Propulsion" href="/our-fleet/ammonia-propulsion">Ammonia
-													Propulsion</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-74" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-74">
-												<a title="LCO2 Shipping" href="/our-fleet/lco2-shipping">LCO2
-													Shipping</a></li>
+										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
+											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/our-fleet" title="Our Fleet" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>Our Fleet</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-75" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-75" style={{ marginTop: 'auto', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Ammonia Propulsion" href="/our-fleet/ammonia-propulsion" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Ammonia Propulsion</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-74" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-74" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="LCO2 Shipping" href="/our-fleet/lco2-shipping" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>LCO2 Shipping</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="3ddf3d04a45b70a9ea0ac3740185c203" id="" className="layout layout-menu-section-media layout-app_megamenu layout-section-media layout-root layout-section-media-has-theme">
@@ -447,14 +439,14 @@ export default function Header() {
 								</div>
 							</li>
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-76" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-76 ${activeMegaMenu === "menu-item-76" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-76")} onMouseLeave={handleMouseLeave}><span className="menu-item-button-wrap"><a title="Contact Us" href="/contact-us" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle button button-secondary" id="menu-item-mega-nav-76">Contact Us</a></span>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-76" role="menu">
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-76" role="menu" style={{ paddingBottom: '1.5rem' }}>
 									<div className="mega-nav-content grid">
-										<ul>
-											<li className="menu-item menu-item-heading"><a href="/contact-us" title="Contact Us" target="" className="">Contact Us</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-77" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-77">
-												<a title="Whistleblowing" href="/contact-us#the-bw-epic-kosan-difference">Whistleblowing</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-78" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-78">
-												<a title="Leave Us a Message" href="/contact-us#have-a-question">Leave Us a Message</a></li>
+										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
+											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/contact-us" title="Contact Us" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>Contact Us</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-77" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-77" style={{ marginTop: 'auto', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Whistleblowing" href="/contact-us#the-bw-epic-kosan-difference" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Whistleblowing</a></li>
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-78" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-78" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
+												<a title="Leave Us a Message" href="/contact-us#have-a-question" style={{ width: '100%', padding: '0.4rem 0', display: 'block' }}>Leave Us a Message</a></li>
 										</ul>
 										<div className="menu-item-contents">
 											<div data-index="0" data-uid="e0a044c2c829270ac86904a13a445d9e" id="" className="layout layout-menu-section-media-callout layout-app_megamenu layout-section-media layout-root">

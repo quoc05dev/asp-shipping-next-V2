@@ -37,3 +37,11 @@ Integrated "What We Do" as a top-level menu item immediately after "About Us".
 
 ## Build
 - Next.js build: PASS
+
+## GLOBAL DESKTOP MEGA MENU VISUAL NORMALIZATION
+- Green bottom border removed: Globally overridden via `.mega-nav-body` class in `app/globals.css`.
+- Navigation rail standard: Applied consistently to What We Do, About Us, Sustainability, Media, Careers, Suppliers, Our Fleet, Contact Us.
+- Final divider standard: Standard `padding: '0.4rem 0'` and `borderBottom: '1px solid #e5e7eb'` applied to all left rail navigation items to create a consistent, predictable rhythm.
+- Left/Right baseline standard: Utilized CSS Grid's natural height synchronization. Left rails now use natural height (no artificial stretch), allowing the right content column to match seamlessly. Sparse menus (Suppliers, Our Fleet, Contact Us) use `margin-top: auto` to correctly push their items to the bottom of the grid cell for perfect baseline alignment.
+- Menus verified: All menus updated using inline layout structural properties.
+- Responsive results: Structural layout scales properly across breakpoints up to 1600px.
