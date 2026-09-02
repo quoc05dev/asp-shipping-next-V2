@@ -2,9 +2,38 @@
 import React, { useState, useEffect, useRef } from 'react';
 import MobileNav from './MobileNav';
 
+const wwdPreviews = {
+    'commercial-management': {
+        title: 'Commercial Management',
+        desc: 'Employment strategy across time charter, spot voyage and pool partnerships, matching every vessel to the trade where it can perform best.',
+        route: '/commercial-management'
+    },
+    'technical-management': {
+        title: 'Technical Management',
+        desc: 'Planned maintenance, dry-docking, performance, safety and regulatory oversight to ensure vessels operate efficiently and sustainably.',
+        route: '/technical-management'
+    },
+    'marine-consultancy': {
+        title: 'Marine Consultancy',
+        desc: 'Practical maritime advice for commercial planning, technical projects, inspections, and dispute resolution by experienced professionals.',
+        route: '/marine-consultancy'
+    },
+    'crew-management': {
+        title: 'Crew Management',
+        desc: 'Recruitment, deployment, training and welfare for qualified seafarers across global shipping operations.',
+        route: '/crew-management'
+    },
+    'sea-transportation': {
+        title: 'Sea Transportation',
+        desc: 'Flexible sea transportation across dry bulk, clean and dirty petroleum products, delivering cargoes safely worldwide.',
+        route: '/sea-transportation'
+    }
+};
+
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+    const [activeWwdService, setActiveWwdService] = useState<string>('commercial-management');
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const headerRef = useRef<HTMLElement>(null);
 
@@ -75,18 +104,33 @@ export default function Header() {
 									<div className="mega-nav-content grid">
 										<ul>
 											<li className="menu-item menu-item-heading"><a href="/what-we-do" title="What We Do" target="" className="">What We Do</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-1" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-1" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1" onMouseEnter={() => setActiveWwdService('commercial-management')}>
 												<a title="Commercial Management" href="/commercial-management">Commercial Management</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-2" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-2" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2" onMouseEnter={() => setActiveWwdService('technical-management')}>
 												<a title="Technical Management" href="/technical-management">Technical Management</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-3" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-3" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3" onMouseEnter={() => setActiveWwdService('marine-consultancy')}>
 												<a title="Marine Consultancy" href="/marine-consultancy">Marine Consultancy</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-4" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-4" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4" onMouseEnter={() => setActiveWwdService('crew-management')}>
 												<a title="Crew Management" href="/crew-management">Crew Management</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-5" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5">
+											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-5" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5" onMouseEnter={() => setActiveWwdService('sea-transportation')}>
 												<a title="Sea Transportation" href="/sea-transportation">Sea Transportation</a></li>
 										</ul>
 										<div className="menu-item-contents">
+                                            <div className="layout layout-menu-featured-cards layout-app_megamenu layout-root u-h-100">
+                                                <div className="layout-inner layout-row row u-gy-4 u-h-100 u-px-4 u-py-4">
+                                                    <div className="u-d-flex u-flex-column u-justify-content-center">
+                                                        <h3 className="u-h4 u-mb-3">{wwdPreviews[activeWwdService as keyof typeof wwdPreviews].title}</h3>
+                                                        <p className="u-mb-4" style={{ fontSize: "0.95rem", lineHeight: 1.5, maxWidth: "450px" }}>
+                                                            {wwdPreviews[activeWwdService as keyof typeof wwdPreviews].desc}
+                                                        </p>
+                                                        <div>
+                                                            <a href={wwdPreviews[activeWwdService as keyof typeof wwdPreviews].route} className="theme-btn theme-btn-outline-primary theme-btn-sm" onClick={handleMouseLeave}>
+                                                                Explore {wwdPreviews[activeWwdService as keyof typeof wwdPreviews].title} &rarr;
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 										</div>
 									</div>
 								</div>
