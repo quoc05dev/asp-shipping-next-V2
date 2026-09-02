@@ -104,8 +104,8 @@ export default function Header() {
 
 					<nav className="site-nav u-ml-auto u-d-none u-d-lg-flex u-ml-auto mega-nav"  >
 						<ul id="menu-primary-menu" className="site-nav-items site-nav-items-primary">
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-what-we-do" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-what-we-do ${activeMegaMenu === "menu-item-what-we-do" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-what-we-do")} onMouseLeave={handleMouseLeave}><a title="What We Do" href="/what-we-do" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-what-we-do">What We Do</a>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-what-we-do" role="menu">
+							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-what-we-do" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-what-we-do ${activeMegaMenu === "menu-item-what-we-do" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-what-we-do")} onMouseLeave={handleMouseLeave}><a href="/what-we-do" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-what-we-do">What We Do</a>
+								<div  className="mega-nav-body container container-max container-rfs container-w-outer" style={{ height: '320px' }} aria-labelledby="menu-item-mega-nav-what-we-do" role="menu">
 									<div className="mega-nav-content grid">
 										<ul>
 											<li className="menu-item menu-item-heading"><a href="/what-we-do" title="What We Do" target="" className="">What We Do</a></li>
