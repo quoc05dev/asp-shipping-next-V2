@@ -5281,9 +5281,7 @@ h6,
     padding-bottom: 10px !important;
 }
 
-.mega-nav-content ul>li.menu-item:last-child {
-    border-bottom: none !important;
-}
+/* .mega-nav-content ul > li.menu-item:last-child — border-bottom kept (removed to allow final nav divider) */
 
 .mega-nav-content ul>li.menu-item>a {
     text-decoration: none !important;
