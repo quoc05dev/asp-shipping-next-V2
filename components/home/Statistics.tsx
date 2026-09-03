@@ -5,7 +5,7 @@ export default function Statistics() {
     <>
 					<div className="container container-max">
 	<div className="global-grid-stats">
-		<div id="" className="layout-statistic-box layout-page active">
+		<div id="" className="layout-statistic-box layout-page" tabIndex={0}>
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">41</div>
@@ -14,7 +14,7 @@ export default function Statistics() {
 				<div className="statistic-caption u-mt-4">Vessels in Fleet</div>
 			</div>
 		</div>
-		<div id="" className="layout-statistic-box layout-page">
+		<div id="" className="layout-statistic-box layout-page" tabIndex={0}>
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">3</div>
@@ -23,7 +23,7 @@ export default function Statistics() {
 				<div className="statistic-caption u-mt-4">Total DWT</div>
 			</div>
 		</div>
-		<div id="" className="layout-statistic-box layout-page">
+		<div id="" className="layout-statistic-box layout-page" tabIndex={0}>
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">30</div>
@@ -32,7 +32,7 @@ export default function Statistics() {
 				<div className="statistic-caption u-mt-4">Global Partners</div>
 			</div>
 		</div>
-		<div id="" className="layout-statistic-box layout-page">
+		<div id="" className="layout-statistic-box layout-page" tabIndex={0}>
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">2021</div>
@@ -40,7 +40,7 @@ export default function Statistics() {
 				<div className="statistic-caption u-mt-4">Founded</div>
 			</div>
 		</div>
-		<div id="" className="layout-statistic-box layout-page">
+		<div id="" className="layout-statistic-box layout-page" tabIndex={0}>
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
 				<div className="statistic-content u-mb-auto">
 					<div className="statistic-figure u-h2">21</div>

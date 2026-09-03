@@ -5231,26 +5231,30 @@ h6,
 /* --- STATISTIC BOX CUSTOM HOVER EFFECTS --- */
 /* Normal State: Light gray background, dark text */
 .layout-page .layout-statistic-box .statistic {
-    background-color: #f3f1e9 !important;
-    /* ASP Paper (Light Beige/Gray) */
+    background-color: #ffffff !important;
+    border: 1px solid #00683833 !important;
     color: var(--asp-ink) !important;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
 }
 
 .layout-page .layout-statistic-box .statistic .statistic-figure,
-.layout-page .layout-statistic-box .statistic .statistic-suffix,
+.layout-page .layout-statistic-box .statistic .statistic-suffix {
+    color: var(--asp-sea) !important;
+    transition: color 0.2s ease !important;
+}
 .layout-page .layout-statistic-box .statistic .statistic-caption {
     color: var(--asp-ink) !important;
-    transition: color 0.3s ease !important;
+    transition: color 0.2s ease !important;
 }
 
-/* Hover and Active State: Dark green background, white text, scale up */
+/* Hover/Focus Active State styles */
 .layout-page .layout-statistic-box:hover .statistic,
+.layout-page .layout-statistic-box:focus-within .statistic,
+.global-grid-stats:not(:hover):not(:focus-within) .layout-statistic-box:first-child .statistic,
 .layout-page .layout-statistic-box.active .statistic {
     background-color: var(--asp-sea) !important;
+    border-color: var(--asp-sea) !important;
     color: #ffffff !important;
-    transform: scale(1.05) !important;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
     z-index: 10 !important;
     position: relative !important;
 }
@@ -5258,6 +5262,12 @@ h6,
 .layout-page .layout-statistic-box:hover .statistic .statistic-figure,
 .layout-page .layout-statistic-box:hover .statistic .statistic-suffix,
 .layout-page .layout-statistic-box:hover .statistic .statistic-caption,
+.layout-page .layout-statistic-box:focus-within .statistic .statistic-figure,
+.layout-page .layout-statistic-box:focus-within .statistic .statistic-suffix,
+.layout-page .layout-statistic-box:focus-within .statistic .statistic-caption,
+.global-grid-stats:not(:hover):not(:focus-within) .layout-statistic-box:first-child .statistic .statistic-figure,
+.global-grid-stats:not(:hover):not(:focus-within) .layout-statistic-box:first-child .statistic .statistic-suffix,
+.global-grid-stats:not(:hover):not(:focus-within) .layout-statistic-box:first-child .statistic .statistic-caption,
 .layout-page .layout-statistic-box.active .statistic .statistic-figure,
 .layout-page .layout-statistic-box.active .statistic .statistic-suffix,
 .layout-page .layout-statistic-box.active .statistic .statistic-caption {
