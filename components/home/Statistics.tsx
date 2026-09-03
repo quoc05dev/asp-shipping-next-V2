@@ -3,7 +3,7 @@ import React from 'react';
 export default function Statistics() {
   return (
     <>
-					<div className="container container-max">
+					<div className="container container-max home-statistics">
 	<div className="global-grid-stats">
 		<div id="" className="layout-statistic-box layout-page" tabIndex={0}>
 			<div className="statistic theme-hover-style theme-style-primary u-d-flex u-flex-column u-h-100">
