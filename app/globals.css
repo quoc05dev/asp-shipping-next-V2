@@ -345,3 +345,13 @@
   }
 }
 .mega-nav-body { border-bottom: none !important; }
+
+.wwd-service-card {
+  transition: background-color 0.2s ease;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: -2rem;
+}
+.wwd-service-card:hover {
+  background-color: #f0fdf4;
+}
