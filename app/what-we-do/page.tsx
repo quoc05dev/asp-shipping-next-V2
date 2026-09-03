@@ -65,7 +65,10 @@ function ServiceIcon({ type }: { type: string }) {
   if (!artwork) return null;
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
+      width={40}
+      height={40}
       fill="none"
       stroke="#1a1a1a"
       strokeWidth="1.8"
