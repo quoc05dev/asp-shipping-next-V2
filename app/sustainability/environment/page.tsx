@@ -9,15 +9,30 @@ export default function Page() {
       <div className="legacy-inner-page page wp-theme-restless-theme">
         <div id="page" className="site">
           <div id="content" className="site-content">
-            <div className="site-breadcrumb u-text-size-small">
-				<nav aria-label="Breadcrumbs" className="site-breadcrumbs" itemProp="breadcrumb"><div className="container container-w-outer container-max container-rfs"><ol className="breadcrumb" itemScope itemType="http://schema.org/BreadcrumbList"><meta name="numberOfItems" content="3" /><meta name="itemListOrder" content="Ascending" /><li className="breadcrumb-item breadcrumb-item-first" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem"><a href="/.." rel="home" aria-label="Home" className="breadcrumb-link" itemType="https://schema.org/Thing" itemProp="item"><span className="breadcrumb-label" itemProp="name">Home</span></a><span className="breadcrumb-separator"><i className="icon icon-bullet ">
-	<svg><use xlinkHref="../../wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#bullet"></use></svg>
-</i>
-</span><meta content="1" itemProp="position" /></li><li className="breadcrumb-item" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem"><a href="/.." className="breadcrumb-link" itemType="https://schema.org/Thing" itemProp="item"><span className="breadcrumb-label" itemProp="name">Sustainability</span></a><span className="breadcrumb-separator"><i className="icon icon-bullet ">
-	<svg><use xlinkHref="../../wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#bullet"></use></svg>
-</i>
-</span><meta content="2" itemProp="position" /></li><li className="breadcrumb-item breadcrumb-item-last" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem"><a href="index.html" className="breadcrumb-link" itemType="https://schema.org/Thing" itemProp="item"><span className="breadcrumb-label" itemProp="name">Environment</span></a><meta content="3" itemProp="position" /></li></ol></div></nav>			</div>
-<main id="siteMain" className="main container container-rfs container-w-outer">
+            <div className="site-breadcrumb u-text-size-small" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem', backgroundColor: '#f8f9fa' }}>
+  <div className="container container-w-outer container-max container-rfs">
+    <ol className="breadcrumb" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+      <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
+        <a href="/" className="breadcrumb-link" style={{ color: '#1a202c', fontWeight: 'normal', textDecoration: 'none' }}>
+          <span className="breadcrumb-label">Home</span>
+        </a>
+        <span className="breadcrumb-separator" style={{ margin: '0 0.75rem', color: '#007236', fontSize: '0.65em' }}>■</span>
+      </li>
+      <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
+        <a href="/sustainability" className="breadcrumb-link" style={{ color: '#1a202c', fontWeight: 'normal', textDecoration: 'none' }}>
+          <span className="breadcrumb-label">Sustainability</span>
+        </a>
+        <span className="breadcrumb-separator" style={{ margin: '0 0.75rem', color: '#007236', fontSize: '0.65em' }}>■</span>
+      </li>
+      <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
+        <a href="/sustainability/environment" className="breadcrumb-link" style={{ color: '#007236', fontWeight: 'bold', textDecoration: 'none' }}>
+          <span className="breadcrumb-label">Environment</span>
+        </a>
+      </li>
+    </ol>
+  </div>
+</div>
+            <main id="siteMain" className="main container container-rfs container-w-outer">
 			
 	
 	<article id="post-1011" className="content-single content-page post-1011 page type-page status-publish has-post-thumbnail hentry entity entity-page">

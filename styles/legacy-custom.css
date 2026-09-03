@@ -219,10 +219,7 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 }
 
 
-/* Phase 12H - Breadcrumb Separator Fix */
-.breadcrumb-item > span:not([itemprop="name"]) {
-    display: none !important;
-}
+
 .breadcrumb-item:not(.breadcrumb-item-last)::after {
     content: "¦";
     color: var(--theme-color-primary, #007236);
@@ -248,4 +245,5 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 .legacy-inner-page {
     overflow-x: clip;
 }
+
 
