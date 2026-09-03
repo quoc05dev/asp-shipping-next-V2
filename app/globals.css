@@ -245,9 +245,13 @@
 
 /* Phase 9 Header Utility Controls */
 .site-header .custom-nav-extras .custom-sync-color {
-    color: #fff;
+    color: var(--asp-ink, #2d2d2d);
     transition: color 200ms ease;
     text-decoration: none;
+}
+
+.site-header.site-header-transparent:not(.active):not(.is-stuck) .custom-nav-extras .custom-sync-color {
+    color: #fff;
 }
 
 .site-header .custom-nav-extras .custom-sync-color:hover {

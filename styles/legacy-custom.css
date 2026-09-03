@@ -244,3 +244,34 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
     display: none !important;
   }
 }
+
+
+/* Phase 12H - Breadcrumb Separator Fix */
+.breadcrumb-item > span:not([itemprop="name"]) {
+    display: none !important;
+}
+.breadcrumb-item:not(.breadcrumb-item-last)::after {
+    content: "¦";
+    color: var(--theme-color-primary, #007236);
+    font-size: 0.55em;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.75rem;
+    position: relative;
+    top: -1px;
+}
+
+/* Phase 12H - Fix legacy layout breakout overflow */
+.legacy-inner-page .layout-full,
+.legacy-inner-page .layout-root.layout-has-theme > .layout-bg,
+.legacy-inner-page .layout-root.layout-two-columns .layout-column.layout-has-theme > .layout-bg {
+    /* Override legacy calc that fails due to missing --theme-scrollbar-size */
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    width: auto !important;
+}
+
+/* Clip the remaining harmless scrollbar-width overflow caused by 50vw */
+.legacy-inner-page {
+    overflow-x: clip;
+}
