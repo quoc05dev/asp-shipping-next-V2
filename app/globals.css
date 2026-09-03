@@ -346,26 +346,23 @@
 }
 .mega-nav-body { border-bottom: none !important; }
 
-.wwd-service-card {
-  transition: background-color 0.2s ease;
-  border-radius: 12px;
-  padding: 2rem;
-  margin: -2rem;
-}
-.wwd-service-card:hover {
-  background-color: #f0fdf4;
-}
-
-/* What We Do Icons */
-.what-we-do-icon {
-  width: 40px;
-  height: 40px;
+/* Home What We Do Icons */
+.home-service-icon {
+  width: 32px;
+  height: 32px;
   color: #1a1a1a;
   overflow: visible;
   transition: color 0.25s ease, transform 0.25s ease;
   flex-shrink: 0;
-  margin-top: 2px;
 }
-.what-we-do-icon .icon-accent { color: #059669; stroke: currentColor; }
-.what-we-do-icon .icon-accent--fill { fill: currentColor; }
-.wwd-service-card:hover .what-we-do-icon { color: #059669; transform: translateY(-0.25rem) scale(1.04); }
+.home-service-icon .icon-accent { color: #059669; stroke: currentColor; }
+.home-service-icon .icon-accent--fill { fill: currentColor; }
+.home-service-card:hover .home-service-icon { color: #059669; }
+
+/* Home What We Do Card */
+.home-service-card {
+  transition: background-color 0.25s ease, border-color 0.25s ease !important;
+}
+.home-service-card:hover {
+  background-color: #f0fdf4 !important;
+}
