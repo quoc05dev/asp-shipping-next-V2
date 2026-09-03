@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch and cleanup artifacts
+/scratch/
+/node.zip
+/git-setup.exe
+/nvm-setup.exe
