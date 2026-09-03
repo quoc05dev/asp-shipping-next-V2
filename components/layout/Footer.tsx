@@ -65,7 +65,7 @@ export default function Footer() {
 									<div className="menu-footer-column-1-container">
 										<ul id="menu-footer-column-1" className="menu">
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-active menu-item-94">
-												<a title="Home" href="index.html">Home</a></li>
+												<a title="Home" href="index.html" style={{ color: 'var(--asp-signal)' }}>Home</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-96" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-96">
 												<a title="Contact Us" href="/contact-us">Contact Us</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-95" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
@@ -73,6 +73,28 @@ export default function Footer() {
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2013" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2013">
 												<a title="Supplier Verification" href="/suppliers/supplier-verification">Supplier
 													Verification</a></li>
+										</ul>
+									</div>
+								</section>
+							</div>
+
+							<div className="col-12 col-md">
+								<section className="widget nav_menu-wwd widget_nav_menu">
+									<h3 className="u-visually-hidden widget-title">What We Do</h3>
+									<div className="menu-footer-column-wwd-container">
+										<ul id="menu-footer-column-wwd" className="menu">
+											<FooterAccordion id="menu-item-wwd" title="What We Do" href="/what-we-do">
+													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-1" className="menu-item menu-item-type-post_type menu-item-object-page">
+														<a title="Commercial Management" href="/commercial-management" className="collapse-link">Commercial Management</a></li>
+													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-2" className="menu-item menu-item-type-post_type menu-item-object-page">
+														<a title="Technical Management" href="/technical-management" className="collapse-link">Technical Management</a></li>
+													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-3" className="menu-item menu-item-type-post_type menu-item-object-page">
+														<a title="Marine Consultancy" href="/marine-consultancy" className="collapse-link">Marine Consultancy</a></li>
+													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-4" className="menu-item menu-item-type-post_type menu-item-object-page">
+														<a title="Crew Management" href="/crew-management" className="collapse-link">Crew Management</a></li>
+													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-5" className="menu-item menu-item-type-post_type menu-item-object-page">
+														<a title="Sea Transportation" href="/sea-transportation" className="collapse-link">Sea Transportation</a></li>
+											</FooterAccordion>
 										</ul>
 									</div>
 								</section>

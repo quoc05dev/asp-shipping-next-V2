@@ -25,6 +25,7 @@ export default function FooterAccordion({ id, title, href, children }: FooterAcc
           title={title}
           href={href}
           className="footer-parent-link"
+          style={{ color: 'var(--asp-signal)' }}
         >
           <span>{title}</span>
         </a>
