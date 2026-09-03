@@ -30,7 +30,9 @@ export default function Home() {
 					<Hero />
 					<div className="layout layout-spacer layout-page layout-root"><div className="layout-inner"><div className="spacer spacer-large"></div></div></div>
 					<WhatWeDo />
-					<div className="layout layout-spacer layout-page layout-root"><div className="layout-inner"><div className="spacer spacer-large"></div></div></div>
+					<div className="layout layout-spacer layout-page layout-root"><div className="layout-inner"><div className="spacer spacer-small"></div></div></div>
+					<div className="layout layout-horizontal-line layout-page layout-full u-px-0 layout-root"><div className="layout-inner container container-max"><hr className="u-my-0" /></div></div>
+					<div className="layout layout-spacer layout-page layout-root"><div className="layout-inner"><div className="spacer spacer-small"></div></div></div>
 					<AboutPreview />
 
 					<div data-index="3" data-uid="2fa4f5f87bfb493379470f53b8733001" id="" className="layout layout-spacer layout-page layout-root">
