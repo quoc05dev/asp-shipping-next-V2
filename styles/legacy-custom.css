@@ -204,34 +204,7 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 
 /* Phase 12G - Legacy Inner Page Context */
 .legacy-inner-page {
-  /* Push inner page down to avoid header overlap */
-  padding-top: var(--theme-header-height-rem, 110px);
-}
-
-/* Restore Legacy Hero Proportions */
-.legacy-inner-page .banner-page .banner-media > span {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 20rem; /* Mobile/default shallow banner height */
-}
-
-@media (min-width: 1200px) {
-  .legacy-inner-page .banner-page .banner-media > span {
-    height: auto;
-    aspect-ratio: 4 / 1; /* Desktop 25% padding-bottom equivalent */
   }
-}
-
-.legacy-inner-page .banner-page .banner-media img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-}
 
 /* Hide small image on desktop, hide large image on mobile */
 @media (min-width: 992px) {
@@ -275,3 +248,4 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 .legacy-inner-page {
     overflow-x: clip;
 }
+

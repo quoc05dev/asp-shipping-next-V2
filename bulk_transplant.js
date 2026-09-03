@@ -112,7 +112,7 @@ for (const route of routes) {
   jsx = jsx.replace(/novalidate(?:="[^"]*")?/gi, 'noValidate');
   jsx = jsx.replace(/maxlength="([0-9]+)"/gi, 'maxLength={$1}');
   jsx = jsx.replace(/tabindex="([0-9]+)"/gi, 'tabIndex={$1}');
-  jsx = jsx.replace(/<span([^>]*)name="[^"]*"([^>]*)>/gi, '<span$1$2>');
+  jsx = jsx.replace(/<span([^>]*)(\sname="[^"]*")([^>]*)>/gi, '<span$1$3>');
   jsx = jsx.replace(/size="([0-9]+)"/gi, 'size={$1}');
   jsx = jsx.replace(/aria-required="[^"]*"/gi, 'aria-required="true"');
   jsx = jsx.replace(/aria-invalid="[^"]*"/gi, 'aria-invalid="false"');
@@ -152,3 +152,4 @@ export default function Page() {
   fs.writeFileSync(route.nextPath, page);
 }
 console.log("Done");
+
