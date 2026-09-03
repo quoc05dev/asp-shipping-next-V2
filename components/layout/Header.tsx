@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import MobileNav from './MobileNav';
 
 const whatWeDoServices = [
@@ -30,6 +31,8 @@ const whatWeDoServices = [
 ];
 
 export default function Header() {
+    const pathname = usePathname();
+    const isHomePage = pathname === '/' || pathname === '/what-we-do';
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -78,7 +81,7 @@ export default function Header() {
 
     return (
         <>
-            <header id="siteHeader"      data-cms-section="header" className={`site-header site-header-transparent ${isScrolled || activeMegaMenu ? "active" : ""} ${isScrolled ? "is-stuck" : ""}`}>
+            <header id="siteHeader"      data-cms-section="header" className={`site-header ${isHomePage ? "site-header-transparent" : ""} ${isScrolled || activeMegaMenu ? "active" : ""} ${isScrolled ? "is-stuck" : ""}`}>
 		<div className="site-header-inner">
 			<div id="siteNavbar" className="site-navbar">
 				<div className="container container-w-outer container-max container-rfs">
