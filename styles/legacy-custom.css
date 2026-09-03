@@ -221,7 +221,7 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 
 
 .breadcrumb-item:not(.breadcrumb-item-last)::after {
-    content: "¦";
+    content: "";
     color: var(--theme-color-primary, #007236);
     font-size: 0.55em;
     display: inline-block;
@@ -247,3 +247,19 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 }
 
 
+
+/* Phase 12K - Fix Breadcrumb Visibility and Overflow */
+.legacy-inner-page {
+    /* Push inner page down so Breadcrumb and Hero are not covered by fixed Header */
+    padding-top: var(--theme-header-height-rem, 110px);
+}
+
+/* Phase 12K - Fix legacy layout breakout overflow */
+.legacy-inner-page .layout-full,
+.legacy-inner-page .layout-root.layout-has-theme > .layout-bg,
+.legacy-inner-page .layout-root.layout-two-columns .layout-column.layout-has-theme > .layout-bg {
+    /* Override legacy calc that fails due to missing --theme-scrollbar-size */
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    width: auto !important;
+}
