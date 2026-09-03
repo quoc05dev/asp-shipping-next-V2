@@ -263,3 +263,20 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
     margin-right: calc(-50vw + 50%) !important;
     width: auto !important;
 }
+
+/* Phase 12M - Breadcrumb Visual Compaction */
+.legacy-inner-page .site-breadcrumb a.breadcrumb-link {
+    color: var(--theme-color-black, #1a202c) !important;
+    font-weight: normal !important;
+}
+.legacy-inner-page .site-breadcrumb a.breadcrumb-link:hover {
+    color: var(--theme-color-primary, #007236) !important;
+}
+.legacy-inner-page .site-breadcrumb a.breadcrumb-link.breadcrumb-link-current {
+    font-weight: 600 !important;
+    color: var(--theme-color-black, #1a202c) !important;
+    cursor: default;
+}
+.legacy-inner-page .site-breadcrumb a.breadcrumb-link.breadcrumb-link-current:hover {
+    color: var(--theme-color-black, #1a202c) !important;
+}

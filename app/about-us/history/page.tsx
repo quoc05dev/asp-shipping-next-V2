@@ -9,23 +9,23 @@ export default function Page() {
       <div className="legacy-inner-page page wp-theme-restless-theme">
         <div id="page" className="site">
           <div id="content" className="site-content">
-            <div className="site-breadcrumb u-text-size-small" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem', backgroundColor: '#f8f9fa' }}>
+            <div className="site-breadcrumb u-text-size-small" style={{ paddingTop: '0.4rem', paddingBottom: '0.4rem', backgroundColor: '#ffffff', borderBottom: '1px solid #eaeaea' }}>
   <div className="container container-w-outer container-max container-rfs">
     <ol className="breadcrumb" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
       <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
-        <a href="/" className="breadcrumb-link" style={{ color: '#1a202c', fontWeight: 'normal', textDecoration: 'none' }}>
+        <a href="/" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
           <span className="breadcrumb-label">Home</span>
         </a>
-        <span className="breadcrumb-separator" style={{ margin: '0 0.75rem', color: '#007236', fontSize: '0.65em' }}>■</span>
+        <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>
       </li>
       <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
-        <a href="/about-us" className="breadcrumb-link" style={{ color: '#1a202c', fontWeight: 'normal', textDecoration: 'none' }}>
+        <a href="/about-us" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
           <span className="breadcrumb-label">About Us</span>
         </a>
-        <span className="breadcrumb-separator" style={{ margin: '0 0.75rem', color: '#007236', fontSize: '0.65em' }}>■</span>
+        <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>
       </li>
       <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
-        <a href="/about-us/history" className="breadcrumb-link" style={{ color: '#007236', fontWeight: 'bold', textDecoration: 'none' }}>
+        <a href="/about-us/history" className="breadcrumb-link breadcrumb-link-current" style={{ textDecoration: 'none' }}>
           <span className="breadcrumb-label">History</span>
         </a>
       </li>
