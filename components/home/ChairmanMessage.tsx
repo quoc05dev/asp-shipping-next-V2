@@ -1,4 +1,5 @@
 import React from 'react';
+import ChairmanTypewriter from './ChairmanTypewriter';
 
 export default function ChairmanMessage() {
   return (
@@ -16,7 +17,7 @@ export default function ChairmanMessage() {
       </div>
       
       <div style={{fontSize: "clamp(1.6rem, 2.5vw, 2.6rem)", fontWeight: "600", lineHeight: "1.35", color: "var(--asp-ink, #2d2d2d)", marginBottom: "24px", }} data-cms-field="quote">
-        These vessels not only strengthen our fleet and let us serve clients more effectively — they reaffirm our dedication to advancing sustainable practices across the industry.
+        <ChairmanTypewriter quote="These vessels not only strengthen our fleet and let us serve clients more effectively — they reaffirm our dedication to advancing sustainable practices across the industry." />
       </div>
       
       <div style={{color: "var(--theme-color-primary, #007236)", fontSize: "4rem", lineHeight: "1", fontFamily: "Georgia, serif", marginBottom: "36px", }}>
