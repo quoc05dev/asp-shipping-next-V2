@@ -241,6 +241,62 @@ export default function Footer() {
 			</div>
 		</div>
 	</footer>
+  <style dangerouslySetInnerHTML={{__html: `
+    /* Child link default state */
+    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]) {
+      position: relative;
+      display: inline-block;
+      transform-origin: left center;
+      transition: transform 160ms ease !important;
+      color: var(--asp-white) !important;
+      text-decoration: none !important;
+    }
+
+    /* Child link hover state */
+    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]):hover,
+    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]):focus {
+      transform: scale(1.03);
+      color: var(--asp-white) !important;
+    }
+
+    /* Child link underline pseudo-element */
+    .site-footer .menu a:not(.footer-parent-link):not([title="Home"])::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      width: 0;
+      height: 1px;
+      background-color: var(--asp-signal);
+      transition: width 200ms ease !important;
+    }
+
+    /* Child link underline animation on hover */
+    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]):hover::after,
+    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]):focus::after {
+      width: 100%;
+    }
+
+    /* Main heading explicit rules to prevent inherited color changes and hover animations */
+    .site-footer .menu a.footer-parent-link,
+    .site-footer .menu a[title="Home"] {
+      transition: none !important;
+      color: var(--asp-signal) !important;
+    }
+    
+    .site-footer .menu a.footer-parent-link:hover,
+    .site-footer .menu a.footer-parent-link:focus,
+    .site-footer .menu a[title="Home"]:hover,
+    .site-footer .menu a[title="Home"]:focus {
+      transform: none !important;
+      color: var(--asp-signal) !important;
+    }
+    
+    .site-footer .menu a.footer-parent-link::after,
+    .site-footer .menu a[title="Home"]::after {
+      display: none !important;
+    }
+  `}} />
     </>
   );
 }
