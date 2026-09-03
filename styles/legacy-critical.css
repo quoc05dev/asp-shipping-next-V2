@@ -579,7 +579,7 @@
 			--theme-body-bg-color: var(--theme-color-white);
 			--theme-paragraph-margin-bottom: 1.5rem;
 			--theme-small-font-size: 80%;
-			--theme-hr-border-color: var(--asp-divider, #ddd9cf);
+			--theme-hr-border-color: var(--asp-divider, #e5e2d8);
 			--theme-figcaption-margin-top: var(--theme-spacing-2);
 			--theme-figcaption-margin-bottom: var(--theme-spacing-2);
 			--theme-figcaption-color: var(--theme-body-color);
