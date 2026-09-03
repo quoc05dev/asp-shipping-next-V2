@@ -1,7 +1,7 @@
 # Phase Status
 
 CURRENT PHASE:
-Phase 11 — Componentize Home COMPLETE
+Phase 11.5A — What We Do Navigation Integration COMPLETE
 
 NEXT PHASE:
-Phase 11.5 — What We Do Navigation / Content Architecture
+Phase 11.5B — What We Do Hub Page
