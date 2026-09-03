@@ -195,3 +195,8 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 				background-color: #0d703b;
 				color: #fff;
 			}
+/* Phase 12F - Legacy Inner Page Polish */
+.legacy-inner-page ul { list-style-position: outside; margin-left: 1.5rem; }
+.legacy-inner-page a { text-decoration: none; }
+.legacy-inner-page img { max-width: 100%; height: auto; }
+
