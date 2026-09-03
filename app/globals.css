@@ -355,3 +355,17 @@
 .wwd-service-card:hover {
   background-color: #f0fdf4;
 }
+
+/* What We Do Icons */
+.what-we-do-icon {
+  width: 40px;
+  height: 40px;
+  color: #1a1a1a;
+  overflow: visible;
+  transition: color 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.what-we-do-icon .icon-accent { color: #059669; stroke: currentColor; }
+.what-we-do-icon .icon-accent--fill { fill: currentColor; }
+.wwd-service-card:hover .what-we-do-icon { color: #059669; transform: translateY(-0.25rem) scale(1.04); }

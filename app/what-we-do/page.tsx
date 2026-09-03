@@ -54,28 +54,78 @@ const services = [
 function ServiceIcon({ type }: { type: string }) {
   let artwork;
   switch (type) {
-    case 'commercial': artwork = <><path d="M8 42h48l-7 10H18L8 42Z" /><rect x="17" y="31" width="10" height="11" /><rect x="27" y="31" width="10" height="11" /><rect x="37" y="31" width="10" height="11" /><path style={{ stroke: "#059669" }} d="M13 24c10-12 28-14 39-3" /><path style={{ stroke: "#059669" }} d="m46 17 6 4-5 5" /></>; break;
-    case 'technical': artwork = <><circle cx="32" cy="32" r="22" /><circle style={{ stroke: "#059669", fill: "#059669" }} cx="32" cy="32" r="4" /><path d="M32 28c-5-6-4-13 1-17 6 5 6 12 2 18" /><path d="M36 32c6-5 13-4 17 1-5 6-12 6-18 2" /><path d="M32 36c5 6 4 13-1 17-6-5-6-12-2-18" /><path d="M28 32c-6 5-13 4-17-1 5-6 12-6 18-2" /></>; break;
-    case 'marine': artwork = <><path d="M10 13h44v32H31l-10 8v-8H10V13Z" /><path style={{ stroke: "#059669" }} d="M17 36c7-12 15-14 29-13" /><circle cx="17" cy="36" r="2" /><circle cx="46" cy="23" r="2" /><path d="m31 20 5 9-9 5 4-14ZM31 17v3M31 34v3M23 27h3M36 27h3" /></>; break;
-    case 'crew': artwork = <><circle cx="32" cy="25" r="8" /><path style={{ stroke: "#059669" }} d="M19 25c0-8 5-14 13-14s13 6 13 14" /><path d="M17 25h30M32 11v7" /><path d="M16 53c1-11 7-17 16-17s15 6 16 17M25 38l7 7 7-7" /></>; break;
-    case 'sea': artwork = <><path d="M7 42h50l-8 10H17L7 42Z" /><path d="M15 42a8 8 0 0 1 16 0M25 42a8 8 0 0 1 16 0M35 42a8 8 0 0 1 16 0" /><path d="M51 42V27h5" /><path style={{ stroke: "#059669" }} d="M32 13v10M27.7 15.5l8.6 5M36.3 15.5l-8.6 5" /></>; break;
-    default: artwork = null;
+    case 'commercial':
+      artwork = (
+        <>
+          <path d="M8 42h48l-7 10H18L8 42Z" />
+          <rect x="17" y="31" width="10" height="11" />
+          <rect x="27" y="31" width="10" height="11" />
+          <rect x="37" y="31" width="10" height="11" />
+          <path className="icon-accent" d="M13 24c10-12 28-14 39-3" />
+          <path className="icon-accent" d="m46 17 6 4-5 5" />
+        </>
+      );
+      break;
+    case 'technical':
+      artwork = (
+        <>
+          <circle cx="32" cy="32" r="22" />
+          <circle className="icon-accent icon-accent--fill" cx="32" cy="32" r="4" />
+          <path d="M32 28c-5-6-4-13 1-17 6 5 6 12 2 18" />
+          <path d="M36 32c6-5 13-4 17 1-5 6-12 6-18 2" />
+          <path d="M32 36c5 6 4 13-1 17-6-5-6-12-2-18" />
+          <path d="M28 32c-6 5-13 4-17-1 5-6 12-6 18-2" />
+        </>
+      );
+      break;
+    case 'marine':
+      artwork = (
+        <>
+          <path d="M10 13h44v32H31l-10 8v-8H10V13Z" />
+          <path className="icon-accent" d="M17 36c7-12 15-14 29-13" />
+          <circle cx="17" cy="36" r="2" />
+          <circle cx="46" cy="23" r="2" />
+          <path d="m31 20 5 9-9 5 4-14ZM31 17v3M31 34v3M23 27h3M36 27h3" />
+        </>
+      );
+      break;
+    case 'crew':
+      artwork = (
+        <>
+          <circle cx="32" cy="25" r="8" />
+          <path className="icon-accent" d="M19 25c0-8 5-14 13-14s13 6 13 14" />
+          <path d="M17 25h30M32 11v7" />
+          <path d="M16 53c1-11 7-17 16-17s15 6 16 17M25 38l7 7 7-7" />
+        </>
+      );
+      break;
+    case 'sea':
+      artwork = (
+        <>
+          <path d="M7 42h50l-8 10H17L7 42Z" />
+          <path d="M15 42a8 8 0 0 1 16 0M25 42a8 8 0 0 1 16 0M35 42a8 8 0 0 1 16 0" />
+          <path d="M51 42V27h5" />
+          <path className="icon-accent" d="M32 13v10M27.7 15.5l8.6 5M36.3 15.5l-8.6 5" />
+        </>
+      );
+      break;
+    default:
+      artwork = null;
   }
   
   if (!artwork) return null;
   return (
     <svg
+      className="what-we-do-icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
-      width={40}
-      height={40}
       fill="none"
-      stroke="#1a1a1a"
+      stroke="currentColor"
       strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      style={{ width: '40px', height: '40px', flexShrink: 0, marginTop: '2px' }}
+      focusable="false"
     >
       {artwork}
     </svg>
