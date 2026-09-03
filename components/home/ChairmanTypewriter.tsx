@@ -10,6 +10,7 @@ export default function ChairmanTypewriter({ quote }: ChairmanTypewriterProps) {
   const [displayedText, setDisplayedText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [prefersReducedMotionState, setPrefersReducedMotionState] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   // Detect visibility
@@ -34,6 +35,7 @@ export default function ChairmanTypewriter({ quote }: ChairmanTypewriterProps) {
   useEffect(() => {
     // Check for reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setPrefersReducedMotionState(prefersReducedMotion);
     
     if (!isVisible) {
       // Off-screen: Reset cleanly
@@ -99,19 +101,21 @@ export default function ChairmanTypewriter({ quote }: ChairmanTypewriterProps) {
         }}
       >
         {displayedText}
-        <span style={{ position: 'relative' }}>
-          <span 
-            style={{ 
-              position: 'absolute',
-              left: '2px',
-              bottom: '0',
-              width: '1px',
-              height: '0.85em',
-              backgroundColor: 'var(--theme-color-primary, #007236)',
-              animation: 'blink 800ms step-end infinite',
-            }}
-          />
-        </span>
+        {!prefersReducedMotionState && (
+          <span style={{ position: 'relative' }}>
+            <span 
+              style={{ 
+                position: 'absolute',
+                left: '2px',
+                bottom: '0',
+                width: '1px',
+                height: '0.85em',
+                backgroundColor: 'var(--theme-color-primary, #007236)',
+                animation: 'blink 800ms step-end infinite',
+              }}
+            />
+          </span>
+        )}
       </div>
       
       {/* Caret blink animation */}
