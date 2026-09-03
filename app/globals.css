@@ -346,23 +346,25 @@
 }
 .mega-nav-body { border-bottom: none !important; }
 
+
 /* Home What We Do Icons */
 .home-service-icon {
   width: 32px;
   height: 32px;
-  color: #1a1a1a;
+  color: var(--theme-color-primary);
   overflow: visible;
   transition: color 0.25s ease, transform 0.25s ease;
   flex-shrink: 0;
 }
-.home-service-icon .icon-accent { color: #059669; stroke: currentColor; }
+.home-service-icon .icon-accent { color: #9ace32; stroke: currentColor; }
 .home-service-icon .icon-accent--fill { fill: currentColor; }
-.home-service-card:hover .home-service-icon { color: #059669; }
+.home-service-card:hover .home-service-icon { color: var(--theme-color-primary); }
 
 /* Home What We Do Card */
 .home-service-card {
   transition: background-color 0.25s ease, border-color 0.25s ease !important;
 }
 .home-service-card:hover {
-  background-color: #f0fdf4 !important;
+  background-color: rgba(154, 206, 50, 0.13) !important;
+  border-color: var(--theme-color-primary) !important;
 }
