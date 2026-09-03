@@ -195,6 +195,21 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 				background-color: #0d703b;
 				color: #fff;
 			}
+			
+/* --- HOME OUR FLEET STATS SINGLE-ACTIVE HOVER OVERRIDES --- */
+.home-fleet-stats .layout-statistic-box .custom-stat-box {
+    background-color: #f5f5f5 !important;
+    color: #333 !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Hover/Focus Active State styles */
+.home-fleet-stats .layout-statistic-box:hover .custom-stat-box,
+.home-fleet-stats .layout-statistic-box:focus-within .custom-stat-box,
+.home-fleet-stats:not(:hover):not(:focus-within) .layout-statistic-box:first-child .custom-stat-box {
+    background-color: #0d703b !important;
+    color: #fff !important;
+}
 /* Phase 12F - Legacy Inner Page Polish */
 .legacy-inner-page ul { list-style-position: outside; margin-left: 1.5rem; }
 .legacy-inner-page a { text-decoration: none; }

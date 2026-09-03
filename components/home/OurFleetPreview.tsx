@@ -36,9 +36,9 @@ export default function OurFleetPreview() {
 				</div>
 
 				{/*  Statistics Grid (2x2)  */}
-				<div style={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", }}>
+				<div className="home-fleet-stats" style={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", }}>
 					{/*  Stat 1  */}
-					<div className="layout-statistic-box active">
+					<div className="layout-statistic-box" tabIndex={0}>
 						<div className="statistic custom-stat-box u-d-flex u-flex-column u-h-100" data-cms-array="stats" data-cms-data-index="0">
 							<div className="statistic-content u-mb-auto">
 								<div className="statistic-figure u-h2" style={{fontSize: "2.5rem", lineHeight: "1", }} data-cms-field="figure">41</div>
@@ -49,7 +49,7 @@ export default function OurFleetPreview() {
 						</div>
 					</div>
 					{/*  Stat 2  */}
-					<div className="layout-statistic-box">
+					<div className="layout-statistic-box" tabIndex={0}>
 						<div className="statistic custom-stat-box u-d-flex u-flex-column u-h-100" data-cms-array="stats" data-cms-data-index="1">
 							<div className="statistic-content u-mb-auto">
 								<div className="statistic-figure u-h2" style={{fontSize: "2.5rem", lineHeight: "1", }} data-cms-field="figure">10</div>
@@ -60,7 +60,7 @@ export default function OurFleetPreview() {
 						</div>
 					</div>
 					{/*  Stat 3  */}
-					<div className="layout-statistic-box">
+					<div className="layout-statistic-box" tabIndex={0}>
 						<div className="statistic custom-stat-box u-d-flex u-flex-column u-h-100" data-cms-array="stats" data-cms-data-index="2">
 							<div className="statistic-content u-mb-auto">
 								<div className="statistic-figure u-h2" style={{fontSize: "2.5rem", lineHeight: "1", }} data-cms-field="figure">8</div>
@@ -71,7 +71,7 @@ export default function OurFleetPreview() {
 						</div>
 					</div>
 					{/*  Stat 4  */}
-					<div className="layout-statistic-box">
+					<div className="layout-statistic-box" tabIndex={0}>
 						<div className="statistic custom-stat-box u-d-flex u-flex-column u-h-100" data-cms-array="stats" data-cms-data-index="3">
 							<div className="statistic-content u-mb-auto">
 								<div className="statistic-figure u-h2" style={{fontSize: "2.5rem", lineHeight: "1", }} data-cms-field="figure">5</div>
