@@ -7,55 +7,56 @@ export function ServiceIcon({ icon }: { icon: string }) {
     case "commercial":
       artwork = (
         <>
-          <path d="M8 42h48l-7 10H18L8 42Z" />
-          <rect x="17" y="31" width="10" height="11" />
-          <rect x="27" y="31" width="10" height="11" />
-          <rect x="37" y="31" width="10" height="11" />
-          <path className="icon-accent" d="M13 24c10-12 28-14 39-3" />
-          <path className="icon-accent" d="m46 17 6 4-5 5" />
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <path d="M14 2v6h6" />
+          <path className="icon-accent" d="M8 15l3-3 2 2 4-4" />
+          <path className="icon-accent" d="M17 14v-4h-4" />
         </>
       );
       break;
     case "technical":
       artwork = (
         <>
-          <circle cx="32" cy="32" r="22" />
-          <circle className="icon-accent icon-accent--fill" cx="32" cy="32" r="4" />
-          <path d="M32 28c-5-6-4-13 1-17 6 5 6 12 2 18" />
-          <path d="M36 32c6-5 13-4 17 1-5 6-12 6-18 2" />
-          <path d="M32 36c5 6 4 13-1 17-6-5-6-12-2-18" />
-          <path d="M28 32c-6 5-13 4-17-1 5-6 12-6 18-2" />
+          <circle cx="12" cy="12" r="7" />
+          <path d="M12 3v2M12 19v2M5.64 5.64l1.41 1.41M16.95 16.95l1.41 1.41M3 12h2M19 12h2M5.64 18.36l1.41-1.41M16.95 7.05l1.41-1.41" />
+          <circle className="icon-accent" cx="12" cy="12" r="3" />
+          <path className="icon-accent" d="M12 9v-2M12 17v-2M9 12H7M17 12h-2" />
         </>
       );
       break;
     case "marine":
       artwork = (
         <>
-          <path d="M10 13h44v32H31l-10 8v-8H10V13Z" />
-          <path className="icon-accent" d="M17 36c7-12 15-14 29-13" />
-          <circle cx="17" cy="36" r="2" />
-          <circle cx="46" cy="23" r="2" />
-          <path d="m31 20 5 9-9 5 4-14ZM31 17v3M31 34v3M23 27h3M36 27h3" />
+          <path d="M8 21h8" />
+          <path d="M9 21V11h6v10" />
+          <path d="M10 11L11 5h2l1 6" />
+          <path d="M12 5V2" />
+          <path d="M7 11h10" />
+          <path className="icon-accent" d="M17 7h4M3 7h4M16 4l3-2M8 4L5 2M16 10l3 2M8 10l-3 2" />
         </>
       );
       break;
     case "crew":
       artwork = (
         <>
-          <circle cx="32" cy="25" r="8" />
-          <path className="icon-accent" d="M19 25c0-8 5-14 13-14s13 6 13 14" />
-          <path d="M17 25h30M32 11v7" />
-          <path d="M16 53c1-11 7-17 16-17s15 6 16 17M25 38l7 7 7-7" />
+          <circle cx="12" cy="8" r="3" />
+          <path d="M12 14c-4 0-7 2-7 6v1h14v-1c0-4-3-6-7-6z" />
+          <circle className="icon-accent" cx="6" cy="10" r="2" />
+          <path className="icon-accent" d="M2 21v-1c0-3 2-5 4-6" />
+          <circle className="icon-accent" cx="18" cy="10" r="2" />
+          <path className="icon-accent" d="M22 21v-1c0-3-2-5-4-6" />
         </>
       );
       break;
     case "sea":
       artwork = (
         <>
-          <path d="M7 42h50l-8 10H17L7 42Z" />
-          <path d="M15 42a8 8 0 0 1 16 0M25 42a8 8 0 0 1 16 0M35 42a8 8 0 0 1 16 0" />
-          <path d="M51 42V27h5" />
-          <path className="icon-accent" d="M32 13v10M27.7 15.5l8.6 5M36.3 15.5l-8.6 5" />
+          <path d="M3 15l1.5 3h15l1.5-3H3z" />
+          <path d="M17 15V8h3v7" />
+          <path d="M16 11h5" />
+          <rect className="icon-accent" x="6" y="11" width="4" height="4" />
+          <rect className="icon-accent" x="11" y="11" width="4" height="4" />
+          <path className="icon-accent" d="M2 20c2 0 3 1 5 1s3-1 5-1 3 1 5 1 3-1 5-1" />
         </>
       );
       break;
@@ -65,10 +66,10 @@ export function ServiceIcon({ icon }: { icon: string }) {
     <svg
       className="home-service-icon"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 64 64"
+      viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.8"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
