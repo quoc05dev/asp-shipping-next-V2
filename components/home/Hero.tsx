@@ -10,14 +10,15 @@ export default function Hero() {
 								<div className="banner-overlay u-pos-absolute u-pos-x u-pos-y u-d-flex u-flex-column u-justify-content-end u-h-100">
 									<div className="container container-rfs container-w-outer u-mb-8">
 										<div className="banner-content">
-											<hr className="hero-divider" style={{ margin: '0 0 12px 0', border: 'none', borderTop: '1px solid rgba(255, 255, 255, 0.3)', width: '100%' }} />
-											<div className="layout-row row u-gy-0" style={{ alignItems: 'flex-start' }}>
+																						<div className="layout-row row u-gy-0" style={{ alignItems: 'flex-start' }}>
 												<div className="layout-column col-12 col-lg-6">
+													<hr className="hero-divider-left" style={{ margin: '0 0 12px 0', border: 'none', borderTop: '1px solid rgba(255, 255, 255, 0.3)', width: '100%' }} />
 													<div className="layout-landing-banner-lead u-h1 u-text-color-white content-width" data-cms-section="hero" data-cms-field="title" style={{ marginTop: 0 }}>
 														<p style={{ margin: 0, paddingRight: '20px' }}>Turning vision into <span style={{color: "var(--asp-signal) !important", }}>value</span></p>
 													</div>
 												</div>
 												<div className="layout-column col-12 col-lg-6">
+													<hr className="hero-divider-right" style={{ margin: '0 0 12px 0', border: 'none', borderTop: '1px solid rgba(255, 255, 255, 0.3)', width: '100%' }} />
 													<div className="layout-landing-banner-excerpt u-text-color-white content-width" data-cms-section="hero" data-cms-field="description" style={{ marginTop: 0 }}>
 														<p style={{ margin: 0 }}>Asia Pacific Shipping is a leading independent owner and
 															operator of modern tankers and bulk carriers across the
