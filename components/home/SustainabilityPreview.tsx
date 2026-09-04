@@ -15,10 +15,7 @@ export default function SustainabilityPreview() {
 											Sustainability</h2>
 										<div className="section-lead-content u-h4">
 											<div className="content-width">
-												<p data-cms-field="sustainability_desc">Asia Pacific Shipping plays a vital role in supplying the world with
-													LPG, an exceptional and essential energy, which is a clean burning
-													and versatile fuel. We specialise in safely and efficiently
-													delivering it over the last mile to our customers around the globe.
+												<p data-cms-field="sustainability_desc">Asia Pacific Shipping is committed to safe and efficient marine transportation. We focus on environmental responsibility, fleet renewal with modern technologies like methanol dual-fuel vessels, and contributing toward the maritime industry's Net Zero 2050 goals.
 												</p>
 											</div>
 										</div>
@@ -26,11 +23,6 @@ export default function SustainabilityPreview() {
 											<div className="layout-inner button-group u-mt-9 content-width">
 												<div><a href="/sustainability" title="Our Role in Sustainability" target="" className="button button-outline button-outline-secondary"><span data-cms-field="sustainability_btn_1">Our
 															Role in Sustainability</span></a></div>
-												<div><a href="/wp-content/uploads/2025/04/BW-Epic-Kosan-Sustainability-Report-FY-2024.pdf" title="Download Sustainability Report 2024" target="_blank" className="button button-outline button-outline-secondary" rel="noreferrer noopenner"><span data-cms-field="sustainability_btn_2">Download Sustainability Report
-															2024</span><i className="icon icon-download "><svg>
-																<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#download">
-																</use>
-															</svg></i></a></div>
 											</div>
 										</div>
 									</div>

@@ -389,3 +389,16 @@ hr.hero-divider-right {
     background-size: 100% var(--asp-accent-thickness), 100% 1px !important;
     background-position: left center, right center !important;
 }
+
+/* Phase 13: Lower Home Hero Bottom Content Row */
+@media (min-width: 992px) {
+    .banner-landing .banner-overlay .container {
+        margin-bottom: clamp(80px, 12vh, 130px) !important;
+    }
+
+    /* Phase 13: Responsive Hero Title */
+    .banner-landing .layout-landing-banner-lead.u-h1 {
+        font-size: clamp(2.5rem, 4.25vw, 4.33rem) !important;
+        white-space: nowrap !important;
+    }
+}

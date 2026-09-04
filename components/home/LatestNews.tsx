@@ -30,7 +30,7 @@ export default function LatestNews() {
 					<div className="post-categories row u-gy-2 u-gx-2">
 						<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press Releases</a></div>
 					</div>
-					<a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance">
+					<a href="#" className="entry-permalink" title="ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers">
 						<span className="ratio ratio-instrinsic">
 							<span className="ratio-size" style={{paddingBottom: "50%", }}></span>
 							<img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail ratio-item" alt="" />
@@ -38,9 +38,9 @@ export default function LatestNews() {
 					</a>
 				</header>
 				<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
-					<a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance">
+					<a href="#" className="entry-permalink" title="ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers">
 						<time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29, 2026</time>
-						<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance</h3>
+						<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers</h3>
 					</a>
 				</div>
 			</article>
@@ -56,12 +56,11 @@ export default function LatestNews() {
 												<div className="post-categories row u-gy-2 u-gx-2">
 													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 															Releases</a></div>
-												</div><a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+												</div><a href="#" className="entry-permalink" title="ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2026/05/29/bw-epic-kosan-expands-use-of-git-coatings-following-6-out-of-dock-fuel-savings-and-maintained-hull-performance" className="entry-permalink" title="Asia Pacific Shipping expands use of GIT Coatings following 6% out-of-dock fuel savings and maintained hull performance"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29, 2026</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29, 2026</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														Asia Pacific Shipping expands use of GIT Coatings following 6%
-														out-of-dock fuel savings and maintained hull performance </h3>
+														ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers </h3>
 												</a></div>
 										</article>
 									</div>
@@ -71,12 +70,11 @@ export default function LatestNews() {
 												<div className="post-categories row u-gy-2 u-gx-2">
 													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 															Releases</a></div>
-												</div><a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+												</div><a href="#" className="entry-permalink" title="ASP Expands The Fleet with Two New MR2 Tankers from K Shipbuilding"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2025/09/09/bw-epic-kosan-partners-with-bound4blue-to-install-unique-non-explosion-proof-esail-on-lpg-carrier-helena-kosan" className="entry-permalink" title="Asia Pacific Shipping partners with bound4blue to install unique non-explosion proof eSAIL® on LPG carrier Helena Kosan"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September 9, 2025</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="ASP Expands The Fleet with Two New MR2 Tankers from K Shipbuilding"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September 9, 2025</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														Asia Pacific Shipping partners with bound4blue to install unique
-														non-explosion proof eSAIL® on LPG carrier Helena Kosan </h3>
+														ASP Expands The Fleet with Two New MR2 Tankers from K Shipbuilding </h3>
 												</a></div>
 										</article>
 									</div>
@@ -86,11 +84,11 @@ export default function LatestNews() {
 												<div className="post-categories row u-gy-2 u-gx-2">
 													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
 															Releases</a></div>
-												</div><a href="/media/news/2025/04/16/bw-epic-kosan-new-leadership" className="entry-permalink" title="Jakob Bode announced as new CEO of Asia Pacific Shipping"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+												</div><a href="#" className="entry-permalink" title="5 Years of Turning Vision into Value"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp" className="entry-thumbnail  ratio-item" alt="" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2025/04/16/bw-epic-kosan-new-leadership" className="entry-permalink" title="Jakob Bode announced as new CEO of Asia Pacific Shipping"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-04-16T07:18:11+00:00">April 16, 2025</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="5 Years of Turning Vision into Value"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-04-16T07:18:11+00:00">April 16, 2025</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														Jakob Bode announced as new CEO of Asia Pacific Shipping </h3>
+														5 Years of Turning Vision into Value </h3>
 												</a></div>
 										</article>
 									</div>
@@ -100,11 +98,11 @@ export default function LatestNews() {
 												<div className="post-categories row u-gy-2 u-gx-2">
 													<div className="col-auto"><a href="/media/news/category/articles" className="button button-small button-secondary">Articles</a>
 													</div>
-												</div><a href="/media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/ship-home-news-1.jpg" className="entry-thumbnail u-object-fit-cover u-object-pos-center u-w-100 u-h-100 ratio-item" alt="Ship at sea" /></span></a>
+												</div><a href="#" className="entry-permalink" title="ASP Luna Joins The Fleet"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/ship-home-news-1.jpg" className="entry-thumbnail u-object-fit-cover u-object-pos-center u-w-100 u-h-100 ratio-item" alt="ASP Luna" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-10-09T02:39:25+00:00">October 9, 2024</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="ASP Luna Joins The Fleet"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-10-09T02:39:25+00:00">October 9, 2024</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														How to Attract A New Generation To Join Your Team </h3>
+														ASP Luna Joins The Fleet </h3>
 												</a></div>
 										</article>
 									</div>
@@ -114,11 +112,11 @@ export default function LatestNews() {
 												<div className="post-categories row u-gy-2 u-gx-2">
 													<div className="col-auto"><a href="/media/news/category/articles" className="button button-small button-secondary">Articles</a>
 													</div>
-												</div><a href="/media/news/2024/06/19/cultivating-a-passion-for-shipping" className="entry-permalink" title="Cultivating A Passion for Shipping"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/ship-home-news-2.jpg" className="entry-thumbnail u-object-fit-cover u-object-pos-center u-w-100 u-h-100 ratio-item" alt="Cultivating A Passion for Shipping at Asia Pacific Shipping" /></span></a>
+												</div><a href="#" className="entry-permalink" title="ASP Titan Joins The Fleet"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/ship-home-news-2.jpg" className="entry-thumbnail u-object-fit-cover u-object-pos-center u-w-100 u-h-100 ratio-item" alt="ASP Titan" /></span></a>
 											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2024/06/19/cultivating-a-passion-for-shipping" className="entry-permalink" title="Cultivating A Passion for Shipping"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-06-19T03:37:15+00:00">June 19, 2024</time>
+											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="ASP Titan Joins The Fleet"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-06-19T03:37:15+00:00">June 19, 2024</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														Cultivating A Passion for Shipping </h3>
+														ASP Titan Joins The Fleet </h3>
 												</a></div>
 										</article>
 									</div>
