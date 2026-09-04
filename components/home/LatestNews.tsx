@@ -100,7 +100,7 @@ export default function LatestNews() {
 												<div className="post-categories row u-gy-2 u-gx-2">
 													<div className="col-auto"><a href="/media/news/category/articles" className="button button-small button-secondary">Articles</a>
 													</div>
-												</div><a href="/media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/partners/logo-client-vitol.png" className="entry-thumbnail  ratio-item" alt="" /></span></a>
+												</div><a href="/media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/ship-home-news-1.jpg" className="entry-thumbnail u-object-fit-cover u-object-pos-center u-w-100 u-h-100 ratio-item" alt="Ship at sea" /></span></a>
 											</header>
 											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2024/10/09/how-to-attract-a-new-generation-to-join-your-team" className="entry-permalink" title="How to Attract A New Generation To Join Your Team"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-10-09T02:39:25+00:00">October 9, 2024</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
@@ -114,7 +114,7 @@ export default function LatestNews() {
 												<div className="post-categories row u-gy-2 u-gx-2">
 													<div className="col-auto"><a href="/media/news/category/articles" className="button button-small button-secondary">Articles</a>
 													</div>
-												</div><a href="/media/news/2024/06/19/cultivating-a-passion-for-shipping" className="entry-permalink" title="Cultivating A Passion for Shipping"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/partners/logo-client-lauritzen-bulkers.png" className="entry-thumbnail  ratio-item" alt="Cultivating A Passion for Shipping at Asia Pacific Shipping" /></span></a>
+												</div><a href="/media/news/2024/06/19/cultivating-a-passion-for-shipping" className="entry-permalink" title="Cultivating A Passion for Shipping"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/ship-home-news-2.jpg" className="entry-thumbnail u-object-fit-cover u-object-pos-center u-w-100 u-h-100 ratio-item" alt="Cultivating A Passion for Shipping at Asia Pacific Shipping" /></span></a>
 											</header>
 											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="/media/news/2024/06/19/cultivating-a-passion-for-shipping" className="entry-permalink" title="Cultivating A Passion for Shipping"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-06-19T03:37:15+00:00">June 19, 2024</time>
 													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
