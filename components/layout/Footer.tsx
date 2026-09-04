@@ -188,14 +188,10 @@ export default function Footer() {
 				</div>
 
 				<div className="row u-gy-4">
-					<div className="col-12 col-sm-auto col-lg-auto col-xl-4 col-footer-first-col u-d-flex u-flex-row u-flex-wrap">
+					<div className="col-12 col-sm-auto col-lg-auto col-xl-auto col-footer-first-col u-d-flex u-flex-row u-flex-wrap">
 						<div className="site-copyright u-flex-shrink-0 u-mr-2">
-							| Tel: <a href="tel:+84968016085" style={{ textDecoration: 'none', color: 'inherit' }}>+84 968 016 085</a> | <a href="mailto:contact@aspshipping.vn" style={{ textDecoration: 'none', color: 'inherit' }}>contact@aspshipping.vn</a>
+							| Tel: <a href="tel:+84968016085" style={{ textDecoration: 'none', color: 'inherit' }}>+84 968 016 085</a> | <a href="mailto:contact@aspshipping.vn" style={{ textDecoration: 'none', color: 'inherit' }}>contact@aspshipping.vn</a> | <a href="/privacy-policy" title="Privacy Policy" target="" style={{ textDecoration: 'none', color: 'inherit' }}>Privacy Policy</a>
 						</div>
-					</div>
-
-					<div className="col-12 col-lg-auto offset-lg-1 offset-xl-0">
-						<a href="/privacy-policy" title="Privacy Policy" target="" className="site-privacy-policy">Privacy Policy</a>
 					</div>
 
 					<div className="col-12 col-lg-auto u-ml-lg-auto">
