@@ -486,55 +486,6 @@ export default function MobileNav({ onMenuToggle }: MobileNavProps) {
                                             </div>
                                         </div>
                                     </li>
-                                    <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-2014">
-                                        <a title="Suppliers" href="/suppliers" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-2014" onClick={(e) => openSubmenu(e, 'menu-item-nav-slider-2014')}>
-                                            <span className="menu-item-text">Suppliers</span>
-                                            <i className="icon icon-chevron-right menu-icon-right">
-                                                <svg><use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-right"></use></svg>
-                                            </i>
-                                        </a>
-                                        <div className={`nav-slider nav-slider-submenu react-nav-submenu ${isSubmenuActive('menu-item-nav-slider-2014') ? 'is-active' : ''}`} aria-labelledby="menu-item-nav-slider-2014">
-                                            <ul>
-                                                <li className="menu-item menu-item-back">
-                                                    <a className="nav-slider-toggle nav-slider-toggle-back" href="#back" onClick={closeSubmenu}>
-                                                        <i className="icon icon-chevron-left menu-icon-left">
-                                                            <svg><use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#chevron-left"></use></svg>
-                                                        </i>
-                                                        <span className="menu-item-text">Back</span>
-                                                    </a>
-                                                </li>
-                                                <li className="menu-item menu-item-view-parent"><Link href="/suppliers" onClick={() => closeMenu('route')}>Suppliers</Link></li>
-                                                <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2015">
-                                                    <Link title="Supplier Verification" href="/suppliers/supplier-verification" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Supplier Verification</span></Link>
-                                                </li>
-                                            </ul>
-                                            <div className="menu-item-contents u-px-4 u-pb-8 u-mt-4">
-                                                <div className="layout layout-menu-section-media layout-app_megamenu layout-section-media layout-root layout-section-media-has-theme">
-                                                    <div className="layout-inner layout-row row u-gx-0">
-                                                        <div className="layout-column layout-column-section-media-thumbnail col-12 u-mb-4">
-                                                            <div className="section-media-thumbnail u-d-flex u-h-100">
-                                                                <span className="ratio ratio-instrinsic"><span className="ratio-size" style={{paddingBottom: '50%'}}></span><img width="576" height="288" src="/wp-content/uploads/asp_images/sustainability/environment-methanol.webp" className="img-fluid section-media-thumbnail-img u-border-radius u-object-fit-cover u-object-pos-center ratio-item" alt="" /></span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="layout-column layout-column-section-media-lead col-12">
-                                                            <div className="layout layout-section-lead layout-app_megamenu layout-section-lead-has-theme">
-                                                                <div className="layout-inner theme-style theme-style-primary u-p-4">
-                                                                    <div className="section-lead-content u-h4">
-                                                                        <div className="content-width">Supplier Verification</div>
-                                                                    </div>
-                                                                    <div className="layout layout-buttons layout-app_megamenu">
-                                                                        <div className="layout-inner button-group u-mt-4 content-width">
-                                                                            <div><a href="/suppliers/supplier-verification" title="View Supplier Verification" target="" className="button button-outline button-outline-secondary"><span>View Supplier Verification</span></a></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
                                 <ul id="menu-callout-menu-1" className="site-nav-items site-nav-items-mobile">
                                     <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-73">

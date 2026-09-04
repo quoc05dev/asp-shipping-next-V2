@@ -354,43 +354,6 @@ export default function Header() {
 									</div>
 								</div>
 							</li>
-							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2014" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-2014 ${activeMegaMenu === "menu-item-2014" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-2014")} onMouseLeave={handleMouseLeave}><a title="Suppliers" href="/suppliers" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle" id="menu-item-mega-nav-2014">Suppliers</a>
-								<div  className="mega-nav-body container container-max container-rfs container-w-outer" aria-labelledby="menu-item-mega-nav-2014" role="menu" >
-									<div className="mega-nav-content grid">
-										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
-											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href="/suppliers" title="Suppliers" target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>Suppliers</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2015" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2015" style={{ marginTop: 'auto', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
-												<a title="Supplier Verification" href="/suppliers/supplier-verification" style={{ width: '100%', padding: '0', display: 'block' }}>Supplier Verification</a></li>
-										</ul>
-										<div className="menu-item-contents">
-											<div data-index="0" data-uid="67fa7fee6a64ffdd34d3956fc47ec227" id="" className="layout layout-menu-section-media layout-app_megamenu layout-section-media layout-root layout-section-media-has-theme">
-												<div className="layout-inner layout-row row u-gx-0">
-													<div className="layout-column layout-column-section-media-thumbnail col-sm-6">
-														<div className="section-media-thumbnail u-d-flex u-h-100"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="576" height="288" src="/wp-content/uploads/asp_images/sustainability/environment-methanol.webp" className="img-fluid section-media-thumbnail-img u-border-radius u-object-fit-cover u-object-pos-center  ratio-item" alt="" /></span></div>
-													</div>
-													<div className="layout-column layout-column-section-media-lead col-sm-6">
-														<div data-index="0" data-uid="6b1d741271d5abe0958d2b7eabb91ddd" id="" className="layout layout-section-lead layout-app_megamenu layout-section-lead-has-theme">
-															<div className="layout-inner theme-style theme-style-primary">
-																<div className="section-lead-content u-h4">
-																	<div className="content-width">
-																		Supplier Verification </div>
-																</div>
-																<div data-index="0" data-uid="9801d5ee4dc0c8a1add009712a6baf00" id="" className="layout layout-buttons layout-app_megamenu">
-																	<div className="layout-inner button-group u-mt-9 content-width">
-																		<div><a href="/suppliers/supplier-verification" title="View Supplier Verification" target="" className="button button-outline button-outline-secondary"><span>View
-																					Supplier Verification</span></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
 						</ul>
 						<ul id="menu-callout-menu" className="site-nav-items site-nav-items-callout">
 							<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-73" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mega-nav-item menu-item-73 ${activeMegaMenu === "menu-item-73" ? "is-active" : ""}`} onMouseEnter={() => handleMouseEnter("menu-item-73")} onMouseLeave={handleMouseLeave}><span className="menu-item-button-wrap"><a title="Our Fleet" href="/our-fleet" aria-haspopup="true" aria-expanded="false" className="mega-nav-toggle button" id="menu-item-mega-nav-73">Our
