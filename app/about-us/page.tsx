@@ -32,8 +32,16 @@ export default function Page() {
 	<article id="post-10" className="content-single content-page post-10 page type-page status-publish has-post-thumbnail hentry entity entity-page">
 	<header className="entry-header">
 					<div   id="" className="layout layout-page-header layout-page layout-full u-px-0 layout-root"><div className="layout-inner "><div className="banner banner-page
-	banner-page-has-image"><div className="banner-inner u-pos-relative"><div className="banner-media"><span className="ratio"><span className="ratio-size"></span><img  width="3840" height="960" src="/wp-content/uploads/asp_images/about/history-04-new-building.jpg" className="banner-img banner-img-large " alt="Asia Pacific Shipping&#039;s LPG carrier, Katherine Kosan" /><img  width="992" height="744" src="/wp-content/uploads/asp_images/ships/asp-maple.jpg" className="banner-img banner-img-small " alt="Asia Pacific Shipping&#039;s LPG carrier, Katherine Kosan" /><span className="banner-backdrop u-pos-absolute u-pos-x u-pos-y"></span></span></div><div className="banner-overlay u-pos-absolute u-pos-x u-pos-y u-d-flex u-flex-column u-justify-content-end u-h-100"><div className="container container-rfs container-w-outer"><div className="banner-content"><hr /><h1 className="heading h2 u-mb-3 entry-title u-font-weight-normal">
-	About Us</h1></div></div></div></div></div></div></div>			</header>
+	banner-page-has-image"><div className="banner-inner u-pos-relative"><div className="banner-media"><span className="ratio"><span className="ratio-size"></span><img  width="3840" height="960" src="/wp-content/uploads/asp_images/about/history-04-new-building.jpg" className="banner-img banner-img-large " alt="Asia Pacific Shipping&#039;s LPG carrier, Katherine Kosan" /><img  width="992" height="744" src="/wp-content/uploads/asp_images/ships/asp-maple.jpg" className="banner-img banner-img-small " alt="Asia Pacific Shipping&#039;s LPG carrier, Katherine Kosan" /><span className="banner-backdrop u-pos-absolute u-pos-x u-pos-y"></span></span></div><div className="banner-overlay u-pos-absolute u-pos-x u-pos-y u-d-flex u-flex-column u-justify-content-end u-h-100"><div className="container container-rfs container-w-outer"><div className="banner-content"><hr className="about-us-hero-divider" /><h1 className="heading h2 u-mb-3 entry-title u-font-weight-normal">
+	About Us</h1></div></div></div></div></div></div></div>
+			<style dangerouslySetInnerHTML={{__html: `
+			  hr.about-us-hero-divider {
+			    border: none !important;
+			    height: 1px !important;
+			    background: linear-gradient(to right, var(--asp-signal) 0%, var(--asp-signal) 60px, rgba(255, 255, 255, 0.6) 60px, rgba(255, 255, 255, 0.6) 100%) !important;
+			  }
+			`}} />
+			</header>
 
 	<section className="entry-body">
 		<div className="entry-content-layouts entry-content">
