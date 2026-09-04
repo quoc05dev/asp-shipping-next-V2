@@ -65,7 +65,7 @@ export default function Footer() {
 									<div className="menu-footer-column-1-container">
 										<ul id="menu-footer-column-1" className="menu">
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-active menu-item-94">
-												<a title="Home" href="index.html" style={{ color: 'var(--asp-signal)' }}>Home</a></li>
+												<a title="Home" href="index.html" className="footer-parent-link">Home</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-96" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-96">
 												<a title="Contact Us" href="/contact-us">Contact Us</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-95" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
@@ -243,7 +243,7 @@ export default function Footer() {
 	</footer>
   <style dangerouslySetInnerHTML={{__html: `
     /* Child link default state */
-    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]) {
+    footer.site-footer section.widget_nav_menu .menu a:not(.footer-parent-link) {
       position: relative;
       display: inline-block;
       transform-origin: left center;
@@ -253,14 +253,14 @@ export default function Footer() {
     }
 
     /* Child link hover state */
-    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]):hover,
-    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]):focus {
+    footer.site-footer section.widget_nav_menu .menu a:not(.footer-parent-link):hover,
+    footer.site-footer section.widget_nav_menu .menu a:not(.footer-parent-link):focus {
       transform: scale(1.03);
       color: var(--asp-white) !important;
     }
 
     /* Child link underline pseudo-element */
-    .site-footer .menu a:not(.footer-parent-link):not([title="Home"])::after {
+    footer.site-footer section.widget_nav_menu .menu a:not(.footer-parent-link)::after {
       content: '';
       position: absolute;
       left: 0;
@@ -272,28 +272,24 @@ export default function Footer() {
     }
 
     /* Child link underline animation on hover */
-    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]):hover::after,
-    .site-footer .menu a:not(.footer-parent-link):not([title="Home"]):focus::after {
+    footer.site-footer section.widget_nav_menu .menu a:not(.footer-parent-link):hover::after,
+    footer.site-footer section.widget_nav_menu .menu a:not(.footer-parent-link):focus::after {
       width: 100%;
     }
 
     /* Main heading explicit rules to prevent inherited color changes and hover animations */
-    .site-footer .menu a.footer-parent-link,
-    .site-footer .menu a[title="Home"] {
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link {
       transition: none !important;
       color: var(--asp-signal) !important;
     }
     
-    .site-footer .menu a.footer-parent-link:hover,
-    .site-footer .menu a.footer-parent-link:focus,
-    .site-footer .menu a[title="Home"]:hover,
-    .site-footer .menu a[title="Home"]:focus {
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link:hover,
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link:focus {
       transform: none !important;
       color: var(--asp-signal) !important;
     }
     
-    .site-footer .menu a.footer-parent-link::after,
-    .site-footer .menu a[title="Home"]::after {
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link::after {
       display: none !important;
     }
   `}} />
