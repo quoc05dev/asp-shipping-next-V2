@@ -182,15 +182,16 @@ export default function Footer() {
 				<div className="row">
 					<div className="col-12 col-sm-auto col-footer-first-col">
 						<div className="site-copyright">
-							© 2026 Asia Pacific Shipping (ASP). All rights reserved. | Tel: +84 968 016 085 |
-							contact@aspshipping.vn </div>
+							© 2026 Asia Pacific Shipping (ASP). All rights reserved.
+						</div>
 					</div>
 				</div>
 
 				<div className="row u-gy-4">
 					<div className="col-12 col-sm-auto col-lg-auto col-xl-4 col-footer-first-col u-d-flex u-flex-row u-flex-wrap">
-						<div className="site-tagline u-flex-shrink-0 u-mr-2">Turning vision into value</div>
-
+						<div className="site-copyright u-flex-shrink-0 u-mr-2">
+							| Tel: <a href="tel:+84968016085" style={{ textDecoration: 'none', color: 'inherit' }}>+84 968 016 085</a> | <a href="mailto:contact@aspshipping.vn" style={{ textDecoration: 'none', color: 'inherit' }}>contact@aspshipping.vn</a>
+						</div>
 					</div>
 
 					<div className="col-12 col-lg-auto offset-lg-1 offset-xl-0">
