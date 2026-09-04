@@ -25,7 +25,7 @@ export default function AboutPreview() {
   		<div style={{width: "100%", }}>
   			<div className="layout layout-content layout-page" style={{maxWidth: "100% !important", padding: "0 !important", margin: "0 !important", }}>
   				<div className="layout-inner" style={{maxWidth: "100% !important", padding: "0 !important", margin: "0 !important", }}>
-  					<hr className="u-mt-0" />
+
   					<p style={{textAlign: "justify", maxWidth: "100% !important", marginRight: "0 !important", paddingRight: "0 !important", }} data-cms-field="title">We have the scale, fleet and operational resources to serve our customers on a truly global basis; with approximately 2,500 cargo operations annually, we transport more than 4.2 million tonnes between over 240 different ports worldwide, performing an average of five load operations every day.</p>
   					<p style={{textAlign: "justify", maxWidth: "100% !important", marginRight: "0 !important", paddingRight: "0 !important", }} data-cms-field="description">We offer customers the best solution for their transportation needs with our leading service and high operational standards.</p>
   				</div>
