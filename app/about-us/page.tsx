@@ -38,7 +38,7 @@ export default function Page() {
 			  hr.about-us-hero-divider {
 			    border: none !important;
 			    height: 1px !important;
-			    background: linear-gradient(to right, var(--asp-signal) 0%, var(--asp-signal) 60px, rgba(255, 255, 255, 0.6) 60px, rgba(255, 255, 255, 0.6) 100%) !important;
+			    background: linear-gradient(to right, var(--asp-signal) 0%, var(--asp-signal) 80px, rgba(255, 255, 255, 0.6) 80px, rgba(255, 255, 255, 0.6) 100%) !important;
 			  }
 			`}} />
 			</header>
