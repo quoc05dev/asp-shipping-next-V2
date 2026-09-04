@@ -368,3 +368,24 @@
   background-color: rgba(154, 206, 50, 0.13) !important;
   border-color: var(--theme-color-primary) !important;
 }
+
+/* ==========================================================================
+   GLOBAL ACCENT LINES
+   ========================================================================== */
+:root {
+  --asp-accent-thickness: 2px;
+}
+
+/* Apply the green accent style to all hero title dividers across the site */
+.banner-content hr,
+hr.hero-divider-left,
+hr.hero-divider-right {
+    border: none !important;
+    height: var(--asp-accent-thickness) !important;
+    background: 
+      linear-gradient(to right, var(--asp-signal) 0%, var(--asp-signal) 110px, transparent 110px, transparent 100%),
+      linear-gradient(to right, transparent 0%, transparent 110px, rgba(255, 255, 255, 0.6) 110px, rgba(255, 255, 255, 0.6) 100%) !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% var(--asp-accent-thickness), 100% 1px !important;
+    background-position: left center, right center !important;
+}
