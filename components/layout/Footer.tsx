@@ -278,13 +278,16 @@ export default function Footer() {
     }
 
     /* Main heading explicit rules to prevent inherited color changes and hover animations */
-    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link {
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link,
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link span {
       transition: none !important;
       color: var(--asp-signal) !important;
     }
     
     footer.site-footer section.widget_nav_menu .menu a.footer-parent-link:hover,
-    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link:focus {
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link:focus,
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link:hover span,
+    footer.site-footer section.widget_nav_menu .menu a.footer-parent-link:focus span {
       transform: none !important;
       color: var(--asp-signal) !important;
     }
