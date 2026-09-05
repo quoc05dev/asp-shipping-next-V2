@@ -43,6 +43,15 @@ const SectionLead = ({ title, heading, description }: { title: string, heading: 
 );
 
 export default function WhatWeDoHubPage() {
+  const trustedPartners = [
+    { name: 'Partner Logo 1', image: '', href: '#' },
+    { name: 'Partner Logo 2', image: '', href: '#' },
+    { name: 'Partner Logo 3', image: '', href: '#' },
+    { name: 'Partner Logo 4', image: '', href: '#' },
+    { name: 'Partner Logo 5', image: '', href: '#' },
+    { name: 'Partner Logo 6', image: '', href: '#' },
+  ];
+
   return (
     <>
       <Header />
@@ -93,6 +102,89 @@ export default function WhatWeDoHubPage() {
                 </div>
               </div>
             </div>
+          </section>
+
+          <Divider />
+
+          {/* 01.5 - TRUSTED RELATIONSHIPS */}
+          <section className="layout layout-page layout-root u-py-4" style={{ backgroundColor: '#073220', color: '#ffffff' }}>
+            <div className="layout-inner">
+              <div className="row align-items-center">
+                <div className="col-12 col-lg-3 u-mb-4 u-mb-lg-0">
+                  <h2 className="heading h6 u-mb-1" style={{ color: '#ffffff' }}>Trusted Relationships</h2>
+                  <p className="u-text-size-small u-mb-0" style={{ color: 'rgba(255, 255, 255, 0.75)', lineHeight: '1.4' }}>
+                    Working alongside customers and partners across maritime operations.
+                  </p>
+                </div>
+                <div className="col-12 col-lg-9">
+                  <div className="trusted-marquee-container">
+                    <div className="trusted-marquee-track">
+                      {trustedPartners.map((partner, idx) => (
+                        <div key={`orig-${idx}`} className="trusted-marquee-item">
+                          <span className="trusted-logo-placeholder">{partner.name}</span>
+                        </div>
+                      ))}
+                      {trustedPartners.map((partner, idx) => (
+                        <div key={`dup-${idx}`} className="trusted-marquee-item" aria-hidden="true">
+                          <span className="trusted-logo-placeholder">{partner.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <style>{`
+              .trusted-marquee-container {
+                overflow: hidden;
+                display: flex;
+                width: 100%;
+                position: relative;
+                mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+                -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+              }
+              .trusted-marquee-track {
+                display: flex;
+                align-items: center;
+                gap: 4rem;
+                animation: trusted-marquee 25s linear infinite;
+              }
+              .trusted-marquee-container:hover .trusted-marquee-track {
+                animation-play-state: paused;
+              }
+              .trusted-marquee-item {
+                flex: 0 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+              }
+              .trusted-logo-placeholder {
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.85rem;
+                white-space: nowrap;
+              }
+              @keyframes trusted-marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-50% - 2rem)); }
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .trusted-marquee-track {
+                  animation: none;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  gap: 2rem;
+                }
+                .trusted-marquee-container {
+                  overflow: visible;
+                  mask-image: none;
+                  -webkit-mask-image: none;
+                }
+              }
+            `}</style>
           </section>
 
           <Divider />
