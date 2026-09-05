@@ -1,109 +1,344 @@
 import React from 'react';
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import ServicePageHero from '@/components/what-we-do/ServicePageHero';
+import ContactForm from '@/components/contact/ContactForm';
+import NewsletterForm from '@/components/contact/NewsletterForm';
+import type { Metadata } from 'next';
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: 'Contact Us | ASP Shipping',
+  description: 'Reach out to Asia Pacific Shipping for global maritime solutions. We have regional offices in Singapore, Copenhagen, Manila and Tokyo.',
+};
+
+const Divider = () => (
+  <div className="layout layout-spacer layout-page layout-root">
+    <div className="layout-inner">
+      <div className="spacer spacer-medium"></div>
+    </div>
+    <div className="layout layout-horizontal-line layout-page layout-full u-px-0 layout-root">
+      <div className="layout-inner container container-max">
+        <hr className="u-my-0" style={{ borderTop: '1px solid #e5e5e5' }} />
+      </div>
+    </div>
+    <div className="layout-inner">
+      <div className="spacer spacer-medium"></div>
+    </div>
+  </div>
+);
+
+export default function ContactUsPage() {
   return (
     <>
       <Header />
-      <div className="legacy-inner-page page wp-theme-restless-theme">
-        <div id="page" className="site">
-          <div id="content" className="site-content">
-            <div className="site-breadcrumb u-text-size-small" style={{ paddingTop: '0.4rem', paddingBottom: '0.4rem', backgroundColor: '#ffffff', borderBottom: '1px solid #eaeaea' }}>
-  <div className="container container-w-outer container-max container-rfs">
-    <ol className="breadcrumb" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-      <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
-        <a href="/" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
-          <span className="breadcrumb-label">Home</span>
-        </a>
-        <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>
-      </li>
-      <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
-        <a href="/contact-us" className="breadcrumb-link breadcrumb-link-current" style={{ textDecoration: 'none' }}>
-          <span className="breadcrumb-label">Contact Us</span>
-        </a>
-      </li>
-    </ol>
-  </div>
-</div>
-            <main id="siteMain" className="main container container-rfs container-w-outer">
-			
-	
-	<article id="post-50" className="content-single content-page post-50 page type-page status-publish has-post-thumbnail hentry entity entity-page">
-	<header className="entry-header">
-					<div   id="" className="layout layout-page-header layout-page layout-full u-px-0 layout-root"><div className="layout-inner "><div className="banner banner-page
-	banner-page-has-image"><div className="banner-inner u-pos-relative"><div className="banner-media"><span className="ratio"><span className="ratio-size"></span><img  width="2560" height="640" src="/wp-content/uploads/asp_images/sustainability/governance-oversight.webp" className="banner-img " alt="Asia Pacific Shipping&#039;s LPG Carrier" /><span className="banner-backdrop u-pos-absolute u-pos-x u-pos-y"></span></span></div><div className="banner-overlay u-pos-absolute u-pos-x u-pos-y u-d-flex u-flex-column u-justify-content-end u-h-100"><div className="container container-rfs container-w-outer"><div className="banner-content"><hr /><h1 className="heading h2 u-mb-3 entry-title u-font-weight-normal">
-	Contact Us</h1></div></div></div></div></div></div></div>			</header>
-
-	<section className="entry-body">
-		<div className="entry-content-layouts entry-content">
-			<div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-large"></div></div></div><div   id="the-bw-epic-kosan-difference-contents" className="layout layout-two-columns layout-page layout-root layout-columns layout-two-columns-6x4"><div className="layout-inner layout-row row"><div   id="" className="layout layout-column layout-page col-12 col-lg-6"><div   id="the-bw-epic-kosan-difference" className="layout layout-section-lead layout-page"><div className="layout-inner "><h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-	The Asia Pacific Shipping Difference</h2><div className="section-lead-content u-h4"><div className="content-width"><p>Our whistle-blowing platform is hosted on an external platform by <a href="/https://secure.ethicspoint.eu/domain/media/en/gui/105447" target="_blank" rel="noopener">EthicsPoint</a>. At Asia Pacific Shipping, we value our reputation as a reliable provider of maritime energy transportation services.</p></div></div><div   id="" className="layout layout-buttons layout-page"><div className="layout-inner button-group u-mt-9 content-width"><div><a href="https://secure.ethicspoint.eu/domain/media/en/gui/105447/report.html" title="Reach Out Via EthicsPoint" target="_blank" className="button button-outline" rel="noreferrer noopenner"><span>Reach Out Via EthicsPoint</span></a></div></div></div></div></div></div><div   id="" className="layout layout-column layout-page col-12 col-lg-6 col-xl-5 col-xxl-4 offset-xl-1 offset-xxl-2"><div   id="" className="layout layout-content layout-page"><div className="layout-inner "><div className="content-width left"><hr className="u-mt-0" /><p>Our stakeholders, both internal and external, should speak up where they have concerns over possible breaches of ethics or standards of professional conduct. Your confidentiality is assured and you have our commitment for action.</p></div></div></div></div></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-medium"></div></div></div><div   id="" className="layout layout-horizontal-line layout-page layout-full u-px-0 layout-root"><div className="layout-inner "><hr className="u-my-0"/></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-paragraph"></div></div></div><div   id="our-offices" className="layout layout-section-lead layout-page layout-root"><div className="layout-inner "><h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-	Our Offices</h2><div className="section-lead-content u-h4"><div className="content-width"><p>Beyond our headquarters in Singapore, Asia Pacific Shipping also has regional offices in Copenhagen, Manila and Tokyo.</p></div></div></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-small"></div></div></div><div   id="" className="layout layout-location-list layout-page layout-root"><div className="layout-inner "><div className="row row-locations u-gy-4"><div className="col-12 col-md-6 col-xxl-3 u-d"><div className="card card-location u-bg-lighter u-border-radius u-h-100 u-overflow-hidden"><div className="ratio"><div className="ratio-size ratio-size-3x2"></div><iframe
-							className="ratio-item "
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.830327073398!2d103.79676162668937!3d1.2751081618079503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1bc1c1bb8d11%3A0xe0eb605f8b2ff167!2sMapletree%20Business%20City!5e0!3m2!1sen!2ssg!4v1705549127324!5m2!1sen!2ssg"
-							width="600"
-							height="450"
-							style={{"border":"0"} as React.CSSProperties}
-							allowFullScreen={true}
-							referrerPolicy="no-referrer-when-downgrade"
-						></iframe></div><div className="card-header u-px-4 u-pt-3 u-pb-2"><h3 className="h5 card-title u-mb-0 u-text-color-black">Singapore Headquarters</h3></div><hr className="u-mx-4 u-my-0"/><div className="card-body u-px-4 u-pb-4 u-pt-2"><address>10 Pasir Panjang Road<br />
-#17-01, Mapletree Business City?<br />
-Singapore 117438</address><div className="location-meta"><span className="location-meta-label">Tel: </span><span className="location-meta-value"><a href="tel:%2B6562307801">
-	+65 62307801</a></span></div></div></div></div><div className="col-12 col-md-6 col-xxl-3 u-d"><div className="card card-location u-bg-lighter u-border-radius u-h-100 u-overflow-hidden"><div className="ratio"><div className="ratio-size ratio-size-3x2"></div><iframe
-							className="ratio-item "
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.639097333276!2d12.593447916033584!3d55.69526210389571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465252de1e9596b1%3A0xc711e172108a8706!2sIndiakaj%206%2C%202100%20K%C3%B8benhavn!5e0!3m2!1sen!2ssg!4v1672227982617!5m2!1sen!2ssg"
-							width="600"
-							height="450"
-							style={{"border":"0"} as React.CSSProperties}
-							allowFullScreen={true}
-							referrerPolicy="no-referrer-when-downgrade"
-						></iframe></div><div className="card-header u-px-4 u-pt-3 u-pb-2"><h3 className="h5 card-title u-mb-0 u-text-color-black">Copenhagen Office</h3></div><hr className="u-mx-4 u-my-0"/><div className="card-body u-px-4 u-pb-4 u-pt-2"><address>Indiakaj 6<br />
-2100 Copenhagen<br />
-Denmark</address><div className="location-meta"><span className="location-meta-label">Tel: </span><span className="location-meta-value"><a href="tel:%2B4532261000">
-	+45 3226 1000</a></span></div></div></div></div><div className="col-12 col-md-6 col-xxl-3 u-d"><div className="card card-location u-bg-lighter u-border-radius u-h-100 u-overflow-hidden"><div className="ratio"><div className="ratio-size ratio-size-3x2"></div><iframe
-							className="ratio-item "
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.579538701513!2d121.02582097516373!3d14.566020527922216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9ba30cf4ccd%3A0x308ecf3764200af!2sCentury%20Diamond%20Tower(BW%20SHIPPING)%20new%20office!5e0!3m2!1sen!2ssg!4v1717401419483!5m2!1sen!2ssg%20width=600%20height=450%20style=border:0;%20allowFullScreen={true}=%20loading=lazy%20referrerPolicy=no-referrer-when-downgrade"
-							width="600"
-							height="450"
-							style={{"border":"0"} as React.CSSProperties}
-							allowFullScreen={true}
-							referrerPolicy="no-referrer-when-downgrade"
-						></iframe></div><div className="card-header u-px-4 u-pt-3 u-pb-2"><h3 className="h5 card-title u-mb-0 u-text-color-black">Manila Office</h3></div><hr className="u-mx-4 u-my-0"/><div className="card-body u-px-4 u-pb-4 u-pt-2"><address>Unit 2 33rd Floor and Unit 1A-1 32nd Floor Century Diamond Tower Kalayaan Avenue cor Salamanca Street Barangay Poblacion, Makati City 1210 Philippines </address><div className="location-meta"><span className="location-meta-label">Trunkline: </span><span className="location-meta-value"><a href="tel:%2B63253183700">
-	+63 2 5318 3700</a></span></div><div className="location-meta"><span className="location-meta-label">Smart: </span><span className="location-meta-value"><a href="tel:%2B639088862935">
-	+63 908 886 2935</a></span></div><div className="location-meta"><span className="location-meta-label">Globe: </span><span className="location-meta-value"><a href="tel:%2B639171862935">
-	+63 917 186 2935</a></span></div></div></div></div><div className="col-12 col-md-6 col-xxl-3 u-d"><div className="card card-location u-bg-lighter u-border-radius u-h-100 u-overflow-hidden"><div className="ratio"><div className="ratio-size ratio-size-3x2"></div><iframe
-							className="ratio-item "
-							src="/wp-content/uploads/asp_images/partners/logo-client-chinaland.png"
-							width="600"
-							height="450"
-							style={{"border":"0"} as React.CSSProperties}
-							allowFullScreen={true}
-							referrerPolicy="no-referrer-when-downgrade"
-						></iframe></div><div className="card-header u-px-4 u-pt-3 u-pb-2"><h3 className="h5 card-title u-mb-0 u-text-color-black">Tokyo Office</h3></div><hr className="u-mx-4 u-my-0"/><div className="card-body u-px-4 u-pb-4 u-pt-2"><address>+81 50 6862 8493</address></div></div></div></div></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-medium"></div></div></div><div   id="" className="layout layout-horizontal-line layout-page layout-full u-px-0 layout-root"><div className="layout-inner "><hr className="u-my-0"/></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-paragraph"></div></div></div><div   id="have-a-question-contents" className="layout layout-two-columns layout-page layout-root layout-columns layout-two-columns-5x6"><div className="layout-inner layout-row row"><div   id="have-a-question" className="layout layout-column layout-page col-12 col-lg-6 col-xl-5"><div   id="" className="layout layout-section-lead layout-page"><div className="layout-inner "><h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-	Have a Question?</h2><div className="section-lead-content u-h4"><div className="content-width"><p>Leave us a message and we will get back to you as soon as possible.</p></div></div><div   id="" className="layout layout-buttons layout-page"><div className="layout-inner button-group u-mt-9 content-width"><div><a href="mailto:%63&#111;mm&#117;%6eicat%69%6fn%73&#064;&#098;w&#101;&#107;.%63&#111;%6d" title="communications@ASP.com" target="" className="button button-outline"><span>communications@ASP.com</span></a></div></div></div></div></div></div><div   id="" className="layout layout-column layout-page col-12 col-lg-6 offset-xl-1"><div   id="" className="layout layout-content layout-page"><div className="layout-inner "><div className="content-width none left"><div className="wpcf7 no-js" id="wpcf7-f92-o1" lang="en-US" dir="ltr" wpcf7-id="92"><div className="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p><ul></ul></div><form action="https://ASP.com/contact-us/#wpcf7-f92-o1" method="post" className="wpcf7-form init" aria-label="Contact form" noValidate><div style={{"display":"none"} as React.CSSProperties}><input type="hidden" name="_wpcf7" defaultValue="92" /><input type="hidden" name="_wpcf7_version" defaultValue="6.0.2" /><input type="hidden" name="_wpcf7_locale" defaultValue="en_US" /><input type="hidden" name="_wpcf7_unit_tag" defaultValue="wpcf7-f92-o1" /><input type="hidden" name="_wpcf7_container_post" defaultValue="0" /><input type="hidden" name="_wpcf7_posted_data_hash" defaultValue="" /></div><div className="wpcf7-response-output" aria-hidden="true"></div><div className="row"><div className="form-group col-12 col-md-6"><label>Name<em>*</em></label><span className="wpcf7-form-control-wrap"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required={true} form-control" autoComplete="off" aria-required={true} aria-invalid="false" placeholder="Name" defaultValue="" type="text" name="your-name" /></span></div><div className="form-group col-12 col-md-6"><label>Email<em>*</em></label><span className="wpcf7-form-control-wrap"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required={true} wpcf7-text wpcf7-validates-as-email form-control" autoComplete="off" aria-required={true} aria-invalid="false" placeholder="Email" defaultValue="" type="email" name="your-email" /></span></div><div className="form-group col-12 col-md-6"><label>Phone</label><span className="wpcf7-form-control-wrap"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text form-control" aria-invalid="false" placeholder="Phone" defaultValue="" type="text" name="your-phone" /></span></div><div className="form-group col-12 col-md-6"><label>Company</label><span className="wpcf7-form-control-wrap"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text form-control" aria-invalid="false" placeholder="Company" defaultValue="" type="text" name="your-company" /></span></div><div className="form-group col-12"><label>Message<em>*</em></label><span className="wpcf7-form-control-wrap"><textarea cols={40} rows={3} maxLength={2000} className="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required={true} form-control" aria-required={true} aria-invalid="false" placeholder="Type your message here." name="your-message"></textarea></span></div><div className="form-group"><div className="form-acceptance-group"><span className="wpcf7-form-control-wrap"><span className="wpcf7-form-control wpcf7-acceptance"><span className="wpcf7-list-item"><label><input type="checkbox" name="your-acceptance" defaultValue="1" aria-invalid="false" /><span className="wpcf7-list-item-label">Agreement to <a href="/privacy-policy">Privacy Policy</a></span></label></span></span></span><button type="submit" className="button button-outline">Submit Enquiry</button></div></div></div><input type="hidden" id="ct_checkjs_cf7_6c524f9d5d7027454a783c841250ba71" name="ct_checkjs_cf7" defaultValue="0" /><input
-                    className="apbct_special_field apbct_email_id__wp_contact_form_7"
-                    name="apbct__email_id__wp_contact_form_7"
-                    aria-label="apbct__label_id__wp_contact_form_7"
-                    type="text" size={30} maxLength={200} autoComplete="off"
-                    defaultValue=""
-                /></form></div></div></div></div></div></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-small"></div></div></div><div   id="" className="layout layout-horizontal-line layout-page layout-full u-px-0 layout-root"><div className="layout-inner "><hr className="u-my-0"/></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-paragraph"></div></div></div><div   id="our-departments" className="layout layout-section-lead layout-page layout-root"><div className="layout-inner "><h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-	Our Departments</h2><div className="section-lead-content u-h4"><div className="content-width"><p>Have a department-specific question? Reach out to our heads of department directly.</p></div></div></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-small"></div></div></div><div   id="" className="layout layout-tablepress layout-page layout-root"><div className="layout-inner "><table id="tablepress-3" className="tablepress table-datatable tablepress-id-3"><thead><tr className="row-1"><th className="column-1" style={{"width":"25%"} as React.CSSProperties}>Department</th><th className="column-2" style={{"width":"25%"} as React.CSSProperties}>Email</th><th className="column-3" style={{"width":"25%"} as React.CSSProperties}>Key Contact</th><th className="column-4" style={{"width":"25%"} as React.CSSProperties}>Position</th></tr></thead><tbody className="row-hover"><tr className="row-2"><td className="column-1">Chartering</td><td className="column-2"><a href="mailto:&#099;h&#097;&#114;&#116;%65r%69&#110;g&#064;b&#119;&#101;k.%63%6f%6d">&#099;&#104;a&#114;t&#101;&#114;i&#110;g&#064;&#098;w&#101;&#107;.c&#111;&#109;</a></td><td className="column-3">Christian Fjeldborg Gr'nlund</td><td className="column-4">Commercial Director</td></tr><tr className="row-3"><td className="column-1">Technical</td><td className="column-2"><a href="mailto:&#110;&#115;%69&#110;g%68%40%62&#119;%65k.&#099;&#111;%6d">n&#115;&#105;&#110;gh&#064;b&#119;e&#107;.com</a></td><td className="column-3">Niraj Singh</td><td className="column-4">Technical Director</td></tr><tr className="row-4"><td className="column-1">Finance</td><td className="column-2"><a href="mailto:%75u&#114;b&#097;nia&#107;&#064;%62%77e%6b.%63o&#109;">&#117;&#117;&#114;&#098;&#097;n&#105;&#097;k&#064;bwe&#107;.c&#111;m</a></td><td className="column-3">Uta Urbaniak-Sage</td><td className="column-4">Chief Financial Officer</td></tr><tr className="row-5"><td className="column-1">Human Resources</td><td className="column-2"><a href="mailto:&#114;%65c%72uit%40&#098;%77ek.c&#111;&#109;">&#114;ec&#114;ui&#116;&#064;&#098;&#119;ek&#046;com</a></td><td className="column-3">Fevian Leong</td><td className="column-4">Human Resources Director</td></tr><tr className="row-6"><td className="column-1">Media</td><td className="column-2"><a href="mailto:&#099;%6fmmu&#110;i%63at%69o&#110;&#115;%40b&#119;ek.co&#109;">&#099;omm&#117;&#110;&#105;cat&#105;&#111;ns&#064;&#098;wek.co&#109;</a></td><td className="column-3">Uta Urbaniak-Sage</td><td className="column-4">Chief Financial Officer</td></tr><tr className="row-7"><td className="column-1">Projects</td><td className="column-2"><a href="mailto:&#112;&#114;o&#106;&#101;&#099;ts&#064;%62&#119;&#101;k%2ec&#111;m">&#112;&#114;oj&#101;&#099;&#116;&#115;&#064;&#098;wek.co&#109;</a></td><td className="column-3">Rune Wang Foelbaek</td><td className="column-4">Senior Projects Manager</td></tr></tbody></table></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-small"></div></div></div><div   id="" className="layout layout-horizontal-line layout-page layout-full u-px-0 layout-root"><div className="layout-inner "><hr className="u-my-0"/></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-paragraph"></div></div></div><div   id="" className="layout layout-callouts layout-page layout-root layout-column-size-2"><div className="layout-inner layout-row row"><div   id="" className="layout layout-callout-form layout-page layout-column-callout"><div className="callout callout-form theme-style theme-style-primary u-px-4 u-py-3 u-border-radius u-h-100"><h2 className="heading h5 u-mb-3 callout-heading u-mb-0">
-	Subscribe to Our Newsletter</h2><div className="callout-body"><div className="callout-content"><div className="content-width"><p>Sign up to receive alerts on press releases and updates on business activities.</p></div></div><div className="u-mt-9 callout-content-form"><div className="wpcf7 no-js" id="wpcf7-f93-p50-o4" lang="en-US" dir="ltr" wpcf7-id="93"><div className="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p><ul></ul></div><form action="https://ASP.com/contact-us/#wpcf7-f93-p50-o4" method="post" className="wpcf7-form init" aria-label="Contact form" noValidate><div style={{"display":"none"} as React.CSSProperties}><input type="hidden" name="_wpcf7" defaultValue="93" /><input type="hidden" name="_wpcf7_version" defaultValue="6.0.2" /><input type="hidden" name="_wpcf7_locale" defaultValue="en_US" /><input type="hidden" name="_wpcf7_unit_tag" defaultValue="wpcf7-f93-p50-o4" /><input type="hidden" name="_wpcf7_container_post" defaultValue="50" /><input type="hidden" name="_wpcf7_posted_data_hash" defaultValue="" /></div><input type="hidden" name="mc4wp-subscribe" defaultValue="1" /><div className="newsletter"><div><div className="row"><div className="newsletter-field col-12 col-sm-6"><span className="wpcf7-form-control-wrap"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required={true} form-control" aria-required={true} aria-invalid="false" placeholder="First name" defaultValue="" type="text" name="mc4wp-FNAME" /></span></div><div className="newsletter-field col-12 col-sm-6"><span className="wpcf7-form-control-wrap"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required={true} form-control" aria-required={true} aria-invalid="false" placeholder="Last name" defaultValue="" type="text" name="mc4wp-LNAME" /></span></div></div><div className="newsletter-fields"><div className="newsletter-field"><span className="wpcf7-form-control-wrap"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required={true} wpcf7-text wpcf7-validates-as-email form-control" aria-required={true} aria-invalid="false" placeholder="Your email address" defaultValue="" type="email" name="mc4wp-EMAIL" /></span></div><div className="newsletter-submit"><button type="submit" className="button button-outline button-outline-secondary">Subscribe</button></div></div></div><div className="wpcf7-response-output" aria-hidden="true"></div></div><input type="hidden" id="ct_checkjs_cf7_32b30a250abd6331e03a2a1f16466346" name="ct_checkjs_cf7" defaultValue="0" /><input
-                    className="apbct_special_field apbct_email_id__wp_contact_form_7"
-                    name="apbct__email_id__wp_contact_form_7"
-                    aria-label="apbct__label_id__wp_contact_form_7"
-                    type="text" size={30} maxLength={200} autoComplete="off"
-                    defaultValue=""
-                /></form></div></div></div></div></div><div   id="" className="layout layout-callout layout-page layout-column-callout"><div className="callout theme-style theme-style-mint u-px-4 u-py-3 u-border-radius u-h-100"><h2 className="heading h5 u-mb-3 callout-heading u-mb-0">
-	Join Us Today</h2><div className="callout-body"><div className="callout-content"><div className="content-width"><p>Asia Pacific Shipping offers exciting and rewarding career opportunities to people who have the skills and determination to succeed at sea and/or ashore.</p></div></div><div   id="" className="layout layout-buttons layout-page"><div className="layout-inner button-group u-mt-9 callout-buttons content-width"><div><a href="/careers" title="Careers at Asia Pacific Shipping" target="" className="button button-outline button-outline-secondary"><span>Careers at Asia Pacific Shipping</span></a></div></div></div></div></div></div></div></div><div   id="" className="layout layout-spacer layout-page layout-root"><div className="layout-inner "><div className="spacer spacer-large"></div></div></div>
-		</div>
-	</section>
-</article>
-
-			</main>
+      <div style={{ paddingTop: 'var(--theme-header-height-rem, 4.25rem)' }}>
+        
+        {/* Breadcrumb - Outside Hero */}
+        <div className="site-breadcrumb u-text-size-small" style={{ paddingTop: '0.4rem', paddingBottom: '0.4rem', backgroundColor: '#ffffff', borderBottom: '1px solid #eaeaea' }}>
+          <div className="container container-w-outer container-max container-rfs">
+            <ol className="breadcrumb" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+              <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
+                <Link href="/" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
+                  <span className="breadcrumb-label">Home</span>
+                </Link>
+                <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>
+              </li>
+              <li className="breadcrumb-item active" aria-current="page" style={{ display: 'flex', alignItems: 'center' }}>
+                <span className="breadcrumb-link breadcrumb-link-current" style={{ textDecoration: 'none' }}>Contact Us</span>
+              </li>
+            </ol>
           </div>
         </div>
+
+        <main id="siteMain" className="main container container-rfs container-w-outer" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+          
+          <ServicePageHero 
+            title="Contact Us" 
+            imageSrc="/wp-content/uploads/asp_images/sustainability/governance-oversight.webp"
+            imageAlt="Asia Pacific Shipping Operations"
+          />
+          
+          <Divider />
+
+          {/* 01 - The Asia Pacific Shipping Difference */}
+          <section className="layout layout-page layout-root">
+            <div className="layout-inner">
+              <div className="row u-gy-4 u-gx-5">
+                <div className="col-12 col-lg-6">
+                  <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
+                    The Asia Pacific Shipping Difference
+                  </h2>
+                  <div className="section-lead-content u-h4 u-mb-4">
+                    <p>Our whistle-blowing platform is hosted on an external platform by <a href="https://secure.ethicspoint.eu/domain/media/en/gui/105447" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>EthicsPoint</a>. At Asia Pacific Shipping, we value our reputation as a reliable provider of maritime energy transportation services.</p>
+                  </div>
+                  <div className="button-group u-mt-4">
+                    <a href="https://secure.ethicspoint.eu/domain/media/en/gui/105447/report.html" title="Reach Out Via EthicsPoint" target="_blank" rel="noopener noreferrer" className="button button-outline">
+                      <span>Reach Out Via EthicsPoint</span>
+                    </a>
+                  </div>
+                </div>
+                <div className="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                  <div className="content-width">
+                    <p>
+                      Our stakeholders, both internal and external, should speak up where they have concerns over possible breaches of ethics or standards of professional conduct. Your confidentiality is assured and you have our commitment for action.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <Divider />
+
+          {/* 02 - Our Offices */}
+          <section className="layout layout-page layout-root">
+            <div className="layout-inner">
+              <div className="row u-mb-4">
+                <div className="col-12">
+                  <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
+                    Our Offices
+                  </h2>
+                  <div className="section-lead-content u-h4">
+                    <p>Beyond our headquarters in Singapore, Asia Pacific Shipping also has regional offices in Copenhagen, Manila and Tokyo.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="row row-locations u-gy-4">
+                {/* Singapore */}
+                <div className="col-12 col-md-6 col-xxl-3 d-flex">
+                  <div className="card card-location u-bg-lighter u-border-radius w-100 u-overflow-hidden" style={{ border: '1px solid #eaeaea' }}>
+                    <div className="ratio ratio-4x3" style={{ width: '100%', height: '200px', backgroundColor: '#e5e5e5' }}>
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.830327073398!2d103.79676162668937!3d1.2751081618079503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1bc1c1bb8d11%3A0xe0eb605f8b2ff167!2sMapletree%20Business%20City!5e0!3m2!1sen!2ssg!4v1705549127324!5m2!1sen!2ssg"
+                        width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                    <div className="card-body u-p-4 d-flex flex-column">
+                      <h3 className="h5 card-title u-text-color-black u-mb-3">Singapore Headquarters</h3>
+                      <address className="u-mb-4" style={{ fontStyle: 'normal', lineHeight: '1.6' }}>
+                        10 Pasir Panjang Road<br />
+                        #17-01, Mapletree Business City<br />
+                        Singapore 117438
+                      </address>
+                      <div className="mt-auto pt-3" style={{ borderTop: '1px solid #eaeaea' }}>
+                        <span className="u-font-weight-bold">Tel: </span>
+                        <a href="tel:+6562307801" style={{ color: '#007236', textDecoration: 'none' }}>+65 6230 7801</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Copenhagen */}
+                <div className="col-12 col-md-6 col-xxl-3 d-flex">
+                  <div className="card card-location u-bg-lighter u-border-radius w-100 u-overflow-hidden" style={{ border: '1px solid #eaeaea' }}>
+                    <div className="ratio ratio-4x3" style={{ width: '100%', height: '200px', backgroundColor: '#e5e5e5' }}>
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.639097333276!2d12.593447916033584!3d55.69526210389571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465252de1e9596b1%3A0xc711e172108a8706!2sIndiakaj%206%2C%202100%20K%C3%B8benhavn!5e0!3m2!1sen!2ssg!4v1672227982617!5m2!1sen!2ssg"
+                        width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                    <div className="card-body u-p-4 d-flex flex-column">
+                      <h3 className="h5 card-title u-text-color-black u-mb-3">Copenhagen Office</h3>
+                      <address className="u-mb-4" style={{ fontStyle: 'normal', lineHeight: '1.6' }}>
+                        Indiakaj 6<br />
+                        2100 Copenhagen<br />
+                        Denmark
+                      </address>
+                      <div className="mt-auto pt-3" style={{ borderTop: '1px solid #eaeaea' }}>
+                        <span className="u-font-weight-bold">Tel: </span>
+                        <a href="tel:+4532261000" style={{ color: '#007236', textDecoration: 'none' }}>+45 3226 1000</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Manila */}
+                <div className="col-12 col-md-6 col-xxl-3 d-flex">
+                  <div className="card card-location u-bg-lighter u-border-radius w-100 u-overflow-hidden" style={{ border: '1px solid #eaeaea' }}>
+                    <div className="ratio ratio-4x3" style={{ width: '100%', height: '200px', backgroundColor: '#e5e5e5' }}>
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.579538701513!2d121.02582097516373!3d14.566020527922216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9ba30cf4ccd%3A0x308ecf3764200af!2sCentury%20Diamond%20Tower(BW%20SHIPPING)%20new%20office!5e0!3m2!1sen!2ssg!4v1717401419483!5m2!1sen!2ssg"
+                        width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                    <div className="card-body u-p-4 d-flex flex-column">
+                      <h3 className="h5 card-title u-text-color-black u-mb-3">Manila Office</h3>
+                      <address className="u-mb-3" style={{ fontStyle: 'normal', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                        Unit 2 33rd Floor and Unit 1A-1 32nd Floor Century Diamond Tower Kalayaan Avenue cor Salamanca Street Barangay Poblacion, Makati City 1210 Philippines
+                      </address>
+                      <div className="mt-auto pt-3" style={{ borderTop: '1px solid #eaeaea', fontSize: '0.95rem' }}>
+                        <div className="u-mb-1"><span className="u-font-weight-bold">Trunkline: </span><a href="tel:+63253183700" style={{ color: '#007236', textDecoration: 'none' }}>+63 2 5318 3700</a></div>
+                        <div className="u-mb-1"><span className="u-font-weight-bold">Smart: </span><a href="tel:+639088862935" style={{ color: '#007236', textDecoration: 'none' }}>+63 908 886 2935</a></div>
+                        <div><span className="u-font-weight-bold">Globe: </span><a href="tel:+639171862935" style={{ color: '#007236', textDecoration: 'none' }}>+63 917 186 2935</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tokyo */}
+                <div className="col-12 col-md-6 col-xxl-3 d-flex">
+                  <div className="card card-location u-bg-lighter u-border-radius w-100 u-overflow-hidden" style={{ border: '1px solid #eaeaea' }}>
+                    <div className="ratio ratio-4x3" style={{ width: '100%', height: '200px', backgroundColor: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <img 
+                        src="/wp-content/uploads/asp_images/partners/logo-client-chinaland.png" 
+                        alt="Tokyo Office Affiliate" 
+                        style={{ maxWidth: '60%', maxHeight: '60%', objectFit: 'contain' }} 
+                      />
+                    </div>
+                    <div className="card-body u-p-4 d-flex flex-column">
+                      <h3 className="h5 card-title u-text-color-black u-mb-3">Tokyo Office</h3>
+                      <div className="mt-auto pt-3" style={{ borderTop: '1px solid #eaeaea' }}>
+                        <span className="u-font-weight-bold">Tel: </span>
+                        <a href="tel:+815068628493" style={{ color: '#007236', textDecoration: 'none' }}>+81 50 6862 8493</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <Divider />
+
+          {/* 03 - Have a Question / Contact Form */}
+          <section className="layout layout-page layout-root">
+            <div className="layout-inner">
+              <div className="row u-gy-4 u-gx-5">
+                <div className="col-12 col-lg-5">
+                  <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
+                    Have a Question?
+                  </h2>
+                  <div className="section-lead-content u-h4 u-mb-4">
+                    <p>Leave us a message and we will get back to you as soon as possible.</p>
+                  </div>
+                  <div className="button-group u-mt-4">
+                    <a href="mailto:communications@bwek.com" className="button button-outline" style={{ display: 'inline-block' }}>
+                      <span>communications@bwek.com</span>
+                    </a>
+                  </div>
+                </div>
+                <div className="col-12 col-lg-7">
+                  <ContactForm />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <Divider />
+
+          {/* 04 - Our Departments Table */}
+          <section className="layout layout-page layout-root">
+            <div className="layout-inner">
+              <div className="row u-mb-4">
+                <div className="col-12">
+                  <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
+                    Our Departments
+                  </h2>
+                  <div className="section-lead-content u-h4">
+                    <p>Have a department-specific question? Reach out to our heads of department directly.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="table-responsive">
+                <table className="table table-hover" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                  <thead>
+                    <tr style={{ borderBottom: '2px solid #eaeaea' }}>
+                      <th style={{ padding: '1rem 0.5rem' }}>Department</th>
+                      <th style={{ padding: '1rem 0.5rem' }}>Email</th>
+                      <th style={{ padding: '1rem 0.5rem' }}>Key Contact</th>
+                      <th style={{ padding: '1rem 0.5rem' }}>Position</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid #eaeaea' }}>
+                      <td style={{ padding: '1rem 0.5rem' }}>Chartering</td>
+                      <td style={{ padding: '1rem 0.5rem' }}><a href="mailto:chartering@bwek.com" style={{ color: '#007236', textDecoration: 'underline' }}>chartering@bwek.com</a></td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Christian Fjeldborg Grønlund</td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Commercial Director</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #eaeaea' }}>
+                      <td style={{ padding: '1rem 0.5rem' }}>Technical</td>
+                      <td style={{ padding: '1rem 0.5rem' }}><a href="mailto:nsingh@bwek.com" style={{ color: '#007236', textDecoration: 'underline' }}>nsingh@bwek.com</a></td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Niraj Singh</td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Technical Director</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #eaeaea' }}>
+                      <td style={{ padding: '1rem 0.5rem' }}>Finance</td>
+                      <td style={{ padding: '1rem 0.5rem' }}><a href="mailto:uurbaniak@bwek.com" style={{ color: '#007236', textDecoration: 'underline' }}>uurbaniak@bwek.com</a></td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Uta Urbaniak-Sage</td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Chief Financial Officer</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #eaeaea' }}>
+                      <td style={{ padding: '1rem 0.5rem' }}>Human Resources</td>
+                      <td style={{ padding: '1rem 0.5rem' }}><a href="mailto:recruit@bwek.com" style={{ color: '#007236', textDecoration: 'underline' }}>recruit@bwek.com</a></td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Fevian Leong</td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Human Resources Director</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #eaeaea' }}>
+                      <td style={{ padding: '1rem 0.5rem' }}>Media</td>
+                      <td style={{ padding: '1rem 0.5rem' }}><a href="mailto:communications@bwek.com" style={{ color: '#007236', textDecoration: 'underline' }}>communications@bwek.com</a></td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Uta Urbaniak-Sage</td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Chief Financial Officer</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #eaeaea' }}>
+                      <td style={{ padding: '1rem 0.5rem' }}>Projects</td>
+                      <td style={{ padding: '1rem 0.5rem' }}><a href="mailto:projects@bwek.com" style={{ color: '#007236', textDecoration: 'underline' }}>projects@bwek.com</a></td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Rune Wang Foelbaek</td>
+                      <td style={{ padding: '1rem 0.5rem' }}>Senior Projects Manager</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <Divider />
+
+          {/* 05 - Newsletter & Join Us */}
+          <section className="layout layout-page layout-root">
+            <div className="layout-inner">
+              <div className="row u-gy-4 u-gx-4">
+                <div className="col-12 col-lg-7">
+                  <div className="callout theme-style theme-style-primary u-p-5 u-border-radius h-100" style={{ backgroundColor: '#2d2d2d', color: '#ffffff' }}>
+                    <h2 className="heading h5 u-mb-3 callout-heading u-mb-0" style={{ color: '#ffffff' }}>
+                      Subscribe to Our Newsletter
+                    </h2>
+                    <div className="content-width u-mb-4">
+                      <p>Sign up to receive alerts on press releases and updates on business activities.</p>
+                    </div>
+                    <NewsletterForm />
+                  </div>
+                </div>
+                <div className="col-12 col-lg-5">
+                  <div className="callout theme-style theme-style-mint u-p-5 u-border-radius h-100" style={{ backgroundColor: '#f5f9f6', display: 'flex', flexDirection: 'column' }}>
+                    <h2 className="heading h5 u-mb-3 callout-heading u-mb-0">
+                      Join Us Today
+                    </h2>
+                    <div className="content-width u-mb-4 flex-grow-1">
+                      <p>Asia Pacific Shipping offers exciting and rewarding career opportunities to people who have the skills and determination to succeed at sea and/or ashore.</p>
+                    </div>
+                    <div>
+                      <Link href="/careers" className="button button-outline button-outline-secondary" style={{ display: 'inline-block' }}>
+                        <span>Careers at Asia Pacific Shipping</span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Spacer before footer */}
+          <div className="layout layout-spacer layout-page layout-root">
+            <div className="layout-inner">
+              <div className="spacer spacer-large"></div>
+            </div>
+          </div>
+          
+        </main>
       </div>
       <Footer />
     </>
