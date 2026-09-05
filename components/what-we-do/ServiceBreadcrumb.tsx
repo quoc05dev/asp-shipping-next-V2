@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 interface BreadcrumbProps {
-  serviceName: string;
+  serviceName?: string;
 }
 
 export default function ServiceBreadcrumb({ serviceName }: BreadcrumbProps) {
@@ -16,15 +16,17 @@ export default function ServiceBreadcrumb({ serviceName }: BreadcrumbProps) {
             </Link>
             <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>
           </li>
-          <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
-            <Link href="/what-we-do" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
+          <li className={`breadcrumb-item ${!serviceName ? 'active' : ''}`} aria-current={!serviceName ? 'page' : undefined} style={{ display: 'flex', alignItems: 'center' }}>
+            <Link href="/what-we-do" className={`breadcrumb-link ${!serviceName ? 'breadcrumb-link-current' : ''}`} style={{ textDecoration: 'none' }}>
               <span className="breadcrumb-label">What We Do</span>
             </Link>
-            <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>
+            {serviceName && <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>}
           </li>
-          <li className="breadcrumb-item active" aria-current="page" style={{ display: 'flex', alignItems: 'center' }}>
-            <span className="breadcrumb-link breadcrumb-link-current" style={{ textDecoration: 'none' }}>{serviceName}</span>
-          </li>
+          {serviceName && (
+            <li className="breadcrumb-item active" aria-current="page" style={{ display: 'flex', alignItems: 'center' }}>
+              <span className="breadcrumb-link breadcrumb-link-current" style={{ textDecoration: 'none' }}>{serviceName}</span>
+            </li>
+          )}
         </ol>
       </div>
     </div>
