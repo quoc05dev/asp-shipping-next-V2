@@ -43,14 +43,12 @@ const SectionLead = ({ title, heading, description }: { title: string, heading: 
 );
 
 export default function WhatWeDoHubPage() {
-  const trustedPartners = [
-    { name: 'Partner Logo 1', image: '', href: '#' },
-    { name: 'Partner Logo 2', image: '', href: '#' },
-    { name: 'Partner Logo 3', image: '', href: '#' },
-    { name: 'Partner Logo 4', image: '', href: '#' },
-    { name: 'Partner Logo 5', image: '', href: '#' },
-    { name: 'Partner Logo 6', image: '', href: '#' },
-  ];
+  const trustedPartners = Array.from({ length: 8 }).map((_, idx) => ({
+    id: idx + 1,
+    name: `Partner ${idx + 1}`,
+    logo: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80"><text x="100" y="45" font-family="sans-serif" font-weight="600" font-size="16" fill="%23a0a0a0" text-anchor="middle">PARTNER ${idx + 1}</text></svg>`,
+    href: '#'
+  }));
 
   return (
     <>
@@ -107,81 +105,103 @@ export default function WhatWeDoHubPage() {
           <Divider />
 
           {/* 01.5 - TRUSTED RELATIONSHIPS */}
-          <section className="layout layout-page layout-root u-py-4" style={{ backgroundColor: '#073220', color: '#ffffff' }}>
-            <div className="layout-inner">
-              <div className="row align-items-center">
-                <div className="col-12 col-lg-3 u-mb-4 u-mb-lg-0">
-                  <h2 className="heading h6 u-mb-1" style={{ color: '#ffffff' }}>Trusted Relationships</h2>
-                  <p className="u-text-size-small u-mb-0" style={{ color: 'rgba(255, 255, 255, 0.75)', lineHeight: '1.4' }}>
-                    Working alongside customers and partners across maritime operations.
-                  </p>
-                </div>
-                <div className="col-12 col-lg-9">
-                  <div className="trusted-marquee-container">
-                    <div className="trusted-marquee-track">
-                      {trustedPartners.map((partner, idx) => (
-                        <div key={`orig-${idx}`} className="trusted-marquee-item">
-                          <span className="trusted-logo-placeholder">{partner.name}</span>
-                        </div>
-                      ))}
-                      {trustedPartners.map((partner, idx) => (
-                        <div key={`dup-${idx}`} className="trusted-marquee-item" aria-hidden="true">
-                          <span className="trusted-logo-placeholder">{partner.name}</span>
-                        </div>
-                      ))}
+          <section className="layout layout-page layout-root u-py-5" style={{ 
+            backgroundColor: '#032c1b', 
+            width: '100vw',
+            marginLeft: 'calc(50% - 50vw)'
+          }}>
+            <div className="container container-w-outer container-rfs">
+              {/* Heading Row */}
+              <div className="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end u-mb-4">
+                <h2 className="heading h5 u-mb-2 u-mb-md-0 u-font-weight-medium" style={{ color: '#ffffff' }}>
+                  Trusted by leading charterers &amp; traders
+                </h2>
+                <span className="u-text-size-small u-font-weight-bold u-text-uppercase" style={{ letterSpacing: '0.12em', color: 'rgba(255, 255, 255, 0.7)' }}>
+                  Selected Market Relationships
+                </span>
+              </div>
+
+              {/* Marquee Row */}
+              <div className="trusted-marquee-wrapper">
+                <div className="trusted-marquee-track">
+                  {trustedPartners.map((partner, idx) => (
+                    <div key={`orig-${idx}`} className="trusted-partner-card">
+                      <img src={partner.logo} alt={partner.name} className="trusted-partner-img" />
                     </div>
-                  </div>
+                  ))}
+                  {trustedPartners.map((partner, idx) => (
+                    <div key={`dup-${idx}`} className="trusted-partner-card" aria-hidden="true">
+                      <img src={partner.logo} alt={partner.name} className="trusted-partner-img" />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+            
             <style>{`
-              .trusted-marquee-container {
+              .trusted-marquee-wrapper {
                 overflow: hidden;
-                display: flex;
-                width: 100%;
                 position: relative;
-                mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-                -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+                width: 100%;
+                /* Soft edge masking for smooth entry/exit */
+                mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
               }
               .trusted-marquee-track {
                 display: flex;
+                gap: 2rem;
                 align-items: center;
-                gap: 4rem;
-                animation: trusted-marquee 25s linear infinite;
+                animation: trusted-scroll 45s linear infinite;
+                width: max-content;
               }
-              .trusted-marquee-container:hover .trusted-marquee-track {
+              .trusted-marquee-wrapper:hover .trusted-marquee-track {
                 animation-play-state: paused;
               }
-              .trusted-marquee-item {
+              .trusted-partner-card {
                 flex: 0 0 auto;
+                width: 190px;
+                height: 90px;
+                background-color: #ffffff;
+                border-radius: 2px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 40px;
+                padding: 1rem;
               }
-              .trusted-logo-placeholder {
-                font-weight: 600;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 0.85rem;
-                white-space: nowrap;
+              .trusted-partner-img {
+                max-width: 85%;
+                max-height: 65%;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                opacity: 0.9;
+                transition: opacity 0.2s ease;
               }
-              @keyframes trusted-marquee {
+              .trusted-partner-card:hover .trusted-partner-img {
+                opacity: 1;
+              }
+              @keyframes trusted-scroll {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-50% - 2rem)); }
+                /* Shift by exactly 50% of the duplicated track width minus half the gap */
+                100% { transform: translateX(calc(-50% - 1rem)); }
+              }
+              @media (max-width: 991px) {
+                .trusted-partner-card {
+                  width: 160px;
+                  height: 85px;
+                }
               }
               @media (prefers-reduced-motion: reduce) {
                 .trusted-marquee-track {
                   animation: none;
                   flex-wrap: wrap;
                   justify-content: center;
-                  gap: 2rem;
+                  width: 100%;
                 }
-                .trusted-marquee-container {
-                  overflow: visible;
+                .trusted-marquee-wrapper {
                   mask-image: none;
                   -webkit-mask-image: none;
+                  overflow: visible;
                 }
               }
             `}</style>
