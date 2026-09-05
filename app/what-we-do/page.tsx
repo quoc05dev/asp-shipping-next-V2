@@ -59,29 +59,35 @@ export default function WhatWeDoHubPage() {
           <Divider />
 
           {/* 01 - INTRO */}
-          <section className="layout layout-page layout-root">
-            <div className="layout-inner">
-              <div className="row u-gy-4 u-gx-5">
-                <div className="col-12 col-lg-5">
-                  <SectionLead 
-                    title="OUR APPROACH"
-                    heading="Integrated Maritime Expertise"
-                    description="We combine commercial judgment, technical discipline, operational experience and people-focused management to support vessels throughout their lifecycle."
-                  />
+          <section className="layout layout-two-columns layout-page layout-root layout-columns layout-two-columns-6x4">
+            <div className="layout-inner layout-row row">
+              <div className="layout layout-column layout-page col-12 col-lg-6">
+                <div className="layout layout-section-lead layout-page">
+                  <div className="layout-inner">
+                    <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
+                      What We Do
+                    </h2>
+                    <div className="section-lead-content u-h4">
+                      <div className="content-width">
+                        <p>Asia Pacific Shipping provides integrated maritime solutions across the vessel lifecycle, combining commercial insight, technical expertise and operational discipline to support safe, efficient and reliable shipping.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-12 col-lg-7">
-                  <div className="content-width">
-                    <div className="u-mb-4">
-                      <h3 className="h6 u-mb-2">Commercial Judgment</h3>
-                      <p>Market insight, employment strategy and disciplined execution.</p>
-                    </div>
-                    <div className="u-mb-4">
-                      <h3 className="h6 u-mb-2">Technical & Operational Discipline</h3>
-                      <p>Safety, maintenance, performance and regulatory compliance.</p>
-                    </div>
-                    <div>
-                      <h3 className="h6 u-mb-2">Long-Term Partnership</h3>
-                      <p>Practical support, transparent communication and reliable delivery.</p>
+              </div>
+              
+              <div className="layout layout-column layout-page col-12 col-lg-6 col-xl-5 col-xxl-4 offset-xl-1 offset-xxl-2">
+                <div className="layout layout-subheader layout-page">
+                  <div className="layout-inner">
+                    <h3 className="heading h5 u-mb-3 subheading u-text-color-primary u-mb-0">
+                      Our Approach
+                    </h3>
+                  </div>
+                </div>
+                <div className="layout layout-content layout-page">
+                  <div className="layout-inner">
+                    <div className="content-width left">
+                      <p>Our approach is built around practical execution, close collaboration and long-term value. We work with owners, crews and partners to respond to operational needs, maintain high standards and support dependable performance across changing market conditions.</p>
                     </div>
                   </div>
                 </div>
