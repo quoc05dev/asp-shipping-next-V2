@@ -53,11 +53,7 @@ export default function ContactUsPage() {
 
         <main id="siteMain" className="main container container-rfs container-w-outer" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
           
-          <ServicePageHero 
-            title="Contact Us" 
-            imageSrc="/wp-content/uploads/asp_images/sustainability/governance-oversight.webp"
-            imageAlt="Asia Pacific Shipping Operations"
-          />
+          <ServicePageHero content={{ eyebrow: "", title: "Contact Us", subtitle: "", image: { url: "/wp-content/uploads/asp_images/sustainability/governance-oversight.webp", alt: "Asia Pacific Shipping Operations" } }} />
           
           <Divider />
 

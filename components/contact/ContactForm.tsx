@@ -12,6 +12,16 @@ export default function ContactForm() {
 
   return (
     <div className="contact-form-container">
+      <style>{`
+        .contact-form .form-control:focus {
+          border-color: #007236 !important;
+          outline: none;
+          box-shadow: 0 0 0 1px rgba(0, 114, 54, 0.15) !important;
+        }
+        .contact-form .form-control {
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+      `}</style>
       {isSubmitted ? (
         <div className="form-success-message" style={{ padding: '2rem', backgroundColor: '#f5f5f5', borderRadius: '4px', textAlign: 'center' }}>
           <h3 className="h5 u-text-color-primary u-mb-2">Thank you for your enquiry</h3>
@@ -22,31 +32,31 @@ export default function ContactForm() {
           <div className="row u-gy-3">
             <div className="form-group col-12 col-md-6">
               <label htmlFor="firstName" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>First Name <span style={{ color: '#007236' }}>*</span></label>
-              <input type="text" id="firstName" name="firstName" required className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="First Name" />
+              <input type="text" id="firstName" name="firstName" required className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #a8a8a8', borderRadius: '4px' }} placeholder="First Name" />
             </div>
             <div className="form-group col-12 col-md-6">
               <label htmlFor="lastName" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Last Name <span style={{ color: '#007236' }}>*</span></label>
-              <input type="text" id="lastName" name="lastName" required className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="Last Name" />
+              <input type="text" id="lastName" name="lastName" required className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #a8a8a8', borderRadius: '4px' }} placeholder="Last Name" />
             </div>
             <div className="form-group col-12 col-md-6">
               <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Email <span style={{ color: '#007236' }}>*</span></label>
-              <input type="email" id="email" name="email" required className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="Email" />
+              <input type="email" id="email" name="email" required className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #a8a8a8', borderRadius: '4px' }} placeholder="Email" />
             </div>
             <div className="form-group col-12 col-md-6">
               <label htmlFor="phone" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Phone</label>
-              <input type="tel" id="phone" name="phone" className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="Phone" />
+              <input type="tel" id="phone" name="phone" className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #a8a8a8', borderRadius: '4px' }} placeholder="Phone" />
             </div>
             <div className="form-group col-12">
               <label htmlFor="company" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Company</label>
-              <input type="text" id="company" name="company" className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="Company" />
+              <input type="text" id="company" name="company" className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #a8a8a8', borderRadius: '4px' }} placeholder="Company" />
             </div>
             <div className="form-group col-12">
               <label htmlFor="subject" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Subject <span style={{ color: '#007236' }}>*</span></label>
-              <input type="text" id="subject" name="subject" required className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="Subject" />
+              <input type="text" id="subject" name="subject" required className="form-control" style={{ width: '100%', padding: '0.75rem', border: '1px solid #a8a8a8', borderRadius: '4px' }} placeholder="Subject" />
             </div>
             <div className="form-group col-12">
               <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Message <span style={{ color: '#007236' }}>*</span></label>
-              <textarea id="message" name="message" required className="form-control" rows={5} style={{ width: '100%', padding: '0.75rem', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="Type your message here."></textarea>
+              <textarea id="message" name="message" required className="form-control" rows={5} style={{ width: '100%', padding: '0.75rem', border: '1px solid #a8a8a8', borderRadius: '4px' }} placeholder="Type your message here."></textarea>
             </div>
             <div className="form-group col-12 mt-2">
               <div style={{ display: 'flex', alignItems: 'center' }}>

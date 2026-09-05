@@ -5,6 +5,9 @@ import Footer from '@/components/layout/Footer';
 import ServicePageHero from '@/components/what-we-do/ServicePageHero';
 import ServiceBreadcrumb from '@/components/what-we-do/ServiceBreadcrumb';
 import RelatedServices from '@/components/what-we-do/RelatedServices';
+import FaqSection from '@/components/what-we-do/FaqSection';
+import { cmsRepository } from '@/data/cms/repository';
+import HowWeWorkSection from '@/components/what-we-do/HowWeWorkSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -28,7 +31,17 @@ const Divider = () => (
   </div>
 );
 
-export default function MarineConsultancyPage() {
+export default async function MarineConsultancyPage() {
+  const heroContent = await cmsRepository.getPageSection('marine-consultancy', 'hero');
+  const primaryIntroContent = await cmsRepository.getPageSection('marine-consultancy', 'primary_intro');
+  const hwwContent = await cmsRepository.getPageSection('marine-consultancy', 'how_we_work');
+  const capContent = await cmsRepository.getPageSection('marine-consultancy', 'capabilities');
+  const hlContent = await cmsRepository.getPageSection('marine-consultancy', 'highlights');
+  const caContent = await cmsRepository.getPageSection('marine-consultancy', 'marine_advisory');
+  const faqContent = await cmsRepository.getPageSection('marine-consultancy', 'faq');
+  const faqItems = await cmsRepository.getServiceFaqs('marine-consultancy');
+  const relatedServices = await cmsRepository.getRelatedServices('marine-consultancy');
+  const labels = await cmsRepository.getSharedLabels();
   return (
     <>
       <Header />
@@ -36,38 +49,45 @@ export default function MarineConsultancyPage() {
       <ServiceBreadcrumb serviceName="Marine Consultancy" />
       <main id="siteMain" className="main container container-rfs container-w-outer" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
 
-        <ServicePageHero
-          title="Marine Consultancy"
-          imageSrc="/wp-content/uploads/asp_images/ships/asp-luna-turning.webp"
-          imageAlt="ASP Marine Consultancy — vessel operations"
-        />
+        {heroContent && <ServicePageHero content={heroContent.content} />}
 
         <Divider />
 
         {/* 01 - INTRO */}
         <section className="layout layout-page layout-root">
+          <style>{`
+            .intro-img-wrap {
+              position: relative;
+              width: 100%;
+              aspect-ratio: 16/10;
+              border-radius: 4px;
+              overflow: hidden;
+            }
+            @media (min-width: 992px) {
+              .intro-img-wrap {
+                aspect-ratio: auto;
+                height: 100%;
+              }
+            }
+          `}</style>
           <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5 align-items-center">
+            <div className="row u-gy-4 u-gx-5 align-items-stretch">
               <div className="col-12 col-lg-6">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  From Practice To Strategy
-                </h2>
+                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0 u-mt-0">{primaryIntroContent?.content.eyebrow}</h2>
                 <div className="section-lead-content u-h4 u-mb-4">
-                  <p>Advice rooted in ownership.<br/>Solutions grounded in reality.</p>
+                  <p className="u-mt-0" dangerouslySetInnerHTML={{ __html: primaryIntroContent?.content.heading || '' }} />
                 </div>
                 <div className="content-width">
-                  <p>
-                    Our consultancy is built on the experience of active shipowners and operators who have managed complex fleets across multiple market cycles. We bring that practical perspective to every advisory mandate — whether assessing a vessel acquisition, supervising a newbuild programme, or charting a pathway to decarbonisation. The advice we give is the advice we follow ourselves.
-                  </p>
+                  <p className="u-mb-0" dangerouslySetInnerHTML={{ __html: primaryIntroContent?.content.body || '' }} />
                 </div>
               </div>
               <div className="col-12 col-lg-6">
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', borderRadius: '4px', overflow: 'hidden' }}>
-                  <Image
-                    src="/wp-content/uploads/asp_images/about/history-03-first-tanker.png"
-                    alt="ASP marine consultancy operations"
+                <div className="intro-img-wrap">
+                  <Image 
+                    src={primaryIntroContent?.content.image.url || ''}
+                    alt={primaryIntroContent?.content.image.alt || ''}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
                   />
                 </div>
               </div>
@@ -78,123 +98,65 @@ export default function MarineConsultancyPage() {
         <Divider />
 
         {/* 02 - OUR SERVICES */}
+        {capContent && (
         <section className="layout layout-page layout-root">
           <div className="layout-inner">
             <div className="row u-mb-5">
               <div className="col-12 col-lg-8">
                 <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Our Services
+                  {capContent.content.eyebrow}
                 </h2>
                 <div className="section-lead-content u-h4 u-mb-0">
-                  <p>Specialist advisory across the vessel lifecycle</p>
+                  <p>{capContent.content.heading}</p>
                 </div>
                 <div className="content-width u-mt-3">
-                  <p>
-                    From initial acquisition through active operation to eventual recycling, our consultants provide expert guidance at every stage of a vessel&apos;s commercial and technical life.
-                  </p>
+                  <p>{capContent.content.intro}</p>
                 </div>
               </div>
             </div>
-
+            
             <div className="row u-gy-4 u-gx-5 mt-4">
-              <div className="col-12 col-md-4">
-                <div style={{ paddingRight: '1rem', borderLeft: '1px solid #e5e5e5', paddingLeft: '1.5rem', height: '100%' }}>
-                  <h3 className="heading h6 u-mb-3 u-font-weight-bold">Newbuilding Supervision</h3>
-                  <p className="u-mb-0">Comprehensive project management from design review and shipyard selection through on-site construction supervision, sea trials and vessel delivery — drawing on ASP&apos;s direct newbuilding experience.</p>
+              {capContent.content.capabilities.map((cap, idx) => (
+                <div key={idx} className="col-12 col-md-4">
+                  <div style={{ paddingRight: idx < 2 ? '1rem' : '0', borderLeft: '1px solid #e5e5e5', paddingLeft: '1.5rem', height: '100%' }}>
+                    <h3 className="heading h6 u-mb-3 u-font-weight-bold" dangerouslySetInnerHTML={{ __html: cap.title }} />
+                    <p className="u-mb-0" dangerouslySetInnerHTML={{ __html: cap.description }} />
+                  </div>
                 </div>
-              </div>
-              <div className="col-12 col-md-4">
-                <div style={{ paddingRight: '1rem', borderLeft: '1px solid #e5e5e5', paddingLeft: '1.5rem', height: '100%' }}>
-                  <h3 className="heading h6 u-mb-3 u-font-weight-bold">ESG &amp; Decarbonisation</h3>
-                  <p className="u-mb-0">Advisory on pathways to meet IMO emission requirements including EEXI and CII ratings, evaluation of energy-saving technologies, and transition planning for alternative fuel vessel operations.</p>
-                </div>
-              </div>
-              <div className="col-12 col-md-4">
-                <div style={{ borderLeft: '1px solid #e5e5e5', paddingLeft: '1.5rem', height: '100%' }}>
-                  <h3 className="heading h6 u-mb-3 u-font-weight-bold">Marine Due Diligence &amp; S&amp;P</h3>
-                  <p className="u-mb-0">Detailed vessel surveys, technical assessments and condition reports prior to Sale &amp; Purchase transactions or dry-docking, helping investors and owners accurately value and risk-assess maritime assets.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
+        )}
 
         <Divider />
-
         {/* 03 - HOW WE WORK */}
-        <section className="layout layout-page layout-root">
-          <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5">
-              <div className="col-12 col-lg-6">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  How We Work
-                </h2>
-                <div className="section-lead-content u-h4 u-mb-4">
-                  <p>Owner&apos;s perspective.<br/>Independent judgement.</p>
-                </div>
-                <div className="content-width u-mb-5">
-                  <p>
-                    Every consultancy engagement begins with understanding the client&apos;s specific objectives and constraints. We combine our direct operational experience with independent analysis to deliver advice that is both commercially sound and technically credible.
-                  </p>
-                </div>
+        {hwwContent && <HowWeWorkSection content={hwwContent.content} />}
 
-                <div className="process-list" style={{ display: 'flex', flexDirection: 'column' }}>
-                  {[
-                    { num: '01', title: 'Define the Mandate', desc: 'Establish clear project objectives, scope and timeline with the client — whether an acquisition assessment, newbuild supervision, compliance review or strategic advisory.' },
-                    { num: '02', title: 'Investigate &amp; Assess', desc: 'Conduct thorough technical and commercial investigation, including vessel inspection, documentation review, regulatory analysis and market benchmarking.' },
-                    { num: '03', title: 'Advise &amp; Recommend', desc: 'Deliver clear, evidence-based recommendations that balance technical integrity with commercial reality — the same standard we apply to our own fleet decisions.' },
-                    { num: '04', title: 'Support Implementation', desc: 'Provide continued support through the execution phase — from shipyard supervision and project oversight to regulatory filings and operational handover.' },
-                  ].map((step, idx) => (
-                    <div key={idx} style={{ paddingBottom: '1.5rem', marginBottom: '1.5rem', borderBottom: idx !== 3 ? '1px solid #e5e5e5' : 'none' }}>
-                      <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '0.25rem' }}>{step.num}</span>
-                      <h3 className="heading h6 u-mb-2 u-font-weight-bold" dangerouslySetInnerHTML={{ __html: step.title }} />
-                      <p className="u-mb-0">{step.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="col-12 col-lg-6">
-                <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '500px', borderRadius: '4px', overflow: 'hidden' }}>
-                  <Image
-                    src="/wp-content/uploads/asp_images/ships/asp-rainbow.jpg"
-                    alt="ASP vessel at port"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <Divider />
+                <Divider />
 
         {/* 04 - KEY HIGHLIGHTS */}
+        {hlContent && (
         <section className="layout layout-page layout-root">
           <div className="layout-inner">
             <div className="row u-mb-5 justify-content-center text-center">
               <div className="col-12 col-lg-8">
                 <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Key Consultancy Highlights
+                  {hlContent.content.eyebrow}
                 </h2>
                 <div className="section-lead-content u-h4 u-mb-0">
-                  <p>Expertise earned through direct ownership</p>
+                  <p>{hlContent.content.heading}</p>
                 </div>
               </div>
             </div>
-
+            
             <div className="row u-gy-4 u-gx-4">
-              {[
-                { title: 'Active Ownership Experience', desc: 'Our advice reflects the practical realities of owning and operating a modern fleet — not theoretical frameworks divorced from commercial pressure.' },
-                { title: 'Newbuilding Track Record', desc: 'ASP has directly supervised major newbuilding programmes including multi-vessel projects at leading international shipyards, bringing that experience to client mandates.' },
-                { title: 'Decarbonisation Advisory', desc: 'We support clients in navigating IMO emission regulations, evaluating energy-saving technologies and planning transitions to alternative fuel vessels including methanol dual-fuel systems.' },
-                { title: 'Independent Assessment', desc: 'Our due diligence and S&P advisory services are conducted with full independence, providing objective valuations and risk assessments that clients can rely on without conflict of interest.' },
-              ].map((hl, idx) => (
+              {hlContent.content.highlights.map((hl, idx) => (
                 <div key={idx} className="col-12 col-md-6">
-                  <div className="card u-h-100 u-border home-service-card" style={{ border: '1px solid #e5e5e5', padding: '2.5rem 2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.02)' }}>
+                  <div className="card u-h-100 u-border home-service-card" style={{ border: "1px solid #e5e5e5", padding: "2.5rem 2rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}>
                     <div className="card-body p-0">
-                      <h3 className="heading h6 u-mb-3 u-font-weight-bold u-text-color-primary">{hl.title}</h3>
-                      <p className="u-mb-0">{hl.desc}</p>
+                      <h3 className="heading h6 u-mb-3 u-font-weight-bold u-text-color-primary" dangerouslySetInnerHTML={{ __html: hl.title }} />
+                      <p className="u-mb-0" dangerouslySetInnerHTML={{ __html: hl.description }} />
                     </div>
                   </div>
                 </div>
@@ -202,50 +164,44 @@ export default function MarineConsultancyPage() {
             </div>
           </div>
         </section>
+        )}
 
         <Divider />
 
-        {/* 05 - PROJECT FOCUS */}
+        {/* 05 - ADVISORY SERVICES */}
+        {caContent && (
         <section className="layout layout-page layout-root">
           <div className="layout-inner">
             <div className="row u-mb-5 align-items-end">
               <div className="col-12 col-md-8">
                 <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Project Focus
+                  {caContent.content.eyebrow}
                 </h2>
                 <div className="section-lead-content u-h4 u-mb-0">
-                  <p>Representative consultancy work</p>
+                  <p>{caContent.content.heading}</p>
                 </div>
-              </div>
-              <div className="col-12 col-md-4 text-md-right u-mt-3 u-mt-md-0">
-                <a href="/our-fleet" style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                  View our fleet &rarr;
-                </a>
               </div>
             </div>
 
             <div className="row u-gy-4 u-gx-4">
-              {[
-                { name: 'Newbuilding Programme', type: 'Project Advisory', focus: 'LR2 Tankers', detail: 'Multi-vessel supervision', img: '/wp-content/uploads/asp_images/ships/newbuild.jpg' },
-                { name: 'Decarbonisation Pathway', type: 'ESG Advisory', focus: 'Emission Compliance', detail: 'EEXI / CII Planning', img: '/wp-content/uploads/asp_images/ships/ship-home-sust-1.jpg' },
-                { name: 'Vessel Assessment', type: 'S&P Due Diligence', focus: 'Technical Condition', detail: 'Pre-purchase survey', img: '/wp-content/uploads/asp_images/ships/asp-jewels-shipyard.jpg' },
-              ].map((proj, idx) => (
+              {caContent.content.items.map((role, idx) => (
                 <div key={idx} className="col-12 col-md-4">
-                  <div className="card card-page-link u-border-radius u-overflow-hidden u-h-100 home-service-card" style={{ border: '1px solid #e5e5e5' }}>
-                    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10' }}>
-                      <Image src={proj.img} alt={proj.name} fill style={{ objectFit: 'cover' }} />
+                  <div className="card card-page-link u-border-radius u-overflow-hidden u-h-100 home-service-card" style={{ border: '1px solid #e5e5e5', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', flexShrink: 0 }}>
+                      <Image src={role.image.url} alt={role.image.alt} fill style={{ objectFit: 'cover' }} />
                     </div>
-                    <div className="card-body u-px-4 u-py-4">
-                      <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#6c757d', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>{proj.type}</span>
-                      <h3 className="heading h5 u-mb-3 u-text-color-black">{proj.name}</h3>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e5e5e5', paddingTop: '1rem' }}>
+                    <div className="card-body u-px-4 u-py-4" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                      <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#6c757d', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }} dangerouslySetInnerHTML={{ __html: role.type }} />
+                      <h3 className="heading h5 u-mb-2 u-text-color-black" dangerouslySetInnerHTML={{ __html: role.name }} />
+                      <p style={{ color: '#4a4a4a', fontSize: '0.95rem', lineHeight: 1.5 }} className="u-mb-4" dangerouslySetInnerHTML={{ __html: role.description }}></p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e5e5e5', paddingTop: '1rem', marginTop: 'auto' }}>
                         <div>
                           <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Focus</span>
-                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }}>{proj.focus}</span>
+                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }} dangerouslySetInnerHTML={{ __html: role.focus }} />
                         </div>
                         <div style={{ textAlign: 'right' }}>
-                          <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Scope</span>
-                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }}>{proj.detail}</span>
+                          <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Lifecycle</span>
+                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }} dangerouslySetInnerHTML={{ __html: role.lifecycle }} />
                         </div>
                       </div>
                     </div>
@@ -255,66 +211,17 @@ export default function MarineConsultancyPage() {
             </div>
           </div>
         </section>
-
-        <Divider />
-
-        {/* 06 - RELATED SERVICES */}
-        <RelatedServices currentServicePath="/marine-consultancy" />
+        )}
 
         <Divider />
 
         {/* 07 - FAQ */}
-        <section className="layout layout-page layout-root u-pb-5">
-          <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5">
-              <div className="col-12 col-lg-4">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Common Questions
-                </h2>
-                <div className="section-lead-content u-h4 u-mb-4">
-                  <p>Frequently Asked Questions</p>
-                </div>
-                <div className="content-width">
-                  <p>Find quick answers about our marine consultancy capabilities and approach.</p>
-                </div>
-              </div>
-              <div className="col-12 col-lg-8">
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  {[
-                    { q: 'What types of projects does ASP Marine Consultancy handle?', a: 'We consult across a broad range of projects including newbuilding supervision, ESG and decarbonisation pathway planning, Sale & Purchase due diligence, vessel condition surveys, and technical advisory for fleet acquisition or disposal.' },
-                    { q: 'What makes ASP consultancy different from other marine advisors?', a: 'Our advice is grounded in the practical realities of owning and operating a modern fleet. We apply the same standards to client mandates that we apply to our own fleet decisions — giving clients the perspective of an experienced shipowner, not just a consultant.' },
-                    { q: 'Can ASP help with IMO emission compliance planning?', a: 'Yes. We advise on EEXI and CII compliance strategies, evaluate energy-saving technologies and provide guidance on transition pathways including dual-fuel vessel options such as methanol propulsion.' },
-                    { q: 'Does ASP provide pre-purchase technical surveys?', a: 'Absolutely. Our technical team conducts thorough vessel assessments prior to Sale & Purchase, identifying technical risks and condition issues that investors and owners need to accurately value maritime assets.' },
-                  ].map((faq, idx) => (
-                    <details
-                      key={idx}
-                      style={{ paddingBottom: '1.25rem', marginBottom: '1.25rem', borderBottom: '1px solid #e5e5e5' }}
-                      className="faq-details"
-                    >
-                      <summary
-                        className="heading h6 u-font-weight-bold"
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', margin: 0, listStyle: 'none' }}
-                      >
-                        <span style={{ paddingRight: '2rem' }}>{faq.q}</span>
-                        <span style={{ color: '#007236', flexShrink: 0, fontSize: '1.2rem', fontWeight: 400 }}>+</span>
-                      </summary>
-                      <div className="u-mt-3 content-width" style={{ paddingRight: '2rem' }}>
-                        <p className="u-mb-0">{faq.a}</p>
-                      </div>
-                    </details>
-                  ))}
-                </div>
-                <style dangerouslySetInnerHTML={{__html: `
-                  .faq-details summary::-webkit-details-marker { display: none; }
-                  .faq-details[open] summary span:last-child { transform: rotate(45deg); display: inline-block; }
-                  .faq-details summary span:last-child { transition: transform 0.2s ease; }
-                `}} />
-              </div>
-            </div>
-          </div>
-        </section>
+        {faqContent && <FaqSection content={faqContent.content} items={faqItems} />}
 
         <Divider />
+
+        {/* 06 - RELATED SERVICES */}
+        <RelatedServices services={relatedServices} />
       </main>
       </div>
       <Footer />

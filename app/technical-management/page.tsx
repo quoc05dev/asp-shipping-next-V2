@@ -5,6 +5,9 @@ import Footer from '@/components/layout/Footer';
 import ServicePageHero from '@/components/what-we-do/ServicePageHero';
 import ServiceBreadcrumb from '@/components/what-we-do/ServiceBreadcrumb';
 import RelatedServices from '@/components/what-we-do/RelatedServices';
+import FaqSection from '@/components/what-we-do/FaqSection';
+import { cmsRepository } from '@/data/cms/repository';
+import HowWeWorkSection from '@/components/what-we-do/HowWeWorkSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -28,7 +31,13 @@ const Divider = () => (
   </div>
 );
 
-export default function TechnicalManagementPage() {
+export default async function TechnicalManagementPage() {
+  const heroContent = await cmsRepository.getPageSection('technical-management', 'hero');
+  const primaryIntroContent = await cmsRepository.getPageSection('technical-management', 'primary_intro');
+  const hwwContent = await cmsRepository.getPageSection('technical-management', 'how_we_work');
+  const faqContent = await cmsRepository.getPageSection('technical-management', 'faq');
+  const faqItems = await cmsRepository.getServiceFaqs('technical-management');
+  const relatedServices = await cmsRepository.getRelatedServices('technical-management');
   return (
     <>
       <Header />
@@ -36,38 +45,45 @@ export default function TechnicalManagementPage() {
       <ServiceBreadcrumb serviceName="Technical Management" />
       <main id="siteMain" className="main container container-rfs container-w-outer" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
 
-        <ServicePageHero
-          title="Technical Management"
-          imageSrc="/wp-content/uploads/asp_images/ships/asp-titan-aerial-aft.webp"
-          imageAlt="ASP Technical Management — vessel at sea"
-        />
+        {heroContent && <ServicePageHero content={heroContent.content} />}
 
         <Divider />
 
         {/* 01 - INTRO */}
         <section className="layout layout-page layout-root">
+          <style>{`
+            .intro-img-wrap {
+              position: relative;
+              width: 100%;
+              aspect-ratio: 16/10;
+              border-radius: 4px;
+              overflow: hidden;
+            }
+            @media (min-width: 992px) {
+              .intro-img-wrap {
+                aspect-ratio: auto;
+                height: 100%;
+              }
+            }
+          `}</style>
           <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5 align-items-center">
+            <div className="row u-gy-4 u-gx-5 align-items-stretch">
               <div className="col-12 col-lg-6">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Superior Standards
-                </h2>
+                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0 u-mt-0">{primaryIntroContent?.content.eyebrow}</h2>
                 <div className="section-lead-content u-h4 u-mb-4">
-                  <p>Technical discipline.<br/>Operational continuity.</p>
+                  <p className="u-mt-0" dangerouslySetInnerHTML={{ __html: primaryIntroContent?.content.heading || '' }} />
                 </div>
                 <div className="content-width">
-                  <p>
-                    The condition of a vessel reflects the quality of the people who maintain it. Our technical management team applies rigorous planned maintenance systems, proactive inspection regimes, and continual performance monitoring to ensure every ship in our fleet operates at its highest capability — safely, efficiently, and in full regulatory compliance at all times.
-                  </p>
+                  <p className="u-mb-0" dangerouslySetInnerHTML={{ __html: primaryIntroContent?.content.body || '' }} />
                 </div>
               </div>
               <div className="col-12 col-lg-6">
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', borderRadius: '4px', overflow: 'hidden' }}>
-                  <Image
-                    src="/wp-content/uploads/asp_images/ships/asp-titan.webp"
-                    alt="ASP vessel technical operations"
+                <div className="intro-img-wrap">
+                  <Image 
+                    src={primaryIntroContent?.content.image.url || ''}
+                    alt={primaryIntroContent?.content.image.alt || ''}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
                   />
                 </div>
               </div>
@@ -122,52 +138,9 @@ export default function TechnicalManagementPage() {
         <Divider />
 
         {/* 03 - HOW WE WORK */}
-        <section className="layout layout-page layout-root">
-          <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5">
-              <div className="col-12 col-lg-6">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  How We Work
-                </h2>
-                <div className="section-lead-content u-h4 u-mb-4">
-                  <p>Prevention before breakdown.<br/>Precision in every intervention.</p>
-                </div>
-                <div className="content-width u-mb-5">
-                  <p>
-                    Technical performance is built through a systematic cycle of inspection, maintenance, monitoring and review. Each phase requires specialist knowledge, disciplined execution and close coordination between ship and shore.
-                  </p>
-                </div>
+        {hwwContent && <HowWeWorkSection content={hwwContent.content} />}
 
-                <div className="process-list" style={{ display: 'flex', flexDirection: 'column' }}>
-                  {[
-                    { num: '01', title: 'Plan &amp; Schedule', desc: 'Develop and maintain structured planned maintenance schedules, ensuring all class, flag and statutory requirements are met well ahead of critical dates.' },
-                    { num: '02', title: 'Inspect &amp; Assess', desc: 'Conduct routine condition assessments, defect monitoring and superintendent visits to identify technical risks before they become operational problems.' },
-                    { num: '03', title: 'Execute &amp; Maintain', desc: 'Coordinate repairs, dry-docking and critical spares procurement with approved service providers to restore and maintain fleet standards.' },
-                    { num: '04', title: 'Monitor &amp; Optimise', desc: 'Analyse real-time performance data to drive fuel savings, reduce emissions, extend machinery life and benchmark each vessel against targets.' },
-                  ].map((step, idx) => (
-                    <div key={idx} style={{ paddingBottom: '1.5rem', marginBottom: '1.5rem', borderBottom: idx !== 3 ? '1px solid #e5e5e5' : 'none' }}>
-                      <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '0.25rem' }}>{step.num}</span>
-                      <h3 className="heading h6 u-mb-2 u-font-weight-bold" dangerouslySetInnerHTML={{ __html: step.title }} />
-                      <p className="u-mb-0">{step.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="col-12 col-lg-6">
-                <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '500px', borderRadius: '4px', overflow: 'hidden' }}>
-                  <Image
-                    src="/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp"
-                    alt="ASP vessel at sea"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <Divider />
+                <Divider />
 
         {/* 04 - KEY HIGHLIGHTS */}
         <section className="layout layout-page layout-root">
@@ -205,51 +178,68 @@ export default function TechnicalManagementPage() {
 
         <Divider />
 
-        {/* 05 - FLEET FOCUS */}
+                {/* 05 - TECHNICAL DISCIPLINES */}
         <section className="layout layout-page layout-root">
           <div className="layout-inner">
             <div className="row u-mb-5 align-items-end">
               <div className="col-12 col-md-8">
                 <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Fleet Focus
+                  Technical Disciplines
                 </h2>
                 <div className="section-lead-content u-h4 u-mb-0">
-                  <p>Vessels maintained to the highest standard</p>
+                  <p>Core areas of our technical management</p>
                 </div>
-              </div>
-              <div className="col-12 col-md-4 text-md-right u-mt-3 u-mt-md-0">
-                <a href="/our-fleet" style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                  Explore all vessels &rarr;
-                </a>
               </div>
             </div>
 
             <div className="row u-gy-4 u-gx-4">
               {[
-                { name: 'ASP Titan', type: 'LR2 Tanker', cap: '115,049 SDWT', built: '2026', img: '/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp' },
-                { name: 'ASP Luna', type: 'LR2 Tanker', cap: '115,049 SDWT', built: '2026', img: '/wp-content/uploads/asp_images/ships/asp-luna-aerial-aft.webp' },
-                { name: 'ASP Jewels', type: 'Oil Tanker', cap: '114,974 SDWT', built: '2016', img: '/wp-content/uploads/asp_images/ships/asp-jewels.webp' },
-              ].map((ship, idx) => (
+                { 
+                  name: `Planned Maintenance`, 
+                  type: `Maintenance Planning`, 
+                  focus: `Maintenance`, 
+                  detail: `Vessel Systems`, 
+                  img: '/wp-content/uploads/asp_images/ships/asp-luna-turning.webp',
+                  description: `Maintenance planning supports vessel reliability by organizing machinery, equipment and inspection requirements around the vessel’s operating schedule. A structured approach helps technical teams identify priorities and coordinate work before issues affect operations.`
+                },
+                { 
+                  name: `Performance &amp; Reliability`, 
+                  type: `Technical Oversight`, 
+                  focus: `Reliability`, 
+                  detail: `Performance Monitoring`, 
+                  img: '/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp',
+                  description: `Technical oversight considers equipment condition, operational performance and reported defects across the vessel. Continuous review supports timely technical decisions and helps maintain safe and dependable ship operations.`
+                },
+                { 
+                  name: `Dry-Docking &amp; Compliance`, 
+                  type: `Compliance &amp; Projects`, 
+                  focus: `Project Planning`, 
+                  detail: `Dry-Docking &amp; Compliance`, 
+                  img: '/wp-content/uploads/asp_images/ships/maple-cedar.jpg',
+                  description: `Technical projects require careful preparation, coordination and review across maintenance, inspection and regulatory requirements. Structured planning helps vessels complete major work while maintaining appropriate technical and operational standards.`
+                },
+              ].map((role, idx) => (
                 <div key={idx} className="col-12 col-md-4">
-                  <a href="/our-fleet" className="card card-page-link u-border-radius u-overflow-hidden u-h-100 home-service-card" style={{ textDecoration: 'none', border: '1px solid #e5e5e5' }}>
-                    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10' }}>
-                      <Image src={ship.img} alt={ship.name} fill style={{ objectFit: 'cover' }} />
+                  <div className="card card-page-link u-border-radius u-overflow-hidden u-h-100 home-service-card" style={{ border: '1px solid #e5e5e5', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', flexShrink: 0 }}>
+                      <Image src={role.img} alt={role.name.replace(/&amp;/g, '&')} fill style={{ objectFit: 'cover' }} />
                     </div>
-                    <div className="card-body u-px-4 u-py-4">
-                      <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#6c757d', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>{ship.type}</span>
-                      <h3 className="heading h5 u-mb-3 u-text-color-black">{ship.name}</h3>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e5e5e5', paddingTop: '1rem' }}>
+                    <div className="card-body u-px-4 u-py-4" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                      <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#6c757d', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }} dangerouslySetInnerHTML={{ __html: role.type }} />
+                      <h3 className="heading h5 u-mb-2 u-text-color-black" dangerouslySetInnerHTML={{ __html: role.name }} />
+                      <p style={{ color: '#4a4a4a', fontSize: '0.95rem', lineHeight: 1.5 }} className="u-mb-4">{role.description}</p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e5e5e5', paddingTop: '1rem', marginTop: 'auto' }}>
                         <div>
-                          <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Deadweight</span>
-                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }}>{ship.cap}</span>
+                          <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Focus</span>
+                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }} dangerouslySetInnerHTML={{ __html: role.focus }} />
                         </div>
                         <div style={{ textAlign: 'right' }}>
-                          <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Built</span>
-                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }}>{ship.built}</span>
+                          <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Scope</span>
+                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }} dangerouslySetInnerHTML={{ __html: role.detail }} />
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </div>
               ))}
             </div>
@@ -258,63 +248,13 @@ export default function TechnicalManagementPage() {
 
         <Divider />
 
-        {/* 06 - RELATED SERVICES */}
-        <RelatedServices currentServicePath="/technical-management" />
-
-        <Divider />
-
         {/* 07 - FAQ */}
-        <section className="layout layout-page layout-root u-pb-5">
-          <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5">
-              <div className="col-12 col-lg-4">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Common Questions
-                </h2>
-                <div className="section-lead-content u-h4 u-mb-4">
-                  <p>Frequently Asked Questions</p>
-                </div>
-                <div className="content-width">
-                  <p>Find quick answers about our technical management approach and fleet maintenance standards.</p>
-                </div>
-              </div>
-              <div className="col-12 col-lg-8">
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  {[
-                    { q: 'How does ASP ensure its fleet meets oil major vetting standards?', a: 'Our technical management system complies rigorously with TMSA standards and the ISM Code. The fleet is maintained in a state of constant readiness to pass SIRE and CDI inspections by leading charterers at any time.' },
-                    { q: 'What planned maintenance systems does ASP use?', a: 'We utilise modern computerised Planned Maintenance Systems (PMS) to schedule and track all maintenance tasks, enabling early identification of potential issues before they affect vessel performance or availability.' },
-                    { q: 'How are dry-dockings managed to reduce off-hire time?', a: 'Our technical superintendents develop detailed dry-docking scopes in advance, coordinate with approved repair yards, and manage each project tightly to minimise time in dock and return vessels to trading as quickly as possible.' },
-                    { q: 'Does ASP use real-time monitoring for vessel performance?', a: 'Yes. We integrate ship-to-shore sensor technology to monitor speed, fuel consumption, and machinery condition continuously. This data is analysed onshore to drive optimisation recommendations and measure performance against targets.' },
-                  ].map((faq, idx) => (
-                    <details
-                      key={idx}
-                      style={{ paddingBottom: '1.25rem', marginBottom: '1.25rem', borderBottom: '1px solid #e5e5e5' }}
-                      className="faq-details"
-                    >
-                      <summary
-                        className="heading h6 u-font-weight-bold"
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', margin: 0, listStyle: 'none' }}
-                      >
-                        <span style={{ paddingRight: '2rem' }}>{faq.q}</span>
-                        <span style={{ color: '#007236', flexShrink: 0, fontSize: '1.2rem', fontWeight: 400 }}>+</span>
-                      </summary>
-                      <div className="u-mt-3 content-width" style={{ paddingRight: '2rem' }}>
-                        <p className="u-mb-0">{faq.a}</p>
-                      </div>
-                    </details>
-                  ))}
-                </div>
-                <style dangerouslySetInnerHTML={{__html: `
-                  .faq-details summary::-webkit-details-marker { display: none; }
-                  .faq-details[open] summary span:last-child { transform: rotate(45deg); display: inline-block; }
-                  .faq-details summary span:last-child { transition: transform 0.2s ease; }
-                `}} />
-              </div>
-            </div>
-          </div>
-        </section>
+        {faqContent && <FaqSection content={faqContent.content} items={faqItems} />}
 
         <Divider />
+
+        {/* 06 - RELATED SERVICES */}
+        <RelatedServices services={relatedServices} />
       </main>
       </div>
       <Footer />

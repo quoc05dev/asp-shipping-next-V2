@@ -1,59 +1,53 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Service, RelatedServicesSectionContent } from '@/data/cms/types';
 
 interface RelatedServicesProps {
-  currentServicePath: string;
+  content?: RelatedServicesSectionContent;
+  services: Service[];
 }
 
-const services = [
-  {
-    title: 'Commercial Management',
-    href: '/commercial-management',
-    description: 'Employment strategy across time charter, spot voyage and pool partnerships.'
-  },
-  {
-    title: 'Technical Management',
-    href: '/technical-management',
-    description: 'Planned maintenance, performance, safety and regulatory oversight.'
-  },
-  {
-    title: 'Marine Consultancy',
-    href: '/marine-consultancy',
-    description: 'Practical maritime advice for commercial planning and technical projects.'
-  },
-  {
-    title: 'Crew Management',
-    href: '/crew-management',
-    description: 'Recruitment, deployment, training and welfare for qualified seafarers.'
-  },
-  {
-    title: 'Sea Transportation',
-    href: '/sea-transportation',
-    description: 'Flexible sea transportation delivered with disciplined planning and cargo care.'
-  }
-];
+export default function RelatedServices({ content, services }: RelatedServicesProps) {
+  // Use default content if not provided by CMS yet
+  const eyebrow = content?.eyebrow || 'Related Services';
+  const heading = content?.heading || 'Explore more of our maritime services.';
 
-export default function RelatedServices({ currentServicePath }: RelatedServicesProps) {
-  const filteredServices = services.filter(s => s.href !== currentServicePath).slice(0, 3);
-  
   return (
-    <section className="layout layout-spacer layout-page layout-root" style={{ padding: '4rem 0', backgroundColor: '#f8f9fa', marginTop: '4rem' }}>
+    <section className="layout layout-page layout-root" style={{ paddingBottom: 'clamp(2rem, 5vw, 4rem)' }}>
       <div className="layout-inner">
-        <h2 className="heading h4 u-mb-4" style={{ color: '#1a1a1a', borderBottom: '2px solid #007236', display: 'inline-block', paddingBottom: '0.5rem' }}>
-          Related Services
-        </h2>
-        <div className="row mt-4">
-          {filteredServices.map(service => (
-            <div className="col-12 col-md-4 mb-4" key={service.href}>
-              <div className="card h-100 u-border-radius" style={{ padding: '2rem', border: '1px solid #eaeaea', backgroundColor: '#ffffff' }}>
-                <h3 className="heading h5 mb-3">{service.title}</h3>
-                <p style={{ color: '#4b5563', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                  {service.description}
-                </p>
-                <Link href={service.href} className="button button-outline" style={{ marginTop: 'auto', alignSelf: 'flex-start', color: '#007236', border: '1px solid #007236', padding: '0.5rem 1rem', textDecoration: 'none', borderRadius: '4px' }}>
-                  Learn More
-                </Link>
-              </div>
+        <div className="row u-mb-4 align-items-end">
+          <div className="col-12 col-md-8">
+            <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
+              {eyebrow}
+            </h2>
+            <div className="section-lead-content u-h4 u-mb-0">
+              <p>{heading}</p>
+            </div>
+          </div>
+        </div>
+        <div className="row u-gy-4 u-gx-4">
+          {services.map(service => (
+            <div className="col-12 col-md-4" key={service.slug}>
+              <Link 
+                href={`/${service.slug}`} 
+                className="card card-page-link u-border-radius u-overflow-hidden u-h-100 home-service-card" 
+                style={{ textDecoration: 'none', border: '1px solid #e5e5e5', display: 'flex', flexDirection: 'column' }}
+              >
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', flexShrink: 0 }}>
+                  {service.heroImage && (
+                    <Image src={service.heroImage.url} alt={service.heroImage.alt} fill style={{ objectFit: 'cover' }} />
+                  )}
+                </div>
+                <div className="card-body u-px-4 u-py-4 u-bg-lighter" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                  <h3 className="h5 card-title entry-title u-mb-2 u-text-color-black">{service.name}</h3>
+                  <div className="entry-excerpt content-width" style={{ display: 'flex', flexGrow: 1 }}>
+                    <p style={{ color: '#4a4a4a', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>
+                      {service.excerpt}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>

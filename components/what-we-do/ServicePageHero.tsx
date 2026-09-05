@@ -1,13 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import { HeroSectionContent } from '@/data/cms/types';
 
 interface ServiceHeroProps {
-  title: string;
-  imageSrc: string;
-  imageAlt: string;
+  content: HeroSectionContent;
 }
 
-export default function ServicePageHero({ title, imageSrc, imageAlt }: ServiceHeroProps) {
+export default function ServicePageHero({ content }: ServiceHeroProps) {
   return (
     <header className="entry-header">
       <div className="layout layout-page-header layout-page layout-full u-px-0 layout-root">
@@ -18,8 +17,8 @@ export default function ServicePageHero({ title, imageSrc, imageAlt }: ServiceHe
                 <span className="ratio">
                   <span className="ratio-size"></span>
                   <Image 
-                    src={imageSrc} 
-                    alt={imageAlt}
+                    src={content.image.url} 
+                    alt={content.image.alt}
                     fill
                     className="banner-img"
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -33,7 +32,7 @@ export default function ServicePageHero({ title, imageSrc, imageAlt }: ServiceHe
                   <div className="banner-content">
                     <hr />
                     <h1 className="heading h2 u-mb-3 entry-title u-font-weight-normal" style={{ color: '#ffffff' }}>
-                      {title}
+                      {content.title}
                     </h1>
                   </div>
                 </div>

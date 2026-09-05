@@ -5,6 +5,9 @@ import Footer from '@/components/layout/Footer';
 import ServicePageHero from '@/components/what-we-do/ServicePageHero';
 import ServiceBreadcrumb from '@/components/what-we-do/ServiceBreadcrumb';
 import RelatedServices from '@/components/what-we-do/RelatedServices';
+import FaqSection from '@/components/what-we-do/FaqSection';
+import { cmsRepository } from '@/data/cms/repository';
+import HowWeWorkSection from '@/components/what-we-do/HowWeWorkSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -28,7 +31,17 @@ const Divider = () => (
   </div>
 );
 
-export default function CrewManagementPage() {
+export default async function CrewManagementPage() {
+  const heroContent = await cmsRepository.getPageSection('crew-management', 'hero');
+  const primaryIntroContent = await cmsRepository.getPageSection('crew-management', 'primary_intro');
+  const hwwContent = await cmsRepository.getPageSection('crew-management', 'how_we_work');
+  const capContent = await cmsRepository.getPageSection('crew-management', 'capabilities');
+  const hlContent = await cmsRepository.getPageSection('crew-management', 'highlights');
+  const rolesContent = await cmsRepository.getPageSection('crew-management', 'crew_roles');
+  const faqContent = await cmsRepository.getPageSection('crew-management', 'faq');
+  const faqItems = await cmsRepository.getServiceFaqs('crew-management');
+  const relatedServices = await cmsRepository.getRelatedServices('crew-management');
+  const labels = await cmsRepository.getSharedLabels();
   return (
     <>
       <Header />
@@ -36,38 +49,45 @@ export default function CrewManagementPage() {
       <ServiceBreadcrumb serviceName="Crew Management" />
       <main id="siteMain" className="main container container-rfs container-w-outer" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
 
-        <ServicePageHero
-          title="Crew Management"
-          imageSrc="/wp-content/uploads/asp_images/ships/asp-luna.webp"
-          imageAlt="ASP Crew Management — seafarers on deck"
-        />
+        {heroContent && <ServicePageHero content={heroContent.content} />}
 
         <Divider />
 
         {/* 01 - INTRO */}
         <section className="layout layout-page layout-root">
+          <style>{`
+            .intro-img-wrap {
+              position: relative;
+              width: 100%;
+              aspect-ratio: 16/10;
+              border-radius: 4px;
+              overflow: hidden;
+            }
+            @media (min-width: 992px) {
+              .intro-img-wrap {
+                aspect-ratio: auto;
+                height: 100%;
+              }
+            }
+          `}</style>
           <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5 align-items-center">
+            <div className="row u-gy-4 u-gx-5 align-items-stretch">
               <div className="col-12 col-lg-6">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Performance On Board
-                </h2>
+                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0 u-mt-0">{primaryIntroContent?.content.eyebrow}</h2>
                 <div className="section-lead-content u-h4 u-mb-4">
-                  <p>People who perform.<br/>Welfare that sustains them.</p>
+                  <p className="u-mt-0" dangerouslySetInnerHTML={{ __html: primaryIntroContent?.content.heading || '' }} />
                 </div>
                 <div className="content-width">
-                  <p>
-                    Every voyage depends on the people who run it. Our crew management programme recruits, trains and retains highly qualified seafarers who meet the most rigorous international standards — then invests in their welfare and career development to ensure they stay engaged, safe and committed to the highest levels of professional performance across every voyage.
-                  </p>
+                  <p className="u-mb-0" dangerouslySetInnerHTML={{ __html: primaryIntroContent?.content.body || '' }} />
                 </div>
               </div>
               <div className="col-12 col-lg-6">
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', borderRadius: '4px', overflow: 'hidden' }}>
-                  <Image
-                    src="/wp-content/uploads/asp_images/ships/asp-maple.jpg"
-                    alt="ASP vessel operations crew"
+                <div className="intro-img-wrap">
+                  <Image 
+                    src={primaryIntroContent?.content.image.url || ''}
+                    alt={primaryIntroContent?.content.image.alt || ''}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
                   />
                 </div>
               </div>
@@ -78,123 +98,65 @@ export default function CrewManagementPage() {
         <Divider />
 
         {/* 02 - OUR SERVICES */}
+        {capContent && (
         <section className="layout layout-page layout-root">
           <div className="layout-inner">
             <div className="row u-mb-5">
               <div className="col-12 col-lg-8">
                 <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Our Services
+                  {capContent.content.eyebrow}
                 </h2>
                 <div className="section-lead-content u-h4 u-mb-0">
-                  <p>End-to-end seafarer management</p>
+                  <p>{capContent.content.heading}</p>
                 </div>
                 <div className="content-width u-mt-3">
-                  <p>
-                    From recruitment and certification through active deployment and welfare support, we manage the complete seafarer journey with the discipline and care that maritime safety demands.
-                  </p>
+                  <p>{capContent.content.intro}</p>
                 </div>
               </div>
             </div>
-
+            
             <div className="row u-gy-4 u-gx-5 mt-4">
-              <div className="col-12 col-md-4">
-                <div style={{ paddingRight: '1rem', borderLeft: '1px solid #e5e5e5', paddingLeft: '1.5rem', height: '100%' }}>
-                  <h3 className="heading h6 u-mb-3 u-font-weight-bold">Recruitment &amp; Selection</h3>
-                  <p className="u-mb-0">Sourcing qualified, certified seafarers who meet international maritime standards. Our process includes STCW and flag-state certificate verification, ENG1 medical assessment, competency interviews and thorough reference checks.</p>
+              {capContent.content.capabilities.map((cap, idx) => (
+                <div key={idx} className="col-12 col-md-4">
+                  <div style={{ paddingRight: idx < 2 ? '1rem' : '0', borderLeft: '1px solid #e5e5e5', paddingLeft: '1.5rem', height: '100%' }}>
+                    <h3 className="heading h6 u-mb-3 u-font-weight-bold" dangerouslySetInnerHTML={{ __html: cap.title }} />
+                    <p className="u-mb-0" dangerouslySetInnerHTML={{ __html: cap.description }} />
+                  </div>
                 </div>
-              </div>
-              <div className="col-12 col-md-4">
-                <div style={{ paddingRight: '1rem', borderLeft: '1px solid #e5e5e5', paddingLeft: '1.5rem', height: '100%' }}>
-                  <h3 className="heading h6 u-mb-3 u-font-weight-bold">Training &amp; Development</h3>
-                  <p className="u-mb-0">Continuous upskilling programmes including vessel familiarisation, safety management system inductions, advanced simulator exercises for tanker and bulk operations, and structured support for officer certification upgrades.</p>
-                </div>
-              </div>
-              <div className="col-12 col-md-4">
-                <div style={{ borderLeft: '1px solid #e5e5e5', paddingLeft: '1.5rem', height: '100%' }}>
-                  <h3 className="heading h6 u-mb-3 u-font-weight-bold">Welfare &amp; Retention</h3>
-                  <p className="u-mb-0">A supportive environment at sea through competitive compensation, timely repatriation, mental health and wellbeing resources, and 24/7 shore-side support for crew and their families throughout every voyage.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
+        )}
 
         <Divider />
-
         {/* 03 - HOW WE WORK */}
-        <section className="layout layout-page layout-root">
-          <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5">
-              <div className="col-12 col-lg-6">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  How We Work
-                </h2>
-                <div className="section-lead-content u-h4 u-mb-4">
-                  <p>Right person, right vessel.<br/>Supported throughout.</p>
-                </div>
-                <div className="content-width u-mb-5">
-                  <p>
-                    Effective crew management is a continuous cycle — from identifying the right candidate and placing them on the right vessel, through active voyage support, to planned handover and repatriation. Each step requires rigorous coordination between ship and shore.
-                  </p>
-                </div>
+        {hwwContent && <HowWeWorkSection content={hwwContent.content} />}
 
-                <div className="process-list" style={{ display: 'flex', flexDirection: 'column' }}>
-                  {[
-                    { num: '01', title: 'Screen &amp; Certify', desc: 'Verify STCW and flag-state certificates, confirm medical fitness to ENG1 or equivalent standards, and assess competency through structured interview and reference review before crew pool approval.' },
-                    { num: '02', title: 'Deploy &amp; Induct', desc: 'Match each seafarer to the right vessel and position, conduct thorough vessel familiarisation and safety management system induction before commencement of duties.' },
-                    { num: '03', title: 'Support On Voyage', desc: 'Provide 24/7 shore-side support throughout the contract — coordinating medical assistance, payroll, communications, and flag state reporting as required.' },
-                    { num: '04', title: 'Develop &amp; Retain', desc: 'Conduct performance appraisals, identify development opportunities, support certificate upgrades and career progression to build long-term seafarer relationships and fleet continuity.' },
-                  ].map((step, idx) => (
-                    <div key={idx} style={{ paddingBottom: '1.5rem', marginBottom: '1.5rem', borderBottom: idx !== 3 ? '1px solid #e5e5e5' : 'none' }}>
-                      <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '0.25rem' }}>{step.num}</span>
-                      <h3 className="heading h6 u-mb-2 u-font-weight-bold" dangerouslySetInnerHTML={{ __html: step.title }} />
-                      <p className="u-mb-0">{step.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="col-12 col-lg-6">
-                <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '500px', borderRadius: '4px', overflow: 'hidden' }}>
-                  <Image
-                    src="/wp-content/uploads/asp_images/ships/asp-luna-aerial-aft.webp"
-                    alt="ASP vessel in operation"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <Divider />
+                <Divider />
 
         {/* 04 - KEY HIGHLIGHTS */}
+        {hlContent && (
         <section className="layout layout-page layout-root">
           <div className="layout-inner">
             <div className="row u-mb-5 justify-content-center text-center">
               <div className="col-12 col-lg-8">
                 <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Key Crew Management Highlights
+                  {hlContent.content.eyebrow}
                 </h2>
                 <div className="section-lead-content u-h4 u-mb-0">
-                  <p>People at the heart of our operation</p>
+                  <p>{hlContent.content.heading}</p>
                 </div>
               </div>
             </div>
-
+            
             <div className="row u-gy-4 u-gx-4">
-              {[
-                { title: 'International Standards', desc: 'All crew comply with STCW convention requirements and relevant flag-state endorsements, verified rigorously before each deployment.' },
-                { title: '24/7 Shore Support', desc: 'Our crew department is available around the clock to assist seafarers and their families — from medical emergencies to payroll and repatriation coordination.' },
-                { title: 'Structured Development', desc: 'Performance appraisal systems identify talent and groom officers for rank advancement, including pathways to shore-based management roles within the ASP group.' },
-                { title: 'Crew Welfare Programme', desc: 'Competitive compensation, mental health resources, regular family communication support, and timely repatriation reflect our commitment to seafarer wellbeing as a business priority.' },
-              ].map((hl, idx) => (
+              {hlContent.content.highlights.map((hl, idx) => (
                 <div key={idx} className="col-12 col-md-6">
-                  <div className="card u-h-100 u-border home-service-card" style={{ border: '1px solid #e5e5e5', padding: '2.5rem 2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.02)' }}>
+                  <div className="card u-h-100 u-border home-service-card" style={{ border: "1px solid #e5e5e5", padding: "2.5rem 2rem", boxShadow: "0 4px 15px rgba(0,0,0,0.02)" }}>
                     <div className="card-body p-0">
-                      <h3 className="heading h6 u-mb-3 u-font-weight-bold u-text-color-primary">{hl.title}</h3>
-                      <p className="u-mb-0">{hl.desc}</p>
+                      <h3 className="heading h6 u-mb-3 u-font-weight-bold u-text-color-primary" dangerouslySetInnerHTML={{ __html: hl.title }} />
+                      <p className="u-mb-0" dangerouslySetInnerHTML={{ __html: hl.description }} />
                     </div>
                   </div>
                 </div>
@@ -202,50 +164,47 @@ export default function CrewManagementPage() {
             </div>
           </div>
         </section>
+        )}
 
         <Divider />
 
         {/* 05 - FLEET CREW ROLES */}
+        {rolesContent && (
         <section className="layout layout-page layout-root">
           <div className="layout-inner">
             <div className="row u-mb-5 align-items-end">
               <div className="col-12 col-md-8">
                 <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Our People At Sea
+                  {rolesContent.content.eyebrow}
                 </h2>
                 <div className="section-lead-content u-h4 u-mb-0">
-                  <p>Roles that drive performance across the fleet</p>
+                  <p>{rolesContent.content.heading}</p>
                 </div>
               </div>
               <div className="col-12 col-md-4 text-md-right u-mt-3 u-mt-md-0">
-                <a href="/careers" style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                  Careers at ASP &rarr;
-                </a>
+                <a href={rolesContent.content.ctaHref} style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }} dangerouslySetInnerHTML={{ __html: rolesContent.content.ctaLabel }} />
               </div>
             </div>
 
             <div className="row u-gy-4 u-gx-4">
-              {[
-                { name: 'Captains &amp; Officers', type: 'Senior Command', focus: 'Navigation &amp; Safety', detail: 'Deck Officers', img: '/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp' },
-                { name: 'Marine Engineers', type: 'Engine Department', focus: 'Machinery &amp; Systems', detail: 'Chief &amp; Watch Engineers', img: '/wp-content/uploads/asp_images/ships/asp-luna-turning.webp' },
-                { name: 'Ratings &amp; Cadets', type: 'Crew &amp; Trainees', focus: 'Deck &amp; Engine', detail: 'Future Officers', img: '/wp-content/uploads/asp_images/ships/maple-cedar.jpg' },
-              ].map((role, idx) => (
+              {rolesContent.content.roles.map((role, idx) => (
                 <div key={idx} className="col-12 col-md-4">
-                  <div className="card card-page-link u-border-radius u-overflow-hidden u-h-100 home-service-card" style={{ border: '1px solid #e5e5e5' }}>
-                    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10' }}>
-                      <Image src={role.img} alt={role.name.replace(/&amp;/g, '&')} fill style={{ objectFit: 'cover' }} />
+                  <div className="card card-page-link u-border-radius u-overflow-hidden u-h-100 home-service-card" style={{ border: '1px solid #e5e5e5', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', flexShrink: 0 }}>
+                      <Image src={role.image.url} alt={role.image.alt} fill style={{ objectFit: 'cover' }} />
                     </div>
-                    <div className="card-body u-px-4 u-py-4">
+                    <div className="card-body u-px-4 u-py-4" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                       <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#6c757d', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }} dangerouslySetInnerHTML={{ __html: role.type }} />
-                      <h3 className="heading h5 u-mb-3 u-text-color-black" dangerouslySetInnerHTML={{ __html: role.name }} />
-                      <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e5e5e5', paddingTop: '1rem' }}>
+                      <h3 className="heading h5 u-mb-2 u-text-color-black" dangerouslySetInnerHTML={{ __html: role.name }} />
+                      <p style={{ color: '#4a4a4a', fontSize: '0.95rem', lineHeight: 1.5 }} className="u-mb-4" dangerouslySetInnerHTML={{ __html: role.description }}></p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e5e5e5', paddingTop: '1rem', marginTop: 'auto' }}>
                         <div>
                           <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Department</span>
-                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }} dangerouslySetInnerHTML={{ __html: role.focus }} />
+                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }} dangerouslySetInnerHTML={{ __html: role.department }} />
                         </div>
                         <div style={{ textAlign: 'right' }}>
                           <span style={{ display: 'block', color: '#6c757d', fontSize: '0.8rem' }}>Rank Group</span>
-                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }} dangerouslySetInnerHTML={{ __html: role.detail }} />
+                          <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#1a1a1a' }} dangerouslySetInnerHTML={{ __html: role.rankGroup }} />
                         </div>
                       </div>
                     </div>
@@ -255,66 +214,17 @@ export default function CrewManagementPage() {
             </div>
           </div>
         </section>
-
-        <Divider />
-
-        {/* 06 - RELATED SERVICES */}
-        <RelatedServices currentServicePath="/crew-management" />
+        )}
 
         <Divider />
 
         {/* 07 - FAQ */}
-        <section className="layout layout-page layout-root u-pb-5">
-          <div className="layout-inner">
-            <div className="row u-gy-4 u-gx-5">
-              <div className="col-12 col-lg-4">
-                <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
-                  Common Questions
-                </h2>
-                <div className="section-lead-content u-h4 u-mb-4">
-                  <p>Frequently Asked Questions</p>
-                </div>
-                <div className="content-width">
-                  <p>Find quick answers about our crew management process and seafarer welfare standards.</p>
-                </div>
-              </div>
-              <div className="col-12 col-lg-8">
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  {[
-                    { q: 'How does ASP verify the credentials of its seafarers?', a: 'Every candidate undergoes a rigorous multi-stage process: documentary verification of STCW and flag-state certificates, medical assessment to ENG1 or equivalent standards, competency interviews and thorough reference checks. Only those meeting all criteria are added to our approved crew pool.' },
-                    { q: 'What training does ASP provide to its crew?', a: 'We provide a comprehensive training framework including vessel familiarisation courses, safety management system briefings, advanced simulator exercises for tanker and bulk carrier operations, and support for officers pursuing higher certifications. We also run a structured cadet programme to develop the next generation of maritime officers.' },
-                    { q: 'How does ASP support crew welfare at sea?', a: 'We invest in crew welfare through regular communication, competitive compensation, timely repatriation, and access to mental health and wellbeing resources. Our shore-side team is available 24/7 to assist crew and their families throughout every voyage.' },
-                    { q: 'What are typical contract lengths for ASP seafarers?', a: 'Contract lengths vary depending on vessel type and rank, but typically range from four to nine months. We strive to accommodate seafarer preferences while maintaining operational continuity for our fleet.' },
-                  ].map((faq, idx) => (
-                    <details
-                      key={idx}
-                      style={{ paddingBottom: '1.25rem', marginBottom: '1.25rem', borderBottom: '1px solid #e5e5e5' }}
-                      className="faq-details"
-                    >
-                      <summary
-                        className="heading h6 u-font-weight-bold"
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', margin: 0, listStyle: 'none' }}
-                      >
-                        <span style={{ paddingRight: '2rem' }}>{faq.q}</span>
-                        <span style={{ color: '#007236', flexShrink: 0, fontSize: '1.2rem', fontWeight: 400 }}>+</span>
-                      </summary>
-                      <div className="u-mt-3 content-width" style={{ paddingRight: '2rem' }}>
-                        <p className="u-mb-0">{faq.a}</p>
-                      </div>
-                    </details>
-                  ))}
-                </div>
-                <style dangerouslySetInnerHTML={{__html: `
-                  .faq-details summary::-webkit-details-marker { display: none; }
-                  .faq-details[open] summary span:last-child { transform: rotate(45deg); display: inline-block; }
-                  .faq-details summary span:last-child { transition: transform 0.2s ease; }
-                `}} />
-              </div>
-            </div>
-          </div>
-        </section>
+        {faqContent && <FaqSection content={faqContent.content} items={faqItems} />}
 
         <Divider />
+
+        {/* 06 - RELATED SERVICES */}
+        <RelatedServices services={relatedServices} />
       </main>
       </div>
       <Footer />
