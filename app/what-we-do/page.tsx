@@ -64,19 +64,25 @@ export default function WhatWeDoHubPage() {
               <div className="row u-gy-4 u-gx-5">
                 <div className="col-12 col-lg-5">
                   <SectionLead 
-                    title="What We Do"
-                    heading="Maritime Solutions"
-                    description="Commercial judgment, technical discipline and operational care across every stage of a vessel's lifecycle."
+                    title="OUR APPROACH"
+                    heading="Integrated Maritime Expertise"
+                    description="We combine commercial judgment, technical discipline, operational experience and people-focused management to support vessels throughout their lifecycle."
                   />
                 </div>
                 <div className="col-12 col-lg-7">
                   <div className="content-width">
-                    <p className="u-mb-4">
-                      We provide end-to-end maritime services, ensuring optimal performance, stringent regulatory compliance, and sustainable operations worldwide. Our dedicated team of experts works closely with partners to navigate the complexities of global shipping and deliver exceptional, reliable value.
-                    </p>
-                    <p className="u-mb-4">
-                      Our approach integrates operational excellence with commercial and technical expertise. We support our clients across the entire vessel lifecycle—from newbuilding consultancy to long-term crewing and technical management—with an unwavering commitment to safety, compliance, and long-term partnership.
-                    </p>
+                    <div className="u-mb-4">
+                      <h3 className="h6 u-mb-2">Commercial Judgment</h3>
+                      <p>Market insight, employment strategy and disciplined execution.</p>
+                    </div>
+                    <div className="u-mb-4">
+                      <h3 className="h6 u-mb-2">Technical & Operational Discipline</h3>
+                      <p>Safety, maintenance, performance and regulatory compliance.</p>
+                    </div>
+                    <div>
+                      <h3 className="h6 u-mb-2">Long-Term Partnership</h3>
+                      <p>Practical support, transparent communication and reliable delivery.</p>
+                    </div>
                   </div>
                 </div>
               </div>
