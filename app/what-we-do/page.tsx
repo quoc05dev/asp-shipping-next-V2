@@ -118,7 +118,7 @@ export default function WhatWeDoHubPage() {
                   gap: '1rem'
                 }}
               >
-                <h2 className="heading h5 u-mb-0 u-font-weight-medium u-text-color-black" style={{ margin: 0, flex: '1 1 auto' }}>
+                <h2 className="heading h5 subheading u-text-color-primary u-mb-0" style={{ margin: 0, flex: '1 1 auto' }}>
                   Trusted by leading charterers &amp; traders
                 </h2>
                 <span className="u-text-size-small u-font-weight-bold u-text-uppercase" style={{ letterSpacing: '0.12em', color: '#666666', flex: '0 0 auto' }}>
