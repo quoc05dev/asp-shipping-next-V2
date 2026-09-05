@@ -112,11 +112,20 @@ export default function WhatWeDoHubPage() {
           }}>
             <div className="container container-w-outer container-rfs">
               {/* Heading Row */}
-              <div className="d-flex flex-column flex-md-row justify-content-md-between align-items-md-end u-mb-4">
-                <h2 className="heading h5 u-mb-2 u-mb-md-0 u-font-weight-medium" style={{ color: '#ffffff' }}>
+              <div 
+                className="u-mb-4"
+                style={{ 
+                  display: 'flex', 
+                  flexWrap: 'wrap',
+                  justifyContent: 'space-between', 
+                  alignItems: 'flex-end',
+                  gap: '1rem'
+                }}
+              >
+                <h2 className="heading h5 u-mb-0 u-font-weight-medium" style={{ color: '#ffffff', margin: 0, flex: '1 1 auto' }}>
                   Trusted by leading charterers &amp; traders
                 </h2>
-                <span className="u-text-size-small u-font-weight-bold u-text-uppercase" style={{ letterSpacing: '0.12em', color: 'rgba(255, 255, 255, 0.7)' }}>
+                <span className="u-text-size-small u-font-weight-bold u-text-uppercase" style={{ letterSpacing: '0.12em', color: 'rgba(255, 255, 255, 0.7)', flex: '0 0 auto' }}>
                   Selected Market Relationships
                 </span>
               </div>
