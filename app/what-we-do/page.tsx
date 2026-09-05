@@ -345,7 +345,7 @@ export default function WhatWeDoHubPage() {
                 </div>
               </div>
 
-              <div className="row u-gy-4 u-gx-5">
+              <div className="row u-gy-4 u-gx-4 u-gx-lg-5">
                 {[
                   { title: 'About Us', desc: 'Discover our history, leadership, and the values that drive our approach to maritime services.', href: '/about-us' },
                   { title: 'Our Fleet', desc: 'Explore the modern vessels we operate across commercial, technical, and transportation sectors.', href: '/our-fleet' },
@@ -354,11 +354,11 @@ export default function WhatWeDoHubPage() {
                   { title: 'Careers', desc: 'Join our team. Opportunities for seafarers and shore-based maritime professionals.', href: '/careers' },
                   { title: 'Contact Us', desc: 'Get in touch with our global offices to discuss your specific maritime requirements.', href: '/contact-us' }
                 ].map((item, idx) => (
-                  <div key={idx} className="col-12 col-md-6 col-lg-4">
-                    <div style={{ paddingBottom: '1.5rem', marginBottom: '1.5rem', borderBottom: '1px solid #e5e5e5', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <div key={idx} className="col-12 col-md-6 col-lg-4 u-mb-4 u-mb-lg-0">
+                    <div className="explore-card">
                       <h3 className="heading h6 u-mb-3 u-font-weight-bold u-text-color-primary">{item.title}</h3>
-                      <p className="u-mb-4" style={{ flexGrow: 1 }}>{item.desc}</p>
-                      <Link href={item.href} style={{ color: '#007236', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+                      <p className="u-mb-4" style={{ flexGrow: 1, color: '#444444' }}>{item.desc}</p>
+                      <Link href={item.href} className="explore-card-link">
                         {item.title === 'Contact Us' ? 'Contact Us' : `Explore ${item.title}`} &rarr;
                       </Link>
                     </div>
@@ -366,6 +366,33 @@ export default function WhatWeDoHubPage() {
                 ))}
               </div>
             </div>
+
+            <style>{`
+              .explore-card {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 2.5rem;
+                background-color: #ffffff;
+                border: 1px solid #eaeaea;
+                transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+              }
+              .explore-card:hover {
+                transform: translateY(-4px);
+                border-color: #007236;
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+              }
+              .explore-card-link {
+                color: #007236;
+                font-weight: 600;
+                text-decoration: none;
+                display: inline-block;
+                transition: color 0.2s ease;
+              }
+              .explore-card:hover .explore-card-link {
+                color: #005628;
+              }
+            `}</style>
           </section>
 
           <Divider />
