@@ -1,47 +1,67 @@
 import React from 'react';
+import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ServicePageHero from '@/components/what-we-do/ServicePageHero';
 import ServiceBreadcrumb from '@/components/what-we-do/ServiceBreadcrumb';
-import ServiceContent from '@/components/what-we-do/ServiceContent';
 import RelatedServices from '@/components/what-we-do/RelatedServices';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Sea Transportation | ASP Shipping',
-  description: 'Flexible sea transportation across dry bulk, clean and dirty petroleum products, LPG and chemical cargoes, delivered with disciplined planning and cargo care.',
+  description: 'What we do',
 };
 
 export default function SeaTransportationPage() {
   return (
     <>
       <Header />
-      <main className="legacy-inner-page page wp-theme-restless-theme">
-        <div id="page" className="site">
-          <div id="content" className="site-content">
-            <ServiceBreadcrumb serviceName="Sea Transportation" />
+      <main className="page" style={{ backgroundColor: '#ffffff' }}>
+        <ServiceBreadcrumb serviceName="Sea Transportation" />
+        
+        <ServicePageHero 
+          title={"The Engine of Global Supply Chains"} 
+          imageSrc="/images/heads/tanker-forward-course.webp"
+          imageAlt="Sea Transportation"
+        />
+        
+        
+        <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
+          <div className="container container-w-outer container-max">
             
-            <ServicePageHero 
-              title="Sea Transportation" 
-              imageSrc="/wp-content/uploads/asp_images/ships/hero-asp-rainbow-cinematic.png"
-              imageAlt="Asia Pacific Shipping Sea Transportation"
-            />
+            <h2 className="heading h2 mb-4" style={{ fontWeight: 400 }}>Specialized transport</h2>
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '2rem', maxWidth: '800px' }}> Fleet Capabilities</p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>Our modern fleet provides immense payload capacity and highly specialized cargo handling.</p>
             
-            <ServiceContent 
-              intro="We provide flexible and reliable sea transportation services across a diverse range of cargo types. Our modern fleet and experienced crews ensure the safe and efficient delivery of dry bulk, clean and dirty petroleum products, LPG, and specialized chemical cargoes, backed by disciplined planning and uncompromising cargo care."
-              features={[
-                { title: "Specialized Gas Transport", description: "Expert handling and transportation of LPG, petrochemicals, and other specialty gases using our specialized fleet." },
-                { title: "Dry Bulk & Tankers", description: "Versatile shipping solutions for various commodities, maintaining high standards of cargo integrity throughout the voyage." },
-                { title: "Global Reach", description: "Operating across major global trade routes with the capability to service complex logistical requirements." },
-                { title: "Safety & Sustainability", description: "Committed to minimizing environmental impact and ensuring the highest safety standards in all our transportation activities." }
-              ]}
-              imageSrc="/wp-content/uploads/asp_images/partners/logo-client-chinaland.png"
-              imageAlt="Sea Transportation Services"
-            />
-            
-            <RelatedServices currentServicePath="/sea-transportation" />
+            <div className="row mt-5 pt-4">
+              {[{"h3":"CPP/DPP & Chemicals","p":"Safely transporting Clean Petroleum Products (CPP) and Dirty Petroleum Products (DPP). Our modern MR2 and LR2 fleet (up to 114,800 DWT) operates under absolute anti-pollution protocols, ensuring complete cargo integrity."},{"h3":"Dry Bulk","p":"Providing immense payload capacity for the transport of essential raw materials such as coal, iron ore, cement, and agricultural products. Ensuring stable scheduling across bustling trade routes in the Asia-Pacific region and beyond."},{"h3":"LPG","p":"Operating specialized tanker vessels for liquefied gas. Our highly experienced officers and crew execute extremely rigorous cargo pressure and temperature control procedures, guaranteeing absolute safety from load port to discharge port."}].map((item, idx) => (
+                <div key={idx} className="col-12 col-md-6 col-lg-4 mb-4">
+                  <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '8px', height: '100%', borderTop: '4px solid #007236' }}>
+                    <h3 className="heading h5 mb-3" style={{ fontWeight: 600 }}>{item.h3}</h3>
+                    <p style={{ color: '#4b5563', lineHeight: 1.5, margin: 0 }}>{item.p}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+        
           </div>
-        </div>
+        </section>
+    
+        <section style={{ padding: '5rem 0', backgroundColor: '#fcfcf8' }}>
+          <div className="container container-w-outer container-max">
+            
+            <h2 className="heading h2 mb-4" style={{ fontWeight: 400 }}>Frequently Asked Questions</h2>
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '2rem', maxWidth: '800px' }}> Common Questions</p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>We transport a wide range of cargoes including Clean and Dirty Petroleum Products, Chemicals, LPG, and Dry Bulk commodities.</p>
+<p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>Our fleet operates on global trade routes, with a strong presence in the Asia-Pacific region and beyond.</p>
+<p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>Our modern fleet and experienced crews operate under strict anti-pollution and safety protocols, especially for LPG and chemical transport.</p>
+<p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>Yes, we provide flexible transportation solutions including spot voyages, time charters, and Contracts of Affreightment (COA).</p>
+            
+          </div>
+        </section>
+    
+
+        <RelatedServices currentServicePath="/sea-transportation" />
       </main>
       <Footer />
     </>

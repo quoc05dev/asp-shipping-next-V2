@@ -1,47 +1,67 @@
 import React from 'react';
+import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ServicePageHero from '@/components/what-we-do/ServicePageHero';
 import ServiceBreadcrumb from '@/components/what-we-do/ServiceBreadcrumb';
-import ServiceContent from '@/components/what-we-do/ServiceContent';
 import RelatedServices from '@/components/what-we-do/RelatedServices';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Technical Management | ASP Shipping',
-  description: 'Planned maintenance, dry-docking, performance, safety and regulatory oversight delivered through a disciplined, TMSA-aligned management system.',
+  description: 'What we do',
 };
 
 export default function TechnicalManagementPage() {
   return (
     <>
       <Header />
-      <main className="legacy-inner-page page wp-theme-restless-theme">
-        <div id="page" className="site">
-          <div id="content" className="site-content">
-            <ServiceBreadcrumb serviceName="Technical Management" />
+      <main className="page" style={{ backgroundColor: '#ffffff' }}>
+        <ServiceBreadcrumb serviceName="Technical Management" />
+        
+        <ServicePageHero 
+          title={"Superior Standards"} 
+          imageSrc="/images/heads/tanker-forward-course.webp"
+          imageAlt="Technical Management"
+        />
+        
+        
+        <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
+          <div className="container container-w-outer container-max">
             
-            <ServicePageHero 
-              title="Technical Management" 
-              imageSrc="/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp"
-              imageAlt="Asia Pacific Shipping Technical Management"
-            />
+            <h2 className="heading h2 mb-4" style={{ fontWeight: 400 }}>Core disciplines</h2>
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '2rem', maxWidth: '800px' }}> Management Pillars</p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>Our technical management approach integrates stringent safety protocols with advanced monitoring.</p>
             
-            <ServiceContent 
-              intro="Our technical management services are driven by a commitment to safety, reliability, and environmental stewardship. We deliver planned maintenance, dry-docking, and performance oversight through a disciplined, TMSA-aligned management system, ensuring our vessels operate at peak efficiency and comply with the highest industry standards."
-              features={[
-                { title: "Planned Maintenance", description: "Rigorous execution of maintenance schedules using advanced fleet management software to prevent breakdowns and extend vessel lifespans." },
-                { title: "Safety & Compliance", description: "Strict adherence to international regulations, flag state requirements, and classification society standards, backed by continuous safety training." },
-                { title: "Dry-docking & Repairs", description: "Comprehensive planning and execution of dry-docking projects, minimizing off-hire time and controlling costs without compromising quality." },
-                { title: "Performance Monitoring", description: "Real-time tracking of vessel performance and fuel consumption to optimize efficiency and reduce our environmental footprint." }
-              ]}
-              imageSrc="/wp-content/uploads/asp_images/ships/rainbow.jpg"
-              imageAlt="Technical Operations"
-            />
-            
-            <RelatedServices currentServicePath="/technical-management" />
+            <div className="row mt-5 pt-4">
+              {[{"h3":"TMSA & Vetting","p":"ASP's technical management system strictly complies with TMSA (Tanker Management and Self Assessment) standards and the ISM Code. The fleet is constantly maintained in a state of readiness to pass the most rigorous inspections (SIRE/CDI) from leading energy conglomerates (Oil Majors)."},{"h3":"Preventive Maintenance & Dry-docking","p":"Utilizing modern Planned Maintenance Systems (PMS) for the early detection of malfunction risks. We optimize every dry-docking item, minimizing off-hire time and effectively controlling costs."},{"h3":"Vessel Performance Monitoring","p":"Integrating sensor technology and real-time data acquisition systems (ship-to-shore). Closely monitoring speed, fuel consumption, and machinery conditions to make instantaneous adjustments, reducing emissions and increasing economic efficiency for every voyage."}].map((item, idx) => (
+                <div key={idx} className="col-12 col-md-6 col-lg-4 mb-4">
+                  <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '8px', height: '100%', borderTop: '4px solid #007236' }}>
+                    <h3 className="heading h5 mb-3" style={{ fontWeight: 600 }}>{item.h3}</h3>
+                    <p style={{ color: '#4b5563', lineHeight: 1.5, margin: 0 }}>{item.p}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+        
           </div>
-        </div>
+        </section>
+    
+        <section style={{ padding: '5rem 0', backgroundColor: '#fcfcf8' }}>
+          <div className="container container-w-outer container-max">
+            
+            <h2 className="heading h2 mb-4" style={{ fontWeight: 400 }}>Frequently Asked Questions</h2>
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '2rem', maxWidth: '800px' }}> Common Questions</p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>We prioritize preventive maintenance using advanced PMS to minimize downtime and ensure peak performance.</p>
+<p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>Our fleet is maintained in a constant state of readiness to pass the most rigorous SIRE/CDI inspections.</p>
+<p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>Yes, we handle all aspects of dry-docking, optimizing work scopes to control costs and reduce off-hire time.</p>
+<p style={{ fontSize: '1rem', lineHeight: 1.6, color: '#4b5563', marginBottom: '1rem', maxWidth: '800px' }}>We integrate ship-to-shore sensor technology to closely monitor speed and consumption, making adjustments to maximize efficiency.</p>
+            
+          </div>
+        </section>
+    
+
+        <RelatedServices currentServicePath="/technical-management" />
       </main>
       <Footer />
     </>
