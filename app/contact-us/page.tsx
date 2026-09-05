@@ -298,45 +298,32 @@ export default function ContactUsPage() {
           <Divider />
 
           {/* 05 - Newsletter & Join Us */}
-          <section className="layout layout-page layout-root">
+          <section className="layout layout-page layout-root u-pb-7">
             <div className="layout-inner">
-              <div className="row u-gy-4 u-gx-4">
+              <div className="row u-gy-5 u-gx-5">
                 <div className="col-12 col-lg-7">
-                  <div className="callout theme-style theme-style-primary u-p-5 u-border-radius h-100" style={{ backgroundColor: '#2d2d2d', color: '#ffffff' }}>
-                    <h2 className="heading h5 u-mb-3 callout-heading u-mb-0" style={{ color: '#ffffff' }}>
-                      Subscribe to Our Newsletter
-                    </h2>
-                    <div className="content-width u-mb-4">
-                      <p>Sign up to receive alerts on press releases and updates on business activities.</p>
-                    </div>
-                    <NewsletterForm />
+                  <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
+                    Subscribe to Our Newsletter
+                  </h2>
+                  <div className="section-lead-content u-h4 u-mb-4">
+                    <p>Sign up to receive alerts on press releases and updates on business activities.</p>
                   </div>
+                  <NewsletterForm />
                 </div>
-                <div className="col-12 col-lg-5">
-                  <div className="callout theme-style theme-style-mint u-p-5 u-border-radius h-100" style={{ backgroundColor: '#f5f9f6', display: 'flex', flexDirection: 'column' }}>
-                    <h2 className="heading h5 u-mb-3 callout-heading u-mb-0">
-                      Join Us Today
-                    </h2>
-                    <div className="content-width u-mb-4 flex-grow-1">
-                      <p>Asia Pacific Shipping offers exciting and rewarding career opportunities to people who have the skills and determination to succeed at sea and/or ashore.</p>
-                    </div>
-                    <div>
-                      <Link href="/careers" className="button button-outline button-outline-secondary" style={{ display: 'inline-block' }}>
-                        <span>Careers at Asia Pacific Shipping</span>
-                      </Link>
-                    </div>
+                <div className="col-12 col-lg-5 ps-lg-5">
+                  <h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0">
+                    Join Us Today
+                  </h2>
+                  <div className="section-lead-content u-h4 u-mb-4">
+                    <p>Asia Pacific Shipping offers exciting and rewarding career opportunities to people who have the skills and determination to succeed at sea and/or ashore.</p>
                   </div>
+                  <Link href="/careers" className="button button-outline" style={{ display: 'inline-block' }}>
+                    <span>Careers at Asia Pacific Shipping &rarr;</span>
+                  </Link>
                 </div>
               </div>
             </div>
           </section>
-
-          {/* Spacer before footer */}
-          <div className="layout layout-spacer layout-page layout-root">
-            <div className="layout-inner">
-              <div className="spacer spacer-large"></div>
-            </div>
-          </div>
           
         </main>
       </div>
