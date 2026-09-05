@@ -16,8 +16,8 @@ export default function TechnicalManagementPage() {
   return (
     <>
       <Header />
+      <ServiceBreadcrumb serviceName="Technical Management" />
       <main className="page" style={{ backgroundColor: '#ffffff' }}>
-        <ServiceBreadcrumb serviceName="Technical Management" />
         
         <ServicePageHero 
           title={"Superior Standards"} 

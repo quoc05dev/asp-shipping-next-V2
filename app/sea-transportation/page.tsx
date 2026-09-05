@@ -16,8 +16,8 @@ export default function SeaTransportationPage() {
   return (
     <>
       <Header />
+      <ServiceBreadcrumb serviceName="Sea Transportation" />
       <main className="page" style={{ backgroundColor: '#ffffff' }}>
-        <ServiceBreadcrumb serviceName="Sea Transportation" />
         
         <ServicePageHero 
           title={"The Engine of Global Supply Chains"} 

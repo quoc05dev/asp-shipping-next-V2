@@ -16,8 +16,8 @@ export default function MarineConsultancyPage() {
   return (
     <>
       <Header />
+      <ServiceBreadcrumb serviceName="Marine Consultancy" />
       <main className="page" style={{ backgroundColor: '#ffffff' }}>
-        <ServiceBreadcrumb serviceName="Marine Consultancy" />
         
         <ServicePageHero 
           title={"From practice to strategy"} 

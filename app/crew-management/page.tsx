@@ -16,8 +16,8 @@ export default function CrewManagementPage() {
   return (
     <>
       <Header />
+      <ServiceBreadcrumb serviceName="Crew Management" />
       <main className="page" style={{ backgroundColor: '#ffffff' }}>
-        <ServiceBreadcrumb serviceName="Crew Management" />
         
         <ServicePageHero 
           title={"Performance on board"} 
