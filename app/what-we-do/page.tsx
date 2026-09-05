@@ -85,202 +85,119 @@ export default function WhatWeDoHubPage() {
 
           <Divider />
 
-          {/* 02 - SERVICE INDEX */}
-          <section className="layout layout-page layout-root">
+          {/* 02 - SERVICE GRID */}
+          <section className="layout layout-page layout-root u-pb-5">
             <div className="layout-inner">
-              <div className="row u-gy-4 justify-content-center">
+              <style>{`
+                .service-checker-grid {
+                  border: 1px solid #eaeaea;
+                  border-bottom: none;
+                  margin-bottom: 2rem;
+                  border-radius: 4px;
+                  overflow: hidden;
+                }
+                .service-checker-row {
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  width: 100%;
+                  border-bottom: 1px solid #eaeaea;
+                  min-height: 450px;
+                }
+                .service-grid-text {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  padding: 4rem 5rem;
+                  background-color: #ffffff;
+                }
+                .service-grid-image {
+                  position: relative;
+                  width: 100%;
+                  height: 100%;
+                }
+                @media (max-width: 991px) {
+                  .service-checker-row {
+                    grid-template-columns: 1fr;
+                    min-height: auto;
+                  }
+                  .service-grid-text {
+                    padding: 3.5rem 1.5rem;
+                    order: 2 !important;
+                  }
+                  .service-grid-image {
+                    order: 1 !important;
+                    min-height: 320px;
+                  }
+                }
+              `}</style>
+              
+              <div className="service-checker-grid">
                 {[
-                  { id: '01', title: 'Commercial Management', href: '/commercial-management' },
-                  { id: '02', title: 'Technical Management', href: '/technical-management' },
-                  { id: '03', title: 'Marine Consultancy', href: '/marine-consultancy' },
-                  { id: '04', title: 'Crew Management', href: '/crew-management' },
-                  { id: '05', title: 'Sea Transportation', href: '/sea-transportation' }
-                ].map((svc, idx) => (
-                  <div key={idx} className="col-12 col-md-6 col-lg-4 mb-3">
-                    <Link href={svc.href} style={{ textDecoration: 'none', display: 'block', paddingBottom: '1rem', borderBottom: '1px solid #e5e5e5', height: '100%' }}>
-                      <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '0.25rem' }}>{svc.id}</span>
-                      <h3 className="heading h6 u-mb-0 u-font-weight-bold u-text-color-primary" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        {svc.title}
-                        <span style={{ color: '#007236' }}>&rarr;</span>
-                      </h3>
-                    </Link>
-                  </div>
-                ))}
+                  {
+                    id: '01',
+                    title: 'Commercial Management',
+                    desc: 'Employment strategy across time charter, spot voyage and pool partnerships, matching every vessel to the trade where it can perform best. By leveraging our deep market insights and robust operational framework, we ensure that every commercial arrangement maximizes fleet value.',
+                    href: '/commercial-management',
+                    img: '/wp-content/uploads/asp_images/ships/asp-luna-aerial-aft.webp'
+                  },
+                  {
+                    id: '02',
+                    title: 'Technical Management',
+                    desc: 'Planned maintenance, dry-docking, performance, safety and regulatory oversight delivered through a disciplined, TMSA-aligned management system. Our proactive inspection regimes and continual performance monitoring ensure every ship operates safely, efficiently, and in full regulatory compliance.',
+                    href: '/technical-management',
+                    img: '/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp'
+                  },
+                  {
+                    id: '03',
+                    title: 'Marine Consultancy',
+                    desc: 'Practical maritime advice for commercial planning, technical projects, compliance and fleet development, grounded in operating experience. We offer specialist advisory across the vessel lifecycle, from newbuilding supervision and S&P due diligence to ESG and decarbonisation strategy.',
+                    href: '/marine-consultancy',
+                    img: '/wp-content/uploads/asp_images/about/history-03-first-tanker.png'
+                  },
+                  {
+                    id: '04',
+                    title: 'Crew Management',
+                    desc: 'Recruitment, deployment, training and welfare for qualified seafarers, supporting safe operations and reliable performance on every voyage. We manage the complete seafarer journey with the discipline and care that maritime safety demands, ensuring retention and continued skill development.',
+                    href: '/crew-management',
+                    img: '/wp-content/uploads/asp_images/ships/asp-maple.jpg'
+                  },
+                  {
+                    id: '05',
+                    title: 'Sea Transportation',
+                    desc: 'Flexible sea transportation across clean and dirty petroleum products, LPG and chemical cargoes, delivered with disciplined planning and cargo care. Our robust safety management and route optimisation connect producers to buyers reliably across global trade corridors.',
+                    href: '/sea-transportation',
+                    img: '/wp-content/uploads/asp_images/ships/asp-titan-aerial-aft.webp'
+                  }
+                ].map((svc, idx) => {
+                  const isImageRight = idx % 2 === 0;
+                  return (
+                    <div key={svc.id} className="service-checker-row">
+                      <div className="service-grid-text" style={{ order: isImageRight ? 1 : 2 }}>
+                        <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>{svc.id}</span>
+                        <h2 className="heading h3 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0" style={{ fontWeight: 400 }}>
+                          {svc.title}
+                        </h2>
+                        <div className="content-width u-mt-4 u-mb-4">
+                          <p>{svc.desc}</p>
+                        </div>
+                        <Link href={svc.href} style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
+                          Explore {svc.title} &rarr;
+                        </Link>
+                      </div>
+                      <div className="service-grid-image" style={{ order: isImageRight ? 2 : 1 }}>
+                        <Image 
+                          src={svc.img}
+                          alt={svc.title}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
-
-          <Divider />
-
-          {/* 03 - COMMERCIAL PREVIEW */}
-          <section className="layout layout-page layout-root">
-            <div className="layout-inner">
-              <div className="row u-gy-4 u-gx-5 align-items-center">
-                <div className="col-12 col-lg-6">
-                  <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>01</span>
-                  <h2 className="heading h3 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0" style={{ fontWeight: 400 }}>
-                    Commercial Management
-                  </h2>
-                  <div className="content-width u-mt-4 u-mb-4">
-                    <p>
-                      Employment strategy across time charter, spot voyage and pool partnerships, matching every vessel to the trade where it can perform best. By leveraging our deep market insights and robust operational framework, we ensure that every commercial arrangement maximizes fleet value.
-                    </p>
-                  </div>
-                  <Link href="/commercial-management" style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                    Explore Commercial Management &rarr;
-                  </Link>
-                </div>
-                <div className="col-12 col-lg-6">
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', borderRadius: '4px', overflow: 'hidden' }}>
-                    <Image 
-                      src="/wp-content/uploads/asp_images/ships/asp-luna-aerial-aft.webp"
-                      alt="Commercial Management"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <Divider />
-
-          {/* 04 - TECHNICAL PREVIEW */}
-          <section className="layout layout-page layout-root">
-            <div className="layout-inner">
-              <div className="row u-gy-4 u-gx-5 align-items-center flex-lg-row-reverse">
-                <div className="col-12 col-lg-6">
-                  <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>02</span>
-                  <h2 className="heading h3 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0" style={{ fontWeight: 400 }}>
-                    Technical Management
-                  </h2>
-                  <div className="content-width u-mt-4 u-mb-4">
-                    <p>
-                      Planned maintenance, dry-docking, performance, safety and regulatory oversight delivered through a disciplined, TMSA-aligned management system. Our proactive inspection regimes and continual performance monitoring ensure every ship operates safely, efficiently, and in full regulatory compliance.
-                    </p>
-                  </div>
-                  <Link href="/technical-management" style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                    Explore Technical Management &rarr;
-                  </Link>
-                </div>
-                <div className="col-12 col-lg-6">
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', borderRadius: '4px', overflow: 'hidden' }}>
-                    <Image 
-                      src="/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp"
-                      alt="Technical Management"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <Divider />
-
-          {/* 05 - MARINE CONSULTANCY PREVIEW */}
-          <section className="layout layout-page layout-root">
-            <div className="layout-inner">
-              <div className="row u-gy-4 u-gx-5 align-items-center">
-                <div className="col-12 col-lg-6">
-                  <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>03</span>
-                  <h2 className="heading h3 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0" style={{ fontWeight: 400 }}>
-                    Marine Consultancy
-                  </h2>
-                  <div className="content-width u-mt-4 u-mb-4">
-                    <p>
-                      Practical maritime advice for commercial planning, technical projects, compliance and fleet development, grounded in operating experience. We offer specialist advisory across the vessel lifecycle, from newbuilding supervision and S&amp;P due diligence to ESG and decarbonisation strategy.
-                    </p>
-                  </div>
-                  <Link href="/marine-consultancy" style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                    Explore Marine Consultancy &rarr;
-                  </Link>
-                </div>
-                <div className="col-12 col-lg-6">
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', borderRadius: '4px', overflow: 'hidden' }}>
-                    <Image 
-                      src="/wp-content/uploads/asp_images/about/history-03-first-tanker.png"
-                      alt="Marine Consultancy"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <Divider />
-
-          {/* 06 - CREW MANAGEMENT PREVIEW */}
-          <section className="layout layout-page layout-root">
-            <div className="layout-inner">
-              <div className="row u-gy-4 u-gx-5 align-items-center flex-lg-row-reverse">
-                <div className="col-12 col-lg-6">
-                  <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>04</span>
-                  <h2 className="heading h3 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0" style={{ fontWeight: 400 }}>
-                    Crew Management
-                  </h2>
-                  <div className="content-width u-mt-4 u-mb-4">
-                    <p>
-                      Recruitment, deployment, training and welfare for qualified seafarers, supporting safe operations and reliable performance on every voyage. We manage the complete seafarer journey with the discipline and care that maritime safety demands, ensuring retention and continued skill development.
-                    </p>
-                  </div>
-                  <Link href="/crew-management" style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                    Explore Crew Management &rarr;
-                  </Link>
-                </div>
-                <div className="col-12 col-lg-6">
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', borderRadius: '4px', overflow: 'hidden' }}>
-                    <Image 
-                      src="/wp-content/uploads/asp_images/ships/asp-maple.jpg"
-                      alt="Crew Management"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <Divider />
-
-          {/* 07 - SEA TRANSPORTATION PREVIEW */}
-          <section className="layout layout-page layout-root">
-            <div className="layout-inner">
-              <div className="row u-gy-4 u-gx-5 align-items-center">
-                <div className="col-12 col-lg-6">
-                  <span style={{ color: '#007236', fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>05</span>
-                  <h2 className="heading h3 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0" style={{ fontWeight: 400 }}>
-                    Sea Transportation
-                  </h2>
-                  <div className="content-width u-mt-4 u-mb-4">
-                    <p>
-                      Flexible sea transportation across clean and dirty petroleum products, LPG and chemical cargoes, delivered with disciplined planning and cargo care. Our robust safety management and route optimisation connect producers to buyers reliably across global trade corridors.
-                    </p>
-                  </div>
-                  <Link href="/sea-transportation" style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                    Explore Sea Transportation &rarr;
-                  </Link>
-                </div>
-                <div className="col-12 col-lg-6">
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', borderRadius: '4px', overflow: 'hidden' }}>
-                    <Image 
-                      src="/wp-content/uploads/asp_images/ships/asp-titan-aerial-aft.webp"
-                      alt="Sea Transportation"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <Divider />
 
           {/* 08 - EXPLORE ASP */}
           <section className="layout layout-page layout-root u-pb-5">
