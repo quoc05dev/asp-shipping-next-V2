@@ -16,6 +16,7 @@ export default function SeaTransportationPage() {
   return (
     <>
       <Header />
+      <div style={{ paddingTop: 'var(--theme-header-height-rem, 4.25rem)' }}>
       <ServiceBreadcrumb serviceName="Sea Transportation" />
       <main className="page" style={{ backgroundColor: '#ffffff' }}>
         
@@ -63,6 +64,7 @@ export default function SeaTransportationPage() {
 
         <RelatedServices currentServicePath="/sea-transportation" />
       </main>
+      </div>
       <Footer />
     </>
   );

@@ -32,6 +32,7 @@ export default function CommercialManagementPage() {
   return (
     <>
       <Header />
+      <div style={{ paddingTop: 'var(--theme-header-height-rem, 4.25rem)' }}>
       <ServiceBreadcrumb serviceName="Commercial Management" />
       <main id="siteMain" className="main container container-rfs container-w-outer" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
         
@@ -316,6 +317,7 @@ export default function CommercialManagementPage() {
 
         <Divider />
       </main>
+      </div>
       <Footer />
     </>
   );

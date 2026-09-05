@@ -16,6 +16,7 @@ export default function CrewManagementPage() {
   return (
     <>
       <Header />
+      <div style={{ paddingTop: 'var(--theme-header-height-rem, 4.25rem)' }}>
       <ServiceBreadcrumb serviceName="Crew Management" />
       <main className="page" style={{ backgroundColor: '#ffffff' }}>
         
@@ -92,6 +93,7 @@ export default function CrewManagementPage() {
 
         <RelatedServices currentServicePath="/crew-management" />
       </main>
+      </div>
       <Footer />
     </>
   );
