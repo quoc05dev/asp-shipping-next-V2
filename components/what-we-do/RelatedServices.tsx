@@ -38,7 +38,7 @@ export default function RelatedServices({ currentServicePath }: RelatedServicesP
   
   return (
     <section className="layout layout-spacer layout-page layout-root" style={{ padding: '4rem 0', backgroundColor: '#f8f9fa', marginTop: '4rem' }}>
-      <div className="container container-w-outer container-max">
+      <div className="layout-inner">
         <h2 className="heading h4 u-mb-4" style={{ color: '#1a1a1a', borderBottom: '2px solid #007236', display: 'inline-block', paddingBottom: '0.5rem' }}>
           Related Services
         </h2>
