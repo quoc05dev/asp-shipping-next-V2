@@ -32,7 +32,7 @@ const whatWeDoServices = [
 
 export default function Header() {
     const pathname = usePathname();
-    const isHomePage = pathname === '/' || pathname === '/what-we-do';
+    const isHomePage = pathname === '/';
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

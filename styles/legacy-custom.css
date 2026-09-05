@@ -131,22 +131,7 @@ img:is([sizes=auto i], [sizes^="auto," i]) {
 }
 
 /* Extracted inline style 5 */
-.custom-sync-color {
-								color: #ffffff !important;
-								transition: color 0.3s ease;
-								text-decoration: none;
-							}
-							#siteHeader.is-stuck .custom-sync-color,
-							#siteHeader.headroom--not-top .custom-sync-color,
-							#siteHeader.site-header--stuck .custom-sync-color,
-							.mega-nav:hover .custom-sync-color,
-							.nav-offcanvas-opened .custom-sync-color {
-								color: #1a202c !important;
-							}
-							a.custom-sync-color:hover,
-							button.custom-sync-color:hover {
-								color: #74C043 !important;
-							}
+
 							/* Ensure the header container doesn't wrap on desktop to prevent vertical stacking */
 							@media (min-width: 992px) {
 								.site-navbar > .container {
