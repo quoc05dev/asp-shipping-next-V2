@@ -390,15 +390,15 @@ export default function WhatWeDoHubPage() {
                 padding: 0.75rem 1.75rem;
                 border: 1px solid #007236;
                 border-radius: 4px;
-                background-color: transparent;
-                transition: all 0.2s ease;
+                background-color: #ffffff;
+                transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
                 margin-top: auto;
                 align-self: flex-start;
               }
               .asp-btn-outline:hover {
-                background-color: rgba(0, 114, 54, 0.05);
-                border-color: #005628;
-                color: #005628 !important;
+                background-color: #007236;
+                border-color: #007236;
+                color: #ffffff !important;
               }
             `}</style>
           </section>
