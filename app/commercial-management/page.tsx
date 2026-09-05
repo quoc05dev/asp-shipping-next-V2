@@ -258,11 +258,7 @@ export default function CommercialManagementPage() {
         <Divider />
 
         {/* 06 - RELATED SERVICES */}
-        <section className="layout layout-page layout-root">
-          <div className="layout-inner">
-            <RelatedServices currentServicePath="/commercial-management" />
-          </div>
-        </section>
+        <RelatedServices currentServicePath="/commercial-management" />
 
         <Divider />
 
