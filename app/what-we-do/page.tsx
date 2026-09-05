@@ -101,7 +101,7 @@ export default function WhatWeDoHubPage() {
                   grid-template-columns: 1fr 1fr;
                   width: 100%;
                   border-bottom: 1px solid #eaeaea;
-                  min-height: 450px;
+                  min-height: 380px;
                 }
                 .service-grid-text {
                   display: flex;
@@ -136,35 +136,35 @@ export default function WhatWeDoHubPage() {
                   {
                     id: '01',
                     title: 'Commercial Management',
-                    desc: 'Employment strategy across time charter, spot voyage and pool partnerships, matching every vessel to the trade where it can perform best. By leveraging our deep market insights and robust operational framework, we ensure that every commercial arrangement maximizes fleet value.',
+                    desc: 'Employment strategy across time charter, spot voyage and pool partnerships, matching every vessel to the trade where it can perform best. By leveraging our deep market insights and robust operational framework, we ensure that every commercial arrangement maximizes fleet value. We work intimately with owners to secure optimal chartering terms, manage post-fixture operations diligently, and continuously optimize voyage earnings in a volatile global market.',
                     href: '/commercial-management',
                     img: '/wp-content/uploads/asp_images/ships/asp-luna-aerial-aft.webp'
                   },
                   {
                     id: '02',
                     title: 'Technical Management',
-                    desc: 'Planned maintenance, dry-docking, performance, safety and regulatory oversight delivered through a disciplined, TMSA-aligned management system. Our proactive inspection regimes and continual performance monitoring ensure every ship operates safely, efficiently, and in full regulatory compliance.',
+                    desc: 'Planned maintenance, dry-docking, performance, safety and regulatory oversight delivered through a disciplined, TMSA-aligned management system. Our proactive inspection regimes and continual performance monitoring ensure every ship operates safely, efficiently, and in full regulatory compliance. Through rigorous defect reporting, spare parts procurement, and expert superintendent oversight, we protect asset value and minimize off-hire time.',
                     href: '/technical-management',
                     img: '/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp'
                   },
                   {
                     id: '03',
                     title: 'Marine Consultancy',
-                    desc: 'Practical maritime advice for commercial planning, technical projects, compliance and fleet development, grounded in operating experience. We offer specialist advisory across the vessel lifecycle, from newbuilding supervision and S&P due diligence to ESG and decarbonisation strategy.',
+                    desc: 'Practical maritime advice for commercial planning, technical projects, compliance and fleet development, grounded in operating experience. We offer specialist advisory across the vessel lifecycle, from newbuilding supervision and S&P due diligence to ESG and decarbonisation strategy. Our technical experts provide customized, actionable insights that help shipping stakeholders navigate complex regulatory shifts and adopt future-proof technologies.',
                     href: '/marine-consultancy',
                     img: '/wp-content/uploads/asp_images/about/history-03-first-tanker.png'
                   },
                   {
                     id: '04',
                     title: 'Crew Management',
-                    desc: 'Recruitment, deployment, training and welfare for qualified seafarers, supporting safe operations and reliable performance on every voyage. We manage the complete seafarer journey with the discipline and care that maritime safety demands, ensuring retention and continued skill development.',
+                    desc: 'Recruitment, deployment, training and welfare for qualified seafarers, supporting safe operations and reliable performance on every voyage. We manage the complete seafarer journey with the discipline and care that maritime safety demands, ensuring retention and continued skill development. By maintaining a robust talent pool and emphasizing continuous onboard training, we supply vessels with highly competent and motivated crews.',
                     href: '/crew-management',
                     img: '/wp-content/uploads/asp_images/ships/asp-maple.jpg'
                   },
                   {
                     id: '05',
                     title: 'Sea Transportation',
-                    desc: 'Flexible sea transportation across clean and dirty petroleum products, LPG and chemical cargoes, delivered with disciplined planning and cargo care. Our robust safety management and route optimisation connect producers to buyers reliably across global trade corridors.',
+                    desc: 'Flexible sea transportation across clean and dirty petroleum products, LPG and chemical cargoes, delivered with disciplined planning and cargo care. Our robust safety management and route optimisation connect producers to buyers reliably across global trade corridors. We operate a versatile fleet designed for maximum cargo flexibility, ensuring safe, on-time delivery while adhering to the highest environmental and industry standards.',
                     href: '/sea-transportation',
                     img: '/wp-content/uploads/asp_images/ships/asp-titan-aerial-aft.webp'
                   }
