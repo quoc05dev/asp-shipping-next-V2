@@ -32,13 +32,13 @@ export default function CommercialManagementPage() {
   return (
     <>
       <Header />
-      <ServiceBreadcrumb serviceName="Commercial Management" />
       <main id="siteMain" className="main container container-rfs container-w-outer" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
         
         <ServicePageHero 
           title="Commercial Management" 
           imageSrc="/wp-content/uploads/asp_images/ships/asp-luna-aerial-aft.webp"
           imageAlt="Asia Pacific Shipping Commercial Management"
+          breadcrumbName="Commercial Management"
         />
         
         <Divider />
