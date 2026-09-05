@@ -309,8 +309,8 @@ export default function WhatWeDoHubPage() {
                         <div className="content-width u-mt-4 u-mb-4">
                           <p>{svc.desc}</p>
                         </div>
-                        <Link href={svc.href} style={{ color: '#007236', fontWeight: 600, textDecoration: 'none' }}>
-                          Explore {svc.title} &rarr;
+                        <Link href={svc.href} className="asp-btn-outline">
+                          Explore {svc.title}
                         </Link>
                       </div>
                       <div className="service-grid-image" style={{ order: isImageRight ? 2 : 1 }}>
@@ -358,8 +358,8 @@ export default function WhatWeDoHubPage() {
                     <div className="explore-card">
                       <h3 className="heading h6 u-mb-3 u-font-weight-bold u-text-color-primary">{item.title}</h3>
                       <p className="u-mb-4" style={{ flexGrow: 1, color: '#444444' }}>{item.desc}</p>
-                      <Link href={item.href} className="explore-card-link">
-                        {item.title === 'Contact Us' ? 'Contact Us' : `Explore ${item.title}`} &rarr;
+                      <Link href={item.href} className="asp-btn-outline">
+                        {item.title === 'Contact Us' ? 'Contact Us' : `Explore ${item.title}`}
                       </Link>
                     </div>
                   </div>
@@ -382,15 +382,23 @@ export default function WhatWeDoHubPage() {
                 border-color: #007236;
                 box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
               }
-              .explore-card-link {
-                color: #007236;
+              .asp-btn-outline {
+                display: inline-block;
+                color: #007236 !important;
                 font-weight: 600;
                 text-decoration: none;
-                display: inline-block;
-                transition: color 0.2s ease;
+                padding: 0.75rem 1.75rem;
+                border: 1px solid #007236;
+                border-radius: 4px;
+                background-color: transparent;
+                transition: all 0.2s ease;
+                margin-top: auto;
+                align-self: flex-start;
               }
-              .explore-card:hover .explore-card-link {
-                color: #005628;
+              .asp-btn-outline:hover {
+                background-color: rgba(0, 114, 54, 0.05);
+                border-color: #005628;
+                color: #005628 !important;
               }
             `}</style>
           </section>
