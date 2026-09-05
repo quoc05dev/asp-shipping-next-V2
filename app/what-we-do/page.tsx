@@ -105,12 +105,8 @@ export default function WhatWeDoHubPage() {
           <Divider />
 
           {/* 01.5 - TRUSTED RELATIONSHIPS */}
-          <section className="layout layout-page layout-root u-py-5" style={{ 
-            backgroundColor: '#032c1b', 
-            width: '100vw',
-            marginLeft: 'calc(50% - 50vw)'
-          }}>
-            <div className="container container-w-outer container-rfs">
+          <section className="layout layout-page layout-root u-py-5" style={{ backgroundColor: '#ffffff' }}>
+            <div className="layout-inner">
               {/* Heading Row */}
               <div 
                 className="u-mb-4"
@@ -122,10 +118,10 @@ export default function WhatWeDoHubPage() {
                   gap: '1rem'
                 }}
               >
-                <h2 className="heading h5 u-mb-0 u-font-weight-medium" style={{ color: '#ffffff', margin: 0, flex: '1 1 auto' }}>
+                <h2 className="heading h5 u-mb-0 u-font-weight-medium u-text-color-black" style={{ margin: 0, flex: '1 1 auto' }}>
                   Trusted by leading charterers &amp; traders
                 </h2>
-                <span className="u-text-size-small u-font-weight-bold u-text-uppercase" style={{ letterSpacing: '0.12em', color: 'rgba(255, 255, 255, 0.7)', flex: '0 0 auto' }}>
+                <span className="u-text-size-small u-font-weight-bold u-text-uppercase" style={{ letterSpacing: '0.12em', color: '#666666', flex: '0 0 auto' }}>
                   Selected Market Relationships
                 </span>
               </div>
@@ -171,6 +167,7 @@ export default function WhatWeDoHubPage() {
                 width: 190px;
                 height: 90px;
                 background-color: #ffffff;
+                border: 1px solid #eaeaea;
                 border-radius: 2px;
                 display: flex;
                 align-items: center;
