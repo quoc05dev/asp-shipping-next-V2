@@ -61,22 +61,22 @@ export default function WhatWeDoHubPage() {
           {/* 01 - INTRO */}
           <section className="layout layout-page layout-root">
             <div className="layout-inner">
-              <div className="row u-gy-4 u-gx-5 align-items-center">
-                <div className="col-12 col-lg-6">
+              <div className="row u-gy-4 u-gx-5">
+                <div className="col-12 col-lg-5">
                   <SectionLead 
                     title="What We Do"
                     heading="Maritime Solutions"
-                    description="Commercial judgment, technical discipline and operational care across every stage of a vessel's lifecycle. We provide end-to-end maritime services, ensuring optimal performance, stringent regulatory compliance, and sustainable operations worldwide. Our dedicated team of experts works closely with partners to navigate the complexities of global shipping and deliver exceptional, reliable value."
+                    description="Commercial judgment, technical discipline and operational care across every stage of a vessel's lifecycle."
                   />
                 </div>
-                <div className="col-12 col-lg-6">
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', borderRadius: '4px', overflow: 'hidden' }}>
-                    <Image 
-                      src="/wp-content/uploads/asp_images/ships/hero-asp-rainbow-cinematic.png"
-                      alt="ASP Maritime Solutions"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
+                <div className="col-12 col-lg-7">
+                  <div className="content-width">
+                    <p className="u-mb-4">
+                      We provide end-to-end maritime services, ensuring optimal performance, stringent regulatory compliance, and sustainable operations worldwide. Our dedicated team of experts works closely with partners to navigate the complexities of global shipping and deliver exceptional, reliable value.
+                    </p>
+                    <p className="u-mb-4">
+                      Our approach integrates operational excellence with commercial and technical expertise. We support our clients across the entire vessel lifecycle—from newbuilding consultancy to long-term crewing and technical management—with an unwavering commitment to safety, compliance, and long-term partnership.
+                    </p>
                   </div>
                 </div>
               </div>
