@@ -1,0 +1,19 @@
+# Upload only the application source and assets needed for production.
+/*
+!/app
+!/components
+!/data
+!/lib
+!/public
+!/styles
+!/middleware.ts
+!/next.config.ts
+!/next-env.d.ts
+!/tsconfig.json
+!/package.json
+!/package-lock.json
+!/eslint.config.mjs
+!/.vercelignore
+/data/cms/temp_data.json
+/public/screenshot.png
+/public/screenshot2.png

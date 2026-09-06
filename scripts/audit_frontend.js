@@ -24,7 +24,7 @@ function fetchPage(url) {
     http.get(url, (res) => {
       let body = '';
       res.on('data', c => body += c);
-      res.on('end', () => resolve({ status: res.statusCode, body }));
+      res.on('end', () => resolve({ status: res.statusCode, body, headers: res.headers }));
     }).on('error', e => resolve({ error: e.message }));
   });
 }
@@ -78,8 +78,14 @@ function validateFooter(html) {
 
 async function runAudit() {
   console.log('Starting Permanent Frontend Regression Guard...\n');
+  const isAdminRoute = route => route === '/admin' || route.startsWith('/admin/');
+  const publicRoutes = routesToTest.filter(route => !isAdminRoute(route)
+    && !route.includes('_not-found') && !route.includes('_global-error'));
+  // Keep admin discovery and protection checks separate from public presentation.
+  // Required routes remain checked even if accidentally removed from the manifest.
+  const adminRoutes = [...new Set(['/admin', '/admin/login', ...routesToTest.filter(isAdminRoute)])];
   const results = {
-    total: routesToTest.length,
+    total: publicRoutes.length,
     tested: 0,
     passed: 0,
     failed: 0,
@@ -87,10 +93,7 @@ async function runAudit() {
     failures: []
   };
 
-  for (const route of routesToTest) {
-    // Exclude dynamic or non-public routes if needed
-    if (route.includes('_not-found') || route.includes('_global-error')) continue;
-    
+  for (const route of publicRoutes) {
     results.tested++;
     const url = BASE_URL + route;
     const { status, body, error } = await fetchPage(url);
@@ -226,6 +229,48 @@ async function runAudit() {
     }
   }
   
+  results.admin = { tested: 0, passed: 0, failed: 0, failures: [] };
+  for (const route of adminRoutes) {
+    results.admin.tested++;
+    const issues = [];
+    if (!routesToTest.includes(route)) issues.push('Route absent from build manifest');
+    // Anonymous GET only: never submit credentials or mutate authentication state.
+    const { status, body = '', headers = {}, error } = await fetchPage(BASE_URL + route);
+    if (error) issues.push(`Connection Error: ${error}`);
+    else if (route === '/admin/login') {
+      if (status !== 200) issues.push(`Login HTTP ${status}, expected 200`);
+      if (!headers['content-type']?.includes('text/html')) issues.push('Login did not render HTML');
+      if (!body.includes('ASP Admin') || !body.includes('<form')
+        || !/\btype="email"/.test(body) || !/\btype="password"/.test(body)) {
+        issues.push('Login form did not render');
+      }
+      issues.push(...checkBindings(body));
+    } else {
+      if (![302, 303, 307, 308].includes(status)) {
+        issues.push(`Anonymous admin HTTP ${status}, expected login redirect`);
+      }
+      try {
+        if (!headers.location) throw new Error('Missing Location');
+        const target = new URL(headers.location, BASE_URL);
+        if (target.origin !== new URL(BASE_URL).origin || target.pathname !== '/admin/login'
+          || target.searchParams.get('redirectTo') !== route) {
+          issues.push('Admin redirect must target same-origin login and preserve redirectTo');
+        }
+      } catch {
+        issues.push('Missing or invalid admin login redirect');
+      }
+    }
+    if (issues.length) {
+      results.admin.failed++;
+      results.admin.failures.push({ route, errors: issues });
+      console.log(`FAIL (admin): ${route}`);
+      issues.forEach(issue => console.log(`   - ${issue}`));
+    } else {
+      results.admin.passed++;
+      console.log(`PASS (admin): ${route}`);
+    }
+  }
+
   const artifactsDir = path.join(__dirname, '..', 'artifacts', 'frontend-regression');
   if (!fs.existsSync(artifactsDir)) fs.mkdirSync(artifactsDir, { recursive: true });
   fs.writeFileSync(path.join(artifactsDir, 'report.json'), JSON.stringify(results, null, 2));
@@ -234,10 +279,14 @@ async function runAudit() {
   console.log(`Tested: ${results.tested}`);
   console.log(`Passed: ${results.passed}`);
   console.log(`Failed: ${results.failed}`);
+  console.log(`Admin: ${results.admin.passed} / ${results.admin.tested} passed; ${results.admin.failed} failed`);
   
-  if (results.criticalRegressions > 0) {
+  if (results.criticalRegressions > 0 || results.admin.failed > 0) {
     process.exit(1);
   }
 }
 
-runAudit().catch(console.error);
+runAudit().catch(error => {
+  console.error(error);
+  process.exitCode = 1;
+});

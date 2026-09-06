@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/artifacts/
 
 # next.js
 /.next/
@@ -32,6 +33,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+.env.local
+.env*.local
 
 # vercel
 .vercel
@@ -45,3 +49,15 @@ next-env.d.ts
 /node.zip
 /git-setup.exe
 /nvm-setup.exe
+/node.msi
+/.vscode/
+/data/cms/temp_data.json
+/public/screenshot.png
+/public/screenshot2.png
+
+# Local source-video duplicates; production copies live in public/videos/home.
+/ASP_LUNA_1.mp4
+/ASP_LUNA_2.mp4
+
+# local logs
+*.log
