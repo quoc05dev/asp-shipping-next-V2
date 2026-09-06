@@ -1,6 +1,10 @@
 import React from 'react';
+import { cmsRepository } from '@/data/cms/repository';
 
-export default function Statistics() {
+export default async function Statistics() {
+  const statsData = await cmsRepository.getPageSection('home', 'home_statistics');
+  if (!statsData) return null;
+  const stats = statsData.content.stats;
   return (
     <>
 					<div className="container container-max home-statistics">

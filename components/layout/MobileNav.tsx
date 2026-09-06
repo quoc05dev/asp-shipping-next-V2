@@ -4,10 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 interface MobileNavProps {
+    services?: any[];
     onMenuToggle?: (isOpen: boolean) => void;
 }
 
-export default function MobileNav({ onMenuToggle }: MobileNavProps) {
+export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [navStack, setNavStack] = useState<string[]>(['root']);
     const [sliderHeight, setSliderHeight] = useState<number | 'auto'>('auto');
@@ -209,25 +210,15 @@ export default function MobileNav({ onMenuToggle }: MobileNavProps) {
                                                       </a>
                                                   </li>
                                                   <li className="menu-item menu-item-view-parent"><Link href="/what-we-do" onClick={() => closeMenu('route')}>What We Do</Link></li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-1">
-                                                      <Link title="Commercial Management" href="/commercial-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Commercial Management</span></Link>
-                                                  </li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-2">
-                                                      <Link title="Technical Management" href="/technical-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Technical Management</span></Link>
-                                                  </li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-3">
-                                                      <Link title="Marine Consultancy" href="/marine-consultancy" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Marine Consultancy</span></Link>
-                                                  </li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-4">
-                                                      <Link title="Crew Management" href="/crew-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Crew Management</span></Link>
-                                                  </li>
-                                                  <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-wwd-5">
-                                                      <Link title="Sea Transportation" href="/sea-transportation" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Sea Transportation</span></Link>
-                                                  </li>
-                                              </ul>
-                                          </div>
-                                      </li>
-                                    <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-53">
+                                                    {services.map((service: any, index: number) => (
+                                                        <li key={service.id || index} itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+                                                            <Link title={service.title || service.name} href={`/what-we-do/${service.slug}`} className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">{service.title || service.name}</span></Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-slider-item menu-item-53">
                                         <a title="About Us" href="/about-us" aria-haspopup="true" aria-expanded="false" className="nav-slider-toggle" id="menu-item-nav-slider-53" onClick={(e) => openSubmenu(e, 'menu-item-nav-slider-53')}>
                                             <span className="menu-item-text">About Us</span>
                                             <i className="icon icon-chevron-right menu-icon-right">

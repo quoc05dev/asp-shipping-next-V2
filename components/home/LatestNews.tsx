@@ -1,6 +1,10 @@
 import React from 'react';
+import { cmsRepository } from '@/data/cms/repository';
 
-export default function LatestNews() {
+export default async function LatestNews() {
+  const news = await cmsRepository.getPageSection('home', 'home_news');
+  const articles = await cmsRepository.getLatestNews();
+  if (!news) return null;
   return (
     <>
 					<div id="latest-news" className="container container-max">
@@ -9,15 +13,15 @@ export default function LatestNews() {
 		<div className="layout-column layout-column-latest-post-list-lead u-mb-4 u-mb-lg-0">
 			<div id="" className="layout layout-section-lead layout-page">
 				<div className="layout-inner">
-					<h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0" data-cms-field="news_title">Latest News</h2>
+					<h2 className="heading h5 u-mb-3 section-lead-subheading subheading u-text-color-primary u-mb-0" data-cms-field="news_title">{news.content.title}</h2>
 					<div className="section-lead-content u-h4">
 						<div className="small">
-							<p>Keep up to date with our business, people and activities.</p>
+							<p>{news.content.intro}</p>
 						</div>
 					</div>
 					<div id="" className="layout layout-buttons layout-page">
 						<div className="layout-inner button-group u-mt-9">
-							<div><a href="/media/latest-news" title="View All News" className="button button-outline"><span>View All News</span></a></div>
+							<div><a href={news.content.ctaHref} title={news.content.ctaLabel} className="button button-outline"><span>{news.content.ctaLabel}</span></a></div>
 						</div>
 					</div>
 				</div>

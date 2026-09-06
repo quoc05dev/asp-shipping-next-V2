@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function HeroVideoBackground() {
+export default function HeroVideoBackground({ videos }: { videos: any[] }) {
   const [activeVideo, setActiveVideo] = useState(1);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
@@ -69,7 +69,7 @@ export default function HeroVideoBackground() {
     <>
       <video
         ref={video1Ref}
-        src="/videos/home/asp-luna-1.mp4"
+        src={videos[0]?.url}
         muted
         playsInline
         style={{
@@ -79,7 +79,7 @@ export default function HeroVideoBackground() {
       />
       <video
         ref={video2Ref}
-        src="/videos/home/asp-luna-2.mp4"
+        src={videos[1]?.url}
         muted
         playsInline
         style={{

@@ -1,7 +1,10 @@
 import React from 'react';
+import { cmsRepository } from '@/data/cms/repository';
 import FleetSlider from '@/components/home/FleetSlider';
 
-export default function OurFleetPreview() {
+export default async function OurFleetPreview() {
+  const fleet = await cmsRepository.getPageSection('home', 'home_fleet');
+  if (!fleet) return null;
   return (
     <>
 {/*  Unified Our Fleet Section  */}
@@ -16,8 +19,7 @@ export default function OurFleetPreview() {
 			{/*  Right Column: Content  */}
 			<div style={{display: "flex", flexDirection: "column", height: "100%", }}>
 				<div style={{marginBottom: "auto", }}>
-					<h2 className="heading h5 u-text-color-primary" style={{margin: "0 0 12px 0", }}>Our
-						Fleet</h2>
+					<h2 className="heading h5 u-text-color-primary" style={{margin: "0 0 12px 0", }}>{fleet.content.title}</h2>
 					<div style={{marginBottom: "16px", }}>
 						<p style={{fontSize: "1.5rem", lineHeight: "1.4", margin: "0", color: "var(--theme-body-color)", }}>
 							We own and manage a modern, diversified fleet serving customers across
@@ -32,7 +34,7 @@ export default function OurFleetPreview() {
 							supply chains.</p>
 					</div>
 
-					<a href="/our-fleet" className="button button-outline" style={{marginBottom: "32px", }}><span>View Our Fleet List</span></a>
+					<a href={fleet.content.ctaHref || "/our-fleet"} className="button button-outline" style={{marginBottom: "32px", }}><span>{fleet.content.ctaLabel || "View Our Fleet List"}</span></a>
 				</div>
 
 				{/*  Statistics Grid (2x2)  */}

@@ -1,7 +1,10 @@
 import React from 'react';
+import { cmsRepository } from '@/data/cms/repository';
 import FooterAccordion from '@/components/layout/FooterAccordion';
 
-export default function Footer() {
+export default async function Footer() {
+  const siteSettings = await cmsRepository.getSiteSettings();
+  const footerSection = await cmsRepository.getFooterSection();
   return (
     <>
 	<footer id="siteFooter" className="site-footer u-py-8 u-text-size-small theme-style theme-style-tertiary" data-cms-section="footer">
@@ -10,7 +13,7 @@ export default function Footer() {
 				<div className="row">
 					<div className="col-12 col-sm-auto col-lg-auto col-xl-4 col-footer-first-col">
 						<section className="widget text-2 widget_text">
-							<h3 className="widget-title" data-cms-field="newsletter_title">Subscribe to our Newsletter</h3>
+							<h3 className="widget-title" data-cms-field="newsletter_title">{footerSection.newsletterTitle}</h3>
 							<div className="textwidget">
 								<div className="wpcf7 no-js" id="wpcf7-f93-o4" lang="en-US" dir="ltr" wpcf7-id="93">
 									<div className="screen-reader-response">
@@ -64,16 +67,19 @@ export default function Footer() {
 									<h3 className="u-visually-hidden widget-title">Home</h3>
 									<div className="menu-footer-column-1-container">
 										<ul id="menu-footer-column-1" className="menu">
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-active menu-item-94">
-												<a title="Home" href="index.html" className="footer-parent-link">Home</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-96" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-96">
-												<a title="Contact Us" href="/contact-us">Contact Us</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-95" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
-												<a title="Careers" href="/careers">Careers</a></li>
-											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-2013" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2013">
-												<a title="Supplier Verification" href="/suppliers/supplier-verification">Supplier
-													Verification</a></li>
-										</ul>
+    <li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-active">
+      <a title="Home" href="/" className="footer-parent-link">Home</a>
+    </li>
+    <li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+      <a title="Contact Us" href="/contact-us">Contact Us</a>
+    </li>
+    <li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+      <a title="Careers" href="/careers">Careers</a>
+    </li>
+    <li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+      <a title="Supplier Verification" href="/suppliers/supplier-verification">Supplier Verification</a>
+    </li>
+  </ul>
 									</div>
 								</section>
 							</div>
@@ -83,19 +89,14 @@ export default function Footer() {
 									<h3 className="u-visually-hidden widget-title">What We Do</h3>
 									<div className="menu-footer-column-wwd-container">
 										<ul id="menu-footer-column-wwd" className="menu">
-											<FooterAccordion id="menu-item-wwd" title="What We Do" href="/what-we-do">
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-1" className="menu-item menu-item-type-post_type menu-item-object-page">
-														<a title="Commercial Management" href="/commercial-management" className="collapse-link">Commercial Management</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-2" className="menu-item menu-item-type-post_type menu-item-object-page">
-														<a title="Technical Management" href="/technical-management" className="collapse-link">Technical Management</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-3" className="menu-item menu-item-type-post_type menu-item-object-page">
-														<a title="Marine Consultancy" href="/marine-consultancy" className="collapse-link">Marine Consultancy</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-4" className="menu-item menu-item-type-post_type menu-item-object-page">
-														<a title="Crew Management" href="/crew-management" className="collapse-link">Crew Management</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-wwd-5" className="menu-item menu-item-type-post_type menu-item-object-page">
-														<a title="Sea Transportation" href="/sea-transportation" className="collapse-link">Sea Transportation</a></li>
-											</FooterAccordion>
-										</ul>
+    <FooterAccordion id="menu-item-wwd" title={footerSection.columns[0].title} href="/what-we-do">
+      {footerSection.columns[0].links.map((link: any, idx: number) => (
+        <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+          <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
+        </li>
+      ))}
+    </FooterAccordion>
+  </ul>
 									</div>
 								</section>
 							</div>
@@ -105,17 +106,14 @@ export default function Footer() {
 									<h3 className="u-visually-hidden widget-title">About Us</h3>
 									<div className="menu-footer-column-2-container">
 										<ul id="menu-footer-column-2" className="menu">
-											<FooterAccordion id="menu-item-97" title="About Us" href="/about-us">
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-99" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-99">
-														<a title="History" href="/about-us/history" className="collapse-link">History</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-100" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-100">
-														<a title="Leadership" href="/about-us/leadership" className="collapse-link">Leadership</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-98" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-98">
-														<a title="Vision, Mission, Values" href="/about-us/vision-mission-values" className="collapse-link">Vision, Mission, Values</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
-														<a title="Trades" href="/about-us/trades" className="collapse-link">Trades</a></li>
-											</FooterAccordion>
-										</ul>
+    <FooterAccordion id="menu-item-97" title={footerSection.columns[1].title} href="/about-us">
+      {footerSection.columns[1].links.map((link: any, idx: number) => (
+        <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+          <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
+        </li>
+      ))}
+    </FooterAccordion>
+  </ul>
 									</div>
 								</section>
 							</div>
@@ -125,13 +123,14 @@ export default function Footer() {
 									<h3 className="u-visually-hidden widget-title">Our Fleet</h3>
 									<div className="menu-footer-column-3-container">
 										<ul id="menu-footer-column-3" className="menu">
-											<FooterAccordion id="menu-item-102" title="Our Fleet" href="/our-fleet">
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-103" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-103">
-														<a title="Ammonia Propulsion" href="/our-fleet/ammonia-propulsion" className="collapse-link">Ammonia Propulsion</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-104" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-104">
-														<a title="LCO2 Shipping" href="/our-fleet/lco2-shipping" className="collapse-link">LCO2 Shipping</a></li>
-											</FooterAccordion>
-										</ul>
+    <FooterAccordion id="menu-item-102" title={footerSection.columns[2].title} href="/our-fleet">
+      {footerSection.columns[2].links.map((link: any, idx: number) => (
+        <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+          <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
+        </li>
+      ))}
+    </FooterAccordion>
+  </ul>
 									</div>
 								</section>
 							</div>
@@ -141,17 +140,14 @@ export default function Footer() {
 									<h3 className="u-visually-hidden widget-title">Sustainability</h3>
 									<div className="menu-footer-column-4-container">
 										<ul id="menu-footer-column-4" className="menu">
-											<FooterAccordion id="menu-item-105" title="Sustainability" href="/sustainability">
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1125" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1125">
-														<a title="Social" href="/sustainability/social" className="collapse-link">Social</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1113" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1113">
-														<a title="Environment" href="/sustainability/environment" className="collapse-link">Environment</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-1029" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1029">
-														<a title="Governance" href="/sustainability/governance" className="collapse-link">Governance</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-106" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-106">
-														<a title="Policies &amp; Guidelines" href="/sustainability/policies-guidelines" className="collapse-link">Policies &amp; Guidelines</a></li>
-											</FooterAccordion>
-										</ul>
+    <FooterAccordion id="menu-item-105" title={footerSection.columns[3].title} href="/sustainability">
+      {footerSection.columns[3].links.map((link: any, idx: number) => (
+        <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+          <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
+        </li>
+      ))}
+    </FooterAccordion>
+  </ul>
 									</div>
 								</section>
 							</div>
@@ -161,15 +157,14 @@ export default function Footer() {
 									<h3 className="u-visually-hidden widget-title">Media</h3>
 									<div className="menu-footer-column-5-container">
 										<ul id="menu-footer-column-5" className="menu">
-											<FooterAccordion id="menu-item-110" title="Media" href="/media">
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-111" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-111">
-														<a title="Latest News" href="/media/latest-news" className="collapse-link">Latest News</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-112" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-112">
-														<a title="Gallery" href="/media/gallery" className="collapse-link">Gallery</a></li>
-													<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-113" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-113">
-														<a title="Glossary of Terms" href="/media/glossary-of-terms" className="collapse-link">Glossary of Terms</a></li>
-											</FooterAccordion>
-										</ul>
+    <FooterAccordion id="menu-item-110" title={footerSection.columns[4].title} href="/media">
+      {footerSection.columns[4].links.map((link: any, idx: number) => (
+        <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
+          <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
+        </li>
+      ))}
+    </FooterAccordion>
+  </ul>
 									</div>
 								</section>
 							</div>
@@ -181,50 +176,48 @@ export default function Footer() {
 
 				<div className="row">
 					<div className="col-12 col-sm-auto col-footer-first-col">
-						<div className="site-copyright">
-							© 2026 Asia Pacific Shipping (ASP). All rights reserved.
-						</div>
+						<div className="site-copyright" dangerouslySetInnerHTML={{__html: footerSection.copyrightHtml || siteSettings.copyrightText}}></div>
 					</div>
 				</div>
 
 				<div className="row u-gy-4">
 					<div className="col-12 col-sm-auto col-lg-auto col-xl-auto col-footer-first-col u-d-flex u-flex-row u-flex-wrap">
 						<div className="site-copyright u-flex-shrink-0 u-mr-2">
-							| Tel: <a href="tel:+84968016085" style={{ textDecoration: 'none', color: 'inherit' }}>+84 968 016 085</a> | <a href="mailto:contact@aspshipping.vn" style={{ textDecoration: 'none', color: 'inherit' }}>contact@aspshipping.vn</a> | <a href="/privacy-policy" title="Privacy Policy" target="" style={{ textDecoration: 'none', color: 'inherit' }}>Privacy Policy</a>
+							| Tel: <a href={`tel:${siteSettings.phone.replace(/\s/g, '')}`} style={{ textDecoration: 'none', color: 'inherit' }}>{siteSettings.phone}</a> | <a href={`mailto:${siteSettings.email}`} style={{ textDecoration: 'none', color: 'inherit' }}>{siteSettings.email}</a> | <a href="/privacy-policy" title="Privacy Policy" target="" style={{ textDecoration: 'none', color: 'inherit' }}>Privacy Policy</a>
 						</div>
 					</div>
 
 					<div className="col-12 col-lg-auto u-ml-lg-auto">
 						<ul className="social-networks">
-							<li className="social-network"><a href="https://www.facebook.com/aspshipping.vn" title="Facebook" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">Facebook</span><i className="icon icon-facebook ">
+							<li className="social-network"><a href={siteSettings.socialLinks?.facebook || "https://www.facebook.com/aspshipping.vn"} title="Facebook" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">Facebook</span><i className="icon icon-facebook ">
 										<svg>
 											<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#facebook">
 											</use>
 										</svg>
 									</i>
 								</a></li>
-							<li className="social-network"><a href="https://aspshipping.vn" title="Instagram" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">Instagram</span><i className="icon icon-instagram ">
+							<li className="social-network"><a href={siteSettings.socialLinks?.instagram || "#"} title="Instagram" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">Instagram</span><i className="icon icon-instagram ">
 										<svg>
 											<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#instagram">
 											</use>
 										</svg>
 									</i>
 								</a></li>
-							<li className="social-network"><a href="https://aspshipping.vn" title="LinkedIn" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">LinkedIn</span><i className="icon icon-linkedin-in ">
+							<li className="social-network"><a href={siteSettings.socialLinks?.linkedin || "#"} title="LinkedIn" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">LinkedIn</span><i className="icon icon-linkedin-in ">
 										<svg>
 											<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#linkedin-in">
 											</use>
 										</svg>
 									</i>
 								</a></li>
-							<li className="social-network"><a href="https://aspshipping.vn" title="Twitter X" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">Twitter X</span><i className="icon icon-twitter-x ">
+							<li className="social-network"><a href={siteSettings.socialLinks?.twitter || "#"} title="Twitter X" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">Twitter X</span><i className="icon icon-twitter-x ">
 										<svg>
 											<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#twitter-x">
 											</use>
 										</svg>
 									</i>
 								</a></li>
-							<li className="social-network"><a href="https://www.youtube.com/channel/UC9Hcg_n2W_6OHeoPnGNEp7A" title="YouTube" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">YouTube</span><i className="icon icon-youtube-play ">
+							<li className="social-network"><a href={siteSettings.socialLinks?.youtube || "#"} title="YouTube" target="_blank" className="" rel="noreferrer noopenner"><span className="u-visually-hidden">YouTube</span><i className="icon icon-youtube-play ">
 										<svg>
 											<use xlinkHref="/wp-content/themes/restless-theme/dist/spritec014.svg?id=bb172546dccb03016c04220a1b27ff75#youtube-play">
 											</use>

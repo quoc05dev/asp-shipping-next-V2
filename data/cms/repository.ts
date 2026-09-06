@@ -1,4 +1,5 @@
-import { PageSection, SectionKey, ServiceFaq, Service, Partner, SharedLabels, SectionContentMap } from './types';
+import { PageSection, SectionKey, ServiceFaq, Service, Partner, SharedLabels, SectionContentMap, SiteSettings, NavigationItem, FleetVessel, NewsArticle, VideoMediaRef, HomeHeroSectionContent, HomeAboutSectionContent, HomeStatisticsSectionContent, HomeFleetSectionContent, ChairmanMessageSectionContent, HomeLatestNewsSectionContent, HomeSustainabilitySectionContent, HomeNewsletterSectionContent, FooterSectionContent } from './types';
+
 
 export interface CmsRepository {
   getPageSection<K extends SectionKey>(pageSlug: string, sectionKey: K): Promise<PageSection<K> | null>;
@@ -8,15 +9,177 @@ export interface CmsRepository {
   getPartners(): Promise<Partner[]>;
   getRelatedServices(serviceSlug: string): Promise<Service[]>;
   getSharedLabels(): Promise<SharedLabels>;
+  getSiteSettings(): Promise<SiteSettings>;
+  getNavigation(): Promise<NavigationItem[]>;
+  getFleetVessels(): Promise<FleetVessel[]>;
+  getLatestNews(): Promise<NewsArticle[]>;
+  getFooterSection(): Promise<FooterSectionContent>;
 }
+
 
 const MOCK_SHARED_LABELS: SharedLabels = {
   backToAllServices: "Back to all services",
   exploreMore: "Explore more",
   downloadPdf: "Download PDF",
   careersAtAsp: "Careers at ASP",
-  learnMore: "Learn more"
+  learnMore: "Learn more",
+  readMore: "Read More",
+  viewFleet: "View Fleet",
+  contactUs: "Contact Us",
+  search: "Search",
+  newsletterSubmit: "Subscribe"
 };
+
+
+const MOCK_SITE_SETTINGS: SiteSettings = {
+  companyName: "Asia Pacific Shipping",
+  defaultSeoTitle: "ASP Shipping",
+  defaultSeoDescription: "Asia Pacific Shipping is a leading independent owner and operator of modern tankers and bulk carriers.",
+  defaultOgImage: { url: "/wp-content/uploads/asp_images/ships/hero-asp-rainbow-cinematic.png", alt: "ASP Shipping" },
+  phone: "+84 28 1234 5678",
+  email: "info@aspshipping.vn",
+  address: "Hanoi, Vietnam",
+  copyrightText: "Copyright (c) 2026 ASP. All Rights Reserved.",
+  socialLinks: {
+    linkedin: "https://linkedin.com"
+  },
+  brandLogo: { url: "/wp-content/themes/restless-theme/dist/images/logo.svg", alt: "ASP Shipping" }
+};
+
+const MOCK_NAVIGATION: NavigationItem[] = [
+  { id: 'nav-1', key: 'what_we_do', label: 'What We Do', href: '/what-we-do', displayOrder: 1 },
+  { id: 'nav-2', key: 'about_us', label: 'About Us', href: '/about-us', displayOrder: 2 },
+  { id: 'nav-3', key: 'sustainability', label: 'Sustainability', href: '/sustainability', displayOrder: 3 },
+  { id: 'nav-4', key: 'media', label: 'Media', href: '/media', displayOrder: 4 },
+  { id: 'nav-5', key: 'careers', label: 'Careers', href: '/careers', displayOrder: 5 },
+  { id: 'nav-6', key: 'our_fleet', label: 'Our Fleet', href: '/our-fleet', displayOrder: 6 },
+  { id: 'nav-7', key: 'contact_us', label: 'Contact Us', href: '/contact-us', displayOrder: 7 },
+  { id: 'nav-8', key: 'en_vi', label: 'EN / VI', href: '#', displayOrder: 8 },
+  { id: 'nav-9', key: 'search', label: 'Search', href: '#', displayOrder: 9 }
+];
+
+const MOCK_FLEET_VESSELS: Record<string, FleetVessel> = {
+  "asp-luna": {
+    id: 'fleet-1',
+    slug: 'asp-luna',
+    name: "ASP LUNA",
+    type: "LR2 TANKER",
+    dwt: "114,800 DWT",
+    built: "BUILT 2026",
+    trade: "ASP / WORLD TRADES",
+    image: { url: "/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp", alt: "ASP LUNA" },
+    displayOrder: 1
+  },
+  "asp-solar": {
+    id: 'fleet-2',
+    slug: 'asp-solar',
+    name: "ASP SOLAR",
+    type: "MR2 TANKER",
+    dwt: "49,999 DWT",
+    built: "BUILT 2026",
+    trade: "ASP / WORLD TRADES",
+    image: { url: "/wp-content/uploads/asp_images/ships/hero-asp-rainbow-cinematic.png", alt: "ASP SOLAR" },
+    displayOrder: 2
+  },
+  "asp-titan": {
+    id: 'fleet-3',
+    slug: 'asp-titan',
+    name: "ASP TITAN",
+    type: "AFRAMAX TANKER",
+    dwt: "115,000 DWT",
+    built: "BUILT 2025",
+    trade: "ASP / WORLD TRADES",
+    image: { url: "/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp", alt: "ASP TITAN" },
+    displayOrder: 3
+  }
+};
+
+const MOCK_NEWS_ARTICLES: Record<string, NewsArticle> = {
+  "fleet-expansion": {
+    id: 'news-1',
+    slug: 'fleet-expansion',
+    title: "ASP Successfully Takes Delivery of Vietnam's First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers",
+    excerpt: "ASP has taken delivery of the ASP LUNA and ASP SOLAR, strengthening our position in sustainable shipping.",
+    date: "14 Feb 2026",
+    category: "Press Releases",
+    image: { url: "/wp-content/uploads/asp_images/news/fleet-expansion.jpg", alt: "Fleet Expansion" }
+  },
+  "safety-milestone": {
+    id: 'news-2',
+    slug: 'safety-milestone',
+    title: "ASP Achieves 1 Million LTI-Free Man Hours Across Fleet",
+    excerpt: "Our commitment to safety culture and rigorous operational standards has resulted in a major safety milestone.",
+    date: "14 Feb 2026",
+    category: "Events",
+    image: { url: "/wp-content/uploads/asp_images/news/safety-meeting.jpg", alt: "Safety Meeting" }
+  },
+  "new-hq": {
+    id: 'news-3',
+    slug: 'new-hq',
+    title: "ASP Opens New Maritime Operations Center in Hanoi",
+    excerpt: "The new facility integrates real-time fleet monitoring and commercial operations to enhance service delivery.",
+    date: "14 Feb 2026",
+    category: "Press Releases",
+    image: { url: "/wp-content/uploads/asp_images/news/office-opening.jpg", alt: "Office Opening" }
+  }
+};
+
+const MOCK_FOOTER_CONTENT: FooterSectionContent = {
+  newsletterTitle: "Subscribe to our Newsletter",
+  newsletterDescription: "Sign up to receive alerts on press releases and updates on business activities.",
+  copyrightHtml: "Copyright (c) 2026 ASP. All Rights Reserved.",
+  columns: [
+    {
+      title: "What We Do",
+      links: [
+        { label: "Commercial Management", href: "/commercial-management" },
+        { label: "Technical Management", href: "/technical-management" },
+        { label: "Marine Consultancy", href: "/marine-consultancy" },
+        { label: "Crew Management", href: "/crew-management" },
+        { label: "Sea Transportation", href: "/sea-transportation" }
+      ]
+    },
+    {
+      title: "About Us",
+      links: [
+        { label: "Company Overview", href: "/about-us" },
+        { label: "Vision, Mission & Values", href: "/about-us/vision-mission-values" },
+        { label: "History", href: "/about-us/history" },
+        { label: "Leadership", href: "/about-us/leadership" },
+        { label: "Trades", href: "/about-us/trades" }
+      ]
+    },
+    {
+      title: "Our Fleet",
+      links: [
+        { label: "Overview", href: "/our-fleet" },
+        { label: "Ammonia Propulsion", href: "/our-fleet/ammonia-propulsion" },
+        { label: "LCO2 Shipping", href: "/our-fleet/lco2-shipping" }
+      ]
+    },
+    {
+      title: "Sustainability",
+      links: [
+        { label: "Overview", href: "/sustainability" },
+        { label: "Environment", href: "/sustainability/environment" },
+        { label: "Social", href: "/sustainability/social" },
+        { label: "Governance", href: "/sustainability/governance" },
+        { label: "Stakeholder Engagement", href: "/sustainability/stakeholder-engagement" },
+        { label: "Policies & Guidelines", href: "/sustainability/policies-guidelines" }
+      ]
+    },
+    {
+      title: "Media",
+      links: [
+        { label: "Overview", href: "/media" },
+        { label: "Latest News", href: "/media/latest-news" },
+        { label: "Gallery", href: "/media/gallery" },
+        { label: "Glossary of terms", href: "/media/glossary-of-terms" }
+      ]
+    }
+  ]
+};
+
 
 const MOCK_RELATED_SERVICES: Record<string, string[]> = {
   "commercial-management": [
@@ -180,6 +343,103 @@ const MOCK_PARTNERS: Partner[] = [
 ];
 
 const MOCK_PAGE_SECTIONS: Record<string, Record<string, any>> = {
+
+  home: {
+      home_hero: {
+      id: 'sec-home-hero',
+      pageSlug: 'home',
+      sectionKey: 'home_hero',
+      content: {
+        title: 'Turning vision into <span style="color: var(--asp-signal) !important;">value</span>',
+        description: 'Asia Pacific Shipping is a leading independent owner and operator of modern tankers and bulk carriers across the region. We are headquartered in Hanoi, delivering safe, reliable and efficient maritime logistics solutions to customers worldwide.',
+        videos: [
+          { url: '/ASP_LUNA_1.mp4' },
+          { url: '/ASP_LUNA_2.mp4' }
+        ],
+        fallbackImage: { url: '/wp-content/uploads/asp_images/ships/hero-asp-rainbow-cinematic.png', alt: 'Asia Pacific Shipping' }
+      }
+    },
+      home_about: {
+      id: 'sec-home-about',
+      pageSlug: 'home',
+      sectionKey: 'home_about',
+      content: {
+        eyebrow: 'About Us',
+        title: 'We have the scale, fleet and operational resources to serve our customers on a truly global basis, operating a young fleet of modern vessels.',
+        description1: 'ASP is an independent, wholly Vietnamese-owned shipowner and manager, founded by experienced captains, officers and maritime professionals, with strong backing from Vietnamese investors, banks and leasing partners.',
+        description2: 'We maintain the highest standards of safety, quality, and environmental protection, offering customers the best solutions for their transportation needs with our leading service and operational excellence.',
+        ctaLabel: 'Learn About Asia Pacific Shipping',
+        ctaHref: '/about-us'
+      }
+    },
+      home_statistics: {
+      id: 'sec-home-stats',
+      pageSlug: 'home',
+      sectionKey: 'home_statistics',
+      content: {
+        stats: [
+          { id: 'stat-1', value: '41', suffix: '+', label: 'Vessels in Fleet', displayOrder: 1 },
+          { id: 'stat-2', value: '3', suffix: 'M+', label: 'Total DWT', displayOrder: 2 },
+          { id: 'stat-3', value: '30', suffix: '+', label: 'Years of Experience', displayOrder: 3 },
+          { id: 'stat-4', value: '1,500', suffix: '+', label: 'Seafarers', displayOrder: 4 }
+        ]
+      }
+    },
+      home_fleet: {
+      id: 'sec-home-fleet',
+      pageSlug: 'home',
+      sectionKey: 'home_fleet',
+      content: {
+        title: 'Our Fleet',
+        description1: 'We own and manage a modern, diversified fleet serving customers across global trades, including bulk carriers, oil tankers, LPG carriers and chemical tankers.',
+        description2: 'Our commitment to safety, continuous improvement, and operational efficiency ensures that we meet the highest standards of maritime transportation.',
+      }
+    },
+      home_chairman: {
+      id: 'sec-home-chairman',
+      pageSlug: 'home',
+      sectionKey: 'home_chairman',
+      content: {
+        subtitle: 'A MESSAGE FROM OUR CHAIR',
+        quote: 'These vessels not only strengthen our fleet and let us serve clients more effectively - they reaffirm our dedication to advancing sustainable practices across the industry.',
+        name: 'NGUYEN QUYNH ANH',
+        role: 'Chair, ASP'
+      }
+    },
+      home_latest_news: {
+      id: 'sec-home-news',
+      pageSlug: 'home',
+      sectionKey: 'home_news',
+      content: {
+        title: 'Latest News',
+        intro: 'Keep up to date with our business, people and activities.',
+        ctaLabel: 'View All News',
+        ctaHref: '/media/latest-news'
+      }
+    },
+      home_sustainability: {
+      id: 'sec-home-sust',
+      pageSlug: 'home',
+      sectionKey: 'home_sustainability',
+      content: {
+        title: 'Sustainability',
+        description: "Asia Pacific Shipping is committed to safe and efficient marine transportation. We focus on environmental responsibility, fleet renewal with modern technologies like methanol dual-fuel vessels, and contributing toward the maritime industry's Net Zero 2050 goals.",
+        image: { url: '/wp-content/uploads/asp_images/ships/ship-home-sust-1.jpg', alt: 'Ship at sea' },
+        ctaLabel: 'Our Role in Sustainability',
+        ctaHref: '/sustainability'
+      }
+    },
+      home_callouts: {
+      id: 'sec-home-callouts',
+      pageSlug: 'home',
+      sectionKey: 'home_callouts',
+      content: {
+        title: 'Subscribe to Our Newsletter',
+        description: 'Sign up to receive alerts on press releases and updates on business activities.'
+      }
+    }
+  },
+
   "commercial-management": {
     "hero": {
       "id": "sec-commercial-management-hero",
@@ -1324,7 +1584,26 @@ class MockCmsRepository implements CmsRepository {
     if (!section) return null;
     return section as PageSection<K>;
   }
+  
+  async getSiteSettings(): Promise<SiteSettings> {
+    return MOCK_SITE_SETTINGS;
+  }
+  
+  async getNavigation(): Promise<NavigationItem[]> {
+    return MOCK_NAVIGATION.sort((a, b) => a.displayOrder - b.displayOrder);
+  }
 
+  async getFleetVessels(): Promise<FleetVessel[]> {
+    return Object.values(MOCK_FLEET_VESSELS).sort((a, b) => a.displayOrder - b.displayOrder);
+  }
+
+  async getLatestNews(): Promise<NewsArticle[]> {
+    return Object.values(MOCK_NEWS_ARTICLES);
+  }
+
+  async getFooterSection(): Promise<FooterSectionContent> {
+    return MOCK_FOOTER_CONTENT;
+  }
   async getServiceFaqs(serviceSlug: string): Promise<ServiceFaq[]> {
     return MOCK_FAQS[serviceSlug] || [];
   }

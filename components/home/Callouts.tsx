@@ -1,6 +1,9 @@
 import React from 'react';
+import { cmsRepository } from '@/data/cms/repository';
 
-export default function Callouts() {
+export default async function Callouts() {
+  const callouts = await cmsRepository.getPageSection('home', 'home_callouts');
+  if (!callouts) return null;
   return (
     <>
 					<div data-index="20" data-uid="3566d60edf5174d6bb1cffe5ff1308bc" id="" className="layout layout-callouts layout-page layout-root layout-column-size-3">
@@ -8,7 +11,7 @@ export default function Callouts() {
 							<div data-index="0" data-uid="3aff20fb313f55c4afa52a34d5d8a9ce" id="" className="layout layout-callout-form layout-page layout-column-callout">
 								<div className="callout callout-form theme-style theme-style-lighter u-px-4 u-py-3 u-border-radius u-h-100">
 									<h2 className="heading h5 u-mb-3 callout-heading u-mb-0">
-										Subscribe to Our Newsletter</h2>
+										{callouts.content.title}</h2>
 									<div className="callout-body">
 										<div className="callout-content">
 											<div className="content-width">
