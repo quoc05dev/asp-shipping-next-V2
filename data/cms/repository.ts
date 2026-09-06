@@ -1,4 +1,4 @@
-import { PageSection, SectionKey, ServiceFaq, Service, Partner, SharedLabels, SectionContentMap, SiteSettings, NavigationItem, FleetVessel, NewsArticle, VideoMediaRef, HomeHeroSectionContent, HomeAboutSectionContent, HomeStatisticsSectionContent, HomeFleetSectionContent, ChairmanMessageSectionContent, HomeLatestNewsSectionContent, HomeSustainabilitySectionContent, HomeNewsletterSectionContent, FooterSectionContent } from './types';
+import { AboutHeroSectionContent, HistoryIntroSectionContent, HistoryTimelineItem, HistoryTimelineSectionContent, AboutNavigationCard, PageSection, SectionKey, ServiceFaq, Service, Partner, SharedLabels, SectionContentMap, SiteSettings, NavigationItem, FleetVessel, NewsArticle, VideoMediaRef, HomeHeroSectionContent, HomeAboutSectionContent, HomeStatisticsSectionContent, HomeFleetSectionContent, ChairmanMessageSectionContent, HomeLatestNewsSectionContent, HomeSustainabilitySectionContent, HomeNewsletterSectionContent, FooterSectionContent } from './types';
 
 
 export interface CmsRepository {
@@ -361,6 +361,557 @@ const MOCK_PARTNERS: Partner[] = [
 ];
 
 const MOCK_PAGE_SECTIONS: Record<string, Record<string, any>> = {
+  "about-us/trades": {
+    "trades_hero": {
+      id: "trades-hero",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_hero",
+      content: {
+        title: "Trades",
+        desktopImage: { url: "/wp-content/uploads/asp_images/about/history-03-first-tanker.jpg", alt: "Asia Pacific Shipping LPG Carrier" },
+        mobileImage: { url: "/wp-content/uploads/asp_images/ships/asp-titan-sunset.jpg", alt: "Asia Pacific Shipping LPG Carrier" }
+      }
+    },
+    "trades_glance": {
+      id: "trades-glance",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_glance",
+      content: {
+        heading: "BW Kosan at a Glance",
+        intro: "Asia Pacific Shipping operates a fleet of 50 vessels ranging in size from 6,400 to 12,000 cubic meters in the pressurised, semi-refrigerated and ethylene-capable shipping sectors.",
+        stats: [
+          { value: "50", caption: "Vessels in the fleet" },
+          { value: "6,400 ' 12,000", suffix: "CBM", caption: "Capacity of vessels" }
+        ],
+        subheadings: [
+          { heading: "Our Vessels", intro: "Pressurised, semi-refrigerated, ethylene and ammonia-capable ships" },
+          { heading: "Our Team", intro: "In-house operational, technical and crewing teams" }
+        ]
+      }
+    },
+    "trades_intro": {
+      id: "trades-intro",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_intro",
+      content: {
+        paragraphs: [
+          "We aim to deliver to our customers' the best solution for their transportation needs, along with exceptional service and operational standards. Our organisation has significant commercial and technical capability to meet our customers' requirements worldwide. The company is headquartered in Singapore with Copenhagen covering our regional activities in the West, alongside teams in Manila and Tokyo.",
+          "We have the scale and operational strength for future success. We are working to grow our average vessel size, to maintain an attractive vessel average age, so that we can provide safe transportation in a lower carbon world. We believe that LPG will continue to serve as a cleaner form of energy than many alternatives ' especially in the residential sector, where it is a growing source of fuel in developing economies. Alongside LPG, we are optimistic for growth opportunities in adjacent sectors such as ammonia and carbon dioxide (CO2) shipping."
+        ]
+      }
+    },
+    "trades_video1": {
+      id: "trades-video1",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_video1",
+      content: {
+        video: { url: "https://youtu.be/qh7VCsj-y84", poster: { url: "/wp-content/uploads/asp_images/partners/logo-client-western-bulk.png", alt: "" } },
+        caption: "Watch our corporate video.",
+        heading: "A Shipping Partner of Choice",
+        intro: "At Asia Pacific Shipping, we are experienced in high-intensity short-sea or coastal trades, as well as in long-haul transportation.",
+        mobileVideo: { url: "https://youtu.be/qh7VCsj-y84", poster: { url: "/wp-content/uploads/asp_images/news/fleet-expansion.jpg", alt: "" } },
+        mobileCaption: "Watch our corporate video."
+      }
+    },
+    "trades_columns": {
+      id: "trades-columns",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_columns",
+      content: {
+        columns: [
+          "We are facilitating the global supply chain for cleaner energy ' actively managing response to sustainability, decarbonisation and future fuels.",
+          "With a strong balance sheet of close to USD 830 million and low leverage, we are a financially responsible business partner that is investing in our growth for the long term."
+        ]
+      }
+    },
+    "trades_articles": {
+      id: "trades-articles",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_articles",
+      content: {
+        articles: [
+          {
+            image: { url: "/wp-content/uploads/asp_images/partners/logo-client-maersk-tankers.png", alt: "" },
+            heading: "Our Fleet",
+            paragraphs: [
+              "We continue to optimise performance from our fleet both in economic and environmental terms, whilst working with partners on projects in areas such as ammonia and CO2 shipping. The fine-tuning of our fleet with asset transactions highlights our ability to evolve our fleet positively and deliver profitable growth."
+            ],
+            ctaLabel: "See our fleet list",
+            ctaHref: "/our-fleet"
+          },
+          {
+            image: { url: "/wp-content/uploads/asp_images/news/fleet-expansion.jpg", alt: "" },
+            heading: "Geographical and Commodity Diversity",
+            paragraphs: [
+              "Our business is globally diversified with vessels operating in Asia, Europe/Middle East/Africa, and Central/Southern Americas. On average, each year, we perform about three loading operations every day across our fleet, loading over four million tonnes, and engage in about 2,500 cargo operations in 247 different ports. Our cargo mix is split about 59% /41% between LPG and petrochemicals such as ethylene, propylene, butadiene and VCM, and one vessel in the growing ammonia trade.",
+              "This diversity in geography and commodity provides options for our fleet and relative earnings stability. Ship-to-ship (or STS) operations are an important part of our business is an integral part of the global LPG supply chain. We continue to perform STS operations for delivery of LPG over the 'last mile' into developing economies, with an average of about 175 STS operations annually."
+            ],
+            ctaLabel: "Read about our presence on the Amazon River",
+            ctaHref: "/media/news/2024/03/04/navigating-the-amazon"
+          },
+          {
+            image: { url: "/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp", alt: "" },
+            heading: "Safety as our Priority",
+            paragraphs: [
+              "With a workforce of more than 1,800 people, our prime responsibility is to provide a safe operating environment. Zero Harm drives our safety culture and commitment to operating without accidents and achieving our environmental goals. We believe in zero harm to people, the environment, cargo and assets. To realise our vision, we commit to prioritising safety towards our employees, the environment, our assets and cargo."
+            ],
+            ctaLabel: "See our approach to safety",
+            ctaHref: "/sustainability/social"
+          }
+        ]
+      }
+    },
+    "trades_sts": {
+      id: "trades-sts",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_sts",
+      content: {
+        heading: "Ship to Ship Transfer (STS)",
+        image: { url: "/wp-content/uploads/asp_images/partners/logo-client-javelin.png", alt: "" },
+        paragraphs: [
+          "During an STS operation, one vessel, typically the larger vessel, will keep its course, while the other vessel approaches slowly by course alternation. When they are close enough, and mooring lines tightened, STS operation begins.",
+          "STS operations allow for the delivery of cargo from larger vessels to ports which are unable to accomodate larger-sized vessels due to available infrastructure, storage capacity or swallow water depths."
+        ]
+      }
+    },
+    "trades_technical": {
+      id: "trades-technical",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_technical",
+      content: {
+        leftHeading: "Technical Expertise for Flawless Operations and R&D Projects",
+        leftIntro: "Our deep operational and technical experience enables us to support our customers' with the safe, reliable and sustainability shipping of liquified petroleum gas (LPG), petrochemicals and other speciality gases.",
+        rightParagraphs: [
+          "We also work alongside industry partners to not only reduce emissions, but to also explore projects that support wider decarbonisation such as shipping related to carbon capture and storage."
+        ]
+      }
+    },
+    "trades_pointers": {
+      id: "trades-pointers",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_pointers",
+      content: {
+        pointers: [
+          {
+            heading: "LCO2 shipping for Carbon Capture and Storage",
+            paragraphs: [
+              "We can facilitate the shipment of CO2 as part of the Carbon Capture and Storage (CCS) process. CCS is an established technology and capture hubs are being developed. CO2 storage sites are often far away from producers. With a need to move an estimated 90 million tons of CO2 annually to storage sites by 2040, linking CO2 producers with storage facilities will be increasingly important. While the majority of CO2 will be transported by pipelines, this may not be possible or suitable for all locations and distances. This is where shipping can play a complementary role. Read more about our offering <a href='/media/news/2024/03/04/shipping-for-carbon-capture-and-storage'>here</a>."
+            ],
+            image: { url: "/wp-content/uploads/asp_images/about/history-02-first-ship.jpg", alt: "" }
+          },
+          {
+            heading: "Powered by Ammonia",
+            paragraphs: [
+              "Ammonia has been identified as one of the leading potential zero emission fuels as it can be produced from renewable electricity and is already produced in large quantities in the Nordic countries. However, ammonia-powered vessels present several challenges from the technical, safety, fuel supply and commercial viability fronts ' all of which must be overcome before the promise of ships running safely on green ammonia can become a reality. The Nordic Green Ammonia Powered Ships (NoGAPS) project aims to pave the way for ammonia-powered vessels first in the Nordic region, and globally. Read more about our participation in NoGAPS <a href='/media/news/2024/03/04/towards-zero-carbon-shipping-with-ammonia'>here</a>."
+            ],
+            image: { url: "/wp-content/uploads/asp_images/partners/logo-client-totalenergies.png", alt: "" },
+            caption: "Copyright: Breeze Ship Design / M'rsk Mc-Kinney M'ller Center for Zero Carbon Shipping"
+          }
+        ]
+      }
+    },
+    "trades_more": {
+      id: "trades-more",
+      pageSlug: "about-us/trades",
+      sectionKey: "trades_more",
+      content: {
+        heading: "More About Us",
+        intro: "Learn more about Asia Pacific Shipping.",
+        cardIds: ["nav-about-us", "nav-history", "nav-leadership", "nav-vmv"]
+      }
+    }
+  },
+
+  "about-us/vision-mission-values": {
+    "vmv_hero": {
+      id: "vmv-hero",
+      pageSlug: "about-us/vision-mission-values",
+      sectionKey: "vmv_hero",
+      content: {
+        title: "Vision, Mission, Values",
+        desktopImage: { url: "/wp-content/uploads/asp_images/sustainability/governance-oversight.webp", alt: "Asia Pacific Shipping crew" },
+        mobileImage: { url: "/wp-content/uploads/asp_images/partners/logo-client-javelin.png", alt: "Asia Pacific Shipping crew" }
+      }
+    },
+    "vmv_vision_mission": {
+      id: "vmv-vision-mission",
+      pageSlug: "about-us/vision-mission-values",
+      sectionKey: "vmv_vision_mission",
+      content: {
+        visionHeading: "Vision",
+        visionParagraphs: [
+          "We aspire to be our <strong>customers' partner of choice</strong> for transportation of <strong>Liquefied Petroleum Gas (LPG), Petrochemicals &amp; Speciality Gases</strong> in a lower carbon world, recognised for our <strong>leading service &amp; operational standards.</strong>"
+        ],
+        missionHeading: "Mission",
+        missionParagraphs: [
+          "We work <strong>to improve our service continuously</strong> with <strong>safe high quality</strong> Gas Carriers at a competitive price, <strong>investing in our people, with focus on efficiency and long-term sustainability.</strong>"
+        ]
+      }
+    },
+    "vmv_values": {
+      id: "vmv-values",
+      pageSlug: "about-us/vision-mission-values",
+      sectionKey: "vmv_values",
+      content: {
+        heading: "Company Values",
+        intro: "Our CARE values are fully integrated with our culture and guide the way we work together.",
+        values: [
+          {
+            title: "Collaborative",
+            items: [
+              "We engage our customers' to find solutions together",
+              "We interact positively and constructively with our colleagues",
+              "We are open and authentic in everything we do"
+            ]
+          },
+          {
+            title: "Ambitious",
+            items: [
+              "We recognise that to be our customers' first choice we must be responsive and excel in what we do",
+              "We strive for operational excellence, challenging our own performance and goals, as individuals and as teams, seeking to continuously simplify and improve",
+              "We give and we value honest and respectful feedback"
+            ]
+          },
+          {
+            title: "Reliable",
+            items: [
+              "We deliver on our promises to customers' and colleagues",
+              "We recognise that accountability and reliability are essential for success",
+              "We act with integrity and uphold high ethical standards, target zero harm, care for our people with a focus on health, safety and security"
+            ]
+          },
+          {
+            title: "Enduring",
+            items: [
+              "We serve our customers' with a long-term perspective",
+              "We apply ourselves with a commitment to sustainability and to make a positive impact",
+              "We are attuned to the changes around us, and adapt to stay relevant"
+            ]
+          }
+        ]
+      }
+    },
+    "vmv_more": {
+      id: "vmv-more",
+      pageSlug: "about-us/vision-mission-values",
+      sectionKey: "vmv_more",
+      content: {
+        heading: "More About Us",
+        intro: "Learn more about Asia Pacific Shipping.",
+        cardIds: ["nav-about-us", "nav-history", "nav-leadership", "nav-trades"]
+      }
+    }
+  },
+
+  "about-us/leadership": {
+    "leadership_hero": {
+      id: "leadership-hero",
+      pageSlug: "about-us/leadership",
+      sectionKey: "leadership_hero",
+      content: {
+        title: "Leadership",
+        desktopImage: { url: "/wp-content/uploads/asp_images/news/methanol-delivery.jpg", alt: "Asia Pacific Shipping's LPG carrier" },
+        mobileImage: { url: "/wp-content/uploads/asp_images/ships/asp-jewels.webp", alt: "Asia Pacific Shipping's LPG carrier" }
+      }
+    },
+    "leadership_senior_management": {
+      id: "leadership-senior-management",
+      pageSlug: "about-us/leadership",
+      sectionKey: "leadership_senior_management",
+      content: {
+        heading: "Senior Management",
+        intro: "The Asia Pacific Shipping Senior Management Team includes some of the industry's most experienced, effective and diverse leaders.",
+        profiles: [
+          {
+            id: "jakob-bode",
+            name: "Jakob Bode",
+            role: "Chief Executive Officer",
+            image: { url: "/wp-content/uploads/asp_images/ships/asp-maple.jpg", alt: "" },
+            paragraphs: [
+              "Jakob began his shipping career with AP Moller Maersk in 1997, and held positions at Maersk Tankers in USA, Saudia Arabia and Singapore. He subsequently worked with the Eitzen Group as Managing Director of Eitzen Solvang Ethylene. He joined Lauritzen Kosan in 2010 and was appointed Managing Director of J. Lauritzen Singapore in 2016. He assumed the role of Head of Chartering, East of Suez, at Asia Pacific Shipping in 2021, and was appointed Chief Commercial Officer in March 2024.",
+              "He was appointed Chief Executive Office on 1st June 2025, and he is currently a Director of Dan Swift Singapore Pte Ltd. Jakob has completed various executive courses from IESE and INSEAD."
+            ]
+          },
+          {
+            id: "uta-urbaniak-sage",
+            name: "Uta Urbaniak-Sage",
+            role: "Chief Financial Officer",
+            image: { url: "/wp-content/uploads/asp_images/ships/maple-cedar.jpg", alt: "" },
+            paragraphs: [
+              "Uta joined Asia Pacific Shipping (formerly Epic Gas) in 2007 as Managing Director of the Singapore operation and became group CFO in 2012 where she has been closely involved in numerous debt/equity raising and M&A transactions. Before joining Asia Pacific Shipping, Uta worked for HSH Nordbank in Hamburg and Hong Kong in various management positions in the bank's shipping division. Uta is currently a Director of Skuld Mutual P&I Association (Bermuda) Ltd."
+            ]
+          },
+          {
+            id: "niraj-singh",
+            name: "Niraj Singh",
+            role: "Technical Director",
+            image: { url: "/wp-content/uploads/asp_images/sustainability/social-seafarers.jpg", alt: "" },
+            paragraphs: [
+              "Niraj has over 30 years of marine industry experience. He began his career with P&O Bulk in 1989. After spending 6 years as a Chief Engineer with varied experience on Bulk Carriers, Tankers & Oil & Chemical, he joined Gemarfin (Gestioni Maritima Finanziare) as a Technical Superintendent in 2000 at Lugano, Switzerland. In 2003, Niraj joined Epic Gas as Ship Manager, and since 2013 as a Fleet Manager. He took up the role of Technical Director in 2016, and is responsible for our global technical management including Ship Management, SHEQ, Crewing, and Newbuilding."
+            ]
+          },
+          {
+            id: "fevian-leong",
+            name: "Fevian Leong",
+            role: "Human Resources Director",
+            image: { url: "/wp-content/uploads/asp_images/ships/asp-rainbow.jpg", alt: "" },
+            paragraphs: [
+              "Fevian joined Asia Pacific Shipping in August 2022 as Human Resources Director. She has over 20 years of human resources management and development experience, spanning across healthcare, hospitality, maritime, IT and gas industries. Fevian has extensive experience in handling merger and acquisition, and leading organisational change across global corporations. Prior to joining Asia Pacific Shipping, she was the Head of HR, ASEAN at Linde Gas Asia and ASEAN HR Director at Signify (formerly known as Philips Lighting)."
+            ]
+          },
+          {
+            id: "christian-fjeldborg",
+            name: "Christian Fjeldborg Grønlund",
+            role: "Commercial Director",
+            image: { url: "/wp-content/uploads/asp_images/ships/maple-cedar.jpg", alt: "" },
+            paragraphs: [
+              "Christian brings over 20 years of expertise in the shipping industry. His career began in 2005 with J. Lauritzen, where he held key commercial positions across Hong Kong, Singapore, and Copenhagen. Since 2021, he has led ASP's commercial activities in Copenhagen as Head of Chartering, West of Suez. In June 2025, Christian was appointed Commercial Director, overseeing our world-wide commercial activities. Christian has completed management courses with Copenhagen Business School and Leadership Development Program by BW Group."
+            ]
+          }
+        ]
+      }
+    },
+    "leadership_board": {
+      id: "leadership-board",
+      pageSlug: "about-us/leadership",
+      sectionKey: "leadership_board",
+      content: {
+        heading: "Board of Directors",
+        intro: "The Asia Pacific Shipping Board brings a lifetime of entrepreneurship, business experience and industry knowledge to the table.",
+        profiles: [
+          {
+            id: "andreas-sohmen-pao",
+            name: "Andreas Sohmen-Pao",
+            role: "Chairman",
+            image: { url: "/wp-content/uploads/asp_images/partners/logo-client-swissmarine.png", alt: "" },
+            paragraphs: [
+              "Andreas Sohmen-Pao is Chairman of BW Group and listed affiliates BW Offshore, BW LPG, Hafnia, BW Energy and Cadeler. He is also Chairman of Sembcorp Industries and the Global Centre for Maritime Decarbonisation, and a trustee of the Lloyd's Register Foundation.",
+              "Mr Sohmen-Pao was previously Chairman of the Singapore Maritime Foundation and has served as a non-executive director of The Hongkong and Shanghai Banking Corporation Ltd, London P&I Club, Navigator Holdings, Singapore Symphonia Company, National Parks Board Singapore, Sport Singapore and the Maritime and Port Authority of Singapore amongst others.",
+              "Mr Sohmen-Pao graduated from Oxford University in England with an honours degree in Oriental Studies and has an MBA from Harvard Business School."
+            ]
+          },
+          {
+            id: "nicholas-lykiardopulo",
+            name: "Nicholas Lykiardopulo",
+            role: "Board Member",
+            image: { url: "/wp-content/uploads/asp_images/about/earth-day.jpg", alt: "" },
+            paragraphs: [
+              "Nicholas joined the Board in 2017, and brings many years of experience in shipping, commodities and finance. Within his family shipping business, Neda Maritime, he was involved in purchases, disposals and financing of numerous shipping assets, he has also advised on investments in private equity and financial products, both on behalf of Neda as well as in his role as Director of The UK Mutual Steamship Association of Bermuda. Nicholas is on the Board of Diorasis International SA, an alternative Investment Advisory firm based in Luxembourg. He holds an MA from Oxford University and is a Fellow of the Institute of Chartered Shipbrokers."
+            ]
+          },
+          {
+            id: "esben-poulsson",
+            name: "Esben Poulsson",
+            role: "Board Member",
+            image: { url: "/wp-content/uploads/asp_images/ships/hero-asp-rainbow-cinematic.png", alt: "" },
+            paragraphs: [
+              "Esben has worked in the maritime industry for over 50 years, holding a variety of senior management positions in Hong Kong, London, Copenhagen and Singapore. He is Non-Executive Chairman of Cambiaso Risso Asia Pte. Ltd. and of KST Group (formerly Keppel Smit Towage Pte Ltd.). He is Non-Executive Director of Finnlines PLc, Helsinki, Singapore, and of Abu Dhabi Ports Group (Maritime & Shipping Cluster). He also serves as Senior Advisor to the Chairman of X-Press Feeders Ltd. He served an 8-year term on the Board of the Maritime & Port Authority of Singapore (MPA) stepping down in January 2024. He is immediate past President of the Singapore Shipping Association (2019) and immediate past Chairman of the International Chamber of Shipping (2022)."
+            ]
+          },
+          {
+            id: "tommy-thomsen",
+            name: "Tommy Thomsen",
+            role: "Board Member",
+            image: { url: "/wp-content/uploads/asp_images/sustainability/social-seafarers.jpg", alt: "" },
+            paragraphs: [
+              "Tommy brings over 35 years of experience in shipping, logistics, finance and international business. He is currently CEO of the Lauritzen Foundation and it's holding company Lauritzen Fonden Holding. He also serves as Chairman of J. Lauritzen and Vice Chairman of Lauritzen Bulkers. Tommy was previously the CEO of Denmark's Investment Fund for Developing Countries and before that CEO of Nordic Tankers and prior partner in Clipper Group. He has also had a long career in A.P. Moller-Maersk, latest as member of the executive board with responsibility of APM Terminals and other activities. He was also the CEO of Maersk Inc. based in USA. Further he earlier held the responsibility of Maersk Tankers. Tommy is Chairman of The Danish Maritime Fund and serves as non-executive director of PSA International and also serves on the Panama Canal advisory board. He also holds several other board memberships within the Lauritzen Group of companies."
+            ]
+          },
+          {
+            id: "kristian-verner",
+            name: "Kristian Verner Mørch",
+            role: "Board Member",
+            image: { url: "/wp-content/uploads/asp_images/partners/logo-client-anglo-eastern.png", alt: "" },
+            paragraphs: [
+              "Kristian has more than 30 years' experience in the shipping industry, working across both Europe and Asia. He currently serves as CEO of J.Lauritzen. He was CEO of Odfjell SE until May 2022. Prior to that, he was partner and CEO of Clipper Group, and before that had a career at A.P.Moller-Maersk — most significantly as COO of Maersk Tankers. He has served on the boards of Odfjell SE, Nordic Shipholding, Danish Ferries and Brostrøm. Kristian holds an MBA from IMD Switzerland, and has attended the Advanced Management Programme at Harvard Business School."
+            ]
+          },
+          {
+            id: "billy-chiu",
+            name: "Billy Chiu",
+            role: "Board Member",
+            image: { url: "/wp-content/uploads/asp_images/partners/logo-client-adnoc.png", alt: "" },
+            paragraphs: [
+              "Billy is Executive Vice President of BW Group and has been with BW since 1985 with over 30 years of experience in the shipping industry. His current role as EVP oversees the Dry Cargo business, Group Crewing Services, Quality and Compliance department, SOX Compliance, Internal Audit, and Asset Management teams. Billy was appointed as Director of Commercial and Operations in 2003 and later as SVP of Commercial (Tankers). From 2002 to 2003, he was COO responsible for operations, manning, fleet systems and purchasing. He also oversaw the Corporate Affairs and Compliance division of the company from 2011 to 2016. From 1995 to 2002, Billy held senior positions within World-Wide. Billy graduated from the University of Hong Kong with a Bachelor of Social Science degree, majoring in management studies and economics. Currently, he is also a Director at the International Tanker Owners Pollution Federation (ITOPF) and the UK P&I Club."
+            ]
+          }
+        ]
+      }
+    },
+    "leadership_more": {
+      id: "leadership-more",
+      pageSlug: "about-us/leadership",
+      sectionKey: "leadership_more",
+      content: {
+        heading: "More About Us",
+        intro: "Learn more about Asia Pacific Shipping.",
+        cardIds: ["nav-about-us", "nav-history", "nav-vmv", "nav-trades"]
+      }
+    }
+  },
+
+  "about-us/history": {
+    "history_hero": {
+      id: "history-hero",
+      pageSlug: "about-us/history",
+      sectionKey: "history_hero",
+      content: {
+        title: "History",
+        desktopImage: { url: "/wp-content/uploads/asp_images/about/history-03-first-tanker.png", alt: "Asia Pacific Shipping's LPG carrier, Helena Kosan" },
+        mobileImage: { url: "/wp-content/uploads/asp_images/about/history-02-first-ship.jpg", alt: "Asia Pacific Shipping's LPG carrier, Helena Kosan" }
+      }
+    },
+    "history_intro": {
+      id: "history-intro",
+      pageSlug: "about-us/history",
+      sectionKey: "history_intro",
+      content: {
+        heading: "Established in 2005",
+        paragraphs: [
+          "Since 2005, Asia Pacific Shipping has been dedicated to the safe and reliable transportation of liquefied petroleum gas (LPG), petrochemicals and other speciality gases to the global market.",
+          "We offer customers' the best solution for their transportation needs with our leading service and high operational standards."
+        ]
+      }
+    },
+    "history_timeline": {
+      id: "history-timeline",
+      pageSlug: "about-us/history",
+      sectionKey: "history_timeline",
+      content: {
+        itemIds: ["item1", "item2", "item3", "item4", "item5", "item6"]
+      }
+    },
+    "history_more": {
+      id: "history-more",
+      pageSlug: "about-us/history",
+      sectionKey: "history_more",
+      content: {
+        heading: "More About Us",
+        intro: "Learn more about Asia Pacific Shipping.",
+        cardIds: ["overview", "leadership", "vmv", "trades"]
+      }
+    }
+  },
+  "about-us": {
+    "about_content_columns": {
+      id: "about-us-content-columns",
+      pageSlug: "about-us",
+      sectionKey: "about_content_columns",
+      content: {
+        columns: [
+          { paragraphs: ["We have progressively focused on the larger pressure vessels, especially those over 7,000cbm, as with many shipping sectors there is an ongoing up-sizing in the tonnage demanded by our customers', assisting to capture the economies of scale in improved value freight for our customer."] },
+          { paragraphs: ["The underlying global seaborne LPG market is positive with an annual growth rate that currently stands at 5 ' 6%. Additionally, our ships are designed to also carry a range of petrochemical products which provides us diversified earnings as we can switch between LPG and petrochemical markets. This also offers us an opportunity to have a global reach across key trading regions and strengthen relationships with highly diversified blue-chip customers'."] },
+          { paragraphs: ["With strong revenue momentum, a robust financial profile and supportive ownership, we remain an attractive counterparty for industry stakeholders. We can position our ships in growing and active markets on a global scale and develop a mix of time-charters, voyage-charters and Contracts of Affreightment (COAs)."] },
+          { paragraphs: ["Our seafarers and teams ashore are 100% focused on delivering a full array of high-quality real-time services to existing customers' and developing new customers', niche markets and trade lanes."] }
+        ]
+      }
+    },
+    "about_global_service": {
+      id: "about-us-global-service",
+      pageSlug: "about-us",
+      sectionKey: "about_global_service",
+      content: {
+        leftHeading: "Serving Our Customers on a Global Basis",
+        leftParagraphs: ["With our headquarters in Singapore, and offices in Copenhagen, Manila and Tokyo, we have the scale and operational resources to serve our customers' on a truly global basis. Our clients include many of the world's leading energy majors and commodity trading houses for whom we work throughout Southeast Asia, Europe, West Africa and the Americas."],
+        rightHeading: "Long Term Relationships and the Best Solutions",
+        rightParagraphs: ["Our experienced team of seafarers and staff ashore are customer service focused. We value long term relationships with our clients for whom we deliver the best solutions, as promised, meeting deadlines and honouring our agreements. From spot voyages and time charters to Contracts of Affreightment (CoA), we deliver flexible solutions and high-quality service. We strive for excellence and operate to the highest standards of safety, health and environmental care."]
+      }
+    },
+    "about_lpg_intro": {
+      id: "about-us-lpg-intro",
+      pageSlug: "about-us",
+      sectionKey: "about_lpg_intro",
+      content: {
+        heading: "Liquefied Petroleum Gas (LPG) is a versatile energy source that is used in many applications",
+        subheading: "Shipping cleaner-burning LPG to world markets"
+      }
+    },
+    "about_lpg_pointers": {
+      id: "about-us-lpg-pointers",
+      pageSlug: "about-us",
+      sectionKey: "about_lpg_pointers",
+      content: {
+        pointers: [
+          { title: "Delivering to Often Hard To Reach Places", description: "Our operations touch everyday life. As the world's leader in the pressurised LPG shipping, we play a crucial role in the last-mile transportation of energy and petrochemicals, particularly to communities in developing nations." },
+          { title: "Powering Communities Worldwide", description: "While large vessels are used to transport LPG and petrochemicals on long-haul routes, smaller vessels like ours distribute these commodities over shorter distances, often navigating into smaller ports and terminals that larger ships cannot access. These shipments serve local communities by supplying energy for residential use, powering industries and providing essential feedstock for manufacturing." },
+          { title: "Committed to Operational Excellence", description: "We are committed to delivering safe, reliable and efficient shipping services. Through our modern fleet and experienced crew, we aim to support global supply chains while upholding the highest standards of safety and environmental responsibility." }
+        ]
+      }
+    },
+    "about_lpg_details": {
+      id: "about-us-lpg-details",
+      pageSlug: "about-us",
+      sectionKey: "about_lpg_details",
+      content: {
+        leftHeading: "What is LPG?",
+        leftParagraphs: ["Liquefied Petroleum Gas (LPG) is a versatile energy source that is used in many applications, from heating and cooking to transport and industrial processes. When used as a fuel, LPG burns cleanly with no soot and very low sulphur emissions.", "LPG is a mixture of propane and butane. It is a co-product of natural gas and oil extraction and oil refining. The majority of LPG is derived from natural gas extraction.", "LPG is a gas at room temperature and normal atmospheric pressure. However, it can be liquefied by applying moderate pressure or by cooling. This makes it easy to store and transport in cylinders or bulk tanks."],
+        rightHeading: "The LPG Market",
+        rightParagraphs: ["The global LPG market is growing, driven by increasing demand from the residential and commercial sectors, particularly in developing countries where it is used as a cleaner alternative to traditional cooking fuels like wood and coal. The petrochemical industry is also a significant consumer of LPG, using it as a feedstock for the production of plastics and other materials.", "Seaborne trade plays a vital role in the global LPG market, connecting producing regions like the Middle East and the US with consuming regions like Asia and Europe. The pressurised LPG shipping sector, in which Asia Pacific Shipping operates, is a specialized segment of this market, focused on regional distribution and last-mile delivery."]
+      }
+    },
+    "about_applications": {
+      id: "about-us-applications",
+      pageSlug: "about-us",
+      sectionKey: "about_applications",
+      content: {
+        applications: [
+          { title: "Residential / Commercial", description: "Cooking (kitchen and barbecues), heating and lighting" },
+          { title: "Chemicals and Refinery", description: "Petrochemicals feedstock" },
+          { title: "Industry", description: "Furnaces, fuel for power generators" },
+          { title: "Transport", description: "Low-emission alternative to gasoline and diesel for taxis, buses and private cars" },
+          { title: "Agriculture", description: "Crop harvesting and drying, heating and power for farm equipment" }
+        ]
+      }
+    },
+    "about_more": {
+      id: "about-us-more",
+      pageSlug: "about-us",
+      sectionKey: "about_more",
+      content: {
+        heading: "More About Us",
+        intro: "Learn more about Asia Pacific Shipping",
+        cardIds: ["history", "leadership", "vmv", "trades"]
+      }
+    },
+
+    "about_fleet": {
+      id: "about-us-fleet",
+      pageSlug: "about-us",
+      sectionKey: "about_fleet",
+      content: {
+        heading: "The Asia Pacific Shipping Fleet of LPG and Petrochemical Carriers",
+        paragraphs: ["Our fleet is modern and our vessels have cargo carrying capacity that cover a wide spectrum ' from 6,400cbm to 12,000cbm. Asia Pacific Shipping has the scale to provide our customers' flexibility with a varied sized and high-quality fleet that is globally accepted."],
+        image: { url: "/wp-content/uploads/asp_images/partners/logo-client-swissmarine.png", alt: "Asia Pacific Shipping Ship and Staff" },
+        ctaLabel: "Learn About Our Fleet",
+        ctaHref: "/our-fleet"
+      }
+    },
+
+
+    "about_who_we_are": {
+      id: "about-us-who-we-are",
+      pageSlug: "about-us",
+      sectionKey: "about_who_we_are",
+      content: {
+        leftHeading: "Who We Are",
+        leftParagraphs: ["Asia Pacific Shipping is the world's leading owner and operator of modern high-quality fully pressurised, semi-refrigerated as well as ethylene and ammonia capable vessels which provide maritime transportation of liquified petroleum gas (LPG), petrochemicals and other speciality gases."],
+        rightHeading: "Asia Pacific Shipping Way",
+        rightParagraphs: ["Thinking Big and Small - a global business, with a regional focus on last tonne-mile delivery. We are the world's largest owner and commercial operator of pressurised LPG carriers. We have a market-leading LPG and petrochemical shipping platform, with strong brand recognition and an experienced in-house commercial and technical management team."]
+      }
+    },
+
+    "about_hero": {
+      id: "about-us-hero",
+      pageSlug: "about-us",
+      sectionKey: "about_hero",
+      content: {
+        title: "About Us",
+        desktopImage: { url: "/wp-content/uploads/asp_images/about/history-04-new-building.jpg", alt: "Asia Pacific Shipping's LPG carrier, Katherine Kosan" },
+        mobileImage: { url: "/wp-content/uploads/asp_images/ships/asp-maple.jpg", alt: "Asia Pacific Shipping's LPG carrier, Katherine Kosan" }
+      }
+    }
+  },
+
 
   home: {
       home_hero: {
@@ -1614,6 +2165,85 @@ const MOCK_FAQS: Record<string, ServiceFaq[]> = {
       "serviceSlug": "sea-transportation"
     }
   ]
+};
+
+
+
+export const historyTimelineItems: Record<string, HistoryTimelineItem> = {
+  item1: {
+    id: "item1",
+    year: "2005 ' 2012",
+    paragraphs: ["Epic Shipping builds a reputation in Asia as a preferred operator and supplier of 3,500 ' 5,000 cbm Japanese built pressurised LPG vessels. Ownership increases to 9 vessels, plus 6 bareboat charters. The Company manages a further 8 vessels outside the pressurised LPG sector for third parties."],
+    image: { url: "/wp-content/uploads/asp_images/about/earth-day.jpg", alt: "" }
+  },
+  item2: {
+    id: "item2",
+    year: "2013",
+    paragraphs: ["Pacific Basin divests its 12 vessels and partners with BW Group to recapitalize Epic Shipping. The new company is named Asia Pacific Shipping and is headquartered in Singapore.", "The company places an order for up to six 11,000cbm ships in Japan, securing significant growth in the larger pressurized vessel segment."],
+    image: { url: "/wp-content/uploads/asp_images/about/history-03-first-tanker.png", alt: "" }
+  },
+  item3: {
+    id: "item3",
+    year: "2014 ' 2018",
+    paragraphs: ["Asia Pacific Shipping establishes an office in Geneva and completes a secondary listing on the Merkur Market (now Euronext Growth) in Oslo.", "The company expands its fleet to 39 vessels by acquiring ships and executing further newbuilding programs in Japan."],
+    image: { url: "/wp-content/uploads/asp_images/about/history-04-new-building.jpg", alt: "" }
+  },
+  item4: {
+    id: "item4",
+    year: "2019",
+    paragraphs: ["Following an offer to all shareholders, BW Group purchases 82.6% of shares in Epic Gas Ltd."],
+    image: { url: "/wp-content/uploads/asp_images/sustainability/environment-methanol.webp", alt: "" }
+  },
+  item5: {
+    id: "item5",
+    year: "2020",
+    paragraphs: ["Epic Gas and Lauritzen Kosan signed an agreement to combine their fleet and business activities to create Asia Pacific Shipping."],
+    image: { url: "/wp-content/uploads/asp_images/ships/asp-titan.webp", alt: "" }
+  },
+  item6: {
+    id: "item6",
+    year: "2023",
+    paragraphs: ["Following the successful privatisation offer from Web Holding Limited, Asia Pacific Shipping delists from the Oslo Stock Exchange on 6 December.' The major shareholders in the privatised company continue to be BW Group, J. Lauritzen and a group of previously existing Geneva based shareholders including the Lykiardopulo family."],
+    image: { url: "/wp-content/uploads/asp_images/about/earth-topology.jpg", alt: "Sustainability Report 2023" }
+  }
+};
+
+export const aboutNavigationCards: Record<string, AboutNavigationCard> = {
+  history: {
+    id: 'history',
+    title: 'History',
+    href: '/about-us/history',
+    description: 'Growing from strength to strength over the years, we are now the leading owner and operator of pressurised LPG vessels.',
+    image: { url: '/wp-content/uploads/asp_images/partners/logo-client-swissmarine.png', alt: "Asia Pacific Shipping's LPG carrier, Helena Kosan" }
+  },
+  leadership: {
+    id: 'leadership',
+    title: 'Leadership',
+    href: '/about-us/leadership',
+    description: 'Led by CEO Jakob Bode, our leadership team has many years of experience in shipping and maritime operations.',
+    image: { url: '/wp-content/uploads/asp_images/sustainability/social-seafarers.jpg', alt: "Asia Pacific Shipping's LPG Carrier" }
+  },
+  vmv: {
+    id: 'vmv',
+    title: 'Vision, Mission, Values',
+    href: '/about-us/vision-mission-values',
+    description: "Our Vision, Mission and Values serve as our guide as we aspire to be our customers' preferred partner for LPG and Petrochemicals transportation.",
+    image: { url: '/wp-content/uploads/asp_images/ships/asp-luna-aerial-aft.jpg', alt: "Asia Pacific Shipping Crew" }
+  },
+  trades: {
+    id: 'trades',
+    title: 'Trades',
+    href: '/about-us/trades',
+    description: 'At Asia Pacific Shipping, we are a global business with a regional focus on last tonne-mile delivery.',
+    image: { url: '/wp-content/uploads/asp_images/ships/sunshine.jpg', alt: "Asia Pacific Shipping LPG Carrier" }
+  },
+  overview: {
+    id: 'overview',
+    title: 'About Us (Overview)',
+    href: '/about-us',
+    description: 'Asia Pacific Shipping is the world leader in last-mile delivery of liquefied petroleum gas (LPG), petrochemicals and other speciality gases.',
+    image: { url: '/wp-content/uploads/asp_images/about/history-03-first-tanker.png', alt: "Asia Pacific Shipping's LPG carrier, Katherine Kosan" }
+  }
 };
 
 class MockCmsRepository implements CmsRepository {
