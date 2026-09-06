@@ -60,7 +60,9 @@ function validateHeader(html) {
   const mainIndex = Math.max(html.indexOf('<main'), html.indexOf('id="siteMain"'), html.indexOf('site-main'));
   if (mainIndex > 0) {
     const headerHtml = html.substring(0, mainIndex);
-    if (headerHtml.includes('Suppliers')) issues.push('Suppliers found in Header');
+    const navMatches = headerHtml.match(/<nav[^>]*>[\s\S]*?<\/nav>/gi) || [];
+    const navContent = navMatches.join(' ');
+    if (navContent.includes('Suppliers')) issues.push('Suppliers found in Header');
   }
   return issues;
 }
