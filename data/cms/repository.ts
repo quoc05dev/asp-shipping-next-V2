@@ -96,31 +96,49 @@ const MOCK_FLEET_VESSELS: Record<string, FleetVessel> = {
 
 const MOCK_NEWS_ARTICLES: Record<string, NewsArticle> = {
   "fleet-expansion": {
-    id: 'news-1',
+    id: '2136',
     slug: 'fleet-expansion',
-    title: "ASP Successfully Takes Delivery of Vietnam's First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers",
+    title: "ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers",
     excerpt: "ASP has taken delivery of the ASP LUNA and ASP SOLAR, strengthening our position in sustainable shipping.",
-    date: "14 Feb 2026",
+    date: "2026-05-29T07:00:59+00:00",
     category: "Press Releases",
-    image: { url: "/wp-content/uploads/asp_images/news/fleet-expansion.jpg", alt: "Fleet Expansion" }
+    image: { url: "/wp-content/uploads/asp_images/news/fleet-expansion.jpg", alt: "" }
   },
-  "safety-milestone": {
-    id: 'news-2',
-    slug: 'safety-milestone',
-    title: "ASP Achieves 1 Million LTI-Free Man Hours Across Fleet",
-    excerpt: "Our commitment to safety culture and rigorous operational standards has resulted in a major safety milestone.",
-    date: "14 Feb 2026",
-    category: "Events",
-    image: { url: "/wp-content/uploads/asp_images/news/safety-meeting.jpg", alt: "Safety Meeting" }
-  },
-  "new-hq": {
-    id: 'news-3',
-    slug: 'new-hq',
-    title: "ASP Opens New Maritime Operations Center in Hanoi",
-    excerpt: "The new facility integrates real-time fleet monitoring and commercial operations to enhance service delivery.",
-    date: "14 Feb 2026",
+  "methanol-delivery": {
+    id: '2086',
+    slug: 'methanol-delivery',
+    title: "ASP Expands The Fleet with Two New MR2 Tankers from K Shipbuilding",
+    excerpt: "ASP expands the fleet with two new MR2 Tankers.",
+    date: "2025-09-09T13:30:01+00:00",
     category: "Press Releases",
-    image: { url: "/wp-content/uploads/asp_images/news/office-opening.jpg", alt: "Office Opening" }
+    image: { url: "/wp-content/uploads/asp_images/news/methanol-delivery.jpg", alt: "" }
+  },
+  "vision-into-value": {
+    id: '2051',
+    slug: 'vision-into-value',
+    title: "5 Years of Turning Vision into Value",
+    excerpt: "5 Years of Turning Vision into Value.",
+    date: "2025-04-16T07:18:11+00:00",
+    category: "Press Releases",
+    image: { url: "/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp", alt: "" }
+  },
+  "asp-luna-joins": {
+    id: '2023',
+    slug: 'asp-luna-joins',
+    title: "ASP Luna Joins The Fleet",
+    excerpt: "ASP Luna Joins The Fleet.",
+    date: "2024-10-09T02:39:25+00:00",
+    category: "Articles",
+    image: { url: "/wp-content/uploads/asp_images/ships/ship-home-news-1.jpg", alt: "ASP Luna" }
+  },
+  "asp-titan-joins": {
+    id: '2004',
+    slug: 'asp-titan-joins',
+    title: "ASP Titan Joins The Fleet",
+    excerpt: "ASP Titan Joins The Fleet.",
+    date: "2024-06-19T03:37:15+00:00",
+    category: "Articles",
+    image: { url: "/wp-content/uploads/asp_images/ships/ship-home-news-2.jpg", alt: "ASP Titan" }
   }
 };
 
@@ -346,19 +364,29 @@ const MOCK_PAGE_SECTIONS: Record<string, Record<string, any>> = {
 
   home: {
       home_hero: {
-      id: 'sec-home-hero',
-      pageSlug: 'home',
-      sectionKey: 'home_hero',
-      content: {
-        title: 'Turning vision into <span style="color: var(--asp-signal) !important;">value</span>',
-        description: 'Asia Pacific Shipping is a leading independent owner and operator of modern tankers and bulk carriers across the region. We are headquartered in Hanoi, delivering safe, reliable and efficient maritime logistics solutions to customers worldwide.',
-        videos: [
-          { url: '/ASP_LUNA_1.mp4' },
-          { url: '/ASP_LUNA_2.mp4' }
-        ],
-        fallbackImage: { url: '/wp-content/uploads/asp_images/ships/hero-asp-rainbow-cinematic.png', alt: 'Asia Pacific Shipping' }
-      }
-    },
+        id: 'sec-home-hero',
+        pageSlug: 'home',
+        sectionKey: 'home_hero',
+        content: {
+          title: 'Turning vision into <span style="color: var(--asp-signal) !important;">value</span>',
+          description: 'Asia Pacific Shipping is a leading independent owner and operator of modern tankers and bulk carriers across the region. We are headquartered in Hanoi, delivering safe, reliable and efficient maritime logistics solutions to customers worldwide.',
+          videos: [
+            { url: '/videos/home/asp-luna-1.mp4' },
+            { url: '/videos/home/asp-luna-2.mp4' }
+          ],
+          fallbackImage: { url: '/wp-content/uploads/asp_images/ships/hero-asp-rainbow-cinematic.png', alt: 'Asia Pacific Shipping' }
+        }
+      },
+      home_what_we_do: {
+        id: 'sec-home-wwd',
+        pageSlug: 'home',
+        sectionKey: 'home_what_we_do',
+        content: {
+          eyebrow: 'WHAT WE DO',
+          title: 'We provide comprehensive maritime solutions',
+          description: 'Our core services are built on decades of operational excellence.'
+        }
+      },
       home_about: {
       id: 'sec-home-about',
       pageSlug: 'home',
@@ -409,7 +437,7 @@ const MOCK_PAGE_SECTIONS: Record<string, Record<string, any>> = {
       home_latest_news: {
       id: 'sec-home-news',
       pageSlug: 'home',
-      sectionKey: 'home_news',
+      sectionKey: 'home_latest_news',
       content: {
         title: 'Latest News',
         intro: 'Keep up to date with our business, people and activities.',
@@ -1149,7 +1177,7 @@ const MOCK_PAGE_SECTIONS: Record<string, Record<string, any>> = {
         "heading": "Precision in planning.<br/>Reliability in transit.",
         "intro": "Safe and efficient sea transportation is built on a foundation of rigorous voyage planning, continuous monitoring and proactive operational management.",
         "image": {
-          "url": "/wp-content/uploads/asp_images/ships/tanker-forward-course.webp",
+          "url": "/wp-content/uploads/asp_images/heads/tanker-forward-course.webp",
           "alt": "ASP Tanker underway"
         },
         "items": [
@@ -1283,6 +1311,18 @@ const MOCK_PAGE_SECTIONS: Record<string, Record<string, any>> = {
     }
   },
   "what-we-do": {
+    "hero": {
+      "id": "sec-what-we-do-hero",
+      "pageSlug": "what-we-do",
+      "sectionKey": "hero",
+      "content": {
+        "title": "What We Do",
+        "image": {
+          "url": "/wp-content/uploads/asp_images/ships/asp-luna-aerial-aft.webp",
+          "alt": "Asia Pacific Shipping Operations"
+        }
+      }
+    },
     "hub_intro": {
       "id": "sec-hub-intro",
       "pageSlug": "what-we-do",

@@ -1,8 +1,9 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 
 export default async function Statistics() {
-  const statsData = await cmsRepository.getPageSection('home', 'home_statistics');
+  const statsData = await requirePageSection('home', 'home_statistics');
   if (!statsData) return null;
   const stats = statsData.content.stats;
   return (

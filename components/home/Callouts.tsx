@@ -1,8 +1,9 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 
 export default async function Callouts() {
-  const callouts = await cmsRepository.getPageSection('home', 'home_callouts');
+  const callouts = await requirePageSection('home', 'home_callouts');
   if (!callouts) return null;
   return (
     <>

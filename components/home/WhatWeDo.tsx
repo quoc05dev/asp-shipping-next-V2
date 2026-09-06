@@ -1,5 +1,6 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 
 export function ServiceIcon({ icon }: { icon: string }) {
   let artwork: React.ReactNode;
@@ -75,7 +76,7 @@ export function ServiceIcon({ icon }: { icon: string }) {
 
 export default async function WhatWeDo() {
   const services = await cmsRepository.getServices();
-  const wwd = await cmsRepository.getPageSection('home', 'home_what_we_do');
+  const wwd = await requirePageSection('home', 'home_what_we_do');
 
   return (
     <>

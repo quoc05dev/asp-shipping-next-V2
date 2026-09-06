@@ -1,9 +1,10 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 import HeroVideoBackground from './HeroVideoBackground';
 
 export default async function Hero() {
-  const hero = await cmsRepository.getPageSection('home', 'home_hero');
+  const hero = await requirePageSection('home', 'home_hero');
   if (!hero) return null;
   return (
     <>

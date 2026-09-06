@@ -61,7 +61,7 @@ export type SectionKey =
   | 'home_statistics'
   | 'home_fleet'
   | 'home_chairman'
-  | 'home_news'
+  | 'home_latest_news'
   | 'home_sustainability'
   | 'home_callouts'
     | 'home_what_we_do';
@@ -242,7 +242,7 @@ export interface SectionContentMap {
   home_what_we_do: HomeWhatWeDoSectionContent;
     home_fleet: HomeFleetSectionContent;
   home_chairman: ChairmanMessageSectionContent;
-  home_news: HomeLatestNewsSectionContent;
+  home_latest_news: HomeLatestNewsSectionContent;
   home_sustainability: HomeSustainabilitySectionContent;
   home_callouts: HomeNewsletterSectionContent;
 }

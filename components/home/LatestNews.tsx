@@ -1,8 +1,9 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 
 export default async function LatestNews() {
-  const news = await cmsRepository.getPageSection('home', 'home_news');
+  const news = await requirePageSection('home', 'home_latest_news');
   const articles = await cmsRepository.getLatestNews();
   if (!news) return null;
   return (
@@ -27,106 +28,66 @@ export default async function LatestNews() {
 				</div>
 			</div>
 		</div>
+		
 		{/*  Right Column  */}
 		<div className="layout-column layout-column-latest-post-list-first-post u-d-none u-d-lg-block">
-			<article id="post-2136" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2136 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
-				<header className="entry-header">
-					<div className="post-categories row u-gy-2 u-gx-2">
-						<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press Releases</a></div>
+			{articles[0] && (
+				<article id={`post-${articles[0].id}`} className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
+					<header className="entry-header">
+						<div className="post-categories row u-gy-2 u-gx-2">
+							<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">{articles[0].category}</a></div>
+						</div>
+						<a href={`/media/latest-news/${articles[0].slug}`} className="entry-permalink" title={articles[0].title}>
+							<span className="ratio ratio-instrinsic">
+								<span className="ratio-size" style={{paddingBottom: "50%", }}></span>
+								<img width="1200" height="600" src={articles[0].image.url} className="entry-thumbnail ratio-item" alt={articles[0].image.alt} />
+							</span>
+						</a>
+					</header>
+					<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
+						<a href={`/media/latest-news/${articles[0].slug}`} className="entry-permalink" title={articles[0].title}>
+							<time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime={articles[0].date}>{new Date(articles[0].date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+							<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">{articles[0].title}</h3>
+						</a>
 					</div>
-					<a href="#" className="entry-permalink" title="ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers">
-						<span className="ratio ratio-instrinsic">
-							<span className="ratio-size" style={{paddingBottom: "50%", }}></span>
-							<img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail ratio-item" alt="" />
-						</span>
-					</a>
-				</header>
-				<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter">
-					<a href="#" className="entry-permalink" title="ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers">
-						<time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29, 2026</time>
-						<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers</h3>
-					</a>
-				</div>
-			</article>
+				</article>
+			)}
 		</div>
 	</div>
 	{/*  Additional Posts Row  */}
 	<div className="layout-column layout-column-latest-post-list-posts" style={{marginTop: "40px", }}>
-
-								<div className="row u-gy-4 row-posts row-latest-posts">
-									<div className="col-12 u-d-block u-d-lg-none">
-										<article id="post-2136" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2136 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
-											<header className="entry-header">
-												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
-															Releases</a></div>
-												</div><a href="#" className="entry-permalink" title="ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/fleet-expansion.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
-											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2026-05-29T07:00:59+00:00">May 29, 2026</time>
-													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														ASP Successfully Takes Delivery of Vietnam’s First Two Methanol Dual-Fuel MR2 Oil/Chemical Tankers </h3>
-												</a></div>
-										</article>
-									</div>
-									<div className="col-12 col-sm-6 col-lg-4 col-xl-3">
-										<article id="post-2086" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2086 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
-											<header className="entry-header">
-												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
-															Releases</a></div>
-												</div><a href="#" className="entry-permalink" title="ASP Expands The Fleet with Two New MR2 Tankers from K Shipbuilding"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/news/methanol-delivery.jpg" className="entry-thumbnail  ratio-item" alt="" /></span></a>
-											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="ASP Expands The Fleet with Two New MR2 Tankers from K Shipbuilding"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-09-09T13:30:01+00:00">September 9, 2025</time>
-													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														ASP Expands The Fleet with Two New MR2 Tankers from K Shipbuilding </h3>
-												</a></div>
-										</article>
-									</div>
-									<div className="col-12 col-sm-6 col-lg-4 col-xl-3">
-										<article id="post-2051" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2051 post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
-											<header className="entry-header">
-												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">Press
-															Releases</a></div>
-												</div><a href="#" className="entry-permalink" title="5 Years of Turning Vision into Value"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/asp-titan-sunset.webp" className="entry-thumbnail  ratio-item" alt="" /></span></a>
-											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="5 Years of Turning Vision into Value"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2025-04-16T07:18:11+00:00">April 16, 2025</time>
-													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														5 Years of Turning Vision into Value </h3>
-												</a></div>
-										</article>
-									</div>
-									<div className="col-12 col-sm-6 col-lg-4 col-xl-3">
-										<article id="post-2023" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2023 post type-post status-publish format-standard has-post-thumbnail hentry category-articles entity entity-post">
-											<header className="entry-header">
-												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="/media/news/category/articles" className="button button-small button-secondary">Articles</a>
-													</div>
-												</div><a href="#" className="entry-permalink" title="ASP Luna Joins The Fleet"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/ship-home-news-1.jpg" className="entry-thumbnail u-object-fit-cover u-object-pos-center u-w-100 u-h-100 ratio-item" alt="ASP Luna" /></span></a>
-											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="ASP Luna Joins The Fleet"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-10-09T02:39:25+00:00">October 9, 2024</time>
-													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														ASP Luna Joins The Fleet </h3>
-												</a></div>
-										</article>
-									</div>
-									<div className="col-12 col-sm-6 col-lg-4 col-xl-3">
-										<article id="post-2004" className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post-2004 post type-post status-publish format-standard has-post-thumbnail hentry category-articles entity entity-post">
-											<header className="entry-header">
-												<div className="post-categories row u-gy-2 u-gx-2">
-													<div className="col-auto"><a href="/media/news/category/articles" className="button button-small button-secondary">Articles</a>
-													</div>
-												</div><a href="#" className="entry-permalink" title="ASP Titan Joins The Fleet"><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src="/wp-content/uploads/asp_images/ships/ship-home-news-2.jpg" className="entry-thumbnail u-object-fit-cover u-object-pos-center u-w-100 u-h-100 ratio-item" alt="ASP Titan" /></span></a>
-											</header>
-											<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href="#" className="entry-permalink" title="ASP Titan Joins The Fleet"><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime="2024-06-19T03:37:15+00:00">June 19, 2024</time>
-													<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">
-														ASP Titan Joins The Fleet </h3>
-												</a></div>
-										</article>
-									</div>
-								</div>
-							</div>
-						</div>
+		<div className="row u-gy-4 row-posts row-latest-posts">
+			{articles[0] && (
+				<div className="col-12 u-d-block u-d-lg-none">
+					<article id={`post-${articles[0].id}`} className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
+						<header className="entry-header">
+							<div className="post-categories row u-gy-2 u-gx-2">
+								<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">{articles[0].category}</a></div>
+							</div><a href={`/media/latest-news/${articles[0].slug}`} className="entry-permalink" title={articles[0].title}><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src={articles[0].image.url} className="entry-thumbnail  ratio-item" alt={articles[0].image.alt} /></span></a>
+						</header>
+						<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href={`/media/latest-news/${articles[0].slug}`} className="entry-permalink" title={articles[0].title}><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime={articles[0].date}>{new Date(articles[0].date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+								<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">{articles[0].title}</h3>
+							</a></div>
+					</article>
+				</div>
+			)}
+			{articles.slice(1, 5).map((article) => (
+				<div key={article.id} className="col-12 col-sm-6 col-lg-4 col-xl-3">
+					<article id={`post-${article.id}`} className="content-excerpt card card-excerpt card-post u-border-radius u-overflow-hidden u-d-block post type-post status-publish format-standard has-post-thumbnail hentry category-press-releases entity entity-post">
+						<header className="entry-header">
+							<div className="post-categories row u-gy-2 u-gx-2">
+								<div className="col-auto"><a href="/media/news/category/press-releases" className="button button-small button-secondary">{article.category}</a></div>
+							</div><a href={`/media/latest-news/${article.slug}`} className="entry-permalink" title={article.title}><span className="ratio ratio-instrinsic "><span className="ratio-size" style={{paddingBottom: "50%", }}></span><img width="1200" height="600" src={article.image.url} className="entry-thumbnail  ratio-item" alt={article.image.alt} /></span></a>
+						</header>
+						<div className="entry-body card-body u-px-4 u-py-3 u-bg-lighter"><a href={`/media/latest-news/${article.slug}`} className="entry-permalink" title={article.title}><time className="entry-time entry-time-updated h6 u-mb-0 u-text-color-secondary" dateTime={article.date}>{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+								<h3 className="entry-title u-text-color-mute u-font-weight-normal u-h5 u-mb-0">{article.title}</h3>
+							</a></div>
+					</article>
+				</div>
+			))}
+		</div>
+	</div>
+</div>
     </>
   );
 }

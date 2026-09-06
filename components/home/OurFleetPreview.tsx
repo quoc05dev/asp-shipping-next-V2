@@ -1,9 +1,10 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 import FleetSlider from '@/components/home/FleetSlider';
 
 export default async function OurFleetPreview() {
-  const fleet = await cmsRepository.getPageSection('home', 'home_fleet');
+  const fleet = await requirePageSection('home', 'home_fleet');
   if (!fleet) return null;
   return (
     <>

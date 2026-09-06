@@ -1,8 +1,9 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 
 export default async function AboutPreview() {
-  const about = await cmsRepository.getPageSection('home', 'home_about');
+  const about = await requirePageSection('home', 'home_about');
   if (!about) return null;
   return (
     <>

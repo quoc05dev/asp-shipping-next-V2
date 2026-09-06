@@ -51,7 +51,7 @@ export default function HeroVideoBackground({ videos }: { videos: any[] }) {
     };
   }, [hasMounted, prefersReducedMotion]);
 
-  if (!hasMounted || prefersReducedMotion) {
+  if (prefersReducedMotion && hasMounted) {
     return null;
   }
 

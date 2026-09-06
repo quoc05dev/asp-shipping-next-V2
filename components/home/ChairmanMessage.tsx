@@ -1,9 +1,10 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 import ChairmanTypewriter from './ChairmanTypewriter';
 
 export default async function ChairmanMessage() {
-  const chairman = await cmsRepository.getPageSection('home', 'home_chairman');
+  const chairman = await requirePageSection('home', 'home_chairman');
   if (!chairman) return null;
   return (
     <>

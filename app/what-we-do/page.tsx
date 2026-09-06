@@ -131,12 +131,12 @@ export default async function WhatWeDoHubPage() {
                 <div className="trusted-marquee-track">
                   {partners.map((partner, idx) => (
                     <div key={`orig-${idx}`} className="trusted-partner-card">
-                      <Image src={partner.logo.url} alt={partner.logo.alt || partner.name} fill className="trusted-partner-img" style={{ objectFit: "contain" }} />
+                      <img src={partner.logo.url} alt={partner.logo.alt || partner.name} className="trusted-partner-img" style={{ objectFit: "contain" }} />
                     </div>
                   ))}
                   {partners.map((partner, idx) => (
                     <div key={`dup-${idx}`} className="trusted-partner-card" aria-hidden="true">
-                      <Image src={partner.logo.url} alt={partner.logo.alt || partner.name} fill className="trusted-partner-img" style={{ objectFit: "contain" }} />
+                      <img src={partner.logo.url} alt={partner.logo.alt || partner.name} className="trusted-partner-img" style={{ objectFit: "contain" }} />
                     </div>
                   ))}
                 </div>
@@ -331,6 +331,40 @@ export default async function WhatWeDoHubPage() {
                   ))}
                 </div>
               </div>
+              <style>{`
+                .explore-card {
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  padding: 2.5rem;
+                  background-color: #ffffff;
+                  border: 1px solid #eaeaea;
+                  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+                }
+                .explore-card:hover {
+                  transform: translateY(-4px);
+                  border-color: #007236;
+                  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+                }
+                .asp-btn-outline {
+                  display: inline-block;
+                  color: #007236 !important;
+                  font-weight: 600;
+                  text-decoration: none;
+                  padding: 0.75rem 1.75rem;
+                  border: 1px solid #007236;
+                  border-radius: 4px;
+                  background-color: #ffffff;
+                  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+                  margin-top: auto;
+                  align-self: flex-start;
+                }
+                .asp-btn-outline:hover {
+                  background-color: #007236;
+                  border-color: #007236;
+                  color: #ffffff !important;
+                }
+              `}</style>
             </section>
             )}
         </main>

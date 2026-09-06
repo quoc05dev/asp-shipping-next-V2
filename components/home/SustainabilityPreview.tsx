@@ -1,8 +1,9 @@
 import React from 'react';
 import { cmsRepository } from '@/data/cms/repository';
+import { requirePageSection } from '@/data/cms/requirePageSection';
 
 export default async function SustainabilityPreview() {
-  const sust = await cmsRepository.getPageSection('home', 'home_sustainability');
+  const sust = await requirePageSection('home', 'home_sustainability');
   if (!sust) return null;
   return (
     <>
