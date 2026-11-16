@@ -1,8 +1,11 @@
 'use server';
 
+import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { createAdminClient } from '@/lib/supabase/admin';
-import { createClient } from '@/lib/supabase/server';
+import { eq } from 'drizzle-orm';
+import { getAuth } from '@/lib/auth';
+import { db } from '@/lib/db';
+import { adminProfiles } from '@/lib/db/schema';
 
 export type AdminRole = 'SUPER_ADMIN' | 'EDITOR';
 
@@ -13,34 +16,28 @@ export interface AdminProfile {
   created_at: string;
 }
 
-/**
- * Get the currently authenticated admin profile.
- * Returns null if not authenticated or not an admin.
- * 
- * SECURITY: Role is read from the database (admin_profiles table),
- * never from client-supplied values.
- */
 export async function getAdminProfile(): Promise<AdminProfile | null> {
-  const supabase = await createClient();
-  const { data: { user }, error } = await supabase.auth.getUser();
+  const auth = getAuth();
+  const session = await auth.api.getSession({ headers: await headers() });
 
-  if (error || !user) return null;
+  if (!session) return null;
 
-  const admin = createAdminClient();
-  const { data: profile } = await admin
-    .from('admin_profiles')
-    .select('id, role, email, created_at')
-    .eq('id', user.id)
-    .single();
+  const [profile] = await db
+    .select()
+    .from(adminProfiles)
+    .where(eq(adminProfiles.id, session.user.id))
+    .limit(1);
 
   if (!profile) return null;
 
-  return profile as AdminProfile;
+  return {
+    id: profile.id,
+    role: profile.role as AdminRole,
+    email: profile.email,
+    created_at: profile.createdAt.toISOString(),
+  };
 }
 
-/**
- * Require authenticated admin. Redirects to /admin/login if not authenticated.
- */
 export async function requireAdmin(): Promise<AdminProfile> {
   const profile = await getAdminProfile();
   if (!profile) {
@@ -49,9 +46,6 @@ export async function requireAdmin(): Promise<AdminProfile> {
   return profile;
 }
 
-/**
- * Require SUPER_ADMIN role. Redirects to /admin if insufficient privileges.
- */
 export async function requireSuperAdmin(): Promise<AdminProfile> {
   const profile = await requireAdmin();
   if (profile.role !== 'SUPER_ADMIN') {
@@ -60,40 +54,38 @@ export async function requireSuperAdmin(): Promise<AdminProfile> {
   return profile;
 }
 
-/**
- * Sign in with email/password via Supabase Auth.
- * After sign-in, verifies user exists in admin_profiles.
- */
-export async function signInAdmin(email: string, password: string): Promise<{ error?: string }> {
-  const supabase = await createClient();
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+export async function signInAdmin(
+  email: string,
+  password: string,
+): Promise<{ error?: string }> {
+  const normalizedEmail = email.trim().toLowerCase();
+  const [profile] = await db
+    .select()
+    .from(adminProfiles)
+    .where(eq(adminProfiles.email, normalizedEmail))
+    .limit(1);
 
-  if (error) {
+  if (!profile) {
     return { error: 'Invalid credentials' };
   }
 
-  // Verify this user is an admin
-  const adminDb = createAdminClient();
-  const { data: profile } = await adminDb
-    .from('admin_profiles')
-    .select('id, role')
-    .eq('id', data.user.id)
-    .single();
+  try {
+    const result = await getAuth().api.signInEmail({
+      body: { email: normalizedEmail, password, rememberMe: true },
+      headers: await headers(),
+    });
 
-  if (!profile) {
-    // Sign them out — not an admin
-    await supabase.auth.signOut();
-    return { error: 'Access denied. Your account does not have admin privileges.' };
+    if (result.user.id !== profile.id) {
+      return { error: 'Invalid credentials' };
+    }
+  } catch {
+    return { error: 'Invalid credentials' };
   }
 
   return {};
 }
 
-/**
- * Sign out the current admin user.
- */
 export async function signOutAdmin(): Promise<void> {
-  const supabase = await createClient();
-  await supabase.auth.signOut();
+  await getAuth().api.signOut({ headers: await headers() });
   redirect('/admin/login');
 }

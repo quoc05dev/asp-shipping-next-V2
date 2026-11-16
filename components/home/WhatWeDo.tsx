@@ -1,5 +1,5 @@
 import React from 'react';
-import { cmsRepository } from '@/data/cms/repository';
+import { getCmsRepository } from '@/data/cms/getCmsRepository';
 import { requirePageSection } from '@/data/cms/requirePageSection';
 
 export function ServiceIcon({ icon }: { icon: string }) {
@@ -75,6 +75,7 @@ export function ServiceIcon({ icon }: { icon: string }) {
 }
 
 export default async function WhatWeDo() {
+  const cmsRepository = await getCmsRepository();
   const services = await cmsRepository.getServices();
   const wwd = await requirePageSection('home', 'home_what_we_do');
 
@@ -93,7 +94,7 @@ export default async function WhatWeDo() {
               </div>
             </div>
             
-            {services.map((service: any, index: number) => {
+            {services.map((service, index) => {
               let iconName = "commercial";
               if (service.name.toLowerCase().includes("technical")) iconName = "technical";
               if (service.name.toLowerCase().includes("marine")) iconName = "marine";
@@ -111,7 +112,7 @@ export default async function WhatWeDo() {
                       </div>
                       <p className="u-mb-5" style={{flexGrow: "1", }}>{service.excerpt}</p>
                       <div style={{borderTop: "1px solid #e5e5e5", paddingTop: "1.5rem", display: "flex", }}>
-                        <a href={`/what-we-do/${service.slug}`} className="button button-outline"><span>Explore {service.name}</span></a>
+                        <a href={`/${service.slug}`} className="button button-outline"><span>Explore {service.name}</span></a>
                       </div>
                     </div>
                   </div>

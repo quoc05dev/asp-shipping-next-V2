@@ -1,12 +1,19 @@
 "use client";
+import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import type { NavigationItem, Service, SiteSettings } from '@/data/cms/types';
 import MobileNav from './MobileNav';
+import NewsletterForm from '@/components/contact/NewsletterForm';
 
+interface HeaderClientProps {
+    siteSettings: SiteSettings;
+    navigation: NavigationItem[];
+    services: Service[];
+}
 
-
-export default function HeaderClient({ siteSettings, navigation, services, fleetVessels, latestNews }: any) {
-    const getNavItem = (key: string) => navigation?.find((item: any) => item.key === key);
+export default function HeaderClient({ siteSettings, navigation, services }: HeaderClientProps) {
+    const getNavItem = (key: string) => navigation?.find((item) => item.key === key);
 
     const pathname = usePathname();
     const isHomePage = pathname === '/';
@@ -65,12 +72,12 @@ export default function HeaderClient({ siteSettings, navigation, services, fleet
 					<div className="site-branding">
 						<div className="site-branding-inner">
 							<div className="site-logo site-logo-dark" style={{maxWidth: "11.06rem", maxHeight: "2.5rem", }}>
-								<a href="/" title={siteSettings.companyName}>
-									<img width="267" height="60" src="/wp-content/uploads/2024/03/ASP-logo-dark.svg" className="img-fluid" alt={`${siteSettings.defaultSeoTitle} - ${siteSettings.defaultSeoDescription}`} /> </a>
+								<Link href="/" title={siteSettings.companyName}>
+									<img width="267" height="60" src="/wp-content/uploads/2024/03/ASP-logo-dark.svg" className="img-fluid" alt={`${siteSettings.defaultSeoTitle} - ${siteSettings.defaultSeoDescription}`} /> </Link>
 							</div>
 							<div className="site-logo site-logo-light" style={{maxWidth: "11.06rem", maxHeight: "2.5rem", }}>
-								<a href="/" title={siteSettings.companyName}>
-									<img width="268" height="60" src="/wp-content/uploads/2024/03/ASP-logo-light.svg" className="img-fluid" alt={`${siteSettings.defaultSeoTitle} - ${siteSettings.defaultSeoDescription}`} /> </a>
+								<Link href="/" title={siteSettings.companyName}>
+									<img width="268" height="60" src="/wp-content/uploads/2024/03/ASP-logo-light.svg" className="img-fluid" alt={`${siteSettings.defaultSeoTitle} - ${siteSettings.defaultSeoDescription}`} /> </Link>
 							</div>
 						</div>
 					</div>
@@ -96,7 +103,7 @@ export default function HeaderClient({ siteSettings, navigation, services, fleet
 										<div className="menu-item-contents u-pl-4">
                                             <div className="layout layout-menu-featured-cards layout-app_megamenu layout-root u-h-100">
                                                 <div className="layout-inner layout-row row u-gx-4 u-m-0" style={{ alignContent: 'space-between', height: '100%' }}>
-                                                    {services.map((service: any, index: number) => (
+                                                    {services.map((service, index) => (
                                                         <div key={index} className="col-12 col-md-4 u-d-flex u-flex-column u-px-2" style={{ height: 'auto' }}>
                                                             <div className="u-d-flex u-flex-column u-color-body u-justify-content-start">
                                                                 <h4 className="u-h6 u-mb-1 u-color-primary" style={{ fontSize: "0.95rem" }}>{service.name}</h4>
@@ -217,7 +224,7 @@ export default function HeaderClient({ siteSettings, navigation, services, fleet
 										<ul style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
 											<li className="menu-item menu-item-heading" style={{ margin: 0, padding: 0, height: '36px', display: 'flex', alignItems: 'flex-start' }}><a href={getNavItem("media")?.href || "/media"} title={getNavItem("media")?.label || "Media"} target="" className="" style={{ padding: '0 0 0.5rem 0', width: '100%', borderBottom: '1px solid #e5e7eb' }}>{getNavItem("media")?.label || "Media"}</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-64" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-64" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
-												<a title="Latest News" href="/media/latest-news" style={{ width: '100%', padding: '0', display: 'block' }}>Latest News</a></li>
+												<Link title="Latest News" href="/media/latest-news" style={{ width: '100%', padding: '0', display: 'block' }}>Latest News</Link></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-62" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-62" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
 												<a title="Gallery" href="/media/gallery" style={{ width: '100%', padding: '0', display: 'block' }}>Gallery</a></li>
 											<li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" id="menu-item-63" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-63" style={{ borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center' }}>
@@ -401,38 +408,7 @@ export default function HeaderClient({ siteSettings, navigation, services, fleet
 																		</div>
 																	</div>
 																	<div className="u-mt-1 callout-content-form">
-																		<div className="wpcf7 no-js" id="wpcf7-f93-o1" lang="en-US" dir="ltr" wpcf7-id="93">
-																			<div className="screen-reader-response">
-																				<p role="status" aria-live="polite" aria-atomic="true"></p>
-																				<ul></ul>
-																			</div>
-																			<form action="https://aspshipping.vn/#wpcf7-f93-o1" method="post" className="wpcf7-form init" aria-label="Contact form" noValidate={true} data-status="init">
-																				<div style={{display: "none", }}><input type="hidden" name="_wpcf7" value="93" /><input type="hidden" name="_wpcf7_version" value="6.0.2" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f93-o1" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" /></div><input type="hidden" name="mc4wp-subscribe" value="1" />
-																				<div className="newsletter">
-																					<div>
-																						<div className="row">
-																							<div className="newsletter-field col-12 col-sm-6">
-																								<span className="wpcf7-form-control-wrap" data-name="mc4wp-FNAME"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="First name" value="" type="text" name="mc4wp-FNAME" /></span>
-																							</div>
-																							<div className="newsletter-field col-12 col-sm-6">
-																								<span className="wpcf7-form-control-wrap" data-name="mc4wp-LNAME"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Last name" value="" type="text" name="mc4wp-LNAME" /></span>
-																							</div>
-																						</div>
-																						<div className="newsletter-fields">
-																							<div className="newsletter-field">
-																								<span className="wpcf7-form-control-wrap" data-name="mc4wp-EMAIL"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Your email address" value="" type="email" name="mc4wp-EMAIL" /></span>
-																							</div>
-																							<div className="newsletter-submit">
-																								<button type="submit" className="button button-outline button-outline-secondary">Subscribe</button>
-																							</div>
-																						</div>
-																					</div>
-																					<div className="wpcf7-response-output" aria-hidden="true"></div>
-																				</div><input type="hidden" id="ct_checkjs_cf7_0f840be9b8db4d3fbd5ba2ce59211f55" name="ct_checkjs_cf7" value="0" />
-																				
-																				<input className="apbct_special_field apbct_email_id__wp_contact_form_7" name="apbct__email_id__wp_contact_form_7" aria-label="apbct__label_id__wp_contact_form_7" type="text" size={30} maxLength={200} autoComplete="off" value="" />
-																			</form>
-																		</div>
+																		<NewsletterForm />
 																	</div>
 																</div>
 															</div>

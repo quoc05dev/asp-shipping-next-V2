@@ -1,8 +1,9 @@
 import React from 'react';
-import { cmsRepository } from '@/data/cms/repository';
+import { getCmsRepository } from '@/data/cms/getCmsRepository';
 import { requirePageSection } from '@/data/cms/requirePageSection';
 
 export default async function LatestNews() {
+  const cmsRepository = await getCmsRepository();
   const news = await requirePageSection('home', 'home_latest_news');
   const articles = await cmsRepository.getLatestNews();
   if (!news) return null;

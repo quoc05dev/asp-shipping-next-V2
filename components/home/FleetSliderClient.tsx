@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
+import type { FleetVessel } from '@/data/cms/types';
 
-const fleetSlides = [
+const fallbackSlides = [
     {
         name: "ASP LUNA",
         image: "/wp-content/uploads/asp_images/ships/asp-luna-head-on.webp",
@@ -21,15 +22,25 @@ const fleetSlides = [
     }
 ];
 
-export default function FleetSliderClient({ vessels }: { vessels: any[] }) {
+export default function FleetSliderClient({ vessels }: { vessels: FleetVessel[] }) {
+    const slides = vessels.length
+        ? vessels.map((vessel) => ({
+            name: vessel.name,
+            image: vessel.image.url,
+            type: vessel.type,
+            dwt: vessel.dwt,
+            built: vessel.built,
+            trade: vessel.trade,
+        }))
+        : fallbackSlides;
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
-        setCurrentIndex((prev) => (prev + 1) % fleetSlides.length);
+        setCurrentIndex((prev) => (prev + 1) % slides.length);
     };
 
     const handlePrevious = () => {
-        setCurrentIndex((prev) => (prev - 1 + fleetSlides.length) % fleetSlides.length);
+        setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
     };
 
     return (
@@ -46,7 +57,7 @@ export default function FleetSliderClient({ vessels }: { vessels: any[] }) {
                         transform: `translateX(-${currentIndex * 100}%)`
                     }}
                 >
-                    {fleetSlides.map((slide, index) => (
+                    {slides.map((slide, index) => (
                         <div key={index} className="custom-slider-slide" style={{ minWidth: "100%", position: "relative", height: "100%" }}>
                             <img 
                                 src={slide.image} 
@@ -76,7 +87,7 @@ export default function FleetSliderClient({ vessels }: { vessels: any[] }) {
                         id="slider-prev-btn" 
                         onClick={handlePrevious}
                         aria-label="Previous vessel"
-                        style={{ background: "rgba(255,255,255,0.1)", border: "right: 1px solid rgba(255,255,255,0.4)", borderTop: "none", borderBottom: "none", borderLeft: "none", color: "white", width: "54px", height: "50px", cursor: "pointer", transition: "background 0.3s", backdropFilter: "blur(5px)", fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center" }}
+                        style={{ background: "rgba(255,255,255,0.1)", border: "none", borderRight: "1px solid rgba(255,255,255,0.4)", color: "white", width: "54px", height: "50px", cursor: "pointer", transition: "background 0.3s", backdropFilter: "blur(5px)", fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center" }}
                     >
                         ←
                     </button>

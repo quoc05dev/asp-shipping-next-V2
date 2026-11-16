@@ -14,7 +14,7 @@ try {
   routesToTest = Object.keys(manifest)
     .filter(k => k.endsWith('/page'))
     .map(k => k.replace(/\/page$/, '') || '/');
-} catch (e) {
+} catch {
   console.error("Could not load app-paths-manifest.json. Is the app built?");
   process.exit(1);
 }
@@ -128,7 +128,6 @@ async function runAudit() {
       // 1 featured (duplicated for mobile) + 4 secondary = 6 article tags in DOM, but baseline has 5 unique articles.
       if (articleCount !== 6) routeErrors.push(`Home Latest News article DOM count mismatch. Expected 6, got ${articleCount}`);
       
-      const imagesInNews = (latestNewsBlock.match(/<img[^>]*>/g) || []).filter(img => img.includes('entry-thumbnail'));
       // 1 featured image in Right Column (before row-latest-posts? Wait, Right Column is BEFORE row-latest-posts).
       // Let's just match the whole news section
       const newsSectionStart = body.indexOf('layout-column-latest-post-list-first-post');

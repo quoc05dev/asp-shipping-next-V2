@@ -1,22 +1,19 @@
 
 import React from 'react';
 import HeaderClient from './HeaderClient';
-import { cmsRepository } from '@/data/cms/repository';
+import { getCmsRepository } from '@/data/cms/getCmsRepository';
 
 export default async function Header() {
+  const cmsRepository = await getCmsRepository();
   const siteSettings = await cmsRepository.getSiteSettings();
   const navigation = await cmsRepository.getNavigation();
   const services = await cmsRepository.getServices();
-  const fleetVessels = await cmsRepository.getFleetVessels();
-  const latestNews = await cmsRepository.getLatestNews();
 
   return (
-    <HeaderClient 
+    <HeaderClient
       siteSettings={siteSettings}
       navigation={navigation}
       services={services}
-      fleetVessels={fleetVessels}
-      latestNews={latestNews}
     />
   );
 }

@@ -16,6 +16,7 @@ export default function FaqSection({ content, items }: FaqSectionProps) {
 
   const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
+  // eslint-disable-next-line react-hooks/refs -- refs are only read inside the effect, never during render
   useIsomorphicLayoutEffect(() => {
     const calculateHeight = () => {
       if (window.innerWidth < 992) {

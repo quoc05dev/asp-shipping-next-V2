@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -13,9 +14,9 @@ export default function Page() {
   <div className="container container-w-outer container-max container-rfs">
     <ol className="breadcrumb" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
       <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
-        <a href="/" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
+        <Link href="/" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
           <span className="breadcrumb-label">Home</span>
-        </a>
+        </Link>
         <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>
       </li>
       <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
@@ -54,8 +55,8 @@ and Safety</td><td className="column-3">3,8</td><td className="column-4">There a
 must be properly handled to protect our crew and the fleet. As such, we continue to strive<br />
 for zero harm.</td></tr><tr className="row-5"><td className="column-1">Training and development</td><td className="column-2">GRI 404<br />
 Training and Education</td><td className="column-3"></td><td className="column-4">To remain relevant and up to date with changes in our industry, we must quickly adapt and<br />
-grow our employees' skills and abilities to address new business challenges. Hence, we<br />
-continue to prioritise and invest in employee development to ensure Asia Pacific Shipping's longterm<br />
+grow our employees&apos; skills and abilities to address new business challenges. Hence, we<br />
+continue to prioritise and invest in employee development to ensure Asia Pacific Shipping&apos;s longterm<br />
 development and success.</td></tr><tr className="row-6"><td className="column-1">Business ethics</td><td className="column-2">GRI 205<br />
 Anti-corruption</td><td className="column-3">16</td><td className="column-4">We uphold the highest ethical standards and conduct our business in compliance with<br />
 all applicable laws and regulations. Any non-compliance can result in severe financial<br />

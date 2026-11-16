@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { fleetList, FleetListVessel } from '@/data/fleet';
+import { fleetList } from '@/data/fleet';
 
 export default function FleetTable() {
   const [managerFilter, setManagerFilter] = useState('');

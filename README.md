@@ -29,8 +29,29 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Database and deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Production runs as `Caddy -> Next.js -> PostgreSQL` with Docker Compose.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+cp .env.example .env
+# Set DATABASE_URL, POSTGRES_PASSWORD, BETTER_AUTH_SECRET, BETTER_AUTH_URL and DOMAIN.
+# DATABASE_URL must use the password from POSTGRES_PASSWORD and host "db".
+
+docker compose build
+docker compose --profile tools run --rm tools npm run db:migrate
+docker compose --profile tools run --rm tools npm run seed
+docker compose --profile tools run --rm tools npm run create:admin
+docker compose up -d
+```
+
+`CMS_PROVIDER=postgres` is set by Compose. Local `npm run dev` defaults to `CMS_PROVIDER=local` and needs no database.
+
+Backups are not automatic. Run from the VPS and copy the dump off-site:
+
+```bash
+bash scripts/backup-db.sh
+```
+
+The script keeps 7 days in `backups/`. Add it to cron and sync that folder with `rclone` or `restic`.
+

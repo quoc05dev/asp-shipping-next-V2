@@ -1,5 +1,4 @@
 import React from 'react';
-import { cmsRepository } from '@/data/cms/repository';
 import { requirePageSection } from '@/data/cms/requirePageSection';
 import HeroVideoBackground from './HeroVideoBackground';
 

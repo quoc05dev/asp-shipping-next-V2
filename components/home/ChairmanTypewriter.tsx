@@ -35,6 +35,7 @@ export default function ChairmanTypewriter({ quote }: ChairmanTypewriterProps) {
   useEffect(() => {
     // Check for reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time media query read on mount
     setPrefersReducedMotionState(prefersReducedMotion);
     
     if (!isVisible) {

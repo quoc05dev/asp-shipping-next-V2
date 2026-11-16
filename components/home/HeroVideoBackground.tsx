@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function HeroVideoBackground({ videos }: { videos: any[] }) {
+export default function HeroVideoBackground({ videos }: { videos: { url: string }[] }) {
   const [activeVideo, setActiveVideo] = useState(1);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
@@ -11,6 +11,7 @@ export default function HeroVideoBackground({ videos }: { videos: any[] }) {
   const video2Ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- client-only mount flag; avoids SSR hydration mismatch
     setHasMounted(true);
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);

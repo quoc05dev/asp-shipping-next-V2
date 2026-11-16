@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Independent Vietnamese Shipowner",
 };
 
+// Content comes from the database at request time, so admin edits are visible without a rebuild.
+export const dynamic = "force-dynamic";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-US" className="no-js rfs-clamp-vars">

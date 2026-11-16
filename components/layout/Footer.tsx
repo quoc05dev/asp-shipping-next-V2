@@ -1,8 +1,11 @@
+import Link from 'next/link';
 import React from 'react';
-import { cmsRepository } from '@/data/cms/repository';
+import { getCmsRepository } from '@/data/cms/getCmsRepository';
 import FooterAccordion from '@/components/layout/FooterAccordion';
+import NewsletterForm from '@/components/contact/NewsletterForm';
 
 export default async function Footer() {
+  const cmsRepository = await getCmsRepository();
   const siteSettings = await cmsRepository.getSiteSettings();
   const footerSection = await cmsRepository.getFooterSection();
   return (
@@ -15,46 +18,7 @@ export default async function Footer() {
 						<section className="widget text-2 widget_text">
 							<h3 className="widget-title" data-cms-field="newsletter_title">{footerSection.newsletterTitle}</h3>
 							<div className="textwidget">
-								<div className="wpcf7 no-js" id="wpcf7-f93-o4" lang="en-US" dir="ltr" wpcf7-id="93">
-									<div className="screen-reader-response">
-										<p role="status" aria-live="polite" aria-atomic="true"></p>
-										<ul></ul>
-									</div>
-									<form action="https://aspshipping.vn/#wpcf7-f93-o4" method="post" className="wpcf7-form init" aria-label="Contact form" noValidate={true} data-status="init">
-										<div style={{display: "none", }}>
-											<input type="hidden" name="_wpcf7" defaultValue="93" />
-											<input type="hidden" name="_wpcf7_version" defaultValue="6.0.2" />
-											<input type="hidden" name="_wpcf7_locale" defaultValue="en_US" />
-											<input type="hidden" name="_wpcf7_unit_tag" defaultValue="wpcf7-f93-o4" />
-											<input type="hidden" name="_wpcf7_container_post" defaultValue="0" />
-											<input type="hidden" name="_wpcf7_posted_data_hash" defaultValue="" />
-										</div>
-										<input type="hidden" name="mc4wp-subscribe" defaultValue="1" />
-										<div className="newsletter">
-											<div>
-												<div className="row">
-													<div className="newsletter-field col-12 col-sm-6">
-														<span className="wpcf7-form-control-wrap" data-name="mc4wp-FNAME"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="First name" defaultValue="" type="text" name="mc4wp-FNAME" /></span>
-													</div>
-													<div className="newsletter-field col-12 col-sm-6">
-														<span className="wpcf7-form-control-wrap" data-name="mc4wp-LNAME"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Last name" defaultValue="" type="text" name="mc4wp-LNAME" /></span>
-													</div>
-												</div>
-												<div className="newsletter-fields">
-													<div className="newsletter-field">
-														<span className="wpcf7-form-control-wrap" data-name="mc4wp-EMAIL"><input size={40} maxLength={400} className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Your email address" defaultValue="" type="email" name="mc4wp-EMAIL" /></span>
-													</div>
-
-													<div className="newsletter-submit">
-														<button type="submit" className="button button-outline button-outline-secondary">Subscribe</button>
-													</div>
-												</div>
-											</div>
-											<div className="wpcf7-response-output" aria-hidden="true"></div>
-										</div><input type="hidden" id="ct_checkjs_cf7_7eacb532570ff6858afd2723755ff790" name="ct_checkjs_cf7" defaultValue="0" />
-										
-									</form>
-								</div>
+								<NewsletterForm />
 
 							</div>
 						</section>
@@ -68,7 +32,7 @@ export default async function Footer() {
 									<div className="menu-footer-column-1-container">
 										<ul id="menu-footer-column-1" className="menu">
     <li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-active">
-      <a title="Home" href="/" className="footer-parent-link">Home</a>
+      <Link title="Home" href="/" className="footer-parent-link">Home</Link>
     </li>
     <li itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
       <a title="Contact Us" href="/contact-us">Contact Us</a>
@@ -90,7 +54,7 @@ export default async function Footer() {
 									<div className="menu-footer-column-wwd-container">
 										<ul id="menu-footer-column-wwd" className="menu">
     <FooterAccordion id="menu-item-wwd" title={footerSection.columns[0].title} href="/what-we-do">
-      {footerSection.columns[0].links.map((link: any, idx: number) => (
+      {footerSection.columns[0].links.map((link, idx) => (
         <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
           <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
         </li>
@@ -107,7 +71,7 @@ export default async function Footer() {
 									<div className="menu-footer-column-2-container">
 										<ul id="menu-footer-column-2" className="menu">
     <FooterAccordion id="menu-item-97" title={footerSection.columns[1].title} href="/about-us">
-      {footerSection.columns[1].links.map((link: any, idx: number) => (
+      {footerSection.columns[1].links.map((link, idx) => (
         <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
           <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
         </li>
@@ -124,7 +88,7 @@ export default async function Footer() {
 									<div className="menu-footer-column-3-container">
 										<ul id="menu-footer-column-3" className="menu">
     <FooterAccordion id="menu-item-102" title={footerSection.columns[2].title} href="/our-fleet">
-      {footerSection.columns[2].links.map((link: any, idx: number) => (
+      {footerSection.columns[2].links.map((link, idx) => (
         <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
           <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
         </li>
@@ -141,7 +105,7 @@ export default async function Footer() {
 									<div className="menu-footer-column-4-container">
 										<ul id="menu-footer-column-4" className="menu">
     <FooterAccordion id="menu-item-105" title={footerSection.columns[3].title} href="/sustainability">
-      {footerSection.columns[3].links.map((link: any, idx: number) => (
+      {footerSection.columns[3].links.map((link, idx) => (
         <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
           <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
         </li>
@@ -158,7 +122,7 @@ export default async function Footer() {
 									<div className="menu-footer-column-5-container">
 										<ul id="menu-footer-column-5" className="menu">
     <FooterAccordion id="menu-item-110" title={footerSection.columns[4].title} href="/media">
-      {footerSection.columns[4].links.map((link: any, idx: number) => (
+      {footerSection.columns[4].links.map((link, idx) => (
         <li key={idx} itemScope={true} itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
           <a title={link.label} href={link.href} className="collapse-link">{link.label}</a>
         </li>

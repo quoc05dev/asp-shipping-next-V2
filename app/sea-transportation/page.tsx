@@ -6,7 +6,7 @@ import ServicePageHero from '@/components/what-we-do/ServicePageHero';
 import ServiceBreadcrumb from '@/components/what-we-do/ServiceBreadcrumb';
 import RelatedServices from '@/components/what-we-do/RelatedServices';
 import FaqSection from '@/components/what-we-do/FaqSection';
-import { cmsRepository } from '@/data/cms/repository';
+import { getCmsRepository } from '@/data/cms/getCmsRepository';
 import HowWeWorkSection from '@/components/what-we-do/HowWeWorkSection';
 import type { Metadata } from 'next';
 
@@ -32,6 +32,7 @@ const Divider = () => (
 );
 
 export default async function SeaTransportationPage() {
+  const cmsRepository = await getCmsRepository();
   const heroContent = await cmsRepository.getPageSection('sea-transportation', 'hero');
   const primaryIntroContent = await cmsRepository.getPageSection('sea-transportation', 'primary_intro');
   const hwwContent = await cmsRepository.getPageSection('sea-transportation', 'how_we_work');

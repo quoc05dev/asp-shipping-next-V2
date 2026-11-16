@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ServicePageHero from '@/components/what-we-do/ServicePageHero';
-import { cmsRepository } from '@/data/cms/repository';
+import { getCmsRepository } from '@/data/cms/getCmsRepository';
 import ServiceBreadcrumb from '@/components/what-we-do/ServiceBreadcrumb';
 import type { Metadata } from 'next';
 
@@ -44,6 +44,7 @@ const SectionLead = ({ title, heading, description }: { title: string, heading: 
 );
 
 export default async function WhatWeDoHubPage() {
+  const cmsRepository = await getCmsRepository();
   const heroContent = await cmsRepository.getPageSection('what-we-do', 'hero');
   const introContent = await cmsRepository.getPageSection('what-we-do', 'hub_intro');
   const partnersContent = await cmsRepository.getPageSection('what-we-do', 'hub_partners');

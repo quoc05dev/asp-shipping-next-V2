@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -29,9 +30,9 @@ export default async function Page() {
   <div className="container container-w-outer container-max container-rfs">
     <ol className="breadcrumb" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
       <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>
-        <a href="/" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
+        <Link href="/" className="breadcrumb-link" style={{ textDecoration: 'none' }}>
           <span className="breadcrumb-label">Home</span>
-        </a>
+        </Link>
         <span className="breadcrumb-separator" style={{ margin: '0 0.35rem', color: '#007236', fontSize: '0.6em' }}>■</span>
       </li>
       <li className="breadcrumb-item" style={{ display: 'flex', alignItems: 'center' }}>

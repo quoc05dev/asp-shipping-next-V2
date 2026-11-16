@@ -1,4 +1,4 @@
-import { AboutHeroSectionContent, HistoryIntroSectionContent, HistoryTimelineItem, HistoryTimelineSectionContent, AboutNavigationCard, PageSection, SectionKey, ServiceFaq, Service, Partner, SharedLabels, SectionContentMap, SiteSettings, NavigationItem, FleetVessel, NewsArticle, VideoMediaRef, HomeHeroSectionContent, HomeAboutSectionContent, HomeStatisticsSectionContent, HomeFleetSectionContent, ChairmanMessageSectionContent, HomeLatestNewsSectionContent, HomeSustainabilitySectionContent, HomeNewsletterSectionContent, FooterSectionContent } from './types';
+import { HistoryTimelineItem, AboutNavigationCard, PageSection, SectionKey, ServiceFaq, Service, Partner, SharedLabels, SiteSettings, NavigationItem, FleetVessel, NewsArticle, FooterSectionContent } from './types';
 
 
 export interface CmsRepository {
@@ -360,7 +360,7 @@ const MOCK_PARTNERS: Partner[] = [
   }
 ];
 
-const MOCK_PAGE_SECTIONS: Record<string, Record<string, any>> = {
+const MOCK_PAGE_SECTIONS: Record<string, Record<string, unknown>> = {
   "about-us/trades": {
     "trades_hero": {
       id: "trades-hero",

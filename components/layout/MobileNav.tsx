@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import type { Service } from '@/data/cms/types';
 
 interface MobileNavProps {
-    services?: any[];
+    services?: Service[];
     onMenuToggle?: (isOpen: boolean) => void;
 }
 
@@ -17,6 +18,11 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
     const resizeObserverRef = useRef<ResizeObserver | null>(null);
 
     const hasActiveSubmenu = navStack.length > 1;
+
+    const closeMenu = () => {
+        setIsOpen(false);
+        setTimeout(() => setNavStack(['root']), 300); // Wait for transition before resetting
+    };
 
     // Sync isOpen with Header via callback
     useEffect(() => {
@@ -38,7 +44,6 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
             if (resizeObserverRef.current) {
                 resizeObserverRef.current.disconnect();
             }
-            setSliderHeight('auto');
             return;
         }
 
@@ -62,7 +67,7 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
                 }
                 
                 resizeObserverRef.current = new ResizeObserver((entries) => {
-                    for (let entry of entries) {
+                    for (const entry of entries) {
                         updateHeight(entry.target);
                     }
                 });
@@ -78,7 +83,7 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape' && isOpen) {
-                closeMenu('escape');
+                closeMenu();
             }
         };
         document.addEventListener('keydown', handleKeyDown);
@@ -89,7 +94,7 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 992 && isOpen) {
-                closeMenu('resize');
+                closeMenu();
             }
         };
         window.addEventListener('resize', handleResize);
@@ -122,11 +127,6 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
         if (isOpen) {
             setTimeout(() => setNavStack(['root']), 300);
         }
-    };
-
-    const closeMenu = (source: string = 'unknown') => {
-        setIsOpen(false);
-        setTimeout(() => setNavStack(['root']), 300); // Wait for transition before resetting
     };
 
     const openSubmenu = (e: React.MouseEvent, id: string) => {
@@ -183,7 +183,7 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
             </button>
             
             {isOpen && (
-                <div className="offcanvas-backdrop fade show" onClick={() => closeMenu('backdrop')} style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1040 }}></div>
+                <div className="offcanvas-backdrop fade show" onClick={() => closeMenu()} style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1040 }}></div>
             )}
 
             <div id="siteNavOffcanvas" className={`offcanvas offcanvas-nav ${isOpen ? 'show' : ''}`} ref={offcanvasRef} style={{ zIndex: 1045, visibility: isOpen ? 'visible' : 'hidden', pointerEvents: isOpen ? 'auto' : 'none', transform: isOpen ? 'translateX(-100%)' : 'translateX(0)', transition: 'transform 0.3s ease, visibility 0.3s ease' }}>
@@ -209,10 +209,10 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
                                                           <span className="menu-item-text">Back</span>
                                                       </a>
                                                   </li>
-                                                  <li className="menu-item menu-item-view-parent"><Link href="/what-we-do" onClick={() => closeMenu('route')}>What We Do</Link></li>
-                                                    {services.map((service: any, index: number) => (
+                                                  <li className="menu-item menu-item-view-parent"><Link href="/what-we-do" onClick={() => closeMenu()}>What We Do</Link></li>
+                                                    {services.map((service, index) => (
                                                         <li key={service.id || index} itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page">
-                                                            <Link title={service.title || service.name} href={`/what-we-do/${service.slug}`} className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">{service.title || service.name}</span></Link>
+                                                            <Link title={service.name} href={`/${service.slug}`} className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">{service.name}</span></Link>
                                                         </li>
                                                     ))}
                                                 </ul>
@@ -235,18 +235,18 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
                                                         <span className="menu-item-text">Back</span>
                                                     </a>
                                                 </li>
-                                                <li className="menu-item menu-item-view-parent"><Link href="/about-us" onClick={() => closeMenu('route')}>About Us</Link></li>
+                                                <li className="menu-item menu-item-view-parent"><Link href="/about-us" onClick={() => closeMenu()}>About Us</Link></li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-55">
-                                                    <Link title="History" href="/about-us/history" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">History</span></Link>
+                                                    <Link title="History" href="/about-us/history" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">History</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-56">
-                                                    <Link title="Leadership" href="/about-us/leadership" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Leadership</span></Link>
+                                                    <Link title="Leadership" href="/about-us/leadership" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Leadership</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-54">
-                                                    <Link title="Vision, Mission, Values" href="/about-us/vision-mission-values" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Vision, Mission, Values</span></Link>
+                                                    <Link title="Vision, Mission, Values" href="/about-us/vision-mission-values" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Vision, Mission, Values</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-57">
-                                                    <Link title="Trades" href="/about-us/trades" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Trades</span></Link>
+                                                    <Link title="Trades" href="/about-us/trades" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Trades</span></Link>
                                                 </li>
                                             </ul>
                                             <div className="menu-item-contents u-px-4 u-pb-8 u-mt-4">
@@ -301,18 +301,18 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
                                                         <span className="menu-item-text">Back</span>
                                                     </a>
                                                 </li>
-                                                <li className="menu-item menu-item-view-parent"><Link href="/sustainability" onClick={() => closeMenu('route')}>Sustainability</Link></li>
+                                                <li className="menu-item menu-item-view-parent"><Link href="/sustainability" onClick={() => closeMenu()}>Sustainability</Link></li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1112">
-                                                    <Link title="Environment" href="/sustainability/environment" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Environment</span></Link>
+                                                    <Link title="Environment" href="/sustainability/environment" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Environment</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1126">
-                                                    <Link title="Social" href="/sustainability/social" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Social</span></Link>
+                                                    <Link title="Social" href="/sustainability/social" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Social</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1028">
-                                                    <Link title="Governance" href="/sustainability/governance" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Governance</span></Link>
+                                                    <Link title="Governance" href="/sustainability/governance" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Governance</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-71">
-                                                    <Link title="Policies & Guidelines" href="/sustainability/policies-guidelines" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Policies &amp; Guidelines</span></Link>
+                                                    <Link title="Policies & Guidelines" href="/sustainability/policies-guidelines" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Policies &amp; Guidelines</span></Link>
                                                 </li>
                                             </ul>
                                             <div className="menu-item-contents u-px-4 u-pb-8 u-mt-4">
@@ -359,15 +359,15 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
                                                         <span className="menu-item-text">Back</span>
                                                     </a>
                                                 </li>
-                                                <li className="menu-item menu-item-view-parent"><Link href="/media" onClick={() => closeMenu('route')}>Media</Link></li>
+                                                <li className="menu-item menu-item-view-parent"><Link href="/media" onClick={() => closeMenu()}>Media</Link></li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-64">
-                                                    <Link title="Latest News" href="/media/latest-news" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Latest News</span></Link>
+                                                    <Link title="Latest News" href="/media/latest-news" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Latest News</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-62">
-                                                    <Link title="Gallery" href="/media/gallery" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Gallery</span></Link>
+                                                    <Link title="Gallery" href="/media/gallery" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Gallery</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-63">
-                                                    <Link title="Glossary of Terms" href="/media/glossary-of-terms" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Glossary of Terms</span></Link>
+                                                    <Link title="Glossary of Terms" href="/media/glossary-of-terms" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Glossary of Terms</span></Link>
                                                 </li>
                                             </ul>
                                             <div className="menu-item-contents u-px-4 u-pb-8 u-mt-4">
@@ -429,18 +429,18 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
                                                         <span className="menu-item-text">Back</span>
                                                     </a>
                                                 </li>
-                                                <li className="menu-item menu-item-view-parent"><Link href="/careers" onClick={() => closeMenu('route')}>Careers</Link></li>
+                                                <li className="menu-item menu-item-view-parent"><Link href="/careers" onClick={() => closeMenu()}>Careers</Link></li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-79">
-                                                    <Link title="The Asia Pacific Shipping Difference" href="/careers#the-bw-epic-kosan-difference" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">The Asia Pacific Shipping Difference</span></Link>
+                                                    <Link title="The Asia Pacific Shipping Difference" href="/careers#the-bw-epic-kosan-difference" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">The Asia Pacific Shipping Difference</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-80">
-                                                    <Link title="Talent Management" href="/careers#talent-management" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Talent Management</span></Link>
+                                                    <Link title="Talent Management" href="/careers#talent-management" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Talent Management</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-81">
-                                                    <Link title="Benefits of Working at Asia Pacific Shipping" href="/careers#benefits-of-working-at-bw-epic-kosan" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Benefits of Working at Asia Pacific Shipping</span></Link>
+                                                    <Link title="Benefits of Working at Asia Pacific Shipping" href="/careers#benefits-of-working-at-bw-epic-kosan" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Benefits of Working at Asia Pacific Shipping</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-82">
-                                                    <Link title="Career Opportunities" href="/careers#careers-opportunities" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Career Opportunities</span></Link>
+                                                    <Link title="Career Opportunities" href="/careers#careers-opportunities" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Career Opportunities</span></Link>
                                                 </li>
                                             </ul>
                                             <div className="menu-item-contents u-px-4 u-pb-8 u-mt-4">
@@ -498,12 +498,12 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
                                                         <span className="menu-item-text">Back</span>
                                                     </a>
                                                 </li>
-                                                <li className="menu-item menu-item-view-parent"><Link href="/our-fleet" onClick={() => closeMenu('route')}>Our Fleet</Link></li>
+                                                <li className="menu-item menu-item-view-parent"><Link href="/our-fleet" onClick={() => closeMenu()}>Our Fleet</Link></li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-75">
-                                                    <Link title="Ammonia Propulsion" href="/our-fleet/ammonia-propulsion" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Ammonia Propulsion</span></Link>
+                                                    <Link title="Ammonia Propulsion" href="/our-fleet/ammonia-propulsion" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Ammonia Propulsion</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-74">
-                                                    <Link title="LCO2 Shipping" href="/our-fleet/lco2-shipping" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">LCO2 Shipping</span></Link>
+                                                    <Link title="LCO2 Shipping" href="/our-fleet/lco2-shipping" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">LCO2 Shipping</span></Link>
                                                 </li>
                                             </ul>
                                             <div className="menu-item-contents u-px-4 u-pb-8 u-mt-4">
@@ -553,12 +553,12 @@ export default function MobileNav({ onMenuToggle, services = [] }: MobileNavProp
                                                         <span className="menu-item-text">Back</span>
                                                     </a>
                                                 </li>
-                                                <li className="menu-item menu-item-view-parent"><Link href="/contact-us" onClick={() => closeMenu('route')}>Contact Us</Link></li>
+                                                <li className="menu-item menu-item-view-parent"><Link href="/contact-us" onClick={() => closeMenu()}>Contact Us</Link></li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-77">
-                                                    <Link title="Whistleblowing" href="/contact-us#the-bw-epic-kosan-difference" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Whistleblowing</span></Link>
+                                                    <Link title="Whistleblowing" href="/contact-us#the-bw-epic-kosan-difference" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Whistleblowing</span></Link>
                                                 </li>
                                                 <li itemScope itemType="https://www.schema.org/SiteNavigationElement" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-78">
-                                                    <Link title="Leave Us a Message" href="/contact-us#have-a-question" className="nav-slider-link" onClick={() => closeMenu('route')}><span className="menu-item-text">Leave Us a Message</span></Link>
+                                                    <Link title="Leave Us a Message" href="/contact-us#have-a-question" className="nav-slider-link" onClick={() => closeMenu()}><span className="menu-item-text">Leave Us a Message</span></Link>
                                                 </li>
                                             </ul>
                                             <div className="menu-item-contents u-px-4 u-pb-8 u-mt-4">
