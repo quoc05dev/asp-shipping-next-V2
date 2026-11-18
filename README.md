@@ -31,21 +31,55 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Database and deployment
 
-Production runs as `Caddy -> Next.js -> PostgreSQL` with Docker Compose.
+Production runs as `Nginx (host) -> Next.js (Docker) -> PostgreSQL (Docker)`.
+The Compose stack binds the web container to `127.0.0.1:3100`; host Nginx owns `80/443`.
 
 ```bash
 cp .env.example .env
-# Set DATABASE_URL, POSTGRES_PASSWORD, BETTER_AUTH_SECRET, BETTER_AUTH_URL and DOMAIN.
+# Set POSTGRES_PASSWORD, DATABASE_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL,
+# ADMIN_EMAIL and ADMIN_PASSWORD.
 # DATABASE_URL must use the password from POSTGRES_PASSWORD and host "db".
 
-docker compose build
+docker compose --profile tools build
 docker compose --profile tools run --rm tools npm run db:migrate
 docker compose --profile tools run --rm tools npm run seed
 docker compose --profile tools run --rm tools npm run create:admin
 docker compose up -d
 ```
 
+Run `seed` only once on a new database. It overwrites seeded content on later runs.
+
 `CMS_PROVIDER=postgres` is set by Compose. Local `npm run dev` defaults to `CMS_PROVIDER=local` and needs no database.
+
+### Host Nginx
+
+Create `/etc/nginx/sites-available/asp-shipping.conf`, replace the domain, then enable it:
+
+```nginx
+server {
+    listen 80;
+    listen [::]:80;
+    server_name asp.example.com;
+
+    client_max_body_size 10m;
+
+    location / {
+        proxy_pass http://127.0.0.1:3100;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+```bash
+ln -s /etc/nginx/sites-available/asp-shipping.conf /etc/nginx/sites-enabled/
+nginx -t
+systemctl reload nginx
+certbot --nginx -d asp.example.com
+```
 
 Backups are not automatic. Run from the VPS and copy the dump off-site:
 
